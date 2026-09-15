@@ -1,0 +1,561 @@
+/**
+ * 为门户稿件批量获取高清配图
+ *
+ *   node scripts/fetch-images.js              # 补齐缺失的配图
+ *   node scripts/fetch-images.js --force      # 全部重新下载
+ *   node scripts/fetch-images.js --only=高铁   # 只处理标题含「高铁」的稿件
+ *   node scripts/fetch-images.js --apply      # 下载完成后回写 data/news.json
+ *
+ * 逻辑：
+ *   1. 按稿件标题 / 标签 / 图片说明生成中文检索词（优先人工映射表，其次按标题
+ *      自动提炼核心词 + 频道视觉兜底词），去图库检索大尺寸原图；
+ *   2. 逐张下载并校验（真实图片格式、分辨率优先 1400x780 以上、比例正常）；
+ *   3. 用 Pillow 统一裁切为 1600x900 的渐进式 JPEG，存到 public/img/news/；
+ *   4. 裁切后计算感知哈希（dHash），与 scripts/data/image-fingerprints.json 中
+ *      已有的全部配图比对，重复的直接丢弃换下一张 —— 保证全站不出现重复配图；
+ *   5. 把「稿件 -> 本地图片」的对应关系写入 scripts/data/photo-index.json，
+ *      由 seed 与本站数据共用，保证重跑 npm run seed 依然是高清配图。
+ */
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+const { buildQuery } = require('./lib/keywords');
+
+const ROOT = path.resolve(__dirname, '..');
+const DATA_FILE = path.join(ROOT, 'data', 'news.json');
+const OUT_DIR = path.join(ROOT, 'public', 'img', 'news');
+const TMP_DIR = path.join(ROOT, '.tmp-images');
+const INDEX_FILE = path.join(__dirname, 'data', 'photo-index.json');
+const FINGERPRINT_FILE = path.join(__dirname, 'data', 'image-fingerprints.json');
+const LAST_RUN_FILE = path.join(__dirname, 'data', 'last-image-run.json');
+const NORMALIZER = path.join(__dirname, 'lib', 'normalize_image.py');
+
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+
+const OUT_W = 1600;
+const OUT_H = 900;
+const QUALITY = 86;
+
+/** 原图首选门槛：尽量取 1400x780 以上，保证输出 1600x900 不失真 */
+const MIN_SRC_W = 1400;
+const MIN_SRC_H = 780;
+/** 第二档降级门槛（仍保持 720p 起步） */
+const FALLBACK_SRC_W = 1280;
+const FALLBACK_SRC_H = 720;
+/** 保底门槛：宁可略小也要有图（1080P 级别、仍高于页面展示尺寸的 2 倍） */
+const LAST_RESORT_W = 1000;
+const LAST_RESORT_H = 560;
+const MIN_SRC_RATIO = 1.2;
+const MIN_BYTES = 60 * 1024;
+
+/** 感知哈希汉明距离阈值：小于等于该值即判定为同一张图（取值 0~64） */
+const DUP_THRESHOLD = 6;
+
+/** 每个频道补一个"看得见"的兜底词，避免纯抽象标签搜不到图 */
+const CHANNEL_VISUAL = {
+  china: '城市 街景', world: '国际 城市', finance: '金融 市场', tech: '科技 数码',
+  sports: '体育 竞技', ent: '舞台 演出', auto: '汽车', culture: '文化 传统',
+  health: '健康 生活', video: '影像 镜头'
+};
+
+/** 封面关键词（按标题前缀匹配，先命中先使用） */
+const COVER_KEYWORDS = {
+  '纪录片片段：数据中心': '数据中心 机房 服务器 机柜',
+  '直播回放：城市马拉松': '城市马拉松 跑者 冲刺',
+  '一分钟读懂：新能源车快充': '新能源汽车 充电桩 充电',
+  '现场直击：国产大型邮轮': '大型邮轮 内部 甲板',
+  '秋冬饮食指南': '蔬菜 水果 营养餐 餐桌',
+  '睡眠门诊数据发布': '睡眠 卧室 夜晚 安静',
+  '全民健身新趋势': '公园 晨跑 市民 健身',
+  '秋冬流感高发期来临': '疫苗接种 医护人员 注射',
+  '古籍数字化成果开放': '古籍 线装书 特写',
+  '城市阅读空间扩容': '书店 阅读 夜晚 灯光',
+  '非遗工坊走进城市商圈': '非遗 传统手工艺 工坊',
+  '博物馆热持续升温': '博物馆 展厅 参观',
+  '汽车出口再创新高': '汽车 出口 港口 滚装船',
+  '二手车市场透明度提升': '二手车 汽车 交易市场',
+  '智能驾驶进入': '自动驾驶 测试车 传感器',
+  '充电 10 分钟续航': '电动汽车 充电站 快充',
+  '剧集市场回归内容本位': '影视剧 拍摄 剧组 摄像机',
+  '国风综艺出海': '汉服 国风 舞台 表演',
+  '音乐节与文旅深度融合': '音乐节 舞台 观众 灯光',
+  '国产动画电影票房破纪录': '动画电影 制作 特效',
+  '游泳世界杯落幕': '游泳比赛 泳池 竞技',
+  '国家队世预赛客场取胜': '足球比赛 球场 球员',
+  '职业联赛收官战': '足球场 观众 看台',
+  '城市马拉松报名人数创新高': '马拉松 起跑 跑者 人群',
+  '开源社区年度报告': '程序员 写代码 电脑屏幕',
+  '低空经济加速落地': '无人机 配送 物流 送货',
+  '端侧 AI 手机出货': '智能手机 使用 特写',
+  '液冷服务器出货量翻倍': '服务器 机柜 数据中心',
+  '国产大模型推理成本': '数据中心 服务器 机柜 蓝色灯光',
+  '黄金价格再创新高': '黄金 金条 投资',
+  '人民币汇率双向波动': '人民币 外汇 汇率 钞票',
+  '消费市场暖意渐浓': '购物中心 商场 人群 逛街',
+  '外贸数据超预期': '港口 集装箱 吊机',
+  'A 股三季报收官': '证券市场 交易 屏幕 数据',
+  '海外中餐加速': '中餐 餐厅 菜品',
+  '深空探测再传捷报': '运载火箭 发射 升空',
+  '全球粮价连续三个月回落': '小麦 麦田 丰收',
+  '国际航班持续恢复': '民航客机 机场 起飞',
+  '全球气候峰会闭幕': '港口 货轮 航运',
+  '国产大邮轮完成第二次': '大型邮轮 海上航行',
+  '寒潮预警升级': '寒潮 降雪 城市 冬天',
+  '城市体检报告发布': '老旧小区 改造 社区',
+  '县域电商新样本': '农产品 冷链 物流 货车',
+  '城市夜间经济回暖': '城市夜景 夜市 灯光',
+  '全国高铁网再扩容': '复兴号 高铁 列车 城市'
+};
+
+/** 正文配图关键词（按图片说明前缀匹配） */
+const FIGURE_KEYWORDS = {
+  '清晨的公园步道': '公园 步道 晨跑 跑步',
+  '扫描与校勘环节': '古籍 扫描 文献 数字化',
+  '学员在非遗传承人': '扎染 手工 非遗',
+  '展厅内观众驻足': '博物馆 展厅 观众',
+  '海外工厂本地员工': '汽车 工厂 总装 生产线',
+  '测试车辆在城市道路': '自动驾驶 测试车 传感器',
+  '新能源汽车在快充桩': '电动车 充电桩 充电',
+  '节目中展示的传统服饰': '汉服 传统服饰 器物',
+  '制作团队在虚拟拍摄棚': '虚拟拍摄 摄影棚 绿幕',
+  '梯队球员在教练': '青少年 足球 训练',
+  '清晨阳光下，跑者': '马拉松 起跑 跑者',
+  '开发者协作项目中': '程序员 团队 代码 协作',
+  '用户在无网络环境': '手机 翻译 应用',
+  '液冷机柜内部结构': '服务器 机柜 内部 线缆',
+  '数据中心机柜指示灯': '数据中心 服务器 机柜 灯光',
+  '演出与展会带动': '商业街 人流 消费',
+  '港口集装箱作业': '港口 集装箱 吊机',
+  '交易大厅内大屏': '股票 行情 显示屏 红色',
+  '菜单结构本地化后': '中餐馆 门店 用餐',
+  '运载火箭发射升空': '运载火箭 发射 尾焰',
+  '主产区收割进度': '联合收割机 麦田 收割',
+  '试点港口将建设': '港口 码头 船舶 加油',
+  '邮轮靠泊期间': '邮轮 靠泊 港口',
+  '改造后的社区公共空间': '社区 无障碍 坡道',
+  '夜市摊位与商圈': '夜市 摊位 小吃',
+  '新线路穿城而过': '高铁 线路 城市 列车'
+};
+
+/* ------------------------------ 工具 ------------------------------ */
+
+function pickKeyword(map, text, fallback) {
+  for (const key of Object.keys(map)) {
+    if (text && text.startsWith(key)) return map[key];
+  }
+  return fallback;
+}
+
+async function fetchWithTimeout(url, options = {}, ms = 20000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+const SIZE_FILTERS = ['+filterui:imagesize-large', '+filterui:imagesize-wallpaper'];
+
+/* ---------------------------- 配图去重（感知哈希） ---------------------------- */
+
+/** 已用配图指纹表：文件名 -> dHash，存于 scripts/data/image-fingerprints.json */
+let fingerprints = {};
+
+function loadFingerprints() {
+  if (fs.existsSync(FINGERPRINT_FILE)) {
+    try { fingerprints = JSON.parse(fs.readFileSync(FINGERPRINT_FILE, 'utf8')); } catch { fingerprints = {}; }
+  }
+  return fingerprints;
+}
+
+function saveFingerprints() {
+  fs.mkdirSync(path.dirname(FINGERPRINT_FILE), { recursive: true });
+  fs.writeFileSync(FINGERPRINT_FILE, JSON.stringify(fingerprints, null, 2) + '\n', 'utf8');
+}
+
+/** 两个十六进制 dHash 的汉明距离 */
+function hammingHex(a, b) {
+  let x = BigInt(`0x${a}`) ^ BigInt(`0x${b}`);
+  let n = 0;
+  while (x) { n += Number(x & 1n); x >>= 1n; }
+  return n;
+}
+
+/** 批量计算 dHash：一次 python 调用算一批，避免逐张启动进程 */
+function dhashBatch(files) {
+  const out = [];
+  for (let i = 0; i < files.length; i += 40) {
+    const chunk = files.slice(i, i + 40);
+    const r = spawnSync('python', [NORMALIZER, '--dhash', ...chunk], { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
+    if (r.status !== 0) { chunk.forEach(() => out.push(null)); continue; }
+    String(r.stdout).trim().split(/\s*\n\s*/)
+      .forEach((h) => out.push(/^[0-9a-f]{16}$/i.test(h) ? h.toLowerCase() : null));
+  }
+  return out;
+}
+
+/** 为已有配图补齐指纹：首次运行时建立全站指纹库，之后只补新图 */
+function ensureFingerprints() {
+  if (!fs.existsSync(OUT_DIR)) return;
+  const files = fs.readdirSync(OUT_DIR).filter((f) => /\.jpg$/i.test(f));
+  const missing = files.filter((f) => !fingerprints[f]);
+  if (!missing.length) return;
+  console.log(`建立配图去重指纹：新增 ${missing.length} 张（已有 ${files.length - missing.length} 张）…`);
+  const hashes = dhashBatch(missing.map((f) => path.join(OUT_DIR, f)));
+  missing.forEach((f, i) => { if (hashes[i]) fingerprints[f] = hashes[i]; });
+  saveFingerprints();
+}
+
+/** 找出与给定指纹重复的图片；selfKey 用于排除自身（--force 重下同一图位时不算重复） */
+function findDuplicate(hash, selfKey) {
+  if (!hash) return null;
+  for (const [file, h] of Object.entries(fingerprints)) {
+    if (file === selfKey || !h) continue;
+    if (hammingHex(h, hash) <= DUP_THRESHOLD) return file;
+  }
+  return null;
+}
+
+/** 从 Bing 图片搜索取候选原图直链 */
+async function searchCandidates(query, filter, count = 18) {
+  const url = 'https://www.bing.com/images/search?q=' + encodeURIComponent(query)
+    + '&qft=' + filter + '&form=IRFLTR&first=1';
+  let html = '';
+  try {
+    const res = await fetchWithTimeout(url, {
+      headers: { 'User-Agent': UA, 'Accept-Language': 'zh-CN,zh;q=0.9' }
+    });
+    html = await res.text();
+  } catch {
+    return [];
+  }
+  const out = [];
+  const re = /m="(\{[^"]+?\})"/g;
+  let match;
+  while ((match = re.exec(html)) && out.length < count) {
+    const raw = match[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    let obj;
+    try {
+      obj = JSON.parse(raw);
+    } catch {
+      continue;
+    }
+    if (!obj.murl || out.some((x) => x.url === obj.murl)) continue;
+    out.push({ url: obj.murl, page: obj.purl || '', title: String(obj.t || '').slice(0, 60) });
+  }
+  return out;
+}
+
+/** 关键词逐级放宽：整串 -> 前两词 -> 首词 */
+function queryVariants(query) {
+  const words = String(query).split(/\s+/).filter(Boolean);
+  const list = [query];
+  if (words.length > 2) list.push(words.slice(0, 2).join(' '));
+  if (words.length > 1) list.push(words[0]);
+  return [...new Set(list)];
+}
+
+/* ------------------------------ 尺寸解析（无依赖） ------------------------------ */
+
+function readSize(buf) {
+  if (buf.length > 24 && buf.toString('latin1', 0, 2) === '\xFF\xD8') return jpegSize(buf);
+  if (buf.length > 24 && buf.toString('latin1', 1, 4) === 'PNG') {
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  }
+  if (buf.length > 16 && buf.toString('latin1', 0, 3) === 'GIF') {
+    return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
+  }
+  if (buf.length > 32 && buf.toString('latin1', 0, 4) === 'RIFF' && buf.toString('latin1', 8, 12) === 'WEBP') {
+    const kind = buf.toString('latin1', 12, 16);
+    if (kind === 'VP8X') return { w: buf.readUIntLE(24, 3) + 1, h: buf.readUIntLE(27, 3) + 1 };
+    if (kind === 'VP8L') {
+      const bits = buf.readUInt32LE(21);
+      return { w: (bits & 0x3FFF) + 1, h: ((bits >> 14) & 0x3FFF) + 1 };
+    }
+    const start = buf.indexOf(Buffer.from([0x9D, 0x01, 0x2A]));
+    if (start > 0 && start + 7 < buf.length) {
+      return { w: buf.readUInt16LE(start + 3) & 0x3FFF, h: buf.readUInt16LE(start + 5) & 0x3FFF };
+    }
+  }
+  return null;
+}
+
+function jpegSize(buf) {
+  let offset = 2;
+  while (offset + 9 < buf.length) {
+    if (buf[offset] !== 0xFF) { offset += 1; continue; }
+    const marker = buf[offset + 1];
+    if (marker === 0xD8 || marker === 0x01 || (marker >= 0xD0 && marker <= 0xD7)) { offset += 2; continue; }
+    const len = buf.readUInt16BE(offset + 2);
+    const isSof = marker >= 0xC0 && marker <= 0xCF && marker !== 0xC4 && marker !== 0xC8 && marker !== 0xCC;
+    if (isSof) return { h: buf.readUInt16BE(offset + 5), w: buf.readUInt16BE(offset + 7) };
+    offset += 2 + len;
+  }
+  return null;
+}
+
+/** 下载单张候选图并校验（minW/minH 为本次的高清门槛） */
+async function downloadCandidate(candidate, minW = MIN_SRC_W, minH = MIN_SRC_H) {
+  let res;
+  try {
+    res = await fetchWithTimeout(candidate.url, { headers: { 'User-Agent': UA, Referer: 'https://www.bing.com/' } }, 20000);
+  } catch (err) {
+    return { ok: false, why: '网络 ' + err.name };
+  }
+  if (!res.ok) return { ok: false, why: 'HTTP ' + res.status };
+  const type = String(res.headers.get('content-type') || '');
+  if (!type.startsWith('image/')) return { ok: false, why: '非图片 ' + type.slice(0, 24) };
+
+  let buf;
+  try {
+    buf = Buffer.from(await res.arrayBuffer());
+  } catch {
+    return { ok: false, why: '读取失败' };
+  }
+  if (buf.length < MIN_BYTES) return { ok: false, why: '体积过小 ' + Math.round(buf.length / 1024) + 'KB' };
+
+  const size = readSize(buf);
+  if (!size) return { ok: false, why: '无法解析尺寸' };
+  if (size.w < minW || size.h < minH) return { ok: false, why: `分辨率不足 ${size.w}x${size.h}` };
+  if (size.w / size.h < MIN_SRC_RATIO) return { ok: false, why: `比例过窄 ${size.w}x${size.h}` };
+  return { ok: true, buf, size, type };
+}
+
+/** 调用 Pillow 统一裁切输出，并返回成品图的感知哈希（用于去重） */
+function normalize(srcFile, dstFile) {
+  const r = spawnSync('python', [NORMALIZER, srcFile, dstFile, String(OUT_W), String(OUT_H), String(QUALITY)], {
+    encoding: 'utf8'
+  });
+  if (r.status !== 0) {
+    return { ok: false, why: (r.stderr || r.error && r.error.message || 'Pillow 处理失败').trim().slice(0, 120) };
+  }
+  const line = String(r.stdout).trim().split('\n').pop().trim();
+  return { ok: true, hash: /^[0-9a-f]{16}$/i.test(line) ? line.toLowerCase() : null };
+}
+
+/**
+ * 处理一个图片位：检索 -> 下载 -> 归一化 -> 去重校验
+ * 高清门槛分两轮：先按 1400x780 挑，全部失败再按 1280x720 降级重试一次。
+ */
+async function resolveImage({ query, visual = '', dstFile, force }) {
+  const selfKey = path.basename(dstFile);
+  if (!force && fs.existsSync(dstFile) && fs.statSync(dstFile).size > 20000) {
+    return { ok: true, cached: true, query };
+  }
+
+  let dupRejected = 0;
+  const reasons = [];
+
+  // 关键词逐级放宽：整串 -> 前两词 -> 首词 -> 纯频道视觉词（最后手段，保证有图且至少同频道）
+  const variants = [...new Set([
+    ...queryVariants(query),
+    ...(visual ? [visual, `${visual} 高清 摄影`] : [])
+  ])];
+
+  const tiers = [[MIN_SRC_W, MIN_SRC_H], [FALLBACK_SRC_W, FALLBACK_SRC_H], [LAST_RESORT_W, LAST_RESORT_H]];
+  for (const [minW, minH] of tiers) {
+    const tried = new Set();
+    for (const variant of variants) {
+      for (const filter of SIZE_FILTERS) {
+        const candidates = (await searchCandidates(variant, filter)).filter((c) => !tried.has(c.url));
+        candidates.forEach((c) => tried.add(c.url));
+        if (!candidates.length) continue;
+
+        for (const candidate of candidates) {
+          const got = await downloadCandidate(candidate, minW, minH);
+          if (!got.ok) { reasons.push(got.why); continue; }
+          const tmpFile = path.join(TMP_DIR, 'src-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7));
+          fs.writeFileSync(tmpFile, got.buf);
+          const done = normalize(tmpFile, dstFile);
+          fs.unlinkSync(tmpFile);
+          if (!done.ok) { reasons.push(done.why); continue; }
+
+          // 与全站已有配图比对，重复则丢弃换下一张
+          const dup = findDuplicate(done.hash, selfKey);
+          if (dup) {
+            dupRejected += 1;
+            reasons.push(`与已有配图重复（${dup}）`);
+            if (fs.existsSync(dstFile)) fs.unlinkSync(dstFile);
+            continue;
+          }
+
+          if (done.hash) { fingerprints[selfKey] = done.hash; saveFingerprints(); }
+          return {
+            ok: true, cached: false, query,
+            hit: variant,
+            size: `${got.size.w}x${got.size.h}`,
+            from: candidate.url,
+            page: candidate.page,
+            hash: done.hash,
+            dupRejected
+          };
+        }
+        // 这一档关键词已经试过一批候选，够用就换下一个关键词
+        if (reasons.length >= 8) break;
+      }
+    }
+  }
+  return { ok: false, why: reasons.slice(0, 3).join(' / ') || '全部候选不可用', query, dupRejected };
+}
+
+/* ------------------------------ 主流程 ------------------------------ */
+
+function slug(index, channel, kind) {
+  return `${String(index + 1).padStart(2, '0')}-${channel}-${kind}`;
+}
+
+/**
+ * 稳定的文件名前缀。
+ * 不能用数组下标命名：新稿件是 unshift 到数组开头的，下标会整体后移，
+ * 导致新稿件套用旧文件名（旧文件已存在 → 直接复用 → 配图与内容不符）。
+ * 规则：
+ *   - photo-index.json 里已登记的稿件，沿用原文件名（重跑 seed 也不会丢图）；
+ *   - 新稿件用 article.id 命名，与数组顺序无关。
+ */
+function prefixFor(article, index, i) {
+  const hit = index[article.title];
+  const known = hit && (hit.cover || (hit.figures || []).find(Boolean));
+  if (known) {
+    const m = /\/img\/news\/(.+)-(cover|fig\d+)\.jpg$/.exec(known);
+    if (m) return m[1];
+  }
+  const safeId = String(article.id || '').replace(/[^a-zA-Z0-9_-]/g, '');
+  return safeId ? `a-${safeId}` : slug(i, article.channel, 'x');
+}
+
+async function main() {
+  const args = process.argv.slice(2);
+  const force = args.includes('--force');
+  const apply = args.includes('--apply');
+  const only = (args.find((a) => a.startsWith('--only=')) || '').slice(7);
+
+  const articles = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  fs.mkdirSync(TMP_DIR, { recursive: true });
+  fs.mkdirSync(path.dirname(INDEX_FILE), { recursive: true });
+
+  const index = fs.existsSync(INDEX_FILE) ? JSON.parse(fs.readFileSync(INDEX_FILE, 'utf8')) : {};
+
+  // 载入全站配图指纹，用于"不出现重复配图"
+  loadFingerprints();
+  ensureFingerprints();
+
+  const jobs = [];
+
+  articles.forEach((article, i) => {
+    if (only && !article.title.includes(only)) return;
+    const tags = (article.tags || []).filter(Boolean);
+    const fallback = [tags[0], tags[1], CHANNEL_VISUAL[article.channel] || ''].filter(Boolean).join(' ');
+
+    const prefix = prefixFor(article, index, i);
+    const coverFile = `${prefix}-cover`;
+    jobs.push({
+      article, i, slot: 'cover',
+      link: `/img/news/${coverFile}.jpg`,
+      dstFile: path.join(OUT_DIR, `${coverFile}.jpg`),
+      visual: CHANNEL_VISUAL[article.channel] || '',
+      query: pickKeyword(
+        COVER_KEYWORDS, article.title,
+        buildQuery({ title: article.title, channel: article.channel, tags, fallback: fallback || article.title })
+      )
+    });
+
+    (article.content || []).filter((b) => b.type === 'image').forEach((block, k) => {
+      const figFile = `${prefix}-fig${k + 1}`;
+      const caption = block.caption || '';
+      jobs.push({
+        article, i, slot: `figure:${k}`,
+        link: `/img/news/${figFile}.jpg`,
+        dstFile: path.join(OUT_DIR, `${figFile}.jpg`),
+        visual: CHANNEL_VISUAL[article.channel] || '',
+        query: pickKeyword(
+          FIGURE_KEYWORDS, caption,
+          buildQuery({ title: caption || article.title, channel: article.channel, tags, fallback: fallback || article.title })
+        )
+      });
+    });
+  });
+
+  console.log(`待处理图片位：${jobs.length} 个（并发 4，缺失才下载）\n`);
+
+  const results = [];
+  let cursor = 0;
+  async function worker(id) {
+    while (cursor < jobs.length) {
+      const job = jobs[cursor++];
+      const r = await resolveImage({ query: job.query, visual: job.visual, dstFile: job.dstFile, force });
+      results.push({ ...job, ...r });
+      const flag = r.ok ? (r.cached ? '已存在' : '完成  ') : '失败  ';
+      console.log(`[${String(results.length).padStart(3)}/${jobs.length}] ${flag} ${job.slot.padEnd(9)} ${job.query}`);
+      if (!r.ok) console.log(`         └ ${r.why}`);
+    }
+  }
+  await Promise.all([worker(1), worker(2), worker(3), worker(4)]);
+
+  /* 回写索引与站点数据 */
+  let okCount = 0;
+  results.forEach((r) => {
+    if (!r.ok) return;
+    okCount += 1;
+    const key = r.article.title;
+    if (!index[key]) index[key] = { cover: '', figures: [] };
+    if (r.slot === 'cover') index[key].cover = r.link;
+    else index[key].figures[Number(r.slot.split(':')[1])] = r.link;
+  });
+  fs.writeFileSync(INDEX_FILE, JSON.stringify(index, null, 2) + '\n', 'utf8');
+
+  if (apply) {
+    const patched = articles.map((article) => {
+      const hit = index[article.title];
+      if (!hit || !hit.cover) return article;
+      let k = -1;
+      const content = (article.content || []).map((block) => {
+        if (block.type === 'image') {
+          k += 1;
+          const link = hit.figures[k];
+          return link ? { ...block, src: link } : block;
+        }
+        // 正文里的视频块同样用本稿封面做海报图，避免残留占位图
+        if (block.type === 'video' && block.poster) {
+          return { ...block, poster: hit.cover };
+        }
+        return block;
+      });
+      const video = article.video && article.video.poster
+        ? { ...article.video, poster: hit.cover }
+        : article.video;
+      return { ...article, cover: hit.cover, content, video };
+    });
+    fs.writeFileSync(DATA_FILE, JSON.stringify(patched, null, 2) + '\n', 'utf8');
+  }
+
+  const failed = results.filter((r) => !r.ok);
+  const downloaded = results.filter((r) => r.ok && !r.cached).length;
+  const cached = results.filter((r) => r.ok && r.cached).length;
+  const dupRejected = results.reduce((n, r) => n + (r.dupRejected || 0), 0);
+
+  console.log(`\n成功 ${okCount} / ${jobs.length}（新下载 ${downloaded}，已存在 ${cached}）`
+    + `${apply ? '，已回写 data/news.json' : '（未回写，加 --apply 生效）'}`);
+  console.log(`重复配图拦截 ${dupRejected} 次，全站指纹库共 ${Object.keys(fingerprints).length} 张`);
+  if (failed.length) {
+    console.log('失败清单：');
+    failed.forEach((r) => console.log(`  - ${r.article.title} [${r.slot}] ${r.why}`));
+  }
+
+  // 供每日更新简报（scripts/daily.js）读取
+  fs.mkdirSync(path.dirname(LAST_RUN_FILE), { recursive: true });
+  fs.writeFileSync(LAST_RUN_FILE, JSON.stringify({
+    at: new Date().toISOString(),
+    total: jobs.length, ok: okCount, downloaded, cached, dupRejected,
+    failed: failed.map((r) => ({ title: r.article.title, slot: r.slot, why: r.why }))
+  }, null, 2) + '\n', 'utf8');
+
+  try { fs.rmdirSync(TMP_DIR); } catch { /* 非空则保留 */ }
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

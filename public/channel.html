@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>频道 - 寰宇新闻网</title>
+  <meta name="description" content="寰宇新闻网频道页，提供各频道最新资讯、热点排行与深度报道。">
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="crumb" id="crumb"></div>
+    <div class="layout" style="padding-top:0;">
+      <div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title" id="channel-title">频道</div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <select id="sort-select" style="border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--text-2);">
+                <option value="new">最新优先</option>
+                <option value="hot">热度优先</option>
+                <option value="recommend">编辑推荐</option>
+              </select>
+            </div>
+          </div>
+          <div id="channel-desc" style="font-size:13.5px;color:var(--text-3);margin:-6px 0 12px;"></div>
+          <ul class="news-list" id="channel-list"><li class="empty">加载中…</li></ul>
+          <div class="pagination" id="channel-pagination"></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="card-head"><div class="card-title">该频道热读</div></div>
+          <div id="channel-recommend"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">全站热点榜</div></div>
+          <div id="channel-hot"><div class="skeleton" style="height:220px"></div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/channel.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>广场 - 寰宇新闻网</title>
+  <meta name="description" content="寰宇新闻网·广场：实时信息流。发布动态、参与话题讨论、转发与回复，看见此刻正在发生的事。">
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/square.css">
+</head>
+<body class="sq-page">
+  <header id="site-header"></header>
+
+  <main class="sq-shell container">
+    <!-- ============================ 左栏：我的账号 + 快捷入口 ============================ -->
+    <aside class="sq-left sq-col-sticky">
+      <div class="card sq-me">
+        <div class="sq-me-head">
+          <span class="sq-avatar sq-avatar-lg" id="me-avatar">网</span>
+          <div class="sq-me-id">
+            <b id="me-name">匿名网友</b>
+            <span id="me-handle">@anonymous</span>
+          </div>
+        </div>
+        <button class="btn sm" id="btn-edit-me" type="button">设置昵称</button>
+        <ul class="sq-stats" id="me-stats">
+          <li><b>—</b><span>动态</span></li>
+          <li><b>—</b><span>获赞</span></li>
+          <li><b>—</b><span>关注</span></li>
+        </ul>
+      </div>
+
+      <nav class="card sq-nav">
+        <a href="/"><span class="ic">📰</span> 首页要闻</a>
+        <a href="/square.html" class="active"><span class="ic">💬</span> 广场</a>
+        <a href="/video.html"><span class="ic">🎬</span> 视频频道</a>
+        <a href="/search.html"><span class="ic">🔍</span> 全站搜索</a>
+        <a href="/api/v1/square" target="_blank"><span class="ic">🔌</span> 开放接口</a>
+      </nav>
+
+      <button class="sq-post-btn" id="btn-focus-composer" type="button">发布动态</button>
+    </aside>
+
+    <!-- ============================ 中栏：发帖框 + 时间线 ============================ -->
+    <section class="sq-main">
+      <div class="sq-topbar">
+        <h1 id="sq-title">广场</h1>
+        <span class="sq-sub">洞察世界 · 记录此刻 · 一起讨论</span>
+      </div>
+
+      <div class="sq-tabs" id="sq-tabs">
+        <button type="button" data-sort="recommend" class="active">为你推荐</button>
+        <button type="button" data-sort="latest">最新</button>
+        <button type="button" data-sort="hot">热门</button>
+        <button type="button" data-sort="following">关注</button>
+      </div>
+
+      <div class="sq-filter" id="sq-filter" hidden></div>
+
+      <form class="sq-composer" id="composer" autocomplete="off">
+        <span class="sq-avatar" id="composer-avatar">网</span>
+        <div class="sq-composer-body">
+          <textarea id="composer-text" rows="1" maxlength="280" placeholder="有什么新鲜事？"></textarea>
+
+          <div class="sq-picked" id="composer-picked" hidden></div>
+          <div class="sq-quote-chip" id="composer-quote" hidden>
+            <img id="composer-quote-img" alt="">
+            <span id="composer-quote-title"></span>
+            <button type="button" id="composer-quote-del" title="取消引用">✕</button>
+          </div>
+
+          <div class="sq-composer-tools">
+            <button class="sq-mini" type="button" data-tool="image" title="从素材库选图">🖼</button>
+            <button class="sq-mini" type="button" data-tool="topic" title="插入话题">#</button>
+            <button class="sq-mini" type="button" data-tool="quote" title="引用一条新闻">📰</button>
+          </div>
+
+          <div class="sq-panel" id="composer-panel" hidden></div>
+
+          <div class="sq-composer-foot">
+            <span class="sq-counter" id="composer-counter">0 / 280</span>
+            <button class="btn" type="submit" id="composer-submit" disabled>发布</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="sq-feed" id="sq-feed">
+        <div class="skeleton" style="height:120px;margin:16px"></div>
+        <div class="skeleton" style="height:120px;margin:16px"></div>
+      </div>
+
+      <div class="sq-more">
+        <button class="btn ghost" id="btn-more" type="button" hidden>加载更多</button>
+      </div>
+    </section>
+
+    <!-- ============================ 右栏：搜索 / 趋势 / 推荐关注 / 要闻 ============================ -->
+    <aside class="sq-right sq-col-sticky">
+      <form class="sq-search-box" id="sq-search">
+        <svg viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 1 1 4.72 13.36l4.21 4.21-1.42 1.42-4.21-4.21A7.5 7.5 0 0 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/></svg>
+        <input type="search" id="sq-search-input" placeholder="搜索新闻与话题">
+      </form>
+
+      <div class="card">
+        <div class="card-head"><h3 class="card-title">正在热议</h3><span class="card-more">实时</span></div>
+        <div class="sq-trend" id="sq-trends"><div class="skeleton" style="height:120px"></div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h3 class="card-title">推荐关注</h3></div>
+        <div class="sq-who" id="sq-who"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h3 class="card-title">今日要闻</h3><a class="card-more" href="/">更多</a></div>
+        <div id="sq-news"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <!-- 动态详情 / 回复弹层 -->
+  <div class="sq-modal" id="sq-modal" hidden>
+    <div class="sq-modal-card" id="sq-modal-card"></div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/square.js"></script>
+</body>
+</html>

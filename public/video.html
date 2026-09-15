@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>视频频道 - 寰宇新闻网</title>
+  <meta name="description" content="寰宇新闻网视频频道，汇集短视频、直播回放与纪录片精选。">
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="crumb"><a href="/">首页</a> › 视频频道</div>
+    <div class="layout" style="padding-top:0;">
+      <div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">视频精选</div>
+            <span class="card-more" id="video-count"></span>
+          </div>
+          <div class="video-grid" id="video-grid">
+            <div class="skeleton" style="height:180px"></div>
+            <div class="skeleton" style="height:180px"></div>
+            <div class="skeleton" style="height:180px"></div>
+          </div>
+          <div class="pagination" id="video-pagination"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-title">图文报道</div></div>
+          <ul class="news-list" id="video-news"></ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="card-head"><div class="card-title">热播榜</div></div>
+          <div id="video-hot"><div class="skeleton" style="height:220px"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">直播排期</div><span class="card-more">示例</span></div>
+          <ul class="rank-list">
+            <li><span class="rank-no n1">LIVE</span><div class="rank-title">每日 09:30 早间新闻直播</div></li>
+            <li><span class="rank-no n2">LIVE</span><div class="rank-title">每日 18:00 晚间财经观察</div></li>
+            <li><span class="rank-no n3">LIVE</span><div class="rank-title">每周六 20:00 体育赛事直播</div></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/video.js"></script>
+</body>
+</html>

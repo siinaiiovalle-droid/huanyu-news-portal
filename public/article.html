@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文章详情 - 寰宇新闻网</title>
+  <meta name="description" content="寰宇新闻网文章详情页">
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="crumb" id="crumb"></div>
+    <div class="article-wrap" style="padding-top:0;">
+      <article>
+        <div class="card">
+          <header class="article-header">
+            <h1 id="a-title">加载中…</h1>
+            <p class="subtitle" id="a-subtitle"></p>
+            <div class="article-info">
+              <span id="a-channel"></span>
+              <span id="a-source"></span>
+              <span id="a-author"></span>
+              <span id="a-time"></span>
+              <span id="a-views"></span>
+              <div class="article-actions">
+                <button class="act-btn" id="btn-like">👍 点赞 <b id="like-count">0</b></button>
+                <button class="act-btn" id="btn-fav">⭐ 收藏 <b id="fav-count">0</b></button>
+                <button class="act-btn share" id="btn-share">🔗 分享</button>
+              </div>
+            </div>
+          </header>
+
+          <div class="article-body" id="a-body"></div>
+
+          <div class="article-footer">
+            <div id="a-tags" class="tagline"></div>
+            <div>责任编辑：<span id="a-editor">编辑部</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">评论 <span id="comment-count" style="font-size:14px;color:var(--text-3);font-weight:400;"></span></div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn sm ghost" data-sort="new" id="sort-new">最新</button>
+              <button class="btn sm ghost" data-sort="hot" id="sort-hot">最热</button>
+            </div>
+          </div>
+          <div class="comment-form">
+            <textarea id="comment-text" placeholder="说出你的看法，理性讨论…"></textarea>
+            <div class="row">
+              <input id="comment-nick" placeholder="昵称（选填）" maxlength="16">
+              <button class="btn" id="btn-comment">发表评论</button>
+              <span style="font-size:12.5px;color:var(--text-3);">请遵守法律法规与社区规范</span>
+            </div>
+          </div>
+          <div id="comment-list"></div>
+          <div class="pagination" id="comment-pagination"></div>
+        </div>
+      </article>
+
+      <aside>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">相关阅读</div>
+          </div>
+          <ul class="news-list" id="related-list"></ul>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">实时热点榜</div></div>
+          <div id="article-hot"><div class="skeleton" style="height:220px"></div></div>
+        </div>
+        <div class="card" style="background:var(--brand-light);">
+          <div style="font-weight:700;margin-bottom:6px;">内容合作</div>
+          <p style="margin:0;font-size:13.5px;color:var(--text-2);line-height:1.85;">
+            本网开放新闻 API，支持 App、小程序与第三方平台同步资讯。
+            接口见 <a href="/api/v1/feed" target="_blank" style="color:var(--brand)">/api/v1/feed</a>。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/article.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>内容运营后台 - 寰宇新闻网</title>
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- 登录 -->
+  <div class="admin-login" id="login-view">
+    <div class="login-card">
+      <h1>寰宇新闻网 · 内容运营后台</h1>
+      <p class="tip">编辑部专用入口，负责每日头条、热点、爆款与焦点的编排发布</p>
+      <div class="field">
+        <label>账号</label>
+        <input id="login-user" placeholder="请输入账号" autocomplete="username" value="admin">
+      </div>
+      <div class="field">
+        <label>密码</label>
+        <input id="login-pass" type="password" placeholder="请输入密码" autocomplete="current-password">
+      </div>
+      <div class="login-err" id="login-err"></div>
+      <button class="btn" id="btn-login">登录后台</button>
+      <p class="tip" style="margin-top:16px;">
+        默认账号：admin / admin888（首次部署后请立即修改）<br>
+        返回前台：<a href="/" style="color:#0b4f9e;">首页</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div class="admin-shell" id="shell" style="display:none;">
+    <aside class="admin-side">
+      <div class="brand">
+        <span style="width:34px;height:34px;border-radius:9px;background:linear-gradient(140deg,#fff,#cfe3fa);color:#083a76;display:grid;place-items:center;font-weight:800;">寰宇</span>
+        <span><b>内容后台</b><br><span>HUANYU CMS</span></span>
+      </div>
+      <nav class="admin-menu" id="menu">
+        <a href="#/dashboard" data-view="dashboard">📊 运营概览</a>
+        <a href="#/news" data-view="news">📰 稿件管理</a>
+        <a href="#/editor" data-view="editor">✍️ 撰写稿件</a>
+        <a href="#/ranks" data-view="ranks">🔥 榜单运营</a>
+        <a href="#/settings" data-view="settings">⚙️ 站点设置</a>
+      </nav>
+      <div class="foot">
+        寰宇传媒信息技术股份有限公司<br>
+        新闻网站 · 内容中台 v1.0
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-top">
+        <h2 id="view-title">运营概览</h2>
+        <div class="who">
+          <span id="who-name"></span>
+          <a class="btn sm ghost" href="/" target="_blank">查看前台</a>
+          <button class="btn sm ghost" id="btn-logout">退出登录</button>
+        </div>
+      </div>
+
+      <!-- 概览 -->
+      <section id="view-dashboard">
+        <div class="stat-grid" id="stat-grid"></div>
+        <div class="panel">
+          <div class="panel-head">
+            <h3>频道稿件分布</h3>
+            <div class="panel-tools">
+              <button class="btn sm" id="btn-refresh-ranks">一键刷新头条/热点/爆款</button>
+            </div>
+          </div>
+          <div id="channel-stats"></div>
+        </div>
+        <div class="edit-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>热点榜（自动计算）</h3></div>
+            <div id="dash-hot"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>爆款增速榜</h3></div>
+            <div id="dash-blast"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 稿件管理 -->
+      <section id="view-news" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>稿件列表</h3>
+            <div class="panel-tools">
+              <input id="filter-keyword" placeholder="标题/标签关键词">
+              <select id="filter-channel"><option value="">全部频道</option></select>
+              <select id="filter-status">
+                <option value="">全部状态</option>
+                <option value="published">已发布</option>
+                <option value="draft">草稿</option>
+              </select>
+              <button class="btn sm" id="btn-filter">筛选</button>
+              <button class="btn sm" id="btn-new">+ 新建稿件</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="min-width:320px;">标题</th>
+                  <th>频道</th>
+                  <th>运营位</th>
+                  <th>数据</th>
+                  <th>发布时间</th>
+                  <th style="min-width:200px;">操作</th>
+                </tr>
+              </thead>
+              <tbody id="news-tbody"><tr><td colspan="6" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+          <div class="pagination" id="news-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 编辑器 -->
+      <section id="view-editor" style="display:none;">
+        <div class="edit-grid">
+          <div>
+            <div class="panel">
+              <div class="panel-head">
+                <h3 id="editor-title">撰写稿件</h3>
+                <div class="panel-tools">
+                  <button class="btn sm ghost" id="btn-editor-cancel">取消</button>
+                  <button class="btn sm ghost" id="btn-save-draft">存为草稿</button>
+                  <button class="btn sm" id="btn-save-publish">保存并发布</button>
+                </div>
+              </div>
+              <div class="field">
+                <label>标题 *</label>
+                <input type="text" id="f-title" placeholder="请输入新闻标题">
+              </div>
+              <div class="field">
+                <label>副标题 / 导语</label>
+                <input type="text" id="f-subtitle" placeholder="一句话补充说明">
+              </div>
+              <div class="field">
+                <label>摘要（列表页展示）</label>
+                <textarea id="f-summary" placeholder="建议 60-90 字，不填则自动取正文首段"></textarea>
+              </div>
+
+              <div class="field">
+                <label>正文内容（支持文字 / 图片 / 视频混排）</label>
+                <div class="block-editor" id="block-editor"></div>
+                <div class="add-block-bar" style="margin-top:10px;">
+                  <button class="icon-btn" data-add="p">+ 段落</button>
+                  <button class="icon-btn" data-add="h2">+ 小标题</button>
+                  <button class="icon-btn" data-add="image">+ 图片</button>
+                  <button class="icon-btn" data-add="video">+ 视频</button>
+                  <button class="icon-btn" data-add="quote">+ 引用</button>
+                  <button class="icon-btn" data-add="list">+ 列表</button>
+                </div>
+                <div class="hint" style="margin-top:6px;">图片/视频可直接填写 URL，或使用站内占位图服务 /api/v1/placeholder?w=800&amp;h=450&amp;text=说明</div>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="panel">
+              <div class="panel-head"><h3>发布设置</h3></div>
+              <div class="field">
+                <label>所属频道</label>
+                <select id="f-channel"></select>
+              </div>
+              <div class="field">
+                <label>作者 / 记者</label>
+                <input type="text" id="f-author" placeholder="本网记者">
+              </div>
+              <div class="field">
+                <label>来源</label>
+                <input type="text" id="f-source" placeholder="寰宇新闻网">
+              </div>
+              <div class="field">
+                <label>标签（逗号分隔）</label>
+                <input type="text" id="f-tags" placeholder="人工智能,算力,产业">
+              </div>
+              <div class="field">
+                <label>封面图 URL</label>
+                <input type="text" id="f-cover" placeholder="https://... 或 /img/tech-ai.png">
+              </div>
+              <div class="field">
+                <label>发布时间</label>
+                <input type="text" id="f-published" placeholder="留空表示现在">
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><h3>运营位</h3></div>
+              <div class="switch-row">
+                <span>设为头条</span>
+                <label class="switch"><input type="checkbox" id="f-headline"><span></span></label>
+              </div>
+              <div class="field" style="margin-top:10px;">
+                <label>头条排序（越小越靠前）</label>
+                <input type="number" id="f-headline-order" value="0" min="0">
+              </div>
+              <div class="switch-row">
+                <span>加入焦点专题</span>
+                <label class="switch"><input type="checkbox" id="f-focus"><span></span></label>
+              </div>
+              <div class="switch-row">
+                <span>置顶推荐</span>
+                <label class="switch"><input type="checkbox" id="f-top"><span></span></label>
+              </div>
+              <div class="field" style="margin-top:10px;">
+                <label>推荐权重（0-10）</label>
+                <input type="number" id="f-recommend" value="0" min="0" max="10">
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><h3>视频设置（可选）</h3></div>
+              <div class="field">
+                <label>视频地址</label>
+                <input type="text" id="f-video-src" placeholder="https://...mp4">
+              </div>
+              <div class="field">
+                <label>视频封面</label>
+                <input type="text" id="f-video-poster" placeholder="封面图 URL">
+              </div>
+              <div class="field">
+                <label>时长（如 03:20）</label>
+                <input type="text" id="f-video-duration" placeholder="03:20">
+              </div>
+              <p class="preview-note">填写后该稿件会出现在视频频道与首页视频精选区。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 榜单运营 -->
+      <section id="view-ranks" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>运营位编排</h3>
+            <div class="panel-tools">
+              <button class="btn sm" id="btn-refresh-ranks2">按热度自动重排热点/爆款</button>
+            </div>
+          </div>
+          <p class="preview-note">
+            头条由编辑部手动编排（编辑稿件时勾选"设为头条"并设置排序，不足数量时系统按热度自动补齐）；
+            热点榜与爆款榜由访问量、点赞、评论、分享等互动数据自动计算，建议每日早晚各刷新一次。
+          </p>
+        </div>
+        <div class="edit-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>头条编排（当前生效）</h3></div>
+            <div id="ops-headline"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>焦点专题</h3></div>
+            <div id="ops-focus"></div>
+          </div>
+        </div>
+        <div class="edit-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>热点榜（按互动热度实时计算）</h3></div>
+            <div id="ops-hot"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>爆款增速榜（近 48 小时）</h3></div>
+            <div id="ops-blast"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 站点设置 -->
+      <section id="view-settings" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>站点基础信息</h3>
+            <div class="panel-tools"><button class="btn sm" id="btn-save-site">保存设置</button></div>
+          </div>
+          <div class="edit-grid">
+            <div>
+              <div class="field"><label>公司名称</label><input type="text" id="s-company"></div>
+              <div class="field"><label>网站名称</label><input type="text" id="s-siteName"></div>
+              <div class="field"><label>网站简称</label><input type="text" id="s-shortName"></div>
+              <div class="field"><label>站点域名</label><input type="text" id="s-domain"></div>
+              <div class="field"><label>口号</label><input type="text" id="s-slogan"></div>
+              <div class="field"><label>备案号</label><input type="text" id="s-icp"></div>
+            </div>
+            <div>
+              <div class="field"><label>热点榜条数</label><input type="number" id="s-hotSize" min="5" max="30"></div>
+              <div class="field"><label>爆款榜条数</label><input type="number" id="s-blastSize" min="5" max="30"></div>
+              <div class="field"><label>焦点专题条数</label><input type="number" id="s-focusSize" min="3" max="12"></div>
+              <div class="field"><label>首页频道区块条数</label><input type="number" id="s-homeChannelSize" min="3" max="10"></div>
+              <div class="field"><label>列表每页条数</label><input type="number" id="s-pageSize" min="10" max="60"></div>
+              <p class="preview-note">修改后刷新前台页面即可生效，无需重启服务。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

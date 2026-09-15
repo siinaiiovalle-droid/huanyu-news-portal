@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>寰宇新闻网 - 洞察世界 · 传递真相 · 连接未来</title>
+  <meta name="description" content="寰宇新闻网是寰宇传媒信息技术股份有限公司旗下的综合新闻门户，提供国内、国际、财经、科技、体育、娱乐、汽车、文化、健康等频道的最新资讯与视频报道。">
+  <meta name="keywords" content="新闻,头条,热点,财经,科技,体育,娱乐,视频,寰宇新闻网">
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <!-- 头条区 -->
+    <section class="layout" style="padding-bottom:0;">
+      <div>
+        <div class="hero" id="hero"><div class="skeleton" style="height:340px"></div></div>
+
+        <div class="card" style="margin-top:18px;">
+          <div class="card-head">
+            <div class="card-title">最新发布</div>
+            <a class="card-more" href="/channel.html?id=china">更多要闻 ›</a>
+          </div>
+          <ul class="news-list" id="latest-list"><li class="empty">加载中…</li></ul>
+        </div>
+
+        <div id="channel-blocks"></div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">焦点专题</div>
+            <span class="card-more">编辑部精选</span>
+          </div>
+          <div class="focus-grid" id="focus-grid"><div class="skeleton" style="height:180px"></div></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">实时热点榜</div>
+            <span class="card-more" id="hot-updated"></span>
+          </div>
+          <div id="hot-rank"><div class="skeleton" style="height:240px"></div></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">爆款增速榜</div>
+            <span class="card-more">近 48 小时</span>
+          </div>
+          <div id="blast-rank"><div class="skeleton" style="height:200px"></div></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">视频精选</div>
+            <a class="card-more" href="/video.html">全部视频 ›</a>
+          </div>
+          <div id="video-mini" style="display:grid;gap:10px;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">热门话题</div>
+          </div>
+          <div class="tag-cloud" id="tag-cloud"></div>
+        </div>
+
+        <div class="card" style="background:linear-gradient(135deg,#0b4f9e,#1467c6);color:#fff;box-shadow:var(--shadow-hover);">
+          <div style="font-size:18px;font-weight:700;margin-bottom:6px;">寰宇 App 即将上线</div>
+          <p style="margin:0 0 12px;font-size:13.5px;opacity:.86;line-height:1.8;">
+            资讯、短视频与直播、聊天、支付、在线购物、小程序服务一体化。新闻内容与本站实时同步，一处生产、多端触达。
+          </p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:12px;">
+            <span style="background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;">新闻同步</span>
+            <span style="background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;">短视频 · 直播</span>
+            <span style="background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;">即时通讯</span>
+            <span style="background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;">支付 · 购物</span>
+            <span style="background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;">小程序生态</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-head">
+        <div class="card-title">图集精选</div>
+        <span class="card-more">现场影像</span>
+      </div>
+      <div class="focus-grid" id="picture-grid"></div>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

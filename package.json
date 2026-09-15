@@ -1,0 +1,31 @@
+{
+  "name": "zhongxin-news-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中新闻媒信息技术公司 — 门户级新闻网站服务端（含面向 App 的开放内容 API）",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node scripts/seed.js",
+    "seed:posts": "node scripts/seed-posts.js",
+    "square:dedupe": "node scripts/dedupe-square-images.js",
+    "fetch:images": "node scripts/fetch-images.js --apply",
+    "collect": "node scripts/collect.js",
+    "daily": "node scripts/daily.js",
+    "rank": "node scripts/refresh-ranks.js",
+    "schedule": "node scripts/scheduler.js",
+    "test:api": "node scripts/smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "news",
+    "portal",
+    "media",
+    "cms",
+    "api"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,420 @@
+{
+  "端侧 AI 手机出货占比突破四成，离线翻译与修图成高频功能": {
+    "cover": "/img/news/27-tech-cover.jpg",
+    "figures": [
+      "/img/news/27-tech-fig1.jpg"
+    ]
+  },
+  "一分钟读懂：新能源车快充到底伤不伤电池": {
+    "cover": "/img/news/03-video-cover.jpg",
+    "figures": []
+  },
+  "直播回放：城市马拉松全程跟拍与终点冲刺实录": {
+    "cover": "/img/news/a-n_044838i-cover.jpg",
+    "figures": []
+  },
+  "纪录片片段：数据中心的一天，算力是如何被调度的": {
+    "cover": "/img/news/01-video-cover.jpg",
+    "figures": []
+  },
+  "现场直击：国产大型邮轮内部全览，海上度假生活长这样": {
+    "cover": "/img/news/04-video-cover.jpg",
+    "figures": []
+  },
+  "全民健身新趋势：社区 15 分钟运动圈覆盖八成居民": {
+    "cover": "/img/news/07-health-cover.jpg",
+    "figures": [
+      "/img/news/07-health-fig1.jpg"
+    ]
+  },
+  "古籍数字化成果开放：百万页文献可在线检索": {
+    "cover": "/img/news/09-culture-cover.jpg",
+    "figures": [
+      "/img/news/09-culture-fig1.jpg"
+    ]
+  },
+  "秋冬流感高发期来临，医生提醒三类人群尽早接种疫苗": {
+    "cover": "/img/news/08-health-cover.jpg",
+    "figures": []
+  },
+  "非遗工坊走进城市商圈：手作体验成周末新选择": {
+    "cover": "/img/news/11-culture-cover.jpg",
+    "figures": [
+      "/img/news/11-culture-fig1.jpg"
+    ]
+  },
+  "睡眠门诊数据发布：超半数就诊者存在入睡困难": {
+    "cover": "/img/news/06-health-cover.jpg",
+    "figures": []
+  },
+  "博物馆热持续升温：年轻观众占比超过六成": {
+    "cover": "/img/news/12-culture-cover.jpg",
+    "figures": [
+      "/img/news/12-culture-fig1.jpg"
+    ]
+  },
+  "城市阅读空间扩容：24 小时书房点亮深夜街角": {
+    "cover": "/img/news/10-culture-cover.jpg",
+    "figures": []
+  },
+  "汽车出口再创新高：本地化生产与技术输出成新趋势": {
+    "cover": "/img/news/13-auto-cover.jpg",
+    "figures": [
+      "/img/news/13-auto-fig1.jpg"
+    ]
+  },
+  "二手车市场透明度提升：全国统一查询平台上线": {
+    "cover": "/img/news/14-auto-cover.jpg",
+    "figures": []
+  },
+  "充电 10 分钟续航 400 公里：新一代快充电池进入量产阶段": {
+    "cover": "/img/news/16-auto-cover.jpg",
+    "figures": [
+      "/img/news/16-auto-fig1.jpg"
+    ]
+  },
+  "剧集市场回归内容本位：现实题材占比提升至六成": {
+    "cover": "/img/news/17-ent-cover.jpg",
+    "figures": []
+  },
+  "智能驾驶进入\"去高精地图\"阶段，城市辅助驾驶开城加速": {
+    "cover": "/img/news/15-auto-cover.jpg",
+    "figures": [
+      "/img/news/15-auto-fig1.jpg"
+    ]
+  },
+  "国风综艺出海：多语种版本上线，文化细节被逐帧考据": {
+    "cover": "/img/news/18-ent-cover.jpg",
+    "figures": [
+      "/img/news/18-ent-fig1.jpg"
+    ]
+  },
+  "国产动画电影票房破纪录：工业化制作体系逐渐成型": {
+    "cover": "/img/news/20-ent-cover.jpg",
+    "figures": [
+      "/img/news/20-ent-fig1.jpg"
+    ]
+  },
+  "职业联赛收官战吸引超过五万观众，青训体系建设成焦点": {
+    "cover": "/img/news/23-sports-cover.jpg",
+    "figures": [
+      "/img/news/23-sports-fig1.jpg"
+    ]
+  },
+  "游泳世界杯落幕：多项赛会纪录被刷新，青年选手崛起": {
+    "cover": "/img/news/21-sports-cover.jpg",
+    "figures": []
+  },
+  "城市马拉松报名人数创新高，\"赛事经济\"带动周末消费": {
+    "cover": "/img/news/24-sports-cover.jpg",
+    "figures": [
+      "/img/news/24-sports-fig1.jpg"
+    ]
+  },
+  "国家队世预赛客场取胜，年轻阵容展现冲击力": {
+    "cover": "/img/news/22-sports-cover.jpg",
+    "figures": []
+  },
+  "音乐节与文旅深度融合：跨城观演带动目的地热度攀升": {
+    "cover": "/img/news/19-ent-cover.jpg",
+    "figures": []
+  },
+  "低空经济加速落地：无人机配送航线覆盖千余社区": {
+    "cover": "/img/news/26-tech-cover.jpg",
+    "figures": []
+  },
+  "开源社区年度报告：国内开发者贡献量增长 37%": {
+    "cover": "/img/news/25-tech-cover.jpg",
+    "figures": [
+      "/img/news/25-tech-fig1.jpg"
+    ]
+  },
+  "液冷服务器出货量翻倍：数据中心能效比进入 1.15 时代": {
+    "cover": "/img/news/a-n_018zwhi-cover.jpg",
+    "figures": [
+      "/img/news/a-n_018zwhi-fig1.jpg"
+    ]
+  },
+  "国产大模型推理成本再降一半，中小企业接入门槛明显下降": {
+    "cover": "/img/news/29-tech-cover.jpg",
+    "figures": [
+      "/img/news/29-tech-fig1.jpg"
+    ]
+  },
+  "消费市场暖意渐浓：服务消费增速快于商品消费": {
+    "cover": "/img/news/32-finance-cover.jpg",
+    "figures": [
+      "/img/news/32-finance-fig1.jpg"
+    ]
+  },
+  "人民币汇率双向波动常态化，企业套期保值需求上升": {
+    "cover": "/img/news/31-finance-cover.jpg",
+    "figures": []
+  },
+  "黄金价格再创新高后震荡，机构提示分批配置思路": {
+    "cover": "/img/news/30-finance-cover.jpg",
+    "figures": []
+  },
+  "外贸数据超预期：机电产品出口增长 12%，跨境电商拉动明显": {
+    "cover": "/img/news/33-finance-cover.jpg",
+    "figures": [
+      "/img/news/33-finance-fig1.jpg"
+    ]
+  },
+  "海外中餐加速\"本地化\"：小份菜与植物基菜品走俏": {
+    "cover": "/img/news/35-world-cover.jpg",
+    "figures": [
+      "/img/news/35-world-fig1.jpg"
+    ]
+  },
+  "深空探测再传捷报：探测器完成小行星伴飞与采样返回模拟": {
+    "cover": "/img/news/36-world-cover.jpg",
+    "figures": [
+      "/img/news/36-world-fig1.jpg"
+    ]
+  },
+  "A 股三季报收官：新能源与算力板块盈利增速领跑": {
+    "cover": "/img/news/34-finance-cover.jpg",
+    "figures": [
+      "/img/news/34-finance-fig1.jpg"
+    ]
+  },
+  "国际航班持续恢复：多条洲际航线复航，机票价格回落两成": {
+    "cover": "/img/news/38-world-cover.jpg",
+    "figures": []
+  },
+  "全球气候峰会闭幕：130 国就绿色航运燃料标准达成框架共识": {
+    "cover": "/img/news/39-world-cover.jpg",
+    "figures": [
+      "/img/news/39-world-fig1.jpg"
+    ]
+  },
+  "国产大邮轮完成第二次商业航次，旅客满意度超九成": {
+    "cover": "/img/news/40-china-cover.jpg",
+    "figures": [
+      "/img/news/40-china-fig1.jpg"
+    ]
+  },
+  "全球粮价连续三个月回落，主产区丰收缓解供给压力": {
+    "cover": "/img/news/37-world-cover.jpg",
+    "figures": [
+      "/img/news/37-world-fig1.jpg"
+    ]
+  },
+  "城市体检报告发布：三成老旧小区完成适老化改造": {
+    "cover": "/img/news/42-china-cover.jpg",
+    "figures": [
+      "/img/news/42-china-fig1.jpg"
+    ]
+  },
+  "县域电商新样本：农产品从田间到餐桌只用 18 小时": {
+    "cover": "/img/news/43-china-cover.jpg",
+    "figures": []
+  },
+  "城市夜间经济回暖：24 小时书店、深夜食堂带动客流增长三成": {
+    "cover": "/img/news/44-china-cover.jpg",
+    "figures": [
+      "/img/news/44-china-fig1.jpg"
+    ]
+  },
+  "全国高铁网再扩容：三条新线同日开通，城市群通勤半径大幅缩短": {
+    "cover": "/img/news/45-china-cover.jpg",
+    "figures": [
+      "/img/news/45-china-fig1.jpg"
+    ]
+  },
+  "寒潮预警升级：北方多地气温骤降 12℃，能源保供进入临战状态": {
+    "cover": "/img/news/41-china-cover.jpg",
+    "figures": []
+  },
+  "秋冬饮食指南：进补不等于大补，均衡才是关键": {
+    "cover": "/img/news/05-health-cover.jpg",
+    "figures": []
+  },
+  "心梗不一定只表现为胸痛！认清这5类异常表现，关键时刻能救命": {
+    "cover": "/img/news/a-n_mu1zjfhr4gy7y2-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfhr4gy7y2-fig1.jpg"
+    ]
+  },
+  "如何预防虫类叮咬？被叮咬后怎么办？中疾控提示": {
+    "cover": "/img/news/a-n_mu1zjfgcnov8vu-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfgcnov8vu-fig1.jpg"
+    ]
+  },
+  "防范脑出血，这些信号要当心": {
+    "cover": "/img/news/a-n_mu1zjfhrtgd9a6-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfhrtgd9a6-fig1.jpg"
+    ]
+  },
+  "洗稿搬运、换脸仿声 AI微短剧侵权问题如何界定？": {
+    "cover": "/img/news/a-n_mu1zjfdar8g75x-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfdar8g75x-fig1.jpg"
+    ]
+  },
+  "“永恒的大地——乌日切夫美术作品展”在京启幕": {
+    "cover": "/img/news/a-n_mu1zjfdbddge0b-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfdbddge0b-fig1.jpg"
+    ]
+  },
+  "未来感拉满！文博会变身“科幻乐园”": {
+    "cover": "/img/news/a-n_mu1zjfav1t41gm-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfav1t41gm-fig1.jpg"
+    ]
+  },
+  "新潮副刊丨读《扬子江文萃》": {
+    "cover": "/img/news/a-n_mu1zjfavuzgss6-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfavuzgss6-fig1.jpg"
+    ]
+  },
+  "“古典园林韵 香江共传承——三山五园 主题特展”亮相香港文博会": {
+    "cover": "/img/news/a-n_mu1zjf6fjv6pm7-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf6fjv6pm7-fig1.jpg"
+    ]
+  },
+  "文化和旅游部组织开展第二批文旅领域安全隐患暗访抽查": {
+    "cover": "/img/news/a-n_mu1zjf6exd828g-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf6exd828g-fig1.jpg"
+    ]
+  },
+  "国际篮球专家：中国篮球应多学习欧洲而非照搬美国": {
+    "cover": "/img/news/a-n_mu1zjf3ccvxges-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf3ccvxges-fig1.jpg"
+    ]
+  },
+  "埃里克·戈登：深圳各式各样的建筑令我着迷": {
+    "cover": "/img/news/a-n_mu1zjf3cf084me-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf3cf084me-fig1.jpg"
+    ]
+  },
+  "广厦迎队史CBA总决赛首胜 大比分追平北京": {
+    "cover": "/img/news/a-n_mu1zjf0kz5u7vf-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf0kz5u7vf-fig1.jpg"
+    ]
+  },
+  "中国电竞亚运夺冠“十日谈” 沉迷游戏≠电竞": {
+    "cover": "/img/news/a-n_mu1zjexlctba5n-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjexlctba5n-fig1.jpg"
+    ]
+  },
+  "女乘客遭顺风车司机侮辱 对方放话：把你衣服都扒光": {
+    "cover": "/img/news/a-n_mu1zjexlfcy62j-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjexlfcy62j-fig1.jpg"
+    ]
+  },
+  "站在“十字路口”的摩天大楼何以“向上”生长": {
+    "cover": "/img/news/a-n_mu1zjeuc0hsgwy-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeuc0hsgwy-fig1.jpg"
+    ]
+  },
+  "中国人民银行将开展1万亿元买断式逆回购操作": {
+    "cover": "/img/news/a-n_mu1zjeswx0a0pp-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeswx0a0pp-fig1.jpg"
+    ]
+  },
+  "首批全国38个零售业创新提升试点城市名单公布": {
+    "cover": "/img/news/a-n_mu1zjeswm0ye32-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeswm0ye32-fig1.jpg"
+    ]
+  },
+  "湘财祈年：白糖收盘评论20080612": {
+    "cover": "/img/news/a-n_mu1zjepv7erlkr-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjepv7erlkr-fig1.jpg"
+    ]
+  },
+  "特朗普说伊朗“急着谈判”，伊朗却与阿曼敲定了海峡航线共识！带来这些连锁反应": {
+    "cover": "/img/news/a-n_mu1zjenkk9i37u-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjenkk9i37u-fig1.jpg"
+    ]
+  },
+  "美联储“褐皮书”：美国经济不确定性居高位 关税推高物价": {
+    "cover": "/img/news/a-n_mu1zjem4fw0hjd-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjem4fw0hjd-fig1.jpg"
+    ]
+  },
+  "欧洲央行宣布下调欧元区关键利率": {
+    "cover": "/img/news/a-n_mu1zjem4p99qui-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjem4p99qui-fig1.jpg"
+    ]
+  },
+  "华西地区降雨将增多增强 北方大部温差较大一日如两季": {
+    "cover": "/img/news/a-n_mu1zjeigt72hoa-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeigt72hoa-fig1.jpg"
+    ]
+  },
+  "[播客]独家实拍：我那永远跪着的母亲(11/07 22:10)": {
+    "cover": "/img/news/a-n_mu1zjeb8a3omhj-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeb8a3omhj-fig1.jpg"
+    ]
+  },
+  "“算力金属”，为何涨得这么猛？": {
+    "cover": "/img/news/a-n_mu1zjeiht7lasp-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeiht7lasp-fig1.jpg"
+    ]
+  },
+  "镜观·足迹｜呵护千山万水 擘画永续发展": {
+    "cover": "/img/news/a-n_mu1zje2jyc67f3-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zje2jyc67f3-fig1.jpg"
+    ]
+  },
+  "威尔士、苏格兰和北爱尔兰三地政党罕见“抱团”，向伦敦发出什么信号？": {
+    "cover": "/img/news/a-n_mu1zjenjjmxmsw-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjenjjmxmsw-fig1.jpg"
+    ]
+  },
+  "学习卡丨“人不负青山，青山定不负人”": {
+    "cover": "/img/news/a-n_mu1zje2iu3aa35-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zje2iu3aa35-fig1.jpg"
+    ]
+  },
+  "专家提示：老年人应尽早识别潜在的眼底病变风险": {
+    "cover": "/img/news/a-n_mu1zjfgcwt7734-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjfgcwt7734-fig1.jpg"
+    ]
+  },
+  "电子信息制造业发展“十五五”规划发布": {
+    "cover": "/img/news/a-n_mu1zjeuce9zyji-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjeuce9zyji-fig1.jpg"
+    ]
+  },
+  "韩国棋院就LG杯争议致歉 将与中日棋院讨论统一规则": {
+    "cover": "/img/news/a-n_mu1zjf0kz7epvm-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjf0kz7epvm-fig1.jpg"
+    ]
+  },
+  "专家：应积极支持本土私募股权基金走出国门": {
+    "cover": "/img/news/a-n_mu1zjepvnnstb6-cover.jpg",
+    "figures": [
+      "/img/news/a-n_mu1zjepvnnstb6-fig1.jpg"
+    ]
+  }
+}

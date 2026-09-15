@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>搜索 - 寰宇新闻网</title>
+  <link rel="icon" href="/api/v1/placeholder?w=64&h=64&text=寰宇">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="crumb"><a href="/">首页</a> › 全站搜索</div>
+    <div class="layout" style="padding-top:0;">
+      <div>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title" id="search-title">搜索结果</div>
+            <span class="card-more" id="search-count"></span>
+          </div>
+          <div class="tag-cloud" id="search-tags" style="margin-bottom:12px;"></div>
+          <ul class="news-list" id="search-list"><li class="empty">请输入关键词搜索</li></ul>
+          <div class="pagination" id="search-pagination"></div>
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <div class="card-head"><div class="card-title">全站热点榜</div></div>
+          <div id="search-hot"><div class="skeleton" style="height:220px"></div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/search.js"></script>
+</body>
+</html>
