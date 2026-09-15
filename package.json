@@ -10,6 +10,8 @@
     "seed": "node scripts/seed.js",
     "seed:posts": "node scripts/seed-posts.js",
     "square:dedupe": "node scripts/dedupe-square-images.js",
+    "build:deploy": "python scripts/build-deploy.py",
+    "build:static": "node scripts/build-static.js",
     "fetch:images": "node scripts/fetch-images.js --apply",
     "collect": "node scripts/collect.js",
     "daily": "node scripts/daily.js",

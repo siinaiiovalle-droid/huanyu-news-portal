@@ -16,6 +16,7 @@
     like: '<svg viewBox="0 0 24 24"><path d="M12 21s-7.6-4.6-9.6-9.2C1 8.4 3 5 6.4 5c1.9 0 3.3 1 4.1 2.2l1.5 2.1 1.5-2.1C14.3 6 15.7 5 17.6 5 21 5 23 8.4 21.6 11.8 19.6 16.4 12 21 12 21z"/></svg>',
     views: '<svg viewBox="0 0 24 24"><path d="M4 20V10h3v10H4zm6.5 0V4h3v16h-3zM17 20v-7h3v7h-3z"/></svg>',
     bookmark: '<svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.2L5 21V4a1 1 0 0 1 1-1z"/></svg>',
+    share: '<svg viewBox="0 0 24 24"><path d="M12 3l4.5 5.5h-3v6.5h-3V8.5h-3L12 3zM5 18h14v2H5v-2z"/></svg>',
     verified: '<svg class="sq-verified" viewBox="0 0 24 24"><path d="M12 1.6l2.6 1.9 3.2-.2.9 3.1L21.3 8.3l-1.1 3 1.1 3-2.6 1.9-.9 3.1-3.2-.2L12 22.4l-2.6-1.9-3.2.2-.9-3.1L2.7 15.3l1.1-3-1.1-3 2.6-1.9.9-3.1 3.2.2L12 1.6z" fill="#1d9bf0"/><path fill="#fff" d="M10.7 15.4l-3-3 1.3-1.3 1.7 1.7 3.5-3.5 1.3 1.3-4.8 4.8z"/></svg>',
     search: '<svg viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 1 1 4.72 13.36l4.21 4.21-1.42 1.42-4.21-4.21A7.5 7.5 0 0 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z"/></svg>'
   };
@@ -56,6 +57,60 @@
     return html;
   }
 
+  /** 复制文本：优先用剪贴板 API，非安全上下文（http 内网部署）退回 execCommand */
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(new Error('复制失败')); }
+      catch (e) { reject(e); }
+      ta.remove();
+    });
+  }
+
+  function postLink(id) {
+    return location.origin.replace(/\/$/, '') + '/square.html#post-' + id;
+  }
+
+  function closeMenu() {
+    document.querySelectorAll('.sq-menu').forEach((n) => n.remove());
+  }
+
+  /** 推文右上角「…」：复制链接 / 举报，与推特的轻量菜单一致 */
+  function openMenu(id, host) {
+    const opened = host.querySelector('.sq-menu');
+    closeMenu();
+    if (opened) return;
+    const menu = document.createElement('div');
+    menu.className = 'sq-menu';
+    menu.innerHTML = `
+      <button type="button" data-mi="link">🔗 复制动态链接</button>
+      <button type="button" data-mi="text">📋 复制正文</button>
+      <button type="button" data-mi="report" class="danger">🚩 举报此动态</button>`;
+    host.appendChild(menu);
+    menu.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-mi]');
+      if (!btn) return;
+      const item = state.items.find((p) => p.id === id);
+      if (btn.dataset.mi === 'link') {
+        try { await copy(postLink(id)); HY.toast('动态链接已复制'); }
+        catch { HY.toast('复制失败，请手动复制'); }
+      } else if (btn.dataset.mi === 'text') {
+        try { await copy((item ? item.content : '') + '\n—— 寰宇广场'); HY.toast('正文已复制'); }
+        catch { HY.toast('复制失败，请手动复制'); }
+      } else {
+        HY.toast('已收到举报，社区审核会尽快处理');
+      }
+      closeMenu();
+    });
+  }
+
   function avatar(author, size) {
     const a = HY.avatarOf(author || {});
     return `<span class="sq-avatar${size ? ' ' + size : ''}" style="--av:${a.bg}" aria-hidden="true">${HY.escapeHtml(a.initial)}</span>`;
@@ -90,6 +145,7 @@
             ${p.author.handle ? `<span class="sq-handle">@${HY.escapeHtml(p.author.handle)}</span>` : ''}
             <span class="sq-time">· ${HY.timeAgo(p.feedAt || p.createdAt)}</span>
             ${p.pinned ? '<span class="sq-pin">📌 置顶</span>' : ''}
+            <button class="sq-post-more" data-more="${HY.escapeHtml(p.id)}" title="更多" aria-label="更多">···</button>
           </div>
           <div class="sq-text">${renderText(p.content)}</div>
           ${media}
@@ -100,6 +156,7 @@
             <button class="sq-act like${it.like ? ' on' : ''}" data-act="like" data-id="${HY.escapeHtml(p.id)}" title="点赞">${ICON.like}<span>${HY.fmtNum(p.stats.likes)}</span></button>
             <button class="sq-act views" title="阅读量">${ICON.views}<span>${HY.fmtNum(p.stats.views)}</span></button>
             <button class="sq-act bookmark${it.bookmark ? ' on' : ''}" data-act="bookmark" data-id="${HY.escapeHtml(p.id)}" title="收藏">${ICON.bookmark}</button>
+            <button class="sq-act share" data-act="share" data-id="${HY.escapeHtml(p.id)}" title="分享">${ICON.share}</button>
           </div>
         </div>
       </article>`;
@@ -172,6 +229,11 @@
         if (btn) btn.classList.toggle('on', Boolean(item.__it[k]));
       });
     });
+  }
+
+  async function sharePost(id) {
+    try { await copy(postLink(id)); HY.toast('分享链接已复制'); }
+    catch { HY.toast('复制失败，请手动复制'); }
   }
 
   async function act(id, type, btn) {
@@ -482,6 +544,13 @@
     el('btn-more').onclick = loadMore;
 
     el('sq-feed').addEventListener('click', (e) => {
+      const more = e.target.closest('[data-more]');
+      if (more) {
+        e.stopPropagation();
+        const main = more.closest('.sq-post-main');
+        if (main) openMenu(more.dataset.more, main);
+        return;
+      }
       const actBtn = e.target.closest('.sq-act');
       if (actBtn) {
         e.stopPropagation();
@@ -489,8 +558,10 @@
         const type = actBtn.dataset.act;
         if (type === 'reply') return openDetail(id);
         if (type === 'views') return;
+        if (type === 'share') return sharePost(id);
         return act(id, type, actBtn);
       }
+      closeMenu();
       const zoom = e.target.closest('[data-zoom]');
       if (zoom) {
         e.stopPropagation();
@@ -587,9 +658,18 @@
         } catch (err) { HY.toast(err.message); }
         return;
       }
+      const more = e.target.closest('[data-more]');
+      if (more) {
+        e.stopPropagation();
+        const main = more.closest('.sq-post-main');
+        if (main) openMenu(more.dataset.more, main);
+        return;
+      }
       if (e.target.closest('[data-close]') || e.target === el('sq-modal')) closeModal();
     });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    // 点击页面空白处收起「…」菜单
+    document.addEventListener('click', () => closeMenu());
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeMenu(); closeModal(); } });
 
     // 滚动到底自动加载下一页
     const sentinel = document.querySelector('.sq-more');

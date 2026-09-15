@@ -226,3 +226,29 @@ curl "http://localhost:3000/api/v1/sync?since=2026-09-14T08:00:00.000Z"
 
 **想清空数据重来？**
 `npm run seed`（会重置稿件、评论与后台账号）。
+
+---
+
+## 八、静态导出与 GitHub Pages
+
+本站是 Node 服务端应用，GitHub Pages 只托管静态文件，因此提供一键静态导出：
+
+```bash
+npm run build:static      # 输出 gh-pages/：页面 + 383 个接口快照 + 图片
+```
+
+导出包做了三件事：
+
+1. 临时启动本地服务，把页面会用到的每个 GET 请求跑一遍，响应落成 `api/v1/**.json`；
+2. 把 `/css`、`/js`、`/img`、`/api/v1` 等绝对路径改写为相对路径，放在仓库子目录下也能打开；
+3. 注入 `scripts/static-shim.js`：运行时把接口请求改道到静态 JSON，发帖/点赞/评论/后台登录在本地模拟（存 localStorage，不回写服务器）。
+
+> 静态版没有服务端，**写操作不会持久化**；需要真实读写请用 `npm start` 部署到 Node 服务器。
+
+发布（需先 `gh auth login`）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/publish-gh-pages.ps1 -Repo huanyu-news-portal
+```
+
+脚本会自动生成静态包、创建仓库、推送并开启 Pages，最后打印 `https://<用户名>.github.io/<仓库名>/`。

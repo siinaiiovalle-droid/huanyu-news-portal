@@ -139,6 +139,37 @@ header#site-header,
 .nav a:hover { background: rgba(255, 255, 255, .3); color: #fff; }
 .nav a.active { background: #fff; color: var(--brand-dark); font-weight: 700; }
 
+/* ------------------------------ 通栏快讯条 ------------------------------ */
+.flash {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, .04);
+}
+.flash .container { display: flex; align-items: center; gap: 14px; height: 44px; }
+.flash-tag {
+  flex-shrink: 0;
+  display: flex; align-items: center; gap: 7px;
+  background: linear-gradient(135deg, #ff5233, #d9311f);
+  color: #fff; font-size: 13.5px; font-weight: 700; letter-spacing: .5px;
+  padding: 5px 12px; border-radius: 6px;
+}
+.flash-tag i { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: flash-dot 1.4s infinite; }
+@keyframes flash-dot { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+
+.flash-view { flex: 1; min-width: 0; height: 24px; overflow: hidden; }
+.flash-view ul { transition: transform .5s ease; }
+.flash-view li {
+  height: 24px; line-height: 24px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14.5px; overflow: hidden;
+}
+.flash-view li:hover { background: #f8fafc; }
+.flash-view li a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.flash-view li .t { flex-shrink: 0; font-size: 12.5px; color: var(--text-4); font-variant-numeric: tabular-nums; }
+.flash-updated { flex-shrink: 0; font-size: 12.5px; color: var(--text-4); }
+.flash-more { flex-shrink: 0; font-size: 13px; font-weight: 600; color: var(--brand); }
+.flash-more:hover { color: var(--accent); }
+
 /* ------------------------------ 布局 ------------------------------ */
 .layout {
   display: grid;
@@ -411,9 +442,14 @@ header#site-header,
   .hero { grid-template-columns: minmax(0, 1fr); }
   .hero-lead img { min-height: 240px; }
 }
+@media (max-width: 860px) {
+  .flash .container { height: 40px; gap: 10px; }
+  .flash-updated { display: none; }
+}
 @media (max-width: 720px) {
   .container { width: calc(100% - 24px); }
   .header-main { flex-wrap: wrap; gap: 12px; }
+  .flash-more { display: none; }
   .search-box { width: 100%; order: 3; margin-left: 0; }
   .header-actions { margin-left: auto; }
   .hero-item { grid-template-columns: minmax(0, 1fr); }

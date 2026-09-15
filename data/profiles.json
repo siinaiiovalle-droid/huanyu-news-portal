@@ -1,5 +1,12 @@
 [
   {
+    "id": "u_3bohr97y",
+    "createdAt": "2026-09-15T08:19:35.904Z",
+    "updatedAt": "2026-09-15T08:19:35.905Z",
+    "uid": "u_3bohr97y",
+    "following": []
+  },
+  {
     "id": "u_pydn88m6",
     "createdAt": "2026-09-14T10:08:56.641Z",
     "updatedAt": "2026-09-14T10:08:56.641Z",
@@ -30,7 +37,7 @@
   {
     "id": "u_smoke_square",
     "createdAt": "2026-09-14T10:05:14.738Z",
-    "updatedAt": "2026-09-15T06:52:24.057Z",
+    "updatedAt": "2026-09-15T08:49:42.440Z",
     "uid": "u_smoke_square",
     "following": []
   },

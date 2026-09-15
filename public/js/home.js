@@ -21,6 +21,7 @@
     }
 
     renderHero(data.headlines);
+    renderFlash(data.latest, data.generatedAt);
     renderLatest(data.latest);
     renderChannelBlocks(data.channels.filter((c) => c.id !== 'video'), data);
     renderFocus(data.focus);
@@ -63,6 +64,45 @@
             <a href="/article.html?id=${encodeURIComponent(it.id)}"><img src="${HY.escapeHtml(HY.imgOf(it))}" alt="${HY.escapeHtml(it.title)}" loading="lazy"></a>
           </div>`).join('')}
       </div>`;
+  }
+
+  /** 快讯条：每 4 秒向上滚动一条，鼠标悬停暂停；末尾追加首条实现无缝循环 */
+  function renderFlash(list, generatedAt) {
+    const host = document.getElementById('flash');
+    if (!host) return;
+    const items = (list || []).slice(0, 8);
+    if (!items.length) return;
+    host.hidden = false;
+
+    const line = (it) => `<li>
+      <span class="t">${HY.escapeHtml((HY.fmtTime(it.publishedAt) || '').slice(11) || '刚刚')}</span>
+      <a href="/article.html?id=${encodeURIComponent(it.id)}">${HY.escapeHtml(it.title)}</a>
+    </li>`;
+    const ul = document.getElementById('flash-list');
+    ul.innerHTML = items.map(line).join('') + line(items[0]);
+
+    if (generatedAt) {
+      const t = HY.fmtTime(generatedAt);
+      document.getElementById('flash-updated').textContent = t ? `更新于 ${t.slice(11)}` : '';
+    }
+
+    let i = 0;
+    let paused = false;
+    host.addEventListener('mouseenter', () => { paused = true; });
+    host.addEventListener('mouseleave', () => { paused = false; });
+    setInterval(() => {
+      if (paused || document.hidden) return;
+      i += 1;
+      ul.style.transition = 'transform .5s ease';
+      ul.style.transform = `translateY(-${i * 24}px)`;
+      if (i >= items.length) {
+        setTimeout(() => {
+          ul.style.transition = 'none';
+          ul.style.transform = 'translateY(0)';
+          i = 0;
+        }, 520);
+      }
+    }, 4000);
   }
 
   function renderLatest(list) {

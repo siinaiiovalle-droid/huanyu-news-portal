@@ -1,5 +1,16 @@
 [
   {
+    "id": "c_mu2fkwsrkpi7ji",
+    "createdAt": "2026-09-15T08:49:42.411Z",
+    "updatedAt": "2026-09-15T08:49:42.411Z",
+    "articleId": "n_mu1zjfgcwt7734",
+    "user": "自检机器人",
+    "avatar": "",
+    "content": "这是一条接口自检评论",
+    "likes": 0,
+    "status": "published"
+  },
+  {
     "id": "c_mu2be1xm06f0lu",
     "createdAt": "2026-09-15T06:52:24.010Z",
     "updatedAt": "2026-09-15T06:52:24.010Z",
