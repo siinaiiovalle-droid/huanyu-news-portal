@@ -45,6 +45,7 @@
         <a href="#/sources" data-view="sources">🛰 采集源管理</a>
         <a href="#/automation" data-view="automation">⚙️ 自动化规则</a>
         <a href="#/news" data-view="news">📰 稿件管理</a>
+        <a href="#/images" data-view="images">🖼 图库管理<span class="menu-badge" id="badge-images" style="display:none;">0</span></a>
         <a href="#/editor" data-view="editor">✍️ 撰写稿件</a>
         <a href="#/ranks" data-view="ranks">🔥 榜单运营</a>
         <a href="#/social" data-view="social">💬 广场与评论</a>
@@ -290,6 +291,51 @@
             </table>
           </div>
           <div class="pagination" id="news-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 图库管理 -->
+      <section id="view-images" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>新闻配图库</h3>
+            <div class="panel-tools">
+              <input id="img-keyword" placeholder="文件名 / 检索词 / 所属稿件">
+              <select id="img-usage">
+                <option value="all">全部图片</option>
+                <option value="used">已被稿件引用</option>
+                <option value="orphan">闲置未引用</option>
+              </select>
+              <button class="btn sm" id="img-filter">筛选</button>
+              <button class="btn sm primary" id="img-fill">补齐缺图稿件</button>
+              <button class="btn sm" id="img-dup">检测重复</button>
+              <button class="btn sm ghost" id="img-rebuild">重建指纹库</button>
+            </div>
+          </div>
+          <p class="preview-note" style="margin-bottom:12px;">
+            每张配图都是「下载 → 高清校验 → 统一裁切 1600×900 → 全站感知哈希去重 → 绑定稿件」的产物：
+            同一张画面在站内只会被一篇稿件使用，重复的自动换图；检索词由标题 + 标签 + 频道视觉词生成，保证图与文对应。
+          </p>
+          <div class="stat-grid" id="img-stats"></div>
+          <div id="img-dup-result"></div>
+          <div class="img-grid" id="img-grid"><p class="preview-note">加载中…</p></div>
+          <div class="pagination" id="img-pagination"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>缺图稿件</h3>
+            <div class="panel-tools">
+              <button class="btn sm" id="img-fill-all">一键补齐全部（含正文图）</button>
+              <button class="btn sm ghost" id="img-missing-refresh">刷新</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead><tr><th style="min-width:300px;">稿件</th><th>频道</th><th>状态</th><th>缺失图位</th><th style="width:140px;">操作</th></tr></thead>
+              <tbody id="img-missing-tbody"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
         </div>
       </section>
 

@@ -7,3 +7,5 @@ Thumbs.db
 .deploy/
 gh-pages/
 .static-test/
+.tmp-images/
+scripts/_*.js

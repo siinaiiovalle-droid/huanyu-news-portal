@@ -46,6 +46,40 @@ function pickImg(block) {
   return m ? m[1] : '';
 }
 
+/** 正文里第一张图（跳过 1x1 像素、图标等明显不是配图的地址） */
+function firstContentImage(block) {
+  const re = /<img[^>]+src=["']([^"']+)["']/gi;
+  let m;
+  while ((m = re.exec(block))) {
+    const src = decodeEntities(m[1]).trim();
+    if (!/^https?:\/\//i.test(src)) continue;
+    if (/\.(gif|svg)(\?|$)/i.test(src)) continue;
+    if (/logo|icon|avatar|blank|spacer|1x1|pixel/i.test(src)) continue;
+    return src;
+  }
+  return '';
+}
+
+/**
+ * 原文配图：优先 media:content / media:thumbnail / enclosure（RSS 里最可靠的原文直链），
+ * 其次正文第一张 <img>。入池时只记地址，发布前会把它下载到本地再使用，避免外链破图。
+ */
+function pickSourceImage(block) {
+  const media = /<media:content[^>]+url=["']([^"']+)["'][^>]*>/i.exec(block)
+    || /<media:thumbnail[^>]+url=["']([^"']+)["'][^>]*>/i.exec(block);
+  if (media && /^https?:\/\//i.test(decodeEntities(media[1]))) return decodeEntities(media[1]);
+
+  const enc = /<enclosure[^>]*>/i.exec(block);
+  if (enc) {
+    const url = (/url=["']([^"']+)["']/i.exec(enc[0]) || [])[1] || '';
+    const type = (/type=["']([^"']+)["']/i.exec(enc[0]) || [])[1] || '';
+    if (url && /^https?:\/\//i.test(url) && (type.startsWith('image/') || /\.(jpe?g|png|webp)(\?|$)/i.test(url))) {
+      return url;
+    }
+  }
+  return firstContentImage(block);
+}
+
 /** 摘要按句切段，过滤过短碎片 */
 function splitParagraphs(text) {
   return String(text)
@@ -73,6 +107,8 @@ function parseFeed(xml) {
       summary: desc.slice(0, 110),
       paragraphs: splitParagraphs(desc),
       cover: pickImg(block),
+      // 原文配图直链：发布前会本地化下载，用来保证"配图与内容一致"
+      image: pickSourceImage(block),
       publishedAt: Number.isNaN(t) ? null : new Date(t).toISOString()
     });
   });
@@ -80,28 +116,23 @@ function parseFeed(xml) {
 }
 
 /** 明文 HTTP 取数（可经代理绝对地址） */
-function plainGet(u, { timeout = 12000, proxy = '' } = {}) {
+function plainGet(u, { timeout = 12000, proxy = '', headers = {} } = {}) {
   return new Promise((resolve, reject) => {
     const target = new URL(u);
     const via = proxy ? new URL(proxy) : null;
+    const base = { 'User-Agent': UA, ...headers };
     const options = via
-      ? {
-        host: via.hostname,
-        port: Number(via.port) || 80,
-        path: target.toString(),
-        headers: { Host: target.host, 'User-Agent': UA }
-      }
+      ? { host: via.hostname, port: Number(via.port) || 80, path: target.toString(), headers: { ...base, Host: target.host } }
       : {
         host: target.hostname,
         port: Number(target.port) || 80,
         path: `${target.pathname}${target.search}`,
-        headers: { 'User-Agent': UA }
+        headers: base
       };
     const req = http.request(options, (res) => {
-      let data = '';
-      res.setEncoding('utf8');
-      res.on('data', (c) => { data += c; });
-      res.on('end', () => resolve({ status: res.statusCode, body: data }));
+      const chunks = [];
+      res.on('data', (c) => chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c)));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks) }));
     });
     req.setTimeout(timeout, () => req.destroy(new Error('请求超时')));
     req.on('error', reject);
@@ -110,7 +141,7 @@ function plainGet(u, { timeout = 12000, proxy = '' } = {}) {
 }
 
 /** HTTPS over HTTP 代理：先 CONNECT 建隧道，再在隧道上做 TLS */
-function tunnelGet(u, { timeout = 12000, proxy = '' } = {}) {
+function tunnelGet(u, { timeout = 12000, proxy = '', headers = {} } = {}) {
   return new Promise((resolve, reject) => {
     const target = new URL(u);
     const p = new URL(proxy);
@@ -125,6 +156,8 @@ function tunnelGet(u, { timeout = 12000, proxy = '' } = {}) {
     req.setTimeout(timeout, () => req.destroy(new Error('代理连接超时')));
     req.on('error', reject);
     req.on('connect', (res, socket) => {
+      // 隧道建好后的 socket 错误必须自己兜住，否则会冒泡成进程级未捕获异常
+      socket.on('error', reject);
       if (res.statusCode !== 200) {
         socket.destroy();
         reject(new Error(`代理返回 ${res.statusCode}`));
@@ -135,13 +168,12 @@ function tunnelGet(u, { timeout = 12000, proxy = '' } = {}) {
           method: 'GET',
           host: target.hostname,
           path: `${target.pathname}${target.search}`,
-          headers: { 'User-Agent': UA, Host: target.hostname },
+          headers: { 'User-Agent': UA, ...headers, Host: target.hostname },
           createConnection: () => conn
         }, (resp) => {
-          let data = '';
-          resp.setEncoding('utf8');
-          resp.on('data', (c) => { data += c; });
-          resp.on('end', () => resolve({ status: resp.statusCode, body: data }));
+          const chunks = [];
+          resp.on('data', (c) => chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c)));
+          resp.on('end', () => resolve({ status: resp.statusCode, headers: resp.headers, body: Buffer.concat(chunks) }));
         });
         r.setTimeout(timeout, () => r.destroy(new Error('读取超时')));
         r.on('error', reject);
@@ -158,14 +190,33 @@ function tunnelGet(u, { timeout = 12000, proxy = '' } = {}) {
   });
 }
 
-async function httpGetText(url, { timeout = 12000, proxy = '' } = {}) {
+/**
+ * 通用 GET（自动跟随 3xx 跳转），返回二进制。
+ * 图片下载 / 图库检索都走这里，因此同样支持代理。
+ */
+async function httpGetBuffer(url, { timeout = 12000, proxy = '', headers = {}, maxRedirects = 5 } = {}) {
   const useProxy = proxy || envProxy();
-  const target = new URL(url);
-  const res = (useProxy && target.protocol === 'https:')
-    ? await tunnelGet(url, { timeout, proxy: useProxy })
-    : await plainGet(url, { timeout, proxy: useProxy });
-  if (res.status >= 400) throw new Error(`HTTP ${res.status}`);
-  return res.body;
+  let current = url;
+  for (let i = 0; i <= maxRedirects; i += 1) {
+    const target = new URL(current);
+    const res = (useProxy && target.protocol === 'https:')
+      ? await tunnelGet(current, { timeout, proxy: useProxy, headers })
+      : await plainGet(current, { timeout, proxy: useProxy, headers });
+    if ([301, 302, 303, 307, 308].includes(res.status) && res.headers.location) {
+      const next = new URL(res.headers.location, current).toString();
+      if (!/^https?:/i.test(next)) throw new Error('重定向到不支持的地址');
+      current = next;
+      continue;
+    }
+    if (res.status >= 400) throw new Error(`HTTP ${res.status}`);
+    return { status: res.status, headers: res.headers, body: res.body };
+  }
+  throw new Error('重定向次数过多');
+}
+
+async function httpGetText(url, opts = {}) {
+  const res = await httpGetBuffer(url, opts);
+  return res.body.toString('utf8');
 }
 
 async function fetchFeed(url, { timeout = 12000, proxy = '' } = {}) {
@@ -202,5 +253,6 @@ function tagsFor(item, source) {
 }
 
 module.exports = {
-  fetchFeed, parseFeed, testSource, buildContent, tagsFor, stripHtml, decodeEntities, httpGetText, envProxy
+  fetchFeed, parseFeed, testSource, buildContent, tagsFor,
+  stripHtml, decodeEntities, httpGetText, httpGetBuffer, envProxy, pickSourceImage
 };

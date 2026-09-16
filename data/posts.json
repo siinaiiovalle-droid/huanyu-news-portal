@@ -3091,7 +3091,7 @@
   {
     "id": "p_seed_001",
     "createdAt": "2026-09-14T08:43:36.677Z",
-    "updatedAt": "2026-09-15T08:49:42.435Z",
+    "updatedAt": "2026-09-16T03:10:43.618Z",
     "author": {
       "uid": "u_flash",
       "name": "寰宇快讯",
@@ -3123,7 +3123,7 @@
       "likes": 1792,
       "reposts": 2,
       "replies": 2,
-      "views": 78315,
+      "views": 78316,
       "bookmarks": 79
     }
   }

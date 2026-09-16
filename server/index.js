@@ -13,6 +13,7 @@ const svc = require('./lib/news-service');
 const social = require('./lib/social-service');
 const auth = require('./lib/auth');
 const pipeline = require('./lib/pipeline');
+const image = require('./lib/image-service');
 
 const PORT = Number(process.env.PORT || 3000);
 const app = new App({ staticDir: path.resolve(__dirname, '../public') });
@@ -478,13 +479,21 @@ app.post('/api/v1/admin/pipeline/collect', async (req, res) => {
 app.post('/api/v1/admin/pipeline/auto-review', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   const body = await readBody(req);
-  ok(res, pipeline.autoReviewPending({ by: actorOf(req), publish: body.publish !== false }));
+  try {
+    ok(res, await pipeline.autoReviewPending({ by: actorOf(req), publish: body.publish !== false }));
+  } catch (e) {
+    fail(res, e.message);
+  }
 });
 
 /** 把到点的定时内容发布出去 */
-app.post('/api/v1/admin/pipeline/publish-due', (req, res) => {
+app.post('/api/v1/admin/pipeline/publish-due', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
-  ok(res, pipeline.publishDue({ by: actorOf(req) }));
+  try {
+    ok(res, await pipeline.publishDue({ by: actorOf(req) }));
+  } catch (e) {
+    fail(res, e.message);
+  }
 });
 
 /** 手动跑一次"每日任务"：采集 + 审核 + 到点发布 + 刷榜 */
@@ -546,6 +555,14 @@ app.post('/api/v1/admin/inbox/:id/approve', async (req, res) => {
       patch: body.patch || null
     });
     if (!result) return fail(res, '内容不存在', 404);
+    // 发布成功后立即配图（原文配图优先，其余走图库检索并全站去重）
+    if (result.article) {
+      try {
+        result.images = await pipeline.ensureImages({ inboxIds: [req.params.id] });
+      } catch (e) {
+        result.imageError = e.message;
+      }
+    }
     ok(res, result);
   } catch (e) {
     fail(res, e.message);
@@ -565,7 +582,15 @@ app.post('/api/v1/admin/inbox/batch', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   const body = await readBody(req);
   if (!Array.isArray(body.ids) || !body.ids.length) return fail(res, '请选择要处理的内容');
-  ok(res, pipeline.batch(body.ids, { action: body.action || 'approve', by: actorOf(req), reason: body.reason || '' }));
+  const result = pipeline.batch(body.ids, { action: body.action || 'approve', by: actorOf(req), reason: body.reason || '' });
+  if (result.articleIds && result.articleIds.length) {
+    try {
+      result.images = await pipeline.ensureImages({ inboxIds: body.ids });
+    } catch (e) {
+      result.imageError = e.message;
+    }
+  }
+  ok(res, result);
 });
 
 app.delete('/api/v1/admin/inbox/:id', (req, res) => {
@@ -633,6 +658,93 @@ app.post('/api/v1/admin/sources/:id/collect', async (req, res) => {
 app.get('/api/v1/admin/runs', (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   ok(res, pipeline.listRuns({ limit: int(req.query.limit, 20) }));
+});
+
+/* ------------------------------ 图片库（配图下载与管理） ------------------------------ */
+
+/** 图库总览 + 分页列表：关键字、使用状态（used / orphan） */
+app.get('/api/v1/admin/images', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  try {
+    const list = image.listImages({
+      keyword: req.query.keyword || '',
+      usage: req.query.usage || 'all',
+      page: int(req.query.page, 1),
+      pageSize: int(req.query.pageSize, 24)
+    });
+    ok(res, { ...list, stats: image.stats(), missing: image.missingArticles().slice(0, 100) });
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/** 重复配图检测（感知哈希两两比对，返回重复对） */
+app.get('/api/v1/admin/images/duplicates', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  try {
+    const pairs = image.duplicatePairs();
+    ok(res, { pairs, total: pairs.length });
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/** 为一篇稿件重新配图：可指定检索词或直接给图片直链 */
+app.post('/api/v1/admin/images/fetch', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const article = body.articleId ? svc.news.findById(body.articleId) : null;
+  if (!article) return fail(res, '稿件不存在', 404);
+  try {
+    const r = await image.ensureArticleImages(article, {
+      proxy: pipeline.getSettings().proxy || '',
+      force: true,
+      sourceImage: body.url || '',
+      query: body.query || '',
+      maxSlots: int(body.maxSlots, 2)
+    });
+    svc.news.flush();
+    ok(res, { article: svc.news.findById(article.id), ...r });
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/** 批量补图：缺封面的稿件自动配图 */
+app.post('/api/v1/admin/images/fill', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  try {
+    const r = await image.fillMissing({
+      limit: int(body.limit, 8),
+      ids: Array.isArray(body.ids) ? body.ids : [],
+      proxy: pipeline.getSettings().proxy || '',
+      force: !!body.force,
+      maxSlots: int(body.maxSlots, 2)
+    });
+    svc.news.flush();
+    ok(res, r);
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/** 删除未被任何栏目引用的图片（被引用的会被拒绝，避免前台破图） */
+app.delete('/api/v1/admin/images/:file', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const r = image.removeImage(req.params.file);
+  if (!r.ok) return fail(res, r.why);
+  ok(res, true);
+});
+
+/** 重建全站图片指纹库 */
+app.post('/api/v1/admin/images/rebuild', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  try {
+    ok(res, image.rebuildFingerprints());
+  } catch (e) {
+    fail(res, e.message);
+  }
 });
 
 /* ------------------------------ 广场与评论 ------------------------------ */

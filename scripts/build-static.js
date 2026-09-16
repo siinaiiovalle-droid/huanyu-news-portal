@@ -132,7 +132,14 @@ async function collectUrls() {
   const login = await postJson('/api/v1/admin/login', { username: 'admin', password: 'admin888' });
   const token = login && login.data && login.data.token;
   if (token) {
-    ['/api/v1/admin/me', '/api/v1/admin/stats', '/api/v1/admin/site'].forEach((u) => push(`${u}?token=${token}`));
+    ['/api/v1/admin/me', '/api/v1/admin/stats', '/api/v1/admin/site',
+      '/api/v1/admin/pipeline', '/api/v1/admin/pipeline/settings',
+      '/api/v1/admin/sources', '/api/v1/admin/runs?limit=20',
+      '/api/v1/admin/images', '/api/v1/admin/images/duplicates',
+      '/api/v1/admin/inbox?page=1&pageSize=20&status=pending',
+      '/api/v1/admin/inbox?page=1&pageSize=20&status=',
+      '/api/v1/admin/posts?page=1&pageSize=20', '/api/v1/admin/comments?page=1&pageSize=20'
+    ].forEach((u) => push(`${u}${u.includes('?') ? '&' : '?'}token=${token}`));
     ['', 'published', 'draft'].forEach((status) => push(`/api/v1/admin/news?page=1&pageSize=20${status ? `&status=${status}` : ''}&token=${token}`));
   } else {
     console.warn('! 后台令牌获取失败，后台页将只有登录界面');

@@ -14,6 +14,7 @@
   let newsPage = 1;
   let postsPage = 1;
   let commentsPage = 1;
+  let imagesPage = 1;
   let editingId = '';
   let blocks = [];
 
@@ -152,7 +153,7 @@
 
   const TITLES = {
     dashboard: '运营概览', inbox: '采集审核池', sources: '采集源管理', automation: '自动化规则',
-    news: '稿件管理', editor: '撰写稿件', ranks: '榜单运营', social: '广场与评论',
+    news: '稿件管理', images: '图库管理', editor: '撰写稿件', ranks: '榜单运营', social: '广场与评论',
     logs: '任务日志', accounts: '账号管理', settings: '站点设置'
   };
 
@@ -172,6 +173,7 @@
     if (view === 'sources') loadSources();
     if (view === 'automation') loadAutomation();
     if (view === 'news') loadNews(1);
+    if (view === 'images') loadImages(1);
     if (view === 'ranks') loadRanks();
     if (view === 'social') { loadPosts(1); loadComments(1); }
     if (view === 'logs') loadLogs();
@@ -1183,6 +1185,218 @@
     }
   }
 
+  /* ------------------------------ 图库管理 ------------------------------ */
+
+  const KIND_LABEL = { origin: '原文配图', search: '图库检索', card: '品牌配图卡' };
+
+  function fmtSize(b) {
+    const n = Number(b) || 0;
+    if (n >= 1048576) return `${(n / 1048576).toFixed(1)} MB`;
+    return `${Math.max(1, Math.round(n / 1024))} KB`;
+  }
+
+  async function loadImages(page = 1) {
+    imagesPage = page;
+    const kw = ($('img-keyword').value || '').trim();
+    const usage = $('img-usage').value || 'all';
+    let data = null;
+    try {
+      data = await req(`/api/v1/admin/images?keyword=${encodeURIComponent(kw)}&usage=${usage}&page=${page}&pageSize=24`);
+    } catch (e) {
+      toast(e.message);
+      return;
+    }
+
+    const s = data.stats || {};
+    const cards = [
+      ['配图总数', s.total, `占用 ${fmtSize(s.bytes)}`],
+      ['已被引用', s.used, '正被稿件使用'],
+      ['闲置未用', s.orphan, '可安全清理'],
+      ['重复配对', s.dupPairs, s.dupPairs ? '需要处理' : '全站无重复'],
+      ['缺图稿件', s.missingArticles, '待补封面 / 正文图'],
+      ['待补指纹', s.noHash, '影响去重判定']
+    ];
+    $('img-stats').innerHTML = cards.map((c) => `
+      <div class="stat-box"><b>${esc(c[1])}</b><span>${esc(c[0])}</span><small>${esc(c[2])}</small></div>`).join('');
+
+    const badge = $('badge-images');
+    if (badge) {
+      const alert = (s.dupPairs || 0) + (s.missingArticles || 0);
+      badge.style.display = alert > 0 ? '' : 'none';
+      badge.textContent = alert;
+    }
+
+    const list = data.list || [];
+    $('img-grid').innerHTML = list.length
+      ? list.map(imgCard).join('')
+      : '<p class="preview-note">没有符合条件的图片。</p>';
+    bindImageCards();
+    renderPager($('img-pagination'), data.pagination, (p) => loadImages(p));
+    renderMissing(data.missing || [], s.missingArticles || 0);
+  }
+
+  function imgCard(row) {
+    const used = row.usedBy || [];
+    const owner = used[0] || {};
+    const ownerId = row.articleId || owner.id || '';
+    const usedHtml = used.length
+      ? used.slice(0, 3).map((u) => `<div class="row-meta">${esc(u.slot || '引用')}：${esc(u.title || '（未命名）')}</div>`).join('')
+      : '<div class="row-meta">闲置 · 未被任何稿件引用</div>';
+    const more = used.length > 3 ? `<div class="row-meta">等共 ${used.length} 处引用</div>` : '';
+    return `
+      <div class="img-card" data-file="${esc(row.file)}" data-article="${esc(ownerId)}">
+        <a class="thumb" href="${esc(row.url)}" target="_blank" rel="noopener">
+          <img src="${esc(row.url)}" alt="${esc(row.query || row.file)}" loading="lazy">
+        </a>
+        <div class="img-body">
+          <div class="row-title">${esc(row.query || row.file)}</div>
+          <div class="row-meta">${esc(row.file)} · ${fmtSize(row.bytes)}${row.size ? ` · 原图 ${esc(row.size)}` : ''}</div>
+          <div class="row-meta">来源：${esc(KIND_LABEL[row.kind] || '站内素材')}${row.hash ? ` · 指纹 ${esc(String(row.hash).slice(0, 8))}` : ' · 无指纹'}</div>
+          ${usedHtml}${more}
+          <div class="ops-cell" style="margin-top:8px;">
+            <button class="icon-btn" data-act="copy">复制路径</button>
+            ${ownerId ? '<button class="icon-btn" data-act="refetch">换一张</button>' : ''}
+            <button class="icon-btn danger" data-act="remove" ${row.used ? 'disabled title="仍被稿件引用，不能删除"' : ''}>删除</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function bindImageCards() {
+    document.querySelectorAll('#img-grid .img-card').forEach((card) => {
+      const file = card.dataset.file;
+      const article = card.dataset.article;
+      card.querySelectorAll('button[data-act]').forEach((btn) => {
+        btn.onclick = async () => {
+          const act = btn.dataset.act;
+
+          if (act === 'copy') {
+            const url = `/img/news/${file}`;
+            try {
+              await navigator.clipboard.writeText(url);
+              toast(`已复制 ${url}`);
+            } catch (e) { toast(url); }
+            return;
+          }
+
+          if (act === 'remove') {
+            if (!confirm(`确认删除 ${file}？删除后不可恢复。`)) return;
+            try {
+              await req(`/api/v1/admin/images/${encodeURIComponent(file)}`, { method: 'DELETE' });
+              toast('已删除');
+              loadImages(imagesPage);
+            } catch (e) { toast(e.message); }
+            return;
+          }
+
+          if (act === 'refetch') {
+            if (!article) return;
+            const query = prompt('这张配图的检索词（留空则由标题 + 标签 + 频道自动生成）', '');
+            if (query === null) return;
+            btn.disabled = true;
+            btn.textContent = '下载中…';
+            try {
+              const r = await req('/api/v1/admin/images/fetch', {
+                method: 'POST', body: { articleId: article, query: query || '', maxSlots: 1 }
+              });
+              toast(r.filled ? `配图已更新（成功 ${r.filled} 张）` : '未找到合格新图，已保留原图');
+              loadImages(imagesPage);
+            } catch (e) {
+              toast(e.message);
+              btn.disabled = false;
+              btn.textContent = '换一张';
+            }
+          }
+        };
+      });
+    });
+  }
+
+  function renderMissing(rows, total) {
+    const tbody = $('img-missing-tbody');
+    if (!tbody) return;
+    if (!rows.length) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty">所有稿件都已配图。</td></tr>';
+      return;
+    }
+    const chName = (id) => {
+      const c = channels.find((x) => x.id === id);
+      return (c && c.name) || id || '-';
+    };
+    const show = rows.slice(0, 30);
+    tbody.innerHTML = show.map((r) => `
+      <tr data-id="${esc(r.id)}">
+        <td><div class="row-title">${esc(r.title || '（无标题）')}</div><div class="row-meta">${esc(r.id)}</div></td>
+        <td>${esc(chName(r.channel))}</td>
+        <td>${esc(r.status === 'published' ? '已发布' : r.status === 'draft' ? '草稿' : (r.status || '-'))}</td>
+        <td>${esc((r.missing || []).join('、'))}</td>
+        <td><button class="icon-btn" data-act="fill-one">立即补图</button></td>
+      </tr>`).join('')
+      + (total > show.length ? `<tr><td colspan="5" class="preview-note">仅列出前 ${show.length} 篇，全站共 ${total} 篇缺图。</td></tr>` : '');
+
+    tbody.querySelectorAll('button[data-act="fill-one"]').forEach((btn) => {
+      btn.onclick = async () => {
+        const id = btn.closest('tr').dataset.id;
+        btn.disabled = true;
+        btn.textContent = '下载中…';
+        try {
+          const r = await req('/api/v1/admin/images/fill', { method: 'POST', body: { ids: [id], limit: 1, maxSlots: 2 } });
+          toast(`补齐完成：成功 ${r.filled || 0} 张，失败 ${r.failed || 0} 张`);
+          loadImages(imagesPage);
+        } catch (e) {
+          toast(e.message);
+          btn.disabled = false;
+          btn.textContent = '立即补图';
+        }
+      };
+    });
+  }
+
+  async function fillImages(limit) {
+    if (!confirm(`将为最多 ${limit} 个缺图图位下载配图（内容相关 + 全站去重），耗时约 1-3 分钟，继续？`)) return;
+    const btn = $('img-fill');
+    if (btn) btn.disabled = true;
+    try {
+      toast('正在下载配图…');
+      const r = await req('/api/v1/admin/images/fill', { method: 'POST', body: { limit, maxSlots: 2 } });
+      toast(`补图完成：处理 ${r.checked || 0} 篇，成功 ${r.filled || 0} 张，失败 ${r.failed || 0} 张`);
+      loadImages(1);
+    } catch (e) {
+      toast(e.message);
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  async function checkDuplicates() {
+    const box = $('img-dup-result');
+    box.innerHTML = '<p class="preview-note">正在对全站配图做感知哈希两两比对…</p>';
+    try {
+      const r = await req('/api/v1/admin/images/duplicates');
+      const pairs = r.pairs || [];
+      if (!pairs.length) {
+        box.innerHTML = '<div class="dup-list ok">全站配图两两比对完毕，未发现重复画面。</div>';
+      } else {
+        box.innerHTML = `<div class="dup-list"><b>发现 ${pairs.length} 组重复配图</b>`
+          + pairs.slice(0, 20).map((p) => `<div class="row-meta">${esc(p.a)} ↔ ${esc(p.b)}（哈希差 ${p.distance}）</div>`).join('')
+          + '</div>';
+      }
+      toast(pairs.length ? `发现 ${pairs.length} 组重复` : '未发现重复配图');
+    } catch (e) {
+      box.innerHTML = '';
+      toast(e.message);
+    }
+  }
+
+  async function rebuildFingerprints() {
+    if (!confirm('重建指纹库会重新计算全站配图的感知哈希，用于去重判定。继续？')) return;
+    try {
+      const r = await req('/api/v1/admin/images/rebuild', { method: 'POST', body: {} });
+      toast(`指纹库已重建：共 ${r.total} 张，新计算 ${r.computed} 张`);
+      loadImages(imagesPage);
+    } catch (e) { toast(e.message); }
+  }
+
   /* ------------------------------ 事件绑定 ------------------------------ */
 
   function bind() {
@@ -1239,6 +1453,15 @@
 
     // 编辑器
     $('btn-save-draft').onclick = () => saveArticle('draft');
+    // 图库
+    $('img-filter').onclick = () => loadImages(1);
+    $('img-keyword').onkeydown = (e) => { if (e.key === 'Enter') loadImages(1); };
+    $('img-usage').onchange = () => loadImages(1);
+    $('img-missing-refresh').onclick = () => loadImages(imagesPage);
+    $('img-fill').onclick = () => fillImages(8);
+    $('img-fill-all').onclick = () => fillImages(24);
+    $('img-dup').onclick = checkDuplicates;
+    $('img-rebuild').onclick = rebuildFingerprints;
     $('btn-save-publish').onclick = () => saveArticle('published');
     $('btn-editor-cancel').onclick = () => go('news');
     document.querySelectorAll('[data-add]').forEach((btn) => {

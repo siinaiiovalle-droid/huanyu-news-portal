@@ -17,6 +17,7 @@ const { Store, ConfigStore, genId, nowISO } = require('./store');
 const svc = require('./news-service');
 const portal = require('./portal');
 const feed = require('./feed-parser');
+const image = require('./image-service');
 
 const DEFAULT_SOURCES = [
   {
@@ -50,6 +51,10 @@ const DEFAULT_SETTINGS = {
   boostKeywords: ['突发', '最新', '重磅', '独家', '官宣', '曝光', '首例', '首次', '暴涨', '涨停',
     '预警', '通报', '冠军', '夺冠', '直击', '最新进展', '刷屏', '突发消息', '刚刚', '紧急'],
   schedule: { enabled: true, times: ['07:30', '18:00'], collectLimit: 5 },
+  // 配图：自动为发布出去的稿件下载「内容相关且全站唯一」的高清配图
+  autoImage: true,
+  imagePerRun: 12,          // 每轮最多补图张数（含封面与正文图），避免拖慢采集
+  imagePerArticle: 2,       // 每篇稿件最多补几张（1 = 只补封面）
   // 采集代理：留空则读取环境变量 HTTPS_PROXY / HTTP_PROXY；国内服务器访问境外源时可填 http://127.0.0.1:7897
   proxy: '',
   lastRunAt: null,
@@ -266,7 +271,9 @@ function normalizeInboxItem(raw, source) {
     author: source.name || '网络采集',
     sourceName: source.name,
     sourceUrl: raw.link || '',
-    cover: '', // 不使用外链图：统一交给本地配图脚本，避免破图
+    cover: '', // 不使用外链图：发布前统一下载到本地，避免破图
+    // 采集源提供的原文配图直链：配图时优先本地化这张图，保证图片与内容一致
+    sourceImage: raw.image || '',
     content: feed.buildContent(raw),
     publishedAt: raw.publishedAt || nowISO()
   };
@@ -334,19 +341,31 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
   }
 
   const shouldPublish = autoPublish === undefined ? cfg.autoPublish : autoPublish;
+  const publishedIds = [];
   if (shouldPublish && candidates.length) {
     candidates.sort((a, b) => (b.score || 0) - (a.score || 0));
     const quota = Math.max(0, Number(cfg.maxPublishPerRun) || 0);
     const picked = candidates.filter((d) => d.auto.decision === 'publish').slice(0, quota);
     picked.forEach((doc, i) => {
-      publishInboxItem(doc.id, {
+      const article = publishInboxItem(doc.id, {
         by: by || 'system',
         comment: '自动审核通过并发布',
         autoFlags: cfg.autoFlag && i < Number(cfg.headlineTopN || 0),
         autoFocus: cfg.autoFlag && i < Number(cfg.focusTopN || 0)
       });
+      if (article) publishedIds.push(article.id);
       autoPublished += 1;
     });
+  }
+
+  // 自动配图：新发布的稿件立即补上「内容相关且全站唯一」的高清图
+  let imageStat = null;
+  if (cfg.autoImage && publishedIds.length) {
+    try {
+      imageStat = await ensureImages({ articleIds: publishedIds });
+    } catch (e) {
+      console.error('[pipeline] 自动配图失败：', e.message);
+    }
   }
 
   if (added) portal.refreshRanks();
@@ -360,6 +379,7 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
     rejected,
     autoPublished,
     failed,
+    images: imageStat ? { filled: imageStat.filled, failed: imageStat.failed } : null,
     durationMs: Date.now() - started,
     perSource,
     finishedAt: nowISO()
@@ -369,8 +389,42 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
   return run;
 }
 
+/**
+ * 为稿件补配图（复用图片服务）：
+ *   - 优先使用采集源的原文配图（内容一定相关），失败再走关键词图库检索；
+ *   - 每张图都会与全站指纹库比对，重复的自动换图，保证"各种新闻不出现重复配图"。
+ */
+async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlots = 0, force = false } = {}) {
+  const cfg = getSettings();
+  const budget = Math.max(1, Number(limit) || Number(cfg.imagePerRun) || 10);
+  const slots = Math.max(1, Number(maxSlots) || Number(cfg.imagePerArticle) || 2);
+  const ids = [...new Set([
+    ...articleIds,
+    ...inboxIds.map((iid) => (inbox.findById(iid) || {}).articleId).filter(Boolean)
+  ])];
+
+  let pool = svc.news.all().filter((a) => a.status !== 'deleted');
+  if (ids.length) pool = pool.filter((a) => ids.includes(a.id));
+  else pool = pool.filter((a) => !a.cover || (a.content || []).some((b) => b.type === 'image' && !b.src));
+  pool = pool.slice(0, ids.length ? ids.length : budget);
+
+  let filled = 0;
+  let failed = 0;
+  const articles = [];
+  for (const article of pool) {
+    const source = (inbox.findById(article.inboxId) || {}).sourceImage || '';
+    const r = await image.ensureArticleImages(article, {
+      proxy: cfg.proxy || '', force, sourceImage: source, maxSlots: slots
+    });
+    filled += r.filled;
+    failed += r.failed;
+    articles.push({ id: article.id, title: article.title, filled: r.filled, failed: r.failed, details: r.details });
+  }
+  return { checked: pool.length, filled, failed, articles };
+}
+
 /** 对池中待审条目按当前规则重新判定（规则调整后可一键重跑） */
-function autoReviewPending({ by = 'system', publish = true } = {}) {
+async function autoReviewPending({ by = 'system', publish = true } = {}) {
   const cfg = getSettings();
   const pending = inbox.all().filter((d) => d.status === 'pending');
   let toReview = 0;
@@ -393,17 +447,24 @@ function autoReviewPending({ by = 'system', publish = true } = {}) {
     }
   });
 
+  const publishedIds = [];
   if (publish && cfg.autoPublish && candidates.length) {
     candidates.sort((a, b) => (b.score || 0) - (a.score || 0));
     candidates.slice(0, Math.max(0, Number(cfg.maxPublishPerRun) || 0)).forEach((doc, i) => {
-      publishInboxItem(doc.id, {
+      const article = publishInboxItem(doc.id, {
         by,
         comment: '自动审核通过并发布',
         autoFlags: cfg.autoFlag && i < Number(cfg.headlineTopN || 0),
         autoFocus: cfg.autoFlag && i < Number(cfg.focusTopN || 0)
       });
+      if (article) publishedIds.push(article.id);
       published += 1;
     });
+  }
+
+  let imageStat = null;
+  if (cfg.autoImage && publishedIds.length) {
+    imageStat = await ensureImages({ articleIds: publishedIds });
   }
 
   const run = runs.insert({
@@ -413,6 +474,7 @@ function autoReviewPending({ by = 'system', publish = true } = {}) {
     rejected,
     autoPublished: published,
     pendingReview: toReview,
+    images: imageStat ? { filled: imageStat.filled, failed: imageStat.failed } : null,
     durationMs: 0,
     perSource: [],
     finishedAt: nowISO()
@@ -443,6 +505,8 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
     content: merged.content,
     status: target,
     publishedAt: merged.publishedAt,
+    origin: 'pipeline',
+    inboxId: id,
     flags: {
       headline: !!autoFlags,
       headlineOrder: autoFlags ? 1 : 0,
@@ -499,26 +563,32 @@ function reject(id, { by = 'editor', reason = '' } = {}) {
 
 function batch(ids = [], { action = 'approve', by = 'editor', reason = '' } = {}) {
   let done = 0;
+  const articleIds = [];
   ids.forEach((id) => {
     const item = inbox.findById(id);
     if (!item) return;
-    if (action === 'approve') { approve(id, { by, publish: true }); done += 1; }
-    else if (action === 'approve-draft') { approve(id, { by, publish: false }); done += 1; }
+    if (action === 'approve') {
+      const r = approve(id, { by, publish: true });
+      if (r && r.article) articleIds.push(r.article.id);
+      done += 1;
+    } else if (action === 'approve-draft') { approve(id, { by, publish: false }); done += 1; }
     else if (action === 'reject') { reject(id, { by, reason }); done += 1; }
     else if (action === 'delete') { inbox.remove(id); done += 1; }
   });
   flushAll();
-  return { done };
+  return { done, articleIds };
 }
 
 /** 到点发布：待审池中已通过且定时时间已到的条目 + 稿件库中的定时稿件 */
-function publishDue({ by = 'system' } = {}) {
+async function publishDue({ by = 'system' } = {}) {
   const now = Date.now();
   let published = 0;
+  const articleIds = [];
 
   inbox.all().forEach((doc) => {
     if (doc.status === 'approved' && doc.scheduledAt && Date.parse(doc.scheduledAt) <= now) {
-      publishInboxItem(doc.id, { by, comment: '定时发布' });
+      const article = publishInboxItem(doc.id, { by, comment: '定时发布' });
+      if (article) articleIds.push(article.id);
       published += 1;
     }
   });
@@ -526,12 +596,18 @@ function publishDue({ by = 'system' } = {}) {
   svc.news.all().forEach((a) => {
     if (a.status === 'scheduled' && a.scheduledAt && Date.parse(a.scheduledAt) <= now) {
       svc.news.update(a.id, { status: 'published', publishedAt: a.scheduledAt });
+      if (!a.cover) articleIds.push(a.id);
       published += 1;
     }
   });
 
+  let imageStat = null;
+  if (getSettings().autoImage && articleIds.length) {
+    imageStat = await ensureImages({ articleIds });
+  }
+
   if (published) { portal.refreshRanks(); flushAll(); }
-  return { published };
+  return { published, images: imageStat ? { filled: imageStat.filled } : null };
 }
 
 /* ------------------------------ 查询 ------------------------------ */
@@ -593,9 +669,22 @@ function stats() {
       error: src.filter((s) => s.lastStatus === 'error').length,
       neverRun: src.filter((s) => s.enabled !== false && !s.lastRunAt).length
     },
+    images: (() => {
+      const s = image.stats();
+      return {
+        total: s.total,
+        used: s.used,
+        orphan: s.orphan,
+        bytes: s.bytes,
+        noHash: s.noHash,
+        missingArticles: s.missingArticles,
+        dupPairs: s.dupPairs
+      };
+    })(),
     pipeline: {
       enabled: cfg.enabled,
       autoPublish: cfg.autoPublish,
+      autoImage: cfg.autoImage,
       minScore: cfg.minScore,
       autoPublishScore: cfg.autoPublishScore,
       scheduleEnabled: cfg.schedule.enabled,
@@ -628,14 +717,19 @@ function nextRunAt(cfg) {
   return new Date(`${tomorrow}T${first}:00`).toISOString();
 }
 
-/** 每日任务：采集 → 自动审核 → 到点发布 → 刷榜 */
+/** 每日任务：采集 → 自动审核/发布 → 到点发布 → 自动配图 → 刷榜 */
 async function runDailyJob({ trigger = 'schedule', by = 'system' } = {}) {
   const cfg = getSettings();
   if (!cfg.enabled) return { skipped: true, reason: '流水线已关闭' };
   const run = await runCollect({ trigger, limit: Number(cfg.schedule.collectLimit) || 0, by });
-  const due = publishDue({ by });
+  const due = await publishDue({ by });
+  // 兜底补图：覆盖人工发布、定时发布等没走采集配图的稿件
+  let images = null;
+  if (cfg.autoImage) {
+    try { images = await ensureImages({ limit: cfg.imagePerRun }); } catch (e) { images = { error: e.message }; }
+  }
   patchSettings({ lastDailyAt: nowISO() });
-  return { run, due };
+  return { run, due, images };
 }
 
 let timer = null;
@@ -643,7 +737,7 @@ let lastTickKey = '';
 
 function tick() {
   const cfg = getSettings();
-  publishDue();
+  publishDue().catch((e) => console.error('[pipeline] 定时发布失败：', e.message));
   if (!cfg.enabled || !cfg.schedule || !cfg.schedule.enabled) return;
   const now = new Date();
   const pad = (n) => String(n).padStart(2, '0');
@@ -680,6 +774,7 @@ module.exports = {
   listSources, createSource, updateSource, removeSource, testSourceById,
   scoreItem, evaluate, findDuplicate,
   runCollect, autoReviewPending, publishInboxItem, approve, reject, batch, publishDue, runDailyJob,
+  ensureImages,
   listInbox, stats, listRuns, nextRunAt,
   startScheduler, stopScheduler, flushAll
 };

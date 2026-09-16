@@ -30,8 +30,10 @@ async function main() {
   const before = pipeline.stats();
   line(`开始前：待审 ${before.inbox.pending} 条 / 已发布稿件 ${before.news.published} 篇`);
 
+  let images = null;
   if (reviewOnly) {
-    const r = pipeline.autoReviewPending({ by: 'cli' });
+    const r = await pipeline.autoReviewPending({ by: 'cli' });
+    images = r.images;
     line(`\n[审核] 检查 ${r.checked} 条 → 自动发布 ${r.autoPublished} 条，`
       + `自动驳回 ${r.rejected} 条，留待人工 ${r.pendingReview} 条`);
   } else {
@@ -41,6 +43,7 @@ async function main() {
       by: 'collector',
       autoPublish: noPublish ? false : undefined
     });
+    images = run.images;
     line(`\n[采集] 抓取 ${run.fetched} 条 → 入库 ${run.added} 条（重复 ${run.duplicated}、`
       + `自动驳回 ${run.rejected}）→ 自动发布 ${run.autoPublished} 条`);
     (run.perSource || []).forEach((p) => {
@@ -48,13 +51,23 @@ async function main() {
     });
   }
 
-  const due = pipeline.publishDue({ by: 'cli' });
+  const due = await pipeline.publishDue({ by: 'cli' });
   if (due.published) line(`\n[定时] 到点发布 ${due.published} 条`);
+
+  // 兜底补图：把仍然缺封面的稿件补齐（含人工发布、定时发布的）
+  const filled = await pipeline.ensureImages({ limit: 12 });
+  if (filled.checked) {
+    line(`\n[配图] 检查 ${filled.checked} 篇 → 补图 ${filled.filled} 张，失败 ${filled.failed} 张`);
+  } else if (images && images.filled) {
+    line(`\n[配图] 新发布稿件补图 ${images.filled} 张`);
+  }
 
   const after = pipeline.stats();
   line('\n===== 本次简报 =====');
   line(`待审池：待审 ${after.inbox.pending} 条 / 已通过待发 ${after.inbox.approved} 条 / 已驳回 ${after.inbox.rejected} 条`);
   line(`稿件库：已发布 ${after.news.published} 篇 / 草稿 ${after.news.drafts} 篇 / 定时 ${after.news.scheduled} 篇`);
+  line(`图　库：配图 ${after.images.total} 张（已用 ${after.images.used} / 未用 ${after.images.orphan}）`
+    + `，缺图稿件 ${after.images.missingArticles} 篇${after.images.dupPairs ? `，重复图片 ${after.images.dupPairs} 对` : ''}`);
   line(`耗时：${((Date.now() - t0) / 1000).toFixed(1)}s`);
   line('\n提示：数据在 data/*.json 中，重启服务（npm start）后前台生效；'
     + '也可在后台「采集审核池」直接人工复核发布。');

@@ -91,13 +91,58 @@ npm run collect
 ```
 支持 RSS 2.0 / Atom 源，按标题去重，默认入库为**草稿**，必须经编辑人工审核后才能发布（符合内容合规要求）。
 
-### 4. 定时执行
-- Linux 服务器推荐 crontab：
+### 4. 每天自动采集 → 审核 → 发布（默认开启）
+
+定时调度器**内置在 Node 服务进程里**（`server/lib/pipeline.js` 的 `startScheduler`，每 30 秒 tick 一次），
+只要 `npm start` 在跑，到点就会自动跑完整个闭环：
+
+```
+07:30 / 18:00 自动执行：
+采集 RSS → 标题去重 + 质量评分 → 自动审核（命中黑名单/低质直接驳回，高分直接发布，其余进待审池）
+        → 到点发布定时稿 → 为发布稿自动下载配图 → 重排热点榜 / 爆款榜
+```
+
+- 时间与开关在后台 **自动化规则** 页可视化调整（默认 07:30、18:00，可改可关），概览页实时显示「下次运行」；
+- 每个环节都能**手动干预**：概览页「立即采集 / 自动审核 / 每日任务」，采集池逐条「通过 / 驳回 / 编辑后发布」，
+  稿件管理改稿改状态，图库管理补图换图；
+- 不想让服务常驻，也可以交给系统级定时（最稳）：
   ```cron
   */30 * * * * cd /srv/huanyu-news && node scripts/refresh-ranks.js >> logs/rank.log 2>&1
-  0 */2 * * * cd /srv/huanyu-news && node scripts/collect.js >> logs/collect.log 2>&1
+  0 */2  * * * cd /srv/huanyu-news && node scripts/collect.js      >> logs/collect.log 2>&1
+  30 7   * * * cd /srv/huanyu-news && node scripts/daily.js       >> logs/daily.log 2>&1
   ```
-- Windows / 单机：`npm run schedule` 常驻执行（每 30 分钟刷榜、每 2 小时采集）。
+- 手动补跑一次全流程：`npm run daily`（采集 → 补配图 → 刷榜，并输出简报）；
+- Windows / 单机常驻：`npm run schedule`（每 30 分钟刷榜、每 2 小时采集）。
+
+### 5. 配图自动化与图库管理（配图必须对应内容、全站不重复）
+
+每条自动或人工发布的稿件都会走同一套配图流水线（`server/lib/image-service.js`，与 `npm run fetch:images` 同源）：
+
+1. **对应内容**：检索词由标题 + 标签 + 频道视觉词生成（`scripts/lib/keywords.js` 的 `buildQuery`），
+   搜不到再逐级降级（整串 → 前两词 → 首词 → 频道兜底词），保证图与文同主题；稿件若自带原文配图则优先采用；
+2. **高清**：分辨率门槛三档递减 1400×780 → 1280×720 → 1000×560，统一裁切为 1600×900 渐进式 JPEG；
+3. **全站不重复**：裁切后用 Pillow 计算 dHash 感知哈希，与 `scripts/data/image-fingerprints.json` 中
+   全站指纹比对，汉明距离 ≤ 6 即判定为同一张画面 → 丢弃换下一张；**宁可无图，也不重复**；
+4. **可追溯**：文件名（缺图稿件用 `a-<稿件id>-cover/fig1`）、原图直链、检索词、指纹、引用关系
+   全部记入 `scripts/data/photo-index.json` 与 `image-fingerprints.json`。
+
+后台 **图库管理** 页（`admin.html` → 🖼 图库管理）把这套机制完全可视化：
+
+| 能力 | 说明 |
+| --- | --- |
+| 统计面板 | 配图总数/占用体积、已引用、闲置未用、重复配对、缺图稿件、待补指纹 |
+| 图片墙 | 缩略图 + 检索词 + 来源（原文配图/图库检索/品牌配图卡）+ 指纹 + 被哪些稿件引用 |
+| 筛选 | 关键词（文件名 / 检索词 / 所属稿件）+ 使用状态（全部 / 已引用 / 闲置） |
+| 补齐缺图 | 一键批量补图（可设数量），缺图稿件表里也能按篇「立即补图」 |
+| 换一张 | 对某篇稿件指定检索词重新配图（自动走全站去重） |
+| 检测重复 | 全站感知哈希两两比对，列出重复图对与哈希差 |
+| 重建指纹 | 重新计算全站配图指纹库 |
+| 清理 | 删除闲置图片（仍被稿件引用的图片禁止删除，避免破图） |
+
+对应接口（需 `Authorization: Bearer <token>`）：`GET /api/v1/admin/images`、
+`GET /api/v1/admin/images/duplicates`、`POST /api/v1/admin/images/fetch`、
+`POST /api/v1/admin/images/fill`、`POST /api/v1/admin/images/rebuild`、
+`DELETE /api/v1/admin/images/:file`。
 
 ---
 
@@ -230,6 +275,23 @@ curl "http://localhost:3000/api/v1/sync?since=2026-09-14T08:00:00.000Z"
 ---
 
 ## 八、静态导出与 GitHub Pages
+
+### 后台要不要一起发到 GitHub？
+
+**可以发，但要分清用途。**静态导出会把 `admin.html` 和它的接口快照一并打进 `gh-pages`，
+所以 GitHub Pages 上能打开后台界面——只是看到的是**导出那一刻的数据快照**，
+登录、发稿、审核、删除都在浏览器本地模拟（`static-shim.js`，存 localStorage），不会真正落库。
+
+| 部署位置 | 入口 | 能力 |
+| --- | --- | --- |
+| 本机 / 云服务器 `npm start` | `http://localhost:3000/admin.html` | 完整后台：采集、审核、发布、配图、图库、账号、设置，**数据真实持久化**，内置每日定时任务 |
+| GitHub Pages（`gh-pages` 分支） | `https://<用户名>.github.io/<仓库名>/` | 只读演示：前端全部页面 + 后台界面快照，写操作本地模拟 |
+
+结论：**源码和页面可以发到 GitHub，但运营后台的运行实例要放在你本机（或服务器）长期跑**，
+因为「每天自动采集、审核、发布」的调度器是 Node 进程内的定时器，GitHub Pages 上没有服务端进程可以执行它。
+GitHub 上那份是给外部看效果的静态镜像（点不动真实数据），本机这份才是真实运营环境。
+
+### 一键静态导出
 
 本站是 Node 服务端应用，GitHub Pages 只托管静态文件，因此提供一键静态导出：
 
