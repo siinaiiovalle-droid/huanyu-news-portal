@@ -29,8 +29,8 @@ const LOG_DIR = path.join(ROOT, 'logs');
 const LOCK_FILE = path.join(LOG_DIR, 'sync.lock');
 const REPORT_FILE = path.join(__dirname, 'data', 'last-sync.json');
 
-/** 要同步的内容：本地库 + 图片 + 站点代码（gh-pages/ 已被 .gitignore 忽略，不会带进 main） */
-const SYNC_PATHS = ['data', 'public', 'scripts', 'server', 'docs', 'README.md', 'package.json', '.gitignore'];
+/** 要同步的内容：本地库 + 图片 + 站点代码 + 根目录入口脚本（gh-pages/ 已被 .gitignore 忽略，不会带进 main） */
+const SYNC_PATHS = ['data', 'public', 'scripts', 'server', 'docs', '*.bat', 'README.md', 'package.json', '.gitignore'];
 const BRANCH = 'main';
 const PAGES_BRANCH = 'gh-pages';
 const PUSH_RETRY = Math.max(1, Number(process.env.SYNC_PUSH_RETRY) || 3);
