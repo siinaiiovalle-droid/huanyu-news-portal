@@ -2,13 +2,13 @@
   {
     "id": "u_mu0y8733v8fink",
     "createdAt": "2026-09-14T07:56:09.568Z",
-    "updatedAt": "2026-09-16T08:31:56.153Z",
+    "updatedAt": "2026-09-16T08:33:43.750Z",
     "username": "admin",
     "name": "总编辑",
     "role": "admin",
     "salt": "26476ca2c7601a6bd28e3ebd",
     "password": "360910e032487f184851dd04865d4e194c8a49d57c437b7ad164dcd6d8031152",
     "status": "active",
-    "lastLoginAt": "2026-09-16T08:31:56.153Z"
+    "lastLoginAt": "2026-09-16T08:33:43.750Z"
   }
 ]
