@@ -144,6 +144,45 @@ npm run collect
 `POST /api/v1/admin/images/fill`、`POST /api/v1/admin/images/rebuild`、
 `DELETE /api/v1/admin/images/:file`。
 
+### 6. 每天把本地内容同步到 GitHub（本机定时任务）
+
+运营方式是「**本地干活、线上只读**」：采集 / 审核 / 发布全部在本机后台（`localhost:3000/admin.html`）完成，
+内容落在本地库文件 `data/*.json`（纯文本 JSON，可直接打开或用表格工具查看），新下载的高清配图落在
+`public/img/news/`；每天再由本机定时任务把这些文件推到 GitHub。
+
+```bash
+npm run sync                  # 完整同步：本地库 + 图片 → main，再重建静态站 → gh-pages（约 1 分钟）
+npm run sync -- --no-site     # 只推数据与图片，不重建站点（更快，约 10 秒）
+npm run sync -- --dry-run     # 只看有什么变化，不提交不推送
+npm run sync -- --message="补充三篇财经稿"   # 自定义本次提交说明
+node sync.bat                 # 定时任务真正调用的入口，输出写入 logs/sync.log
+```
+
+每次同步按下面的顺序做，并把过程写进日志：
+
+1. 前置检查：必须在 `main` 分支、没有未解决的合并冲突、`origin` 可用；
+2. 若检测到本机服务（3000 端口）在运行，先等 1.5 秒让内存里的改动落盘，再统计
+   `data/ public/ scripts/ server/ docs/` 下的改动（新增图片会自动算进「图片 N 张 / X MB」）；
+3. 提交并推 `main`，**以 `git ls-remote` 的远端 commit 是否等于本地 HEAD 作为成功判据**——
+   本机经代理推送时常报 `curl 28 / RPC failed`，但实际已经推成功；失败自动重试 3 次，
+   遇到远端有新提交先 `rebase` 再推；
+4. 重建静态站（等价于 `npm run build:static`）并推 `gh-pages`，GitHub Pages 随即显示当天内容；
+5. 结果写入 `scripts/data/last-sync.json`，日志写入 `logs/sync.log`（超过 5MB 自动轮转）。
+
+定时任务已注册在 Windows 任务计划程序里，任务名 **`寰宇新闻网-每日同步到GitHub`**：
+
+```powershell
+Get-ScheduledTaskInfo -TaskName '寰宇新闻网-每日同步到GitHub'        # 查看下次运行时间
+Start-ScheduledTask   -TaskName '寰宇新闻网-每日同步到GitHub'        # 立刻补跑一次
+Set-ScheduledTask -TaskName '寰宇新闻网-每日同步到GitHub' `
+  -Trigger (New-ScheduledTaskTrigger -Daily -At 23:00)              # 改到每天 23:00
+Unregister-ScheduledTask -TaskName '寰宇新闻网-每日同步到GitHub'     # 不再需要时删除
+```
+
+默认每天 **22:30** 触发，允许 2 小时，两次运行不会并发（任务级 `IgnoreNew`，脚本内还有 `logs/sync.lock` 兜底），
+**关机错过的会在开机后自动补跑**（`StartWhenAvailable`）。任务以当前登录用户的身份运行，
+要用到该用户已保存的 git 凭据，所以请保持这台机器处于登录状态。
+
 ---
 
 ## 四、开放 API（App / 小程序复用）
@@ -296,7 +335,8 @@ GitHub 上那份是给外部看效果的静态镜像（点不动真实数据）�
 本站是 Node 服务端应用，GitHub Pages 只托管静态文件，因此提供一键静态导出：
 
 ```bash
-npm run build:static      # 输出 gh-pages/：页面 + 383 个接口快照 + 图片
+npm run build:static      # 只导出：输出 gh-pages/：页面 + 673 个接口快照 + 图片
+npm run sync              # 导出 + 推 main + 推 gh-pages，一条命令完成发布（日常推荐）
 ```
 
 导出包做了三件事：
@@ -307,10 +347,10 @@ npm run build:static      # 输出 gh-pages/：页面 + 383 个接口快照 + �
 
 > 静态版没有服务端，**写操作不会持久化**；需要真实读写请用 `npm start` 部署到 Node 服务器。
 
-发布（需先 `gh auth login`）：
+发布：日常运营不用手动推送——本机每天 22:30 的定时任务会自动执行 `npm run sync`
+（见「三、内容生产与"每天更新"机制 → 6. 每天把本地内容同步到 GitHub（本机定时任务）」）。
+临时补发一次，直接在项目根目录执行 `npm run sync` 即可。
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/publish-gh-pages.ps1 -Repo huanyu-news-portal
-```
-
-脚本会自动生成静态包、创建仓库、推送并开启 Pages，最后打印 `https://<用户名>.github.io/<仓库名>/`。
+推送成功的判据是远端 commit 与本地 HEAD 一致（`git ls-remote origin main|gh-pages`），
+本机经代理上传常报 `curl 28 Operation too slow / RPC failed`，**报错不等于失败**，
+以远端 commit 为准；网络差时可加大重试：`SYNC_PUSH_RETRY=5 npm run sync`。

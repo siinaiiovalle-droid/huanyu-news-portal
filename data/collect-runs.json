@@ -1,5 +1,201 @@
 [
   {
+    "id": "mu3uitywqzpfyi",
+    "createdAt": "2026-09-16T08:35:45.848Z",
+    "updatedAt": "2026-09-16T08:35:45.848Z",
+    "type": "collect",
+    "trigger": "manual",
+    "fetched": 931,
+    "added": 50,
+    "duplicated": 503,
+    "rejected": 39,
+    "autoPublished": 0,
+    "failed": 0,
+    "images": null,
+    "durationMs": 6452,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 5
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 5
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 0
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-16T08:35:45.848Z"
+  },
+  {
+    "id": "mu3uijygzgwixt",
+    "createdAt": "2026-09-16T08:35:32.872Z",
+    "updatedAt": "2026-09-16T08:35:32.872Z",
+    "type": "collect",
+    "trigger": "manual",
+    "fetched": 931,
+    "added": 53,
+    "duplicated": 449,
+    "rejected": 36,
+    "autoPublished": 0,
+    "failed": 0,
+    "images": null,
+    "durationMs": 9096,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 5
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 5
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 3
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-16T08:35:32.872Z"
+  },
+  {
     "id": "mu3u6zlo8mvrqe",
     "createdAt": "2026-09-16T08:26:33.276Z",
     "updatedAt": "2026-09-16T08:26:33.276Z",
