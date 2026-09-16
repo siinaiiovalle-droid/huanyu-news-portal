@@ -25,13 +25,63 @@
     var suffix = keys.length
       ? '__' + keys.map(function (k) { return k + '-' + q[k]; }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
       : '';
-    return { rest: rest, suffix: suffix };
+    return { rest: rest, suffix: suffix, q: q };
   }
 
   function relFor(input, withSuffix) {
     var p = parts(input);
     if (!p) return null;
     return './api/v1/' + p.rest + (withSuffix ? p.suffix : '') + '.json';
+  }
+
+  /* 页面带了没预渲染的参数时，逐级放宽再找快照。
+     只放宽「排序 / 关键词 / 频道」这类纯展示型筛选（拿到的还是同一批数据）；
+     状态、分页不能放宽，否则会把已发布的内容混进"待审核"里，或者串页。 */
+  var SOFT_DROP = ['sort', 'keyword', 'channel'];
+
+  function candidatesFor(input) {
+    var p = parts(input);
+    if (!p) return [];
+    var keys = Object.keys(p.q).sort();
+    var out = [];
+    var seen = {};
+    var add = function (arr) {
+      var suffix = arr.length
+        ? '__' + arr.map(function (k) { return k + '-' + p.q[k]; }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
+        : '';
+      var rel = './api/v1/' + p.rest + suffix + '.json';
+      if (!seen[rel]) { seen[rel] = 1; out.push(rel); }
+    };
+    add(keys);
+    var remain = keys.slice();
+    SOFT_DROP.forEach(function (k) {
+      remain = remain.filter(function (x) { return x !== k; });
+      add(remain);
+    });
+    add([]);
+    return out;
+  }
+
+  /** 依次尝试候选文件，返回第一个 200 的响应；全都没有则返回 null */
+  function tryFiles(list, i) {
+    i = i || 0;
+    if (i >= list.length) return Promise.resolve(null);
+    return origFetch(list[i]).then(function (r) {
+      return r && r.ok ? r : tryFiles(list, i + 1);
+    }, function () { return tryFiles(list, i + 1); });
+  }
+
+  /** 快照确实不存在时的兜底：给个结构合理的空结果，页面显示空态而不是"服务响应异常" */
+  function emptyData(url) {
+    console.warn('[static] 该请求没有预渲染快照，已返回空结果：' + url);
+    return {
+      keyword: '',
+      list: [],
+      items: [],
+      total: 0,
+      hasMore: false,
+      pagination: { page: 1, pageSize: 20, total: 0, totalPages: 0 }
+    };
   }
 
   function jsonResponse(obj) {
@@ -262,13 +312,8 @@
 
       if (/api\/v1\/search(\?|$)/.test(url)) return doSearch(url);
 
-      var rel = relFor(url, true);
-      var base = relFor(url, false);
-      return origFetch(rel).then(function (r) {
-        if (r.ok || rel === base) return r;
-        return origFetch(base);
-      }).then(function (r) {
-        if (!r.ok) return r;
+      return tryFiles(candidatesFor(url)).then(function (r) {
+        if (!r) return jsonResponse({ code: 0, message: 'ok', data: emptyData(url) });
         return r.text().then(function (text) {
           var json = null;
           try { json = JSON.parse(text); } catch (e) { json = null; }
