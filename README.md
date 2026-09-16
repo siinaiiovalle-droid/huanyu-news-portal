@@ -3,7 +3,7 @@
 由 `npm run build:static` 自动生成，请勿手改（下次构建会覆盖）。
 
 - 页面：index / channel / article / video / search / square / admin
-- 数据：76 篇稿件、98 条广场动态，预渲染为 api/v1/**.json（395 个文件）
+- 数据：169 篇稿件、98 条广场动态，预渲染为 api/v1/**.json（591 个文件）
 - 图片：9 个素材文件随包发布
 - 交互：发帖、点赞、评论、后台登录为本地模拟，存在浏览器 localStorage，不回写服务器
 

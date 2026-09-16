@@ -15,7 +15,7 @@
   <div class="admin-login" id="login-view">
     <div class="login-card">
       <h1>寰宇新闻网 · 内容运营后台</h1>
-      <p class="tip">编辑部专用入口，负责每日头条、热点、爆款与焦点的编排发布</p>
+      <p class="tip">采集 → 审核 → 发布 一体化内容中台</p>
       <div class="field">
         <label>账号</label>
         <input id="login-user" placeholder="请输入账号" autocomplete="username" value="admin">
@@ -38,18 +38,25 @@
     <aside class="admin-side">
       <div class="brand">
         <span style="width:34px;height:34px;border-radius:9px;background:linear-gradient(140deg,#fff,#cfe3fa);color:#083a76;display:grid;place-items:center;font-weight:800;">寰宇</span>
-        <span><b>内容后台</b><br><span>HUANYU CMS</span></span>
+        <span><b>内容中台</b><br><span>HUANYU CMS</span></span>
       </div>
       <nav class="admin-menu" id="menu">
         <a href="#/dashboard" data-view="dashboard">📊 运营概览</a>
+        <a href="#/inbox" data-view="inbox">📥 采集审核池<span class="menu-badge" id="badge-pending" style="display:none;">0</span></a>
+        <a href="#/sources" data-view="sources">🛰 采集源管理</a>
+        <a href="#/automation" data-view="automation">⚙️ 自动化规则</a>
         <a href="#/news" data-view="news">📰 稿件管理</a>
+        <a href="#/images" data-view="images">🖼 图库管理<span class="menu-badge" id="badge-images" style="display:none;">0</span></a>
         <a href="#/editor" data-view="editor">✍️ 撰写稿件</a>
         <a href="#/ranks" data-view="ranks">🔥 榜单运营</a>
-        <a href="#/settings" data-view="settings">⚙️ 站点设置</a>
+        <a href="#/social" data-view="social">💬 广场与评论</a>
+        <a href="#/logs" data-view="logs">📜 任务日志</a>
+        <a href="#/accounts" data-view="accounts">👤 账号管理</a>
+        <a href="#/settings" data-view="settings">🛠 站点设置</a>
       </nav>
       <div class="foot">
         寰宇传媒信息技术股份有限公司<br>
-        新闻网站 · 内容中台 v1.0
+        内容中台 v2.0 · 采集/审核/发布一体化
       </div>
     </aside>
 
@@ -66,15 +73,25 @@
       <!-- 概览 -->
       <section id="view-dashboard">
         <div class="stat-grid" id="stat-grid"></div>
-        <div class="panel">
+
+        <div class="panel pipeline-panel">
           <div class="panel-head">
-            <h3>频道稿件分布</h3>
+            <h3>内容流水线</h3>
             <div class="panel-tools">
-              <button class="btn sm" id="btn-refresh-ranks">一键刷新头条/热点/爆款</button>
+              <button class="btn sm" id="btn-run-collect">立即采集</button>
+              <button class="btn sm" id="btn-run-review">自动审核待审</button>
+              <button class="btn sm" id="btn-run-daily">执行每日任务</button>
+              <button class="btn sm ghost" id="btn-refresh-ranks">刷新榜单</button>
             </div>
           </div>
+          <div id="pipeline-state" class="pipeline-state"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>频道稿件分布</h3></div>
           <div id="channel-stats"></div>
         </div>
+
         <div class="edit-grid">
           <div class="panel">
             <div class="panel-head"><h3>热点榜（自动计算）</h3></div>
@@ -84,6 +101,155 @@
             <div class="panel-head"><h3>爆款增速榜</h3></div>
             <div id="dash-blast"></div>
           </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>最近任务</h3><div class="panel-tools"><a class="btn sm ghost" href="#/logs">查看全部</a></div></div>
+          <div id="dash-runs"></div>
+        </div>
+      </section>
+
+      <!-- 采集审核池 -->
+      <section id="view-inbox" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>内容采集池（待审核）</h3>
+            <div class="panel-tools">
+              <select id="ib-status">
+                <option value="pending">待审核</option>
+                <option value="">全部</option>
+                <option value="approved">已通过待发布</option>
+                <option value="published">已发布</option>
+                <option value="rejected">已驳回</option>
+              </select>
+              <select id="ib-channel"><option value="">全部频道</option></select>
+              <input id="ib-keyword" placeholder="标题/标签关键词">
+              <select id="ib-sort">
+                <option value="score">按分值排序</option>
+                <option value="time">按采集时间</option>
+              </select>
+              <button class="btn sm" id="ib-filter">筛选</button>
+              <button class="btn sm" id="ib-refresh">刷新</button>
+              <button class="btn sm primary" id="ib-collect">立即采集</button>
+            </div>
+          </div>
+
+          <div class="batch-bar">
+            <label class="check-all"><input type="checkbox" id="ib-check-all"> 全选本页</label>
+            <button class="icon-btn" data-batch="approve">批量通过并发布</button>
+            <button class="icon-btn" data-batch="approve-draft">批量通过（不发布）</button>
+            <button class="icon-btn danger" data-batch="reject">批量驳回</button>
+            <button class="icon-btn danger" data-batch="delete">批量删除</button>
+            <span class="preview-note" id="ib-count"></span>
+          </div>
+
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width:38px;"></th>
+                  <th style="min-width:300px;">内容</th>
+                  <th style="width:96px;">分值</th>
+                  <th style="width:90px;">频道</th>
+                  <th style="width:150px;">自动审核</th>
+                  <th style="width:120px;">采集时间</th>
+                  <th style="min-width:220px;">操作</th>
+                </tr>
+              </thead>
+              <tbody id="inbox-tbody"><tr><td colspan="7" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+          <div class="pagination" id="inbox-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 采集源 -->
+      <section id="view-sources" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>采集源（RSS / Atom）</h3>
+            <div class="panel-tools">
+              <button class="btn sm" id="src-new">+ 新增采集源</button>
+              <button class="btn sm" id="src-refresh">刷新</button>
+            </div>
+          </div>
+          <div class="preview-note" style="margin-bottom:12px;">
+            每个源可设定所属频道、标签、权重（影响热度评分）、单轮采集条数与入库状态。关闭"启用"后该源不参与自动采集。
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="min-width:180px;">名称</th>
+                  <th>频道</th>
+                  <th style="min-width:220px;">地址</th>
+                  <th>权重</th>
+                  <th>每轮</th>
+                  <th>最近状态</th>
+                  <th style="min-width:230px;">操作</th>
+                </tr>
+              </thead>
+              <tbody id="sources-tbody"><tr><td colspan="7" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 自动化规则 -->
+      <section id="view-automation" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>自动采集 · 审核 · 发布规则</h3>
+            <div class="panel-tools"><button class="btn sm primary" id="btn-save-pipeline">保存规则</button></div>
+          </div>
+          <div class="edit-grid">
+            <div>
+              <div class="switch-row"><span>流水线总开关（关闭后不再自动采集发布）</span><label class="switch"><input type="checkbox" id="p-enabled"><span></span></label></div>
+              <div class="switch-row"><span>采集后自动执行审核规则</span><label class="switch"><input type="checkbox" id="p-autoReview"><span></span></label></div>
+              <div class="switch-row"><span>达到分值线自动发布（无需人工）</span><label class="switch"><input type="checkbox" id="p-autoPublish"><span></span></label></div>
+              <div class="switch-row"><span>自动发布时按分值置头条 / 焦点</span><label class="switch"><input type="checkbox" id="p-autoFlag"><span></span></label></div>
+              <div class="switch-row"><span>每日定时自动执行</span><label class="switch"><input type="checkbox" id="p-scheduleEnabled"><span></span></label></div>
+
+              <div class="field" style="margin-top:14px;">
+                <label>每日执行时间（多个用逗号分隔，如 07:30,12:00,18:00）</label>
+                <input type="text" id="p-times" placeholder="07:30,18:00">
+              </div>
+              <div class="field">
+                <label>定时执行时单源采集条数（0 表示按源配置）</label>
+                <input type="number" id="p-collectLimit" min="0" max="50">
+              </div>
+              <div class="field">
+                <label>采集代理（留空则读取环境变量 HTTPS_PROXY）</label>
+                <input type="text" id="p-proxy" placeholder="如 http://127.0.0.1:7897">
+              </div>
+            </div>
+
+            <div>
+              <div class="field"><label>准入分值线（低于此分直接驳回）</label><input type="number" id="p-minScore" min="0" max="100"></div>
+              <div class="field"><label>自动发布分值线（达到即自动发布）</label><input type="number" id="p-autoPublishScore" min="0" max="100"></div>
+              <div class="field"><label>每轮最多自动发布条数</label><input type="number" id="p-maxPublishPerRun" min="0" max="50"></div>
+              <div class="field"><label>内容时效（小时，超过判为过期）</label><input type="number" id="p-maxAgeHours" min="1" max="168"></div>
+              <div class="field"><label>标题最少字数</label><input type="number" id="p-minTitleLen" min="4" max="40"></div>
+              <div class="field"><label>正文最少字数</label><input type="number" id="p-minContentLen" min="20" max="1000"></div>
+              <div class="field"><label>每轮自动置头条条数</label><input type="number" id="p-headlineTopN" min="0" max="10"></div>
+              <div class="field"><label>每轮自动加入焦点条数</label><input type="number" id="p-focusTopN" min="0" max="10"></div>
+            </div>
+          </div>
+
+          <div class="edit-grid" style="margin-top:6px;">
+            <div class="field">
+              <label>敏感 / 低质词（命中即自动驳回，逗号分隔）</label>
+              <textarea id="p-blockKeywords" style="min-height:90px;"></textarea>
+            </div>
+            <div class="field">
+              <label>热点加权词（命中提升热度分值，逗号分隔）</label>
+              <textarea id="p-boostKeywords" style="min-height:90px;"></textarea>
+            </div>
+          </div>
+          <p class="preview-note">
+            分值构成：基础 30 分 + 新鲜度 25 分 + 热点词 15 分 + 内容完整度 15 分 + 采集源权重 10 分 + 配图/原文链接 5 分。
+            重复内容（标题或原文链接已存在）一律不入库。
+          </p>
         </div>
       </section>
 
@@ -99,6 +265,12 @@
                 <option value="">全部状态</option>
                 <option value="published">已发布</option>
                 <option value="draft">草稿</option>
+                <option value="scheduled">定时待发布</option>
+              </select>
+              <select id="filter-origin">
+                <option value="">全部来源</option>
+                <option value="manual">编辑部录入</option>
+                <option value="pipeline">采集流水线</option>
               </select>
               <button class="btn sm" id="btn-filter">筛选</button>
               <button class="btn sm" id="btn-new">+ 新建稿件</button>
@@ -108,7 +280,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th style="min-width:320px;">标题</th>
+                  <th style="min-width:300px;">标题</th>
                   <th>频道</th>
                   <th>运营位</th>
                   <th>数据</th>
@@ -120,6 +292,51 @@
             </table>
           </div>
           <div class="pagination" id="news-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 图库管理 -->
+      <section id="view-images" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>新闻配图库</h3>
+            <div class="panel-tools">
+              <input id="img-keyword" placeholder="文件名 / 检索词 / 所属稿件">
+              <select id="img-usage">
+                <option value="all">全部图片</option>
+                <option value="used">已被稿件引用</option>
+                <option value="orphan">闲置未引用</option>
+              </select>
+              <button class="btn sm" id="img-filter">筛选</button>
+              <button class="btn sm primary" id="img-fill">补齐缺图稿件</button>
+              <button class="btn sm" id="img-dup">检测重复</button>
+              <button class="btn sm ghost" id="img-rebuild">重建指纹库</button>
+            </div>
+          </div>
+          <p class="preview-note" style="margin-bottom:12px;">
+            每张配图都是「下载 → 高清校验 → 统一裁切 1600×900 → 全站感知哈希去重 → 绑定稿件」的产物：
+            同一张画面在站内只会被一篇稿件使用，重复的自动换图；检索词由标题 + 标签 + 频道视觉词生成，保证图与文对应。
+          </p>
+          <div class="stat-grid" id="img-stats"></div>
+          <div id="img-dup-result"></div>
+          <div class="img-grid" id="img-grid"><p class="preview-note">加载中…</p></div>
+          <div class="pagination" id="img-pagination"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>缺图稿件</h3>
+            <div class="panel-tools">
+              <button class="btn sm" id="img-fill-all">一键补齐全部（含正文图）</button>
+              <button class="btn sm ghost" id="img-missing-refresh">刷新</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead><tr><th style="min-width:300px;">稿件</th><th>频道</th><th>状态</th><th>缺失图位</th><th style="width:140px;">操作</th></tr></thead>
+              <tbody id="img-missing-tbody"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -168,70 +385,35 @@
           <aside>
             <div class="panel">
               <div class="panel-head"><h3>发布设置</h3></div>
-              <div class="field">
-                <label>所属频道</label>
-                <select id="f-channel"></select>
-              </div>
-              <div class="field">
-                <label>作者 / 记者</label>
-                <input type="text" id="f-author" placeholder="本网记者">
-              </div>
-              <div class="field">
-                <label>来源</label>
-                <input type="text" id="f-source" placeholder="寰宇新闻网">
-              </div>
-              <div class="field">
-                <label>标签（逗号分隔）</label>
-                <input type="text" id="f-tags" placeholder="人工智能,算力,产业">
-              </div>
-              <div class="field">
-                <label>封面图 URL</label>
-                <input type="text" id="f-cover" placeholder="https://... 或 /img/tech-ai.png">
-              </div>
+              <div class="field"><label>所属频道</label><select id="f-channel"></select></div>
+              <div class="field"><label>作者 / 记者</label><input type="text" id="f-author" placeholder="本网记者"></div>
+              <div class="field"><label>来源</label><input type="text" id="f-source" placeholder="寰宇新闻网"></div>
+              <div class="field"><label>标签（逗号分隔）</label><input type="text" id="f-tags" placeholder="人工智能,算力,产业"></div>
+              <div class="field"><label>封面图 URL</label><input type="text" id="f-cover" placeholder="https://... 或 /img/tech-ai.png"></div>
               <div class="field">
                 <label>发布时间</label>
                 <input type="text" id="f-published" placeholder="留空表示现在">
+              </div>
+              <div class="field">
+                <label>定时发布（到点自动上线，格式 2026-09-16 20:00）</label>
+                <input type="text" id="f-scheduled" placeholder="留空表示立即">
               </div>
             </div>
 
             <div class="panel">
               <div class="panel-head"><h3>运营位</h3></div>
-              <div class="switch-row">
-                <span>设为头条</span>
-                <label class="switch"><input type="checkbox" id="f-headline"><span></span></label>
-              </div>
-              <div class="field" style="margin-top:10px;">
-                <label>头条排序（越小越靠前）</label>
-                <input type="number" id="f-headline-order" value="0" min="0">
-              </div>
-              <div class="switch-row">
-                <span>加入焦点专题</span>
-                <label class="switch"><input type="checkbox" id="f-focus"><span></span></label>
-              </div>
-              <div class="switch-row">
-                <span>置顶推荐</span>
-                <label class="switch"><input type="checkbox" id="f-top"><span></span></label>
-              </div>
-              <div class="field" style="margin-top:10px;">
-                <label>推荐权重（0-10）</label>
-                <input type="number" id="f-recommend" value="0" min="0" max="10">
-              </div>
+              <div class="switch-row"><span>设为头条</span><label class="switch"><input type="checkbox" id="f-headline"><span></span></label></div>
+              <div class="field" style="margin-top:10px;"><label>头条排序（越小越靠前）</label><input type="number" id="f-headline-order" value="0" min="0"></div>
+              <div class="switch-row"><span>加入焦点专题</span><label class="switch"><input type="checkbox" id="f-focus"><span></span></label></div>
+              <div class="switch-row"><span>置顶推荐</span><label class="switch"><input type="checkbox" id="f-top"><span></span></label></div>
+              <div class="field" style="margin-top:10px;"><label>推荐权重（0-10）</label><input type="number" id="f-recommend" value="0" min="0" max="10"></div>
             </div>
 
             <div class="panel">
               <div class="panel-head"><h3>视频设置（可选）</h3></div>
-              <div class="field">
-                <label>视频地址</label>
-                <input type="text" id="f-video-src" placeholder="https://...mp4">
-              </div>
-              <div class="field">
-                <label>视频封面</label>
-                <input type="text" id="f-video-poster" placeholder="封面图 URL">
-              </div>
-              <div class="field">
-                <label>时长（如 03:20）</label>
-                <input type="text" id="f-video-duration" placeholder="03:20">
-              </div>
+              <div class="field"><label>视频地址</label><input type="text" id="f-video-src" placeholder="https://...mp4"></div>
+              <div class="field"><label>视频封面</label><input type="text" id="f-video-poster" placeholder="封面图 URL"></div>
+              <div class="field"><label>时长（如 03:20）</label><input type="text" id="f-video-duration" placeholder="03:20"></div>
               <p class="preview-note">填写后该稿件会出现在视频频道与首页视频精选区。</p>
             </div>
           </aside>
@@ -243,9 +425,7 @@
         <div class="panel">
           <div class="panel-head">
             <h3>运营位编排</h3>
-            <div class="panel-tools">
-              <button class="btn sm" id="btn-refresh-ranks2">按热度自动重排热点/爆款</button>
-            </div>
+            <div class="panel-tools"><button class="btn sm" id="btn-refresh-ranks2">按热度自动重排热点/爆款</button></div>
           </div>
           <p class="preview-note">
             头条由编辑部手动编排（编辑稿件时勾选"设为头条"并设置排序，不足数量时系统按热度自动补齐）；
@@ -253,24 +433,91 @@
           </p>
         </div>
         <div class="edit-grid">
-          <div class="panel">
-            <div class="panel-head"><h3>头条编排（当前生效）</h3></div>
-            <div id="ops-headline"></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><h3>焦点专题</h3></div>
-            <div id="ops-focus"></div>
-          </div>
+          <div class="panel"><div class="panel-head"><h3>头条编排（当前生效）</h3></div><div id="ops-headline"></div></div>
+          <div class="panel"><div class="panel-head"><h3>焦点专题</h3></div><div id="ops-focus"></div></div>
         </div>
         <div class="edit-grid">
-          <div class="panel">
-            <div class="panel-head"><h3>热点榜（按互动热度实时计算）</h3></div>
-            <div id="ops-hot"></div>
+          <div class="panel"><div class="panel-head"><h3>热点榜（按互动热度实时计算）</h3></div><div id="ops-hot"></div></div>
+          <div class="panel"><div class="panel-head"><h3>爆款增速榜（近 48 小时）</h3></div><div id="ops-blast"></div></div>
+        </div>
+      </section>
+
+      <!-- 广场与评论 -->
+      <section id="view-social" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>广场动态</h3>
+            <div class="panel-tools">
+              <input id="post-keyword" placeholder="搜索内容/作者">
+              <button class="btn sm" id="post-search">搜索</button>
+            </div>
           </div>
-          <div class="panel">
-            <div class="panel-head"><h3>爆款增速榜（近 48 小时）</h3></div>
-            <div id="ops-blast"></div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead><tr><th style="min-width:280px;">内容</th><th>作者</th><th>数据</th><th>时间</th><th style="width:150px;">操作</th></tr></thead>
+              <tbody id="posts-tbody"><tr><td colspan="5" class="empty">加载中…</td></tr></tbody>
+            </table>
           </div>
+          <div class="pagination" id="posts-pagination"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>评论管理</h3>
+            <div class="panel-tools">
+              <input id="comment-keyword" placeholder="搜索评论内容/用户">
+              <button class="btn sm" id="comment-search">搜索</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead><tr><th style="min-width:280px;">评论</th><th>所属稿件</th><th>时间</th><th style="width:100px;">操作</th></tr></thead>
+              <tbody id="comments-tbody"><tr><td colspan="4" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+          <div class="pagination" id="comments-pagination"></div>
+        </div>
+      </section>
+
+      <!-- 任务日志 -->
+      <section id="view-logs" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>采集 / 审核 / 发布日志</h3>
+            <div class="panel-tools"><button class="btn sm" id="logs-refresh">刷新</button></div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead>
+                <tr><th>类型</th><th>触发</th><th>抓取</th><th>入库</th><th>重复</th><th>驳回</th><th>自动发布</th><th>耗时</th><th>时间</th></tr>
+              </thead>
+              <tbody id="runs-tbody"><tr><td colspan="9" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 账号管理 -->
+      <section id="view-accounts" style="display:none;">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>后台账号</h3>
+            <div class="panel-tools"><button class="btn sm" id="acc-new">+ 新增账号</button></div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table">
+              <thead><tr><th>账号</th><th>姓名</th><th>角色</th><th>状态</th><th>最后登录</th><th style="width:180px;">操作</th></tr></thead>
+              <tbody id="accounts-tbody"><tr><td colspan="6" class="empty">加载中…</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>修改我的密码</h3></div>
+          <div class="edit-grid">
+            <div class="field"><label>原密码</label><input type="password" id="pw-old"></div>
+            <div class="field"><label>新密码</label><input type="password" id="pw-new"></div>
+          </div>
+          <button class="btn sm primary" id="btn-change-pw" style="margin-top:6px;">确认修改</button>
         </div>
       </section>
 
@@ -302,6 +549,18 @@
         </div>
       </section>
     </main>
+  </div>
+
+  <!-- 通用弹窗 -->
+  <div class="modal-mask" id="modal-mask" style="display:none;">
+    <div class="modal" id="modal">
+      <div class="modal-head">
+        <h3 id="modal-title">标题</h3>
+        <button class="icon-btn" id="modal-close">关闭</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-foot" id="modal-foot"></div>
+    </div>
   </div>
 
   <script src="./js/common.js"></script>
