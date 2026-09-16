@@ -132,15 +132,33 @@ async function collectUrls() {
   const login = await postJson('/api/v1/admin/login', { username: 'admin', password: 'admin888' });
   const token = login && login.data && login.data.token;
   if (token) {
+    const auth = (u) => `${u}${u.includes('?') ? '&' : '?'}token=${token}`;
     ['/api/v1/admin/me', '/api/v1/admin/stats', '/api/v1/admin/site',
       '/api/v1/admin/pipeline', '/api/v1/admin/pipeline/settings',
       '/api/v1/admin/sources', '/api/v1/admin/runs?limit=20',
       '/api/v1/admin/images', '/api/v1/admin/images/duplicates',
-      '/api/v1/admin/inbox?page=1&pageSize=20&status=pending',
-      '/api/v1/admin/inbox?page=1&pageSize=20&status=',
       '/api/v1/admin/posts?page=1&pageSize=20', '/api/v1/admin/comments?page=1&pageSize=20'
-    ].forEach((u) => push(`${u}${u.includes('?') ? '&' : '?'}token=${token}`));
-    ['', 'published', 'draft'].forEach((status) => push(`/api/v1/admin/news?page=1&pageSize=20${status ? `&status=${status}` : ''}&token=${token}`));
+    ].forEach((u) => push(auth(u)));
+
+    // 采集审核池：前端请求带 sort（score/time），必须按真实参数组合预渲染，
+    // 否则静态版会找不到快照、整页空白（曾经就是这么坏的）。
+    ['', 'pending', 'approved', 'published', 'rejected'].forEach((status) => {
+      ['score', 'time'].forEach((sort) => {
+        push(auth(`/api/v1/admin/inbox?page=1&pageSize=20&status=${status}&sort=${sort}`));
+      });
+    });
+
+    // 稿件管理：状态 × 来源
+    ['', 'published', 'draft', 'scheduled'].forEach((status) => {
+      ['', 'manual', 'pipeline'].forEach((origin) => {
+        push(auth(`/api/v1/admin/news?page=1&pageSize=20${status ? `&status=${status}` : ''}${origin ? `&origin=${origin}` : ''}`));
+      });
+    });
+
+    // 图库管理：使用状态筛选
+    ['all', 'used', 'orphan'].forEach((usage) => {
+      push(auth(`/api/v1/admin/images?keyword=&usage=${usage}&page=1&pageSize=24`));
+    });
   } else {
     console.warn('! 后台令牌获取失败，后台页将只有登录界面');
   }
