@@ -9,3 +9,5 @@ gh-pages/
 .static-test/
 .tmp-images/
 scripts/_*.js
+logs/
+scripts/data/last-sync.json

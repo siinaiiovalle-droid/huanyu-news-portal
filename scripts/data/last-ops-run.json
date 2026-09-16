@@ -1,0 +1,14 @@
+{
+  "at": "2026-09-16T08:08:55.584Z",
+  "actor": "github",
+  "label": "刷新榜单",
+  "method": "POST",
+  "path": "/api/v1/admin/refresh-ranks",
+  "body": null,
+  "httpStatus": 200,
+  "code": 0,
+  "message": "ok",
+  "result": "{\"total\":171,\"autoHot\":10,\"autoBlast\":10,\"changed\":0,\"refreshedAt\":\"2026-09-16T08:08:55.568Z\"}",
+  "images": null,
+  "durationMs": 92
+}

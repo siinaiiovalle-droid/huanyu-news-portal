@@ -533,6 +533,11 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
 function approve(id, { by = 'editor', publish = true, publishAt = '', patch = null } = {}) {
   const item = inbox.findById(id);
   if (!item) return null;
+  // 幂等保护：已发布过的条目再次「通过并发布」不应生成第二篇稿件
+  // （前端等待时间一长就容易被重复点击，旧实现每点一次都会多出一篇重复稿）
+  if (item.status === 'published' && item.articleId) {
+    return { scheduled: false, published: false, already: true, article: svc.news.findById(item.articleId) };
+  }
   if (patch) inbox.update(id, patch);
   const at = publishAt ? String(publishAt).replace(' ', 'T') : '';
   if (at && Date.parse(at) > Date.now()) {
@@ -563,20 +568,28 @@ function reject(id, { by = 'editor', reason = '' } = {}) {
 
 function batch(ids = [], { action = 'approve', by = 'editor', reason = '' } = {}) {
   let done = 0;
+  let skipped = 0;
   const articleIds = [];
+  const publishedIds = [];   // 本轮真正发布出去的待审 id，用于排后台配图
   ids.forEach((id) => {
     const item = inbox.findById(id);
     if (!item) return;
+    // 幂等：已发布的条目直接跳过，避免重复点击生成重复稿件
+    if ((action === 'approve' || action === 'approve-draft') && item.status === 'published' && item.articleId) {
+      skipped += 1;
+      return;
+    }
     if (action === 'approve') {
       const r = approve(id, { by, publish: true });
-      if (r && r.article) articleIds.push(r.article.id);
+      if (r && r.already) { skipped += 1; return; }
+      if (r && r.article) { articleIds.push(r.article.id); publishedIds.push(id); }
       done += 1;
     } else if (action === 'approve-draft') { approve(id, { by, publish: false }); done += 1; }
     else if (action === 'reject') { reject(id, { by, reason }); done += 1; }
     else if (action === 'delete') { inbox.remove(id); done += 1; }
   });
   flushAll();
-  return { done, articleIds };
+  return { done, skipped, articleIds, publishedIds };
 }
 
 /** 到点发布：待审池中已通过且定时时间已到的条目 + 稿件库中的定时稿件 */

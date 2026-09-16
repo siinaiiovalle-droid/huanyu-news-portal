@@ -52,6 +52,46 @@ function actorOf(req) {
   return (req.user && (req.user.name || req.user.username)) || 'editor';
 }
 
+/* ------------------------------ 后台配图队列 ------------------------------ */
+
+/**
+ * 审核发布本身是秒级操作，配图下载却是分钟级（每张 15-60 秒）。
+ * 旧实现把配图同步塞在审核请求里，批量通过 10 条要等 5~10 分钟，
+ * 前端全程没有任何反馈，用户会以为"按钮点了没用"，然后反复点击。
+ * 现在改为：审核结果立即返回，配图交给后台队列慢慢跑。
+ */
+const imageTask = { running: false, total: 0, filled: 0, failed: 0, startedAt: '', finishedAt: '', error: '' };
+let imageQueue = [];
+
+function queueImages(inboxIds = []) {
+  const list = [...new Set(inboxIds.filter(Boolean))];
+  if (!list.length) return null;
+  imageQueue = [...new Set([...imageQueue, ...list])];
+  imageTask.total += list.length;
+  if (imageTask.running) return { queued: list.length, pending: imageQueue.length };
+
+  imageTask.running = true;
+  imageTask.startedAt = new Date().toISOString();
+  imageTask.finishedAt = '';
+  imageTask.error = '';
+  (async () => {
+    while (imageQueue.length) {
+      const batch = imageQueue.splice(0, imageQueue.length);
+      try {
+        const r = await pipeline.ensureImages({ inboxIds: batch });
+        imageTask.filled += r.filled || 0;
+        imageTask.failed += r.failed || 0;
+      } catch (e) {
+        imageTask.error = e.message;
+      }
+    }
+    imageTask.running = false;
+    imageTask.finishedAt = new Date().toISOString();
+    console.log(`  [配图] 后台任务完成：成功 ${imageTask.filled} 张 / 失败 ${imageTask.failed} 张`);
+  })();
+  return { queued: list.length, pending: imageQueue.length };
+}
+
 /** SVG 占位图：离线环境下保证页面不出现破图 */
 function placeholderSvg({ w = 800, h = 450, text = '寰宇新闻网', theme = 'blue' }) {
   const themes = {
@@ -555,14 +595,9 @@ app.post('/api/v1/admin/inbox/:id/approve', async (req, res) => {
       patch: body.patch || null
     });
     if (!result) return fail(res, '内容不存在', 404);
-    // 发布成功后立即配图（原文配图优先，其余走图库检索并全站去重）
-    if (result.article) {
-      try {
-        result.images = await pipeline.ensureImages({ inboxIds: [req.params.id] });
-      } catch (e) {
-        result.imageError = e.message;
-      }
-    }
+    if (result.already) return fail(res, '该内容已发布过，无需重复发布');
+    // 配图放后台跑（原文配图优先，其余走图库检索并全站去重），审核结果立即返回
+    if (result.article) result.imagesQueued = queueImages([req.params.id]);
     ok(res, result);
   } catch (e) {
     fail(res, e.message);
@@ -583,12 +618,9 @@ app.post('/api/v1/admin/inbox/batch', async (req, res) => {
   const body = await readBody(req);
   if (!Array.isArray(body.ids) || !body.ids.length) return fail(res, '请选择要处理的内容');
   const result = pipeline.batch(body.ids, { action: body.action || 'approve', by: actorOf(req), reason: body.reason || '' });
+  // 只把真正发布成功的条目丢进配图队列；结果立即返回，不再阻塞几分钟
   if (result.articleIds && result.articleIds.length) {
-    try {
-      result.images = await pipeline.ensureImages({ inboxIds: body.ids });
-    } catch (e) {
-      result.imageError = e.message;
-    }
+    result.imagesQueued = queueImages(result.publishedIds || []);
   }
   ok(res, result);
 });
@@ -898,6 +930,10 @@ async function bootstrap() {
   console.log(`  内容流水线：${cfg.enabled
     ? `已开启，每日 ${(cfg.schedule.times || []).join(' / ')} 自动采集 → 审核 → 发布`
     : '已关闭（可在后台 自动化规则 中开启）'}\n`);
+  // 被 kill（Ctrl+C / 关窗口）时先落盘，避免内存里还没写文件的改动丢掉
+  const shutdown = () => { try { pipeline.flushAll(); } catch { /* ignore */ } process.exit(0); };
+  process.once('SIGINT', shutdown);
+  process.once('SIGTERM', shutdown);
   return server;
 }
 

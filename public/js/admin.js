@@ -484,12 +484,20 @@
       reason = prompt('批量驳回原因（可留空）：', '') || '';
       if (reason === null) return;
     }
+    const btns = Array.from(document.querySelectorAll('[data-batch]'));
+    btns.forEach((b) => { b.disabled = true; });
+    toast(`正在处理 ${ids.length} 条…`, 8000);
     try {
       const r = await req('/api/v1/admin/inbox/batch', { method: 'POST', body: { ids, action, reason } });
-      toast(`已处理 ${r.done} 条`);
+      let msg = `已处理 ${r.done} 条`;
+      if (r.skipped) msg += `，跳过 ${r.skipped} 条（已发布过）`;
+      if (r.imagesQueued && r.imagesQueued.queued) msg += `；${r.imagesQueued.queued} 篇的配图正在后台补齐`;
+      toast(msg, 6000);
       loadInbox(inboxPage);
     } catch (e) {
-      toast(e.message);
+      toast(e.message, 4000);
+    } finally {
+      btns.forEach((b) => { b.disabled = false; });
     }
   }
 
