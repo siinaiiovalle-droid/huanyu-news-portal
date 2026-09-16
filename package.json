@@ -14,6 +14,7 @@
     "build:static": "node scripts/build-static.js",
     "fetch:images": "node scripts/fetch-images.js --apply",
     "collect": "node scripts/collect.js",
+    "pipeline": "node scripts/auto-publish.js",
     "daily": "node scripts/daily.js",
     "rank": "node scripts/refresh-ranks.js",
     "schedule": "node scripts/scheduler.js",

@@ -66,9 +66,18 @@ function normalize(input = {}) {
     flags: { ...defaultFlags(), ...(input.flags || {}) },
     stats: { ...defaultStats(), ...(input.stats || {}) },
     publishedAt: input.publishedAt || nowISO(),
+    // 定时发布：到达 scheduledAt 前状态为 scheduled，由流水线到点转 published
+    scheduledAt: input.scheduledAt || '',
+    // 内容来源：manual 编辑部录入 / pipeline 采集流水线
+    origin: input.origin || 'manual',
+    inboxId: input.inboxId || '',
     createdAt: input.createdAt || nowISO(),
     updatedAt: nowISO()
   };
+  if (base.status === 'scheduled' && base.scheduledAt && Date.parse(base.scheduledAt) <= Date.now()) {
+    base.status = 'published';
+    base.publishedAt = base.scheduledAt;
+  }
   if (!Array.isArray(base.content) || !base.content.length) {
     if (input.text) {
       base.content = String(input.text).split(/\n{2,}/).map((t) => ({ type: 'p', text: t.trim() })).filter((b) => b.text);

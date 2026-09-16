@@ -6,7 +6,16 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["时政"]
+    "tags": [
+      "时政"
+    ],
+    "id": "s_mu3fhi8h39ox9q",
+    "weight": 1,
+    "lastStatus": "ok",
+    "lastCount": 100,
+    "lastError": "",
+    "lastRunAt": "2026-09-16T01:43:42.186Z",
+    "updatedAt": "2026-09-16T01:43:42.186Z"
   },
   {
     "name": "新浪·要闻",
@@ -15,7 +24,16 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["要闻"]
+    "tags": [
+      "要闻"
+    ],
+    "id": "s_mu3fhi8ht7dva2",
+    "weight": 1,
+    "lastStatus": "ok",
+    "lastCount": 1,
+    "lastError": "",
+    "lastRunAt": "2026-09-16T01:43:42.311Z",
+    "updatedAt": "2026-09-16T01:43:42.311Z"
   },
   {
     "name": "中新网·滚动",
@@ -24,7 +42,16 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["国内"]
+    "tags": [
+      "国内"
+    ],
+    "id": "s_mu3fhi8h94ra2n",
+    "weight": 1,
+    "lastStatus": "ok",
+    "lastCount": 30,
+    "lastError": "",
+    "lastRunAt": "2026-09-16T01:43:42.529Z",
+    "updatedAt": "2026-09-16T01:43:42.529Z"
   },
   {
     "name": "人民网·国际",
@@ -33,7 +60,16 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["国际"]
+    "tags": [
+      "国际"
+    ],
+    "id": "s_mu3fhi8hsk7hm4",
+    "weight": 1,
+    "lastStatus": "ok",
+    "lastCount": 100,
+    "lastError": "",
+    "lastRunAt": "2026-09-16T01:43:42.758Z",
+    "updatedAt": "2026-09-16T01:43:42.758Z"
   },
   {
     "name": "中新网·国际",
@@ -42,7 +78,16 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["国际"]
+    "tags": [
+      "国际"
+    ],
+    "id": "s_mu3fhi8hxdolex",
+    "weight": 1,
+    "lastStatus": "ok",
+    "lastCount": 30,
+    "lastError": "",
+    "lastRunAt": "2026-09-16T01:42:32.594Z",
+    "updatedAt": "2026-09-16T01:42:32.594Z"
   },
   {
     "name": "新浪·财经",
@@ -51,7 +96,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["财经"]
+    "tags": [
+      "财经"
+    ],
+    "id": "s_mu3fhi8hynrwo5",
+    "weight": 1
   },
   {
     "name": "人民网·财经",
@@ -60,7 +109,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["财经"]
+    "tags": [
+      "财经"
+    ],
+    "id": "s_mu3fhi8hshmece",
+    "weight": 1
   },
   {
     "name": "中新网·财经",
@@ -69,7 +122,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["财经"]
+    "tags": [
+      "财经"
+    ],
+    "id": "s_mu3fhi8hxuyicg",
+    "weight": 1
   },
   {
     "name": "新浪·科技",
@@ -78,7 +135,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["科技"]
+    "tags": [
+      "科技"
+    ],
+    "id": "s_mu3fhi8h6vqdxc",
+    "weight": 1
   },
   {
     "name": "中新网·科技",
@@ -87,7 +148,11 @@
     "enabled": false,
     "status": "published",
     "limit": 5,
-    "tags": ["科技"]
+    "tags": [
+      "科技"
+    ],
+    "id": "s_mu3fhi8haj7klz",
+    "weight": 1
   },
   {
     "name": "人民网·体育",
@@ -96,7 +161,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["体育"]
+    "tags": [
+      "体育"
+    ],
+    "id": "s_mu3fhi8hm57bob",
+    "weight": 1
   },
   {
     "name": "中新网·体育",
@@ -105,7 +174,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["体育"]
+    "tags": [
+      "体育"
+    ],
+    "id": "s_mu3fhi8hxoxntp",
+    "weight": 1
   },
   {
     "name": "人民网·娱乐",
@@ -114,7 +187,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["娱乐"]
+    "tags": [
+      "娱乐"
+    ],
+    "id": "s_mu3fhi8hc9fe2r",
+    "weight": 1
   },
   {
     "name": "人民网·文化",
@@ -123,7 +200,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["文化"]
+    "tags": [
+      "文化"
+    ],
+    "id": "s_mu3fhi8hxj1iu3",
+    "weight": 1
   },
   {
     "name": "中新网·文化",
@@ -132,7 +213,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["文化"]
+    "tags": [
+      "文化"
+    ],
+    "id": "s_mu3fhi8hgkdzx2",
+    "weight": 1
   },
   {
     "name": "人民网·健康",
@@ -141,7 +226,11 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["健康"]
+    "tags": [
+      "健康"
+    ],
+    "id": "s_mu3fhi8he3t1vj",
+    "weight": 1
   },
   {
     "name": "中新网·健康",
@@ -150,6 +239,10 @@
     "enabled": true,
     "status": "published",
     "limit": 5,
-    "tags": ["健康"]
+    "tags": [
+      "健康"
+    ],
+    "id": "s_mu3fhi8hg91b8o",
+    "weight": 1
   }
 ]

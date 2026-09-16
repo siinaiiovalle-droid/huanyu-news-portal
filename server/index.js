@@ -12,6 +12,7 @@ const portal = require('./lib/portal');
 const svc = require('./lib/news-service');
 const social = require('./lib/social-service');
 const auth = require('./lib/auth');
+const pipeline = require('./lib/pipeline');
 
 const PORT = Number(process.env.PORT || 3000);
 const app = new App({ staticDir: path.resolve(__dirname, '../public') });
@@ -33,6 +34,21 @@ function int(v, d) {
 
 function clientId(req) {
   return String(req.query.uid || req.headers['x-client-id'] || 'anonymous').slice(0, 64);
+}
+
+/** 填了未来时间且要发布的稿件，自动转为定时发布（到点由流水线转正式发布） */
+function applySchedule(body = {}) {
+  if (!body.scheduledAt) return body;
+  const t = Date.parse(String(body.scheduledAt).replace(' ', 'T'));
+  if (Number.isNaN(t)) return body;
+  body.scheduledAt = new Date(t).toISOString();
+  if (t > Date.now() && (body.status === 'published' || !body.status)) body.status = 'scheduled';
+  return body;
+}
+
+/** 后台操作人（用于审核留痕） */
+function actorOf(req) {
+  return (req.user && (req.user.name || req.user.username)) || 'editor';
 }
 
 /** SVG 占位图：离线环境下保证页面不出现破图 */
@@ -337,7 +353,7 @@ app.get('/api/v1/admin/stats', (req, res) => {
 
 app.get('/api/v1/admin/news', (req, res) => {
   if (!auth.requireAuth(req, res)) return;
-  const pool = svc.sortPool(
+  let pool = svc.sortPool(
     svc.listArticles({
       channel: req.query.channel,
       keyword: req.query.keyword,
@@ -345,14 +361,17 @@ app.get('/api/v1/admin/news', (req, res) => {
     }).filter((a) => a.status !== 'deleted'),
     req.query.sort || 'new'
   );
+  if (req.query.status) pool = pool.filter((a) => a.status === req.query.status);
+  if (req.query.origin) pool = pool.filter((a) => (a.origin || 'manual') === req.query.origin);
   ok(res, svc.paginate(pool, int(req.query.page, 1), int(req.query.pageSize, 20)));
 });
 
 app.post('/api/v1/admin/news', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
-  const body = await readBody(req);
+  const body = applySchedule(await readBody(req));
   if (!body.title) return fail(res, '标题不能为空');
-  const article = svc.createArticle(body);
+  const article = svc.createArticle({ ...body, origin: body.origin || 'manual' });
+  svc.news.flush();
   ok(res, article);
 });
 
@@ -365,7 +384,7 @@ app.get('/api/v1/admin/news/:id', (req, res) => {
 
 app.put('/api/v1/admin/news/:id', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
-  const body = await readBody(req);
+  const body = applySchedule(await readBody(req));
   const article = svc.updateArticle(req.params.id, body);
   if (!article) return fail(res, '稿件不存在', 404);
   ok(res, article);
@@ -402,6 +421,335 @@ app.put('/api/v1/admin/site', async (req, res) => {
   ok(res, site.patch(body));
 });
 
+/* ------------------------------ 内容流水线：采集 / 审核 / 自动发布 ------------------------------ */
+
+/** 通用数组分页（待审池、动态、评论等非稿件列表） */
+function paginateList(list, page = 1, pageSize = 20) {
+  const p = Math.max(1, Number(page) || 1);
+  const size = Math.min(100, Math.max(1, Number(pageSize) || 20));
+  const start = (p - 1) * size;
+  return {
+    list: list.slice(start, start + size),
+    pagination: { page: p, pageSize: size, total: list.length, totalPages: Math.max(1, Math.ceil(list.length / size)) }
+  };
+}
+
+/** 流水线总览：待审池 / 稿件 / 采集源 / 运行状态 */
+app.get('/api/v1/admin/pipeline', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.stats());
+});
+
+app.get('/api/v1/admin/pipeline/settings', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.getSettings());
+});
+
+app.put('/api/v1/admin/pipeline/settings', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const next = { ...body };
+  ['minScore', 'autoPublishScore', 'maxPublishPerRun', 'maxAgeHours', 'minTitleLen', 'minContentLen', 'headlineTopN', 'focusTopN']
+    .forEach((k) => { if (next[k] != null) next[k] = Number(next[k]); });
+  ['blockKeywords', 'boostKeywords'].forEach((k) => {
+    if (typeof next[k] === 'string') next[k] = next[k].split(/[,，\n]/).map((s) => s.trim()).filter(Boolean);
+  });
+  ok(res, pipeline.patchSettings(next));
+});
+
+/** 立即采集：可限定源与条数 */
+app.post('/api/v1/admin/pipeline/collect', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  try {
+    const run = await pipeline.runCollect({
+      trigger: 'manual',
+      limit: int(body.limit, 0),
+      sourceIds: Array.isArray(body.sourceIds) && body.sourceIds.length ? body.sourceIds : null,
+      by: actorOf(req)
+    });
+    ok(res, run);
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/** 对池中待审内容按当前规则重跑一次自动审核 */
+app.post('/api/v1/admin/pipeline/auto-review', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  ok(res, pipeline.autoReviewPending({ by: actorOf(req), publish: body.publish !== false }));
+});
+
+/** 把到点的定时内容发布出去 */
+app.post('/api/v1/admin/pipeline/publish-due', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.publishDue({ by: actorOf(req) }));
+});
+
+/** 手动跑一次"每日任务"：采集 + 审核 + 到点发布 + 刷榜 */
+app.post('/api/v1/admin/pipeline/daily', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  try {
+    ok(res, await pipeline.runDailyJob({ trigger: 'manual', by: actorOf(req) }));
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/* ------------------------------ 待审池 ------------------------------ */
+
+app.get('/api/v1/admin/inbox', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.listInbox({
+    status: req.query.status || '',
+    channel: req.query.channel || '',
+    source: req.query.source || '',
+    keyword: req.query.keyword || '',
+    sort: req.query.sort || 'score',
+    page: int(req.query.page, 1),
+    pageSize: int(req.query.pageSize, 20)
+  }));
+});
+
+app.get('/api/v1/admin/inbox/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const item = pipeline.inbox.findById(req.params.id);
+  if (!item) return fail(res, '内容不存在', 404);
+  ok(res, item);
+});
+
+/** 编辑待审内容（标题 / 摘要 / 频道 / 标签）后再审核 */
+app.put('/api/v1/admin/inbox/:id', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const item = pipeline.inbox.findById(req.params.id);
+  if (!item) return fail(res, '内容不存在', 404);
+  const body = await readBody(req);
+  const patch = {};
+  ['title', 'summary', 'channel', 'author'].forEach((k) => { if (body[k] != null) patch[k] = body[k]; });
+  if (body.tags != null) patch.tags = Array.isArray(body.tags) ? body.tags : String(body.tags).split(/[,，\s]+/).filter(Boolean);
+  if (Array.isArray(body.content)) patch.content = body.content;
+  pipeline.inbox.update(req.params.id, patch);
+  pipeline.flushAll();
+  ok(res, pipeline.inbox.findById(req.params.id));
+});
+
+/** 审核通过：publish=true 立即发布，publishAt 定时发布，publish=false 仅标记通过 */
+app.post('/api/v1/admin/inbox/:id/approve', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  try {
+    const result = pipeline.approve(req.params.id, {
+      by: actorOf(req),
+      publish: body.publish !== false,
+      publishAt: body.publishAt || '',
+      patch: body.patch || null
+    });
+    if (!result) return fail(res, '内容不存在', 404);
+    ok(res, result);
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+app.post('/api/v1/admin/inbox/:id/reject', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const row = pipeline.reject(req.params.id, { by: actorOf(req), reason: body.reason || '' });
+  if (!row) return fail(res, '内容不存在', 404);
+  ok(res, row);
+});
+
+/** 批量处理：approve / approve-draft / reject / delete */
+app.post('/api/v1/admin/inbox/batch', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  if (!Array.isArray(body.ids) || !body.ids.length) return fail(res, '请选择要处理的内容');
+  ok(res, pipeline.batch(body.ids, { action: body.action || 'approve', by: actorOf(req), reason: body.reason || '' }));
+});
+
+app.delete('/api/v1/admin/inbox/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  if (!pipeline.inbox.findById(req.params.id)) return fail(res, '内容不存在', 404);
+  pipeline.inbox.remove(req.params.id);
+  pipeline.flushAll();
+  ok(res, true);
+});
+
+/* ------------------------------ 采集源管理 ------------------------------ */
+
+app.get('/api/v1/admin/sources', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.listSources());
+});
+
+app.post('/api/v1/admin/sources', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  try {
+    ok(res, pipeline.createSource(body));
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+app.put('/api/v1/admin/sources/:id', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const row = pipeline.updateSource(req.params.id, body);
+  if (!row) return fail(res, '采集源不存在', 404);
+  ok(res, row);
+});
+
+app.delete('/api/v1/admin/sources/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  if (!pipeline.removeSource(req.params.id)) return fail(res, '采集源不存在', 404);
+  ok(res, true);
+});
+
+/** 测试源可用性（只抓不入库） */
+app.post('/api/v1/admin/sources/:id/test', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  try {
+    ok(res, await pipeline.testSourceById(req.params.id));
+  } catch (e) {
+    fail(res, e.message, 404);
+  }
+});
+
+/** 单源立即采集 */
+app.post('/api/v1/admin/sources/:id/collect', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  try {
+    ok(res, await pipeline.runCollect({ trigger: 'manual', sourceIds: [req.params.id], limit: int(body.limit, 0), by: actorOf(req) }));
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+/* ------------------------------ 任务运行日志 ------------------------------ */
+
+app.get('/api/v1/admin/runs', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.listRuns({ limit: int(req.query.limit, 20) }));
+});
+
+/* ------------------------------ 广场与评论 ------------------------------ */
+
+app.get('/api/v1/admin/posts', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const keyword = String(req.query.keyword || '').toLowerCase();
+  let pool = social.posts.all().slice().sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+  if (keyword) {
+    pool = pool.filter((p) => String(p.content || '').toLowerCase().includes(keyword)
+      || String((p.author && p.author.name) || '').toLowerCase().includes(keyword));
+  }
+  ok(res, paginateList(pool, int(req.query.page, 1), int(req.query.pageSize, 20)));
+});
+
+app.post('/api/v1/admin/posts/:id/pin', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const post = social.posts.findById(req.params.id);
+  if (!post) return fail(res, '动态不存在', 404);
+  social.posts.update(post.id, { pinned: !post.pinned });
+  social.posts.flush();
+  ok(res, social.posts.findById(post.id));
+});
+
+app.delete('/api/v1/admin/posts/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  if (!social.posts.findById(req.params.id)) return fail(res, '动态不存在', 404);
+  social.removePost(req.params.id);
+  social.posts.flush();
+  ok(res, true);
+});
+
+app.get('/api/v1/admin/comments', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const keyword = String(req.query.keyword || '').toLowerCase();
+  let pool = svc.comments.all().slice().sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+  if (keyword) {
+    pool = pool.filter((c) => String(c.content || '').toLowerCase().includes(keyword) || String(c.user || '').toLowerCase().includes(keyword));
+  }
+  const page = paginateList(pool, int(req.query.page, 1), int(req.query.pageSize, 20));
+  page.list = page.list.map((c) => {
+    const article = svc.news.findById(c.articleId);
+    return { ...c, articleTitle: article ? article.title : '（稿件已删除）' };
+  });
+  ok(res, page);
+});
+
+app.delete('/api/v1/admin/comments/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  if (!svc.removeComment(req.params.id)) return fail(res, '评论不存在', 404);
+  svc.comments.flush();
+  ok(res, true);
+});
+
+/* ------------------------------ 账号与权限 ------------------------------ */
+
+function safeAccount(a) {
+  const { salt, password, ...rest } = a;
+  return rest;
+}
+
+app.get('/api/v1/admin/accounts', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, auth.accounts.all().map(safeAccount));
+});
+
+app.post('/api/v1/admin/accounts', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  if (!body.username || !body.password) return fail(res, '请填写账号与密码');
+  const acc = auth.createAccount({
+    username: body.username,
+    password: body.password,
+    name: body.name || body.username,
+    role: body.role || 'editor'
+  });
+  if (!acc) return fail(res, '账号已存在');
+  auth.accounts.flush();
+  ok(res, safeAccount(acc));
+});
+
+app.put('/api/v1/admin/accounts/:id', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const acc = auth.accounts.findById(req.params.id);
+  if (!acc) return fail(res, '账号不存在', 404);
+  const body = await readBody(req);
+  const patch = {};
+  if (body.name) patch.name = body.name;
+  if (body.role) patch.role = body.role;
+  if (body.status) patch.status = body.status;
+  if (body.password) patch.password = auth.hashPassword(body.password, acc.salt);
+  auth.accounts.update(acc.id, patch);
+  auth.accounts.flush();
+  ok(res, safeAccount(auth.accounts.findById(acc.id)));
+});
+
+app.delete('/api/v1/admin/accounts/:id', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  if (req.params.id === req.user.userId) return fail(res, '不能删除当前登录的账号');
+  if (!auth.accounts.findById(req.params.id)) return fail(res, '账号不存在', 404);
+  auth.accounts.remove(req.params.id);
+  auth.accounts.flush();
+  ok(res, true);
+});
+
+app.post('/api/v1/admin/password', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const acc = auth.accounts.findById(req.user.userId);
+  if (!acc) return fail(res, '账号不存在', 404);
+  if (auth.hashPassword(body.oldPassword || '', acc.salt) !== acc.password) return fail(res, '原密码不正确');
+  if (!body.newPassword) return fail(res, '请填写新密码');
+  auth.accounts.update(acc.id, { password: auth.hashPassword(body.newPassword, acc.salt) });
+  auth.accounts.flush();
+  ok(res, true);
+});
+
 /* ------------------------------ 页面别名 ------------------------------ */
 
 app.get('/channel', (req, res) => {
@@ -427,12 +775,17 @@ app.get('/admin', (req, res) => {
 async function bootstrap() {
   const server = await app.listen(PORT);
   const s = getSite();
+  const cfg = pipeline.getSettings();
+  pipeline.startScheduler();
   console.log(`\n  ${s.siteName} 已启动`);
   console.log(`  门户首页 ： http://localhost:${PORT}/`);
   console.log(`  广场栏目 ： http://localhost:${PORT}/square.html`);
   console.log(`  视频频道 ： http://localhost:${PORT}/video.html`);
   console.log(`  运营后台 ： http://localhost:${PORT}/admin.html`);
-  console.log(`  开放 API ： http://localhost:${PORT}/api/v1/home\n`);
+  console.log(`  开放 API ： http://localhost:${PORT}/api/v1/home`);
+  console.log(`  内容流水线：${cfg.enabled
+    ? `已开启，每日 ${(cfg.schedule.times || []).join(' / ')} 自动采集 → 审核 → 发布`
+    : '已关闭（可在后台 自动化规则 中开启）'}\n`);
   return server;
 }
 

@@ -61,18 +61,18 @@ function main() {
   console.log(`===== 每日更新 ${new Date().toLocaleString()} =====`);
   const before = countArticles();
 
-  console.log('\n[1/3] 采集新稿件…');
+  console.log('\n[1/4] 采集并按规则自动审核发布…');
   const collect = run('collect.js', passArgs);
   console.log(tail(collect.out, 12));
   if (!collect.ok) console.log(`  !! 采集异常：${collect.err.trim().slice(0, 200)}`);
 
-  console.log('\n[2/3] 补齐高清配图（内容相关 / 全局去重）…');
+  console.log('\n[2/4] 补齐高清配图（内容相关 / 全局去重）…');
   if (fs.existsSync(LAST_RUN_FILE)) fs.unlinkSync(LAST_RUN_FILE);
   const images = run('fetch-images.js', ['--apply']);
   console.log(tail(images.out, 12));
   if (!images.ok) console.log(`  !! 配图异常：${images.err.trim().slice(0, 200)}`);
 
-  console.log('\n[3/3] 刷新榜单…');
+  console.log('\n[3/4] 刷新榜单…');
   const rank = run('refresh-ranks.js');
   console.log(tail(rank.out, 8));
   if (!rank.ok) console.log(`  !! 刷榜异常：${rank.err.trim().slice(0, 200)}`);
@@ -84,6 +84,14 @@ function main() {
 
   console.log('\n===== 更新简报 =====');
   console.log(`新增稿件：${Math.max(0, after - before)} 篇（全站共 ${after} 篇）`);
+  try {
+    const pipeline = require('../server/lib/pipeline');
+    const s = pipeline.stats();
+    console.log(`待审池：待审 ${s.inbox.pending} 条 / 已通过待发 ${s.inbox.approved} 条 / 已驳回 ${s.inbox.rejected} 条`);
+    console.log(`人工复核：后台 → 采集审核池（http://localhost:3000/admin.html）`);
+  } catch (e) {
+    // 待审池统计失败不影响主流程
+  }
   if (img) {
     console.log(`配图处理：${img.ok}/${img.total} 个图位就绪，新下载 ${img.downloaded} 张，`
       + `复用 ${img.cached} 张，重复拦截 ${img.dupRejected} 次`);
