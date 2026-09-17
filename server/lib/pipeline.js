@@ -674,7 +674,8 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
     source: merged.sourceName || merged.author || '网络采集',
     sourceUrl: merged.sourceUrl,
     // 采集时已经给待审条目下好封面就直接用，避免发布时再下载一次、再占一张图
-    cover: merged.cover || '',
+    // 但必须是本机确有文件：路径写进数据而文件不在，上线就是一张破图，宁可先不带图
+    cover: image.hasLocalImage(merged.cover) ? merged.cover : '',
     content: merged.content,
     status: target,
     publishedAt: merged.publishedAt,
@@ -818,7 +819,7 @@ async function publishDue({ by = 'system' } = {}) {
   svc.news.all().forEach((a) => {
     if (a.status === 'scheduled' && a.scheduledAt && Date.parse(a.scheduledAt) <= now) {
       svc.news.update(a.id, { status: 'published', publishedAt: a.scheduledAt });
-      if (!a.cover) articleIds.push(a.id);
+      if (!image.hasLocalImage(a.cover)) articleIds.push(a.id);
       published += 1;
     }
   });

@@ -13,6 +13,7 @@
     "build:deploy": "python scripts/build-deploy.py",
     "build:static": "node scripts/build-static.js",
     "fetch:images": "node scripts/fetch-images.js --apply",
+    "check:images": "node scripts/check-images.js",
     "collect": "node scripts/collect.js",
     "pipeline": "node scripts/auto-publish.js",
     "daily": "node scripts/daily.js",

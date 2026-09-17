@@ -192,12 +192,27 @@ npm run collect
 `public/img/news/`；每天再由本机定时任务把这些文件推到 GitHub。
 
 ```bash
-npm run sync                  # 完整同步：本地库 + 图片 → main，再重建静态站 → gh-pages（约 1 分钟）
-npm run sync -- --no-site     # 只推数据与图片，不重建站点（更快，约 10 秒）
-npm run sync -- --dry-run     # 只看有什么变化，不提交不推送
+npm run sync                  # 完整同步：配图体检 + 本地库 + 图片 → main，再重建静态站 → gh-pages
+npm run sync -- --no-site     # 只推数据与图片，不重建站点（更快）
+npm run sync -- --no-images   # 跳过同步前的配图体检（赶时间时用）
+npm run sync -- --images-limit=80   # 本次体检最多补 80 篇配图（默认 30）
+npm run sync -- --dry-run     # 只看有什么变化，不提交不推送（体检也只检查不下载）
 npm run sync -- --message="补充三篇财经稿"   # 自定义本次提交说明
 node sync.bat                 # 定时任务真正调用的入口，输出写入 logs/sync.log
+
+npm run check:images            # 单独做一次发布前配图体检（只报告不下载）
+npm run check:images -- --clean            # 顺手清掉指向缺失文件的图片引用（不联网）
+npm run check:images -- --fix --limit=50   # 在时间预算内把缺的图下载回来（有原文链接的走原文图）
+npm run check:images -- --fix --mode=full  # 不赶时间时：连正文图一起补，逐图检索图库
 ```
+
+> **图片永远不会挡住新闻上线**： scripts/check-images.js 以「磁盘上有没有文件」为准扫描每条
+> 新闻的封面 / 正文图 / 视频海报。同步时分两步做：
+> ① **推送前**只体检 + 清掉指向缺失文件的引用（不联网、秒级完成），保证推上线的不是破图地址；
+> ② 文字内容照常提交推送，**一张图都不等**；
+> ③ **推送后**才开始下载缺的图（有时间预算，到点停手），补到了就再单独推一次图片提交。
+> 所以最坏情况也只是「图晚一点到」，文章第一时间就上网了。
+> `npm run daily` 同理：先采集 → 先刷榜让内容到位 → 最后才补图，且配图限时 20 分钟。
 
 每次同步按下面的顺序做，并把过程写进日志：
 

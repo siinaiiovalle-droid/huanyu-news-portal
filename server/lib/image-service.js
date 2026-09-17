@@ -540,10 +540,126 @@ function writeFingerprint(file, hash) {
 }
 
 /**
- * 为一篇稿件补齐封面 / 正文图。
- * force=true 时重下封面（用于后台「换一张图」）。
+ * 判断一个图位上的图有没有真的落盘。
+ * 数据里写了路径 ≠ 图在本机：误删、回退、迁移都可能让 public/img/news/ 里的文件消失，
+ * 这时前台就是一张破图。所以「图片已下载」必须以磁盘上的文件为准。
+ *   ok       —— public/img/news/ 下确有文件，且不是空文件
+ *   missing  —— 记的是站内路径，但本机没有这个文件
+ *   external —— 记的还是外链 URL（没本地化）
+ *   empty    —— 这个图位还没配图
  */
-async function ensureArticleImages(article, { proxy = '', force = false, sourceImage = '', query = '', maxSlots = 2 } = {}) {
+function imageState(url) {
+  if (!url || typeof url !== 'string' || !url.trim()) return 'empty';
+  if (url.indexOf('/img/news/') !== 0) return 'external';
+  const name = path.basename(url.split('?')[0]);
+  const full = path.join(OUT_DIR, name);
+  try {
+    if (fs.existsSync(full) && fs.statSync(full).size >= 1024) return 'ok';
+  } catch { /* 忽略读取异常，按没图处理 */ }
+  return 'missing';
+}
+
+/** 图位是否可用（已落盘） */
+function hasLocalImage(url) {
+  return imageState(url) === 'ok';
+}
+
+/** 一篇稿件身上所有需要被展示的图位 */
+function articleSlots(article) {
+  const slots = [{ slot: '封面', url: article.cover, key: 'cover' }];
+  (article.content || []).forEach((block, i) => {
+    if (block.type === 'image') slots.push({ slot: `正文图${i + 1}`, url: block.src, key: `content.${i}.src` });
+    // 视频块的海报图：没配就不算问题，配了却读不到才需要修
+    if (block.type === 'video' && block.poster) slots.push({ slot: `视频海报${i + 1}`, url: block.poster, key: `content.${i}.poster`, optional: true });
+  });
+  if (article.video && article.video.poster) {
+    slots.push({ slot: '视频海报', url: article.video.poster, key: 'video.poster', optional: true });
+  }
+  return slots;
+}
+
+/** 这篇稿件的图是否都落盘了（缺图或引用了不存在的本地文件都算没通过） */
+function needsImages(article) {
+  return articleSlots(article).some((s) => {
+    const state = imageState(s.url);
+    if (s.optional) return state === 'missing' || state === 'external';
+    return state !== 'ok';
+  });
+}
+
+/**
+ * 发布前配图体检：逐篇检查每个图位在磁盘上是否真的有文件。
+ * 记住 —— 巡检的依据是文件本身，不是数据里的非空字符串。
+ */
+function audit({ statuses = null } = {}) {
+  const pool = svc.news.all().filter((a) => a.status !== 'deleted' && (!statuses || statuses.includes(a.status)));
+  const list = [];
+  const counters = { ok: 0, missing: 0, external: 0, empty: 0 };
+  let ready = 0;
+
+  pool.forEach((a) => {
+    const slots = articleSlots(a).map((s) => ({ ...s, state: imageState(s.url) }));
+    slots.forEach((s) => { counters[s.state] = (counters[s.state] || 0) + 1; });
+    const broken = slots.filter((s) => s.state !== 'ok' && !(s.optional && s.state === 'empty'));
+    if (!broken.length) { ready += 1; return; }
+    list.push({ id: a.id, title: a.title, channel: a.channel, status: a.status, slots: broken });
+  });
+
+  return {
+    at: new Date().toISOString(),
+    checked: pool.length,
+    ready,
+    problems: list.length,
+    states: counters,
+    list
+  };
+}
+
+/**
+ * 清理「记了本地路径但文件不在机器上」的引用。
+ * 这一步完全不联网，秒级跑完 —— 目的只有一个：别把破图地址推上线。
+ * 真正的补图是后面的事（可能要下载几十张），不该在它上面等。
+ */
+function cleanBrokenReferences({ statuses = null } = {}) {
+  const items = [];
+  svc.news.all().forEach((a) => {
+    if (a.status === 'deleted') return;
+    if (statuses && !statuses.includes(a.status)) return;
+    const patch = {};
+    const content = (a.content || []).map((b) => ({ ...b }));
+    const bad = (url) => imageState(url) === 'missing' || imageState(url) === 'external';
+
+    if (bad(a.cover)) {
+      patch.cover = '';
+      items.push({ id: a.id, title: a.title, slot: '封面', url: a.cover });
+    }
+    content.forEach((b, i) => {
+      if (b.type === 'image' && bad(b.src)) {
+        items.push({ id: a.id, title: a.title, slot: `正文图${i + 1}`, url: b.src });
+        b.src = '';
+      }
+      if (b.type === 'video' && b.poster && bad(b.poster)) {
+        items.push({ id: a.id, title: a.title, slot: `视频海报${i + 1}`, url: b.poster });
+        b.poster = '';
+      }
+    });
+    if (Object.keys(patch).length === 0 && JSON.stringify(content) === JSON.stringify(a.content || [])) return;
+    patch.content = content;
+    svc.news.update(a.id, patch);
+  });
+  svc.news.flush();
+  return { cleared: items.length, items };
+}
+
+/**
+ * 为一篇稿件补齐封面 / 正文图。
+ * force=true 时重下（用于后台「换一张图」）。
+ * 封面 / 正文图的本地文件缺失或被换成外链时同样会补，避免破图上线。
+ */
+async function ensureArticleImages(
+  article,
+  { proxy = '', force = false, sourceImage = '', query = '', maxSlots = 2, fast = false, budgetMs = 0 } = {}
+) {
   if (!article || !article.id) return { filled: 0, failed: 0, details: [] };
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const details = [];
@@ -554,7 +670,10 @@ async function ensureArticleImages(article, { proxy = '', force = false, sourceI
   let next = article;
 
   /* 封面 */
-  if (force || !next.cover) {
+  const coverMissing = imageState(next.cover) === 'missing' || imageState(next.cover) === 'external';
+  if (force || !hasLocalImage(next.cover)) {
+    // 数据里有路径但文件没了：先把这条引用删掉，下载成功会写上新文件名；失败也不会留个破图地址
+    if (coverMissing) next = svc.news.update(article.id, { cover: '' }) || next;
     const file = `${base}-cover.jpg`;
     const prevHash = loadFingerprints()[file] || '';
     if (force) dropFingerprint(file);
@@ -565,7 +684,9 @@ async function ensureArticleImages(article, { proxy = '', force = false, sourceI
       pageUrl: next.sourceUrl || '',
       dstFile: path.join(OUT_DIR, file),
       selfFile: file,
-      proxy
+      proxy,
+      fast,
+      budgetMs
     });
     if (r.ok) {
       writeFingerprint(file, r.hash);
@@ -586,12 +707,14 @@ async function ensureArticleImages(article, { proxy = '', force = false, sourceI
   if (maxSlots > 1) {
     for (let i = 0; i < content.length; i += 1) {
       const block = content[i];
-      if (block.type !== 'image' || (block.src && !force)) continue;
+      if (block.type !== 'image') continue;
+      // 正文图同理：文件丢了就不是"配过图"，这次补回来
+      if (!force && hasLocalImage(block.src)) continue;
       if (details.filter((d) => d.ok).length >= maxSlots) break;
       const file = `${base}-fig${i + 1}.jpg`;
       if (force) dropFingerprint(file);
       const q = buildQuery({ title: block.caption || article.title, channel: article.channel, tags: article.tags });
-      const r = await resolveImage({ query: q, visual, dstFile: path.join(OUT_DIR, file), selfFile: file, proxy });
+      const r = await resolveImage({ query: q, visual, dstFile: path.join(OUT_DIR, file), selfFile: file, proxy, fast, budgetMs });
       if (r.ok) {
         writeFingerprint(file, r.hash);
         recordLibrary(file, { articleId: article.id, title: article.title, slot: `figure:${i}`, query: q, from: r.from, kind: r.kind, size: r.size });
@@ -656,23 +779,28 @@ async function ensureInboxImages(item, { proxy = '', force = false, query = '', 
 }
 
 /** 批量补齐：扫描缺图稿件，逐篇配图（默认只补封面 + 1 张正文图） */
-async function fillMissing({ limit = 8, ids = [], proxy = '', force = false, maxSlots = 2 } = {}) {
+async function fillMissing({ limit = 8, ids = [], proxy = '', force = false, maxSlots = 2, deadlineAt = 0 } = {}) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   ensureFingerprints();
   let pool = svc.news.all().filter((a) => a.status !== 'deleted');
   if (ids.length) pool = pool.filter((a) => ids.includes(a.id));
-  else pool = pool.filter((a) => !a.cover || (a.content || []).some((b) => b.type === 'image' && !b.src));
+  else pool = pool.filter((a) => force || needsImages(a));
   pool = pool.slice(0, Math.max(1, Number(limit) || 8));
 
   const results = [];
   for (const article of pool) {
+    // 高峰推送前常常要批量补图，留了时间上限就不会把整个流程拖住
+    if (deadlineAt && Date.now() > deadlineAt) break;
     const r = await ensureArticleImages(article, { proxy, force, maxSlots });
     results.push({ id: article.id, title: article.title, ...r });
   }
+  svc.news.flush();
   return {
     checked: pool.length,
+    handled: results.length,
     filled: results.reduce((n, r) => n + r.filled, 0),
     failed: results.reduce((n, r) => n + r.failed, 0),
+    stoppedEarly: results.length < pool.length,
     articles: results
   };
 }
@@ -712,15 +840,20 @@ function usageMap() {
   return map;
 }
 
-/** 缺图稿件（封面为空，或正文图片位 src 为空） */
+/** 缺图稿件：封面/正文图为空，或记了本地路径但文件不在机器上都算 */
 function missingArticles() {
   return svc.news.all()
     .filter((a) => a.status !== 'deleted')
     .map((a) => {
-      const slots = [];
-      if (!a.cover) slots.push('封面');
-      (a.content || []).forEach((b, i) => { if (b.type === 'image' && !b.src) slots.push(`正文图${i + 1}`); });
-      return slots.length ? { id: a.id, title: a.title, channel: a.channel, status: a.status, publishedAt: a.publishedAt, missing: slots } : null;
+      const slots = articleSlots(a)
+        .filter((s) => !s.optional && s.url)
+        .filter((s) => imageState(s.url) !== 'ok')
+        .map((s) => s.slot);
+      (a.content || []).forEach((b, i) => {
+        if (b.type === 'image' && !b.src) slots.push(`正文图${i + 1}`);
+      });
+      const list = [...new Set(slots)];
+      return list.length ? { id: a.id, title: a.title, channel: a.channel, status: a.status, publishedAt: a.publishedAt, missing: list } : null;
     })
     .filter(Boolean);
 }
@@ -740,6 +873,8 @@ function stats() {
     bytes,
     noHash,
     missingArticles: missingArticles().length,
+    // 引用了本地图片但文件不在机器上的稿件数：这类内容是前台破图的直接来源
+    brokenReferences: audit().problems,
     dupPairs: duplicatePairs().length,
     dir: '/img/news/'
   };
@@ -824,6 +959,7 @@ module.exports = {
   hammingHex, findDuplicate, hashFiles, ensureFingerprints, rebuildFingerprints, duplicatePairs,
   readSize, downloadImage, searchCandidates, resolveImage, fetchOgImage, listPageImages,
   ensureArticleImages, ensureInboxImages, beginBatch, fillMissing,
+  imageState, hasLocalImage, articleSlots, needsImages, audit, cleanBrokenReferences,
   listImages, missingArticles, usageMap, stats, removeImage,
   python
 };

@@ -1,10 +1,10 @@
 /**
  * 每日一键更新 —— npm run daily
  *
- * 流程：
+ * 流程（顺序刻意这样排 —— 图片永远不能挡住内容上线）：
  *   1. 采集   scripts/collect.js       按 RSS 源拉取新稿件（标题去重，单源限量）
- *   2. 配图   scripts/fetch-images.js   为缺失图位下载「高清 + 内容相关 + 不重复」的配图并回写数据
- *   3. 刷榜   scripts/refresh-ranks.js  刷新热点榜 / 爆款榜
+ *   2. 刷榜   scripts/refresh-ranks.js 先让内容和榜单到位，前台能看才是最要紧的
+ *   3. 配图   scripts/fetch-images.js  最后才补图（最耗时的一步），超时也只影响那几张图
  *   4. 输出当日简报
  *
  * 参数透传：npm run daily -- --limit=3 / --draft
@@ -20,13 +20,14 @@ const ROOT = path.resolve(__dirname, '..');
 const NEWS_FILE = path.join(ROOT, 'data', 'news.json');
 const LAST_RUN_FILE = path.join(__dirname, 'data', 'last-image-run.json');
 
-function run(script, args = []) {
+function run(script, args = [], timeoutMs = 0) {
   const started = Date.now();
   try {
     const out = execFileSync(process.execPath, [path.join(__dirname, script), ...args], {
       cwd: ROOT,
       encoding: 'utf8',
-      maxBuffer: 64 * 1024 * 1024
+      maxBuffer: 64 * 1024 * 1024,
+      ...(timeoutMs ? { timeout: timeoutMs, killSignal: 'SIGTERM' } : {})
     });
     return { ok: true, ms: Date.now() - started, out: String(out || '') };
   } catch (e) {
@@ -34,7 +35,7 @@ function run(script, args = []) {
       ok: false,
       ms: Date.now() - started,
       out: String(e.stdout || ''),
-      err: String(e.stderr || e.message || '')
+      err: String(e.stderr || e.message || '') + (e.killed ? '（已到时间上限被中断）' : '')
     };
   }
 }
@@ -66,16 +67,19 @@ function main() {
   console.log(tail(collect.out, 12));
   if (!collect.ok) console.log(`  !! 采集异常：${collect.err.trim().slice(0, 200)}`);
 
-  console.log('\n[2/4] 补齐高清配图（内容相关 / 全局去重）…');
-  if (fs.existsSync(LAST_RUN_FILE)) fs.unlinkSync(LAST_RUN_FILE);
-  const images = run('fetch-images.js', ['--apply']);
-  console.log(tail(images.out, 12));
-  if (!images.ok) console.log(`  !! 配图异常：${images.err.trim().slice(0, 200)}`);
-
-  console.log('\n[3/4] 刷新榜单…');
+  console.log('\n[2/4] 刷新榜单（内容先到位，不等图）…');
   const rank = run('refresh-ranks.js');
   console.log(tail(rank.out, 8));
   if (!rank.ok) console.log(`  !! 刷榜异常：${rank.err.trim().slice(0, 200)}`);
+
+  console.log('\n[3/4] 补齐高清配图（内容相关 / 全局去重，限时 20 分钟）…');
+  if (fs.existsSync(LAST_RUN_FILE)) fs.unlinkSync(LAST_RUN_FILE);
+  const images = run('fetch-images.js', ['--apply'], 20 * 60 * 1000);
+  console.log(tail(images.out, 12));
+  if (!images.ok) {
+    console.log(`  !! 配图没跑完：${images.err.trim().slice(0, 200)}`);
+    console.log('  · 不影响内容：文章已经发布了，缺的图留到下次（后台配图队列 / 下一次同步）继续补');
+  }
 
   const after = countArticles();
   const img = fs.existsSync(LAST_RUN_FILE)

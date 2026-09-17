@@ -9,11 +9,22 @@
  *   3. 顺手重建静态站并发布到 gh-pages，线上站点随即显示当天内容。
  *
  * 用法：
- *   npm run sync                 完整同步：数据 + 图片 + 重建发布静态站
+ *   npm run sync                 完整同步：体检配图 + 数据 + 图片 + 重建发布静态站
  *   npm run sync -- --no-site    只推数据与图片，不重建站点（更快）
+ *   npm run sync -- --no-images  跳过配图检查与补图（赶时间时用）
+ *   npm run sync -- --images-limit=80     本次最多补 80 篇配图（默认 30）
+ *   npm run sync -- --images-budget=600   本次补图时间上限（秒，默认 180，到点停手也不影响已推送的文字）
+ *   npm run sync -- --images-mode=full    连正文图一起补（默认 fast 只补封面）
  *   npm run sync -- --dry-run    只列变化，不提交不推送
  *   npm run sync -- --no-push    只做本地提交，不推远端
  *   npm run sync -- --message="补充三篇财经稿"
+ *
+ * 图片不能耽误新闻发布，所以顺序是：
+ *   ① 推送前 —— 跑 scripts/check-images.js：检查要发布的新闻，每个引用了图片的图位
+ *      是否真有文件躺在 public/img/news/ 里；指向缺失文件的引用当场清掉（不联网、秒级完成），
+ *      避免把破图地址推上线；
+ *   ② 文字内容照常提交并推送 —— 一张图都不等；
+ *   ③ 推送后 —— 才开始下载缺的图，受时间预算约束，补到了再单独推一次「图片提交」。
  *
  * 运行报告：scripts/data/last-sync.json   （已 gitignore）
  * 运行日志：logs/sync.log                 （由 sync.bat 重定向，已 gitignore）
@@ -47,6 +58,10 @@ const OPT = {
   site: !hasFlag('no-site'),
   dryRun: hasFlag('dry-run'),
   push: !hasFlag('no-push'),
+  images: !hasFlag('no-images'),
+  imageLimit: Number(flagValue('images-limit', process.env.SYNC_IMAGE_LIMIT || 30)) || 30,
+  imageBudgetSec: Number(flagValue('images-budget', process.env.SYNC_IMAGE_BUDGET || 180)) || 180,
+  imageMode: flagValue('images-mode', process.env.SYNC_IMAGE_MODE || 'fast').toLowerCase() === 'full' ? 'full' : 'fast',
   message: flagValue('message')
 };
 
@@ -125,6 +140,65 @@ async function waitForLocalService() {
   return busy;
 }
 
+/* ------------------------------ 同步前配图体检 ------------------------------ */
+
+/**
+ * 每次同步必做的一件事：检查「要发布的新闻」的图片是不是真在本机。
+ * 数据里写了 /img/news/xxx.jpg 不代表文件存在 —— 文件没了，推上去就是一张破图。
+ *
+ * 分两步，是为了不让图片拖住发布：
+ *   1. 推送前（fix=false）：只体检 + 清掉指向缺失文件的引用，不联网，秒级完成；
+ *   2. 推送后（fix=true）：文字已经上网了才下载缺的图，受时间预算与硬超时约束，
+ *      补到了就再推一次「图片专用」提交，补不到就留给下一轮。
+ */
+function checkImages({ fix = true, clean = true } = {}) {
+  const reportFile = path.join(__dirname, 'data', 'last-image-check.json');
+  try { if (fs.existsSync(reportFile)) fs.unlinkSync(reportFile); } catch { /* 忽略 */ }
+
+  log(fix
+    ? '· 配图补缺（下载还没落地的图，受时间预算约束）…'
+    : '· 发布前配图体检（检查要发布的新闻的图有没有真的下载到本地）…');
+  const t0 = Date.now();
+  const args = [
+    path.join(ROOT, 'scripts', 'check-images.js'),
+    ...(clean ? ['--clean'] : []),
+    ...(fix && !OPT.dryRun ? ['--fix'] : []), // 只演练的话不下载，避免白跑网络请求
+    `--limit=${OPT.imageLimit}`,
+    `--budget=${OPT.imageBudgetSec}`,
+    `--mode=${OPT.imageMode}`
+  ];
+  // 兜底硬超时：图片再慢也只能占这么久，到点杀掉脚本继续推送 —— 新闻发布的及时性优先
+  const r = spawnSync(process.execPath, args, {
+    cwd: ROOT,
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024,
+    timeout: (OPT.imageBudgetSec + 45) * 1000,
+    killSignal: 'SIGTERM'
+  });
+  String(r.stdout || '').trim().split('\n').forEach((l) => log('    ' + l));
+  if (r.status !== 0 || r.error) {
+    log('    ! 体检未跑完：' + (r.error ? r.error.message : String(r.stderr || '').trim().split('\n').slice(-2).join(' | ') || '未知错误'));
+    log('    ! 不影响发布：文字照推，图片留给下一轮（下一次同步或后台配图队列）继续补');
+  }
+
+  let report = null;
+  try {
+    if (fs.existsSync(reportFile)) report = JSON.parse(fs.readFileSync(reportFile, 'utf8'));
+  } catch { /* 报告读不到不影响后续推送 */ }
+
+  // 脚本被超时杀掉也没关系：文字内容照推，只是这一轮没补上图
+  if (!report) return { seconds: Math.round((Date.now() - t0) / 1000), report: { timedOut: true, before: {}, fix: {} } };
+
+  const b = report.before || {};
+  const f = report.fix || {};
+  log('    体检结果：检查 ' + (b.checked || 0) + ' 篇，配图齐全 ' + (b.ready || 0) + ' 篇，'
+    + '有问题 ' + (b.scopedProblems || 0) + ' 篇'
+    + (f.handled != null ? '；本次补图 ' + f.handled + ' 篇 / ' + (f.filled || 0) + ' 个图位，仍有 ' + (f.remaining || 0) + ' 篇待处理' : '')
+    + '（用时 ' + Math.round((Date.now() - t0) / 1000) + ' 秒）');
+
+  return { seconds: Math.round((Date.now() - t0) / 1000), report };
+}
+
 /* ------------------------------ 变更识别 ------------------------------ */
 
 function changedFiles() {
@@ -193,6 +267,23 @@ async function pushAndVerify(cwd, branch, label) {
   return { ok: false, error: '重试 ' + PUSH_RETRY + ' 次后远端仍不是本地版本（远端 ' + short(remoteHead(cwd, branch)) + '，本地 ' + short(head) + '）' };
 }
 
+/**
+ * 补图落在主推送之后：新闻文字已经上网了，图片才轮得上网络。
+ * 有成果就再提一次小而干净的提交并推走；没有就什么都不做（不会多一次无意义的推送）。
+ */
+async function pushRemainingImages() {
+  const files = changedFiles();
+  if (!files.length) {
+    log('· 本轮没有新增图片，无需二次提交');
+    return { ok: true, changed: 0, skipped: true };
+  }
+  const d = describe(files);
+  const msg = '发布后补图：新增配图 ' + d.images + ' 张（' + new Date().toLocaleString('zh-CN', { hour12: false }) + '）';
+  const commit = commitAll(files, msg);
+  const r = OPT.push ? await pushAndVerify(ROOT, BRANCH, 'main（补图）') : { ok: true, skipped: true, commit };
+  return Object.assign({ changed: files.length, commit }, r);
+}
+
 /* ------------------------------ 静态站发布 ------------------------------ */
 
 async function publishPages() {
@@ -234,7 +325,26 @@ async function main() {
   acquireLock();
   const report = { at: new Date().toISOString(), remote, branch: BRANCH, ok: true };
   try {
-    await waitForLocalService();
+    const serviceAlive = await waitForLocalService();
+
+    // 配图只做两件不拖时间的事：体检 + 清掉指向缺失文件的引用；真正下载放到推送之后
+    if (OPT.images) {
+      const chk = checkImages({ fix: false });
+      const dr = chk.report || {};
+      report.images = {
+        checked: (dr.before || {}).checked || 0,
+        ready: (dr.before || {}).ready || 0,
+        problems: (dr.before || {}).scopedProblems || 0,
+        cleaned: (dr.cleaned || {}).cleared || 0,
+        handled: 0,
+        filled: 0,
+        remaining: (dr.before || {}).scopedProblems || 0,
+        seconds: chk.seconds,
+        order: 'after-push'
+      };
+    } else {
+      log('· 跳过配图体检（--no-images）');
+    }
 
     const files = changedFiles();
     if (!files.length) {
@@ -249,11 +359,35 @@ async function main() {
         report.main = { ok: true, skipped: true, dryRun: true };
       } else {
         const msg = OPT.message
-          || '每日同步：本地库 ' + (report.detail.json) + ' 个文件、配图 ' + (report.detail.images) + ' 张（'
-             + new Date().toLocaleString('zh-CN', { hour12: false }) + '）';
+          || '每日同步：本地库 ' + (report.detail.json) + ' 个文件、配图 ' + (report.detail.images) + ' 张'
+             + (report.images && report.images.cleaned ? '（体检清掉 ' + report.images.cleaned + ' 个失效图片引用）' : '')
+             + '（' + new Date().toLocaleString('zh-CN', { hour12: false }) + '）';
         report.commit = commitAll(files, msg);
         report.main = OPT.push ? await pushAndVerify(ROOT, BRANCH, 'main') : { ok: true, skipped: true, commit: report.commit };
         if (!report.main.ok) fail('main 分支推送失败：' + report.main.error);
+      }
+    }
+
+    // 文字已经上线了，现在才轮到图片：主推送之后才开始下载，配额用完就到此为止
+    if (OPT.images && !OPT.dryRun) {
+      const chk = checkImages({ fix: true, clean: false });
+      const dr = chk.report || {};
+      const f = dr.fix || {};
+      if (report.images) {
+        report.images.handled = f.handled || 0;
+        report.images.filled = f.filled || 0;
+        if (f.remaining != null) report.images.remaining = f.remaining;
+        report.images.seconds = (report.images.seconds || 0) + chk.seconds;
+      }
+      // 本机服务在跑时它缓存的是旧数据，体检写回的结果可能被它覆盖回去
+      if (serviceAlive && (f.filled || 0) > 0) {
+        log('    ! 本地服务正在运行且缓存了旧数据，体检写入的封面可能被它覆盖 —— 建议同步前停掉服务');
+      }
+      if (report.main.ok) {
+        report.imagesPush = await pushRemainingImages();
+        if (!report.imagesPush.ok) log('! 图片二次推送失败：' + (report.imagesPush.error || '') + '（下一次同步会带上）');
+      } else {
+        log('· main 推送没成功，这次补的图留在本地，下一次同步一起推');
       }
     }
 

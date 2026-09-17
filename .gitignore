@@ -11,3 +11,4 @@ gh-pages/
 scripts/_*.js
 logs/
 scripts/data/last-sync.json
+scripts/data/last-image-check.json
