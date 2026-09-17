@@ -514,6 +514,49 @@
     }
   }
 
+  /** 审核池当前的筛选条件，按条件批量时原样带上，保证"筛什么就处理什么" */
+  function currentInboxFilter() {
+    return {
+      status: $('ib-status').value || '',
+      channel: $('ib-channel').value || '',
+      keyword: $('ib-keyword').value || '',
+      sort: $('ib-sort').value || 'score'
+    };
+  }
+
+  async function runBatchByFilter({ action, limit, minScore = 0, maxScore = 0, reason = '' }) {
+    try {
+      const r = await req('./api/v1/admin/inbox/batch-by-filter', {
+        method: 'POST',
+        body: { ...currentInboxFilter(), action, limit, minScore, maxScore, reason }
+      });
+      let msg = `命中 ${r.matched} 条，已处理 ${r.done} 条`;
+      if (r.skipped) msg += `，跳过 ${r.skipped} 条`;
+      if (r.imagesQueued && r.imagesQueued.queued) msg += `；${r.imagesQueued.queued} 篇的配图正在后台补齐`;
+      toast(msg, 6000);
+      loadInbox(1);
+      loadDashboard();
+    } catch (e) {
+      toast(e.message, 4000);
+    }
+  }
+
+  /** 一键发掉当前筛选里分值最高的若干条 */
+  async function batchTop() {
+    const n = Number(prompt('按当前筛选条件，通过并发布分值最高的多少条？', '20'));
+    if (!Number.isFinite(n) || n <= 0) return;
+    if (!confirm(`确认发布分值最高的 ${n} 条？发布后配图会在后台自动补齐。`)) return;
+    await runBatchByFilter({ action: 'approve', limit: n });
+  }
+
+  /** 一键清掉当前筛选里低于分值线的条目，避免池子越堆越大 */
+  async function batchLow() {
+    const line = Number(prompt('驳回分值不高于多少的内容？（默认取准入线 55）', '55'));
+    if (!Number.isFinite(line)) return;
+    if (!confirm(`确认驳回当前筛选下分值 ≤ ${line} 的全部内容？`)) return;
+    await runBatchByFilter({ action: 'reject', limit: 500, maxScore: line, reason: `低于 ${line} 分批量清理` });
+  }
+
   /* ------------------------------ 采集（含同步下载配图） ------------------------------ */
 
   /**
@@ -1519,6 +1562,9 @@
     document.querySelectorAll('[data-batch]').forEach((btn) => {
       btn.onclick = () => runBatch(btn.dataset.batch);
     });
+    const bind = (id, fn) => { const el = $(id); if (el) el.onclick = fn; };
+    bind('ib-batch-top', batchTop);
+    bind('ib-batch-low', batchLow);
 
     // 采集源
     $('src-new').onclick = () => openSourceModal(null);
