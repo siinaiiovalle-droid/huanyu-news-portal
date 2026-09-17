@@ -57,6 +57,7 @@ const DEFAULT_SETTINGS = {
   imagePerArticle: 2,       // 每篇稿件最多补几张（1 = 只补封面）
   imagePool: true,          // 采集时就给待审池条目下载封面，后台审核时直接看得到图
   imageRoundMs: 150000,     // 每轮配图的总时间上限，超时的条目留到下一轮或手动补图
+  imageArticleMs: 90000,    // 单篇配图的时间上限：个别卡住的网络请求不能拖死整个后台队列
   // 采集代理：留空则读取环境变量 HTTPS_PROXY / HTTP_PROXY；国内服务器访问境外源时可填 http://127.0.0.1:7897
   proxy: '',
   lastRunAt: null,
@@ -295,6 +296,22 @@ function evaluate(item, source, cfg, dup = { duplicated: false, duplicateOf: '' 
 
 /* ------------------------------ 采集 ------------------------------ */
 
+/**
+ * RSS 里的时间经常是源站的存档旧日期（实测出现过 2008 年），直接采信会把"刚刚抓到的新闻"
+ * 判成过期稿：既被时效规则成批误杀，发出去后还会沉到列表底部看不见。
+ * 这里只采信"最近 48 小时内且不是未来"的时间，其余一律按入库时间处理，
+ * 原始值保留在 rssPublishedAt 里供溯源。
+ */
+function trustPublishedAt(raw, now = Date.now()) {
+  const src = raw && raw.publishedAt ? String(raw.publishedAt) : '';
+  const t = src ? Date.parse(src) : NaN;
+  const iso = new Date(now).toISOString();
+  if (!src || Number.isNaN(t)) return { publishedAt: iso, rssPublishedAt: '', publishedAtAdjusted: true };
+  if (t > now + 6 * 3600000) return { publishedAt: iso, rssPublishedAt: src, publishedAtAdjusted: true };
+  if (now - t > 48 * 3600000) return { publishedAt: iso, rssPublishedAt: src, publishedAtAdjusted: true };
+  return { publishedAt: src, rssPublishedAt: src, publishedAtAdjusted: false };
+}
+
 function normalizeInboxItem(raw, source) {
   return {
     title: String(raw.title || '').trim(),
@@ -308,7 +325,7 @@ function normalizeInboxItem(raw, source) {
     // 采集源提供的原文配图直链：配图时优先本地化这张图，保证图片与内容一致
     sourceImage: raw.image || '',
     content: feed.buildContent(raw),
-    publishedAt: raw.publishedAt || nowISO()
+    ...trustPublishedAt(raw)
   };
 }
 
@@ -467,10 +484,26 @@ async function runCollectInner({ trigger = 'manual', limit = 0, sourceIds = null
  *   - 优先使用采集源的原文配图（内容一定相关），失败再走关键词图库检索；
  *   - 每张图都会与全站指纹库比对，重复的自动换图，保证"各种新闻不出现重复配图"。
  */
+/**
+ * 给一个异步任务套上时间上限，超时就按 fallback 继续往下走。
+ * 配图依赖外网，个别请求可能长时间挂住；没有这层保护，一条卡住的稿子会把整个后台队列拖死
+ * （实测 12 条一批跑到 15 分钟仍无进展）。超时的请求本身不去取消，它爱什么时候回来都行。
+ */
+function withTimeout(promise, ms, fallback) {
+  const limit = Number(ms) || 0;
+  if (limit <= 0) return promise;
+  let timer = null;
+  const guard = new Promise((resolve) => {
+    timer = setTimeout(() => resolve(fallback), limit);
+  });
+  return Promise.race([promise, guard]).finally(() => { if (timer) clearTimeout(timer); });
+}
+
 async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlots = 0, force = false, deadlineAt = 0 } = {}) {
   const cfg = getSettings();
   const budget = Math.max(1, Number(limit) || Number(cfg.imagePerRun) || 10);
   const slots = Math.max(1, Number(maxSlots) || Number(cfg.imagePerArticle) || 2);
+  const articleMs = Number(cfg.imageArticleMs) || 90000;
   const ids = [...new Set([
     ...articleIds,
     ...inboxIds.map((iid) => (inbox.findById(iid) || {}).articleId).filter(Boolean)
@@ -488,9 +521,13 @@ async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlot
   for (const article of pool) {
     if (deadlineAt && Date.now() > deadlineAt) break;
     const source = (inbox.findById(article.inboxId) || {}).sourceImage || '';
-    const r = await image.ensureArticleImages(article, {
-      proxy: cfg.proxy || '', force, sourceImage: source, maxSlots: slots
-    });
+    // 单篇时间上限，同时不越过本轮的总截止时间
+    const left = deadlineAt ? Math.max(5000, deadlineAt - Date.now()) : articleMs;
+    const r = await withTimeout(
+      image.ensureArticleImages(article, { proxy: cfg.proxy || '', force, sourceImage: source, maxSlots: slots }),
+      Math.min(articleMs, left),
+      { filled: 0, failed: slots, details: [{ slot: '封面', ok: false, why: '单篇配图超时，留到下次补图' }] }
+    );
     filled += r.filled;
     failed += r.failed;
     articles.push({ id: article.id, title: article.title, filled: r.filled, failed: r.failed, details: r.details });
@@ -525,9 +562,12 @@ async function ensureInboxCovers({ ids = [], limit = 0, force = false, deadlineA
       while (cursor < docs.length) {
         if (deadlineAt && Date.now() > deadlineAt) return;
         const doc = docs[cursor++];
-        const r = await image.ensureInboxImages(doc, {
-          proxy: cfg.proxy || '', force, fast, budgetMs: fast ? 8000 : 25000
-        });
+        // budgetMs 是图片服务内部的软预算，外面再套一层硬超时，防止个别请求挂住不放
+        const r = await withTimeout(
+          image.ensureInboxImages(doc, { proxy: cfg.proxy || '', force, fast, budgetMs: fast ? 8000 : 25000 }),
+          (Number(cfg.imageArticleMs) || 90000),
+          { ok: false, why: '单条配图超时，留到下次补图' }
+        );
         passDone += 1;
         collectState.images.done = passDone;
         if (r.ok) {
@@ -725,6 +765,42 @@ function batch(ids = [], { action = 'approve', by = 'editor', reason = '' } = {}
   return { done, skipped, articleIds, publishedIds };
 }
 
+/**
+ * 按筛选条件批量处理待审池。
+ * 池子动辄几百条，一页 20 条地勾选根本处理不过来，运营真实的想法通常是：
+ *   "把当前筛选里分值最高的 N 条发出去" 或者 "低于准入线的这一堆清掉"。
+ * 所以这里支持按 minScore / maxScore 过滤，并沿当前排序取前 limit 条。
+ */
+function batchByFilter(
+  filter = {},
+  { action = 'approve', by = 'editor', reason = '', limit = 20 } = {}
+) {
+  const size = Math.max(1, Math.min(500, Number(limit) || 20));
+  const minScore = Number(filter.minScore) || 0;
+  const maxScore = Number(filter.maxScore) || 0;
+
+  const ids = [];
+  let page = 1;
+  let total = 0;
+  while (ids.length < size) {
+    const { list, pagination } = listInbox({ ...filter, page, pageSize: 100 });
+    total = (pagination && pagination.total) || total;
+    if (!list.length) break;
+    for (const d of list) {
+      if (ids.length >= size) break;
+      const score = Number(d.score) || 0;
+      if (minScore && score < minScore) continue;
+      if (maxScore && score > maxScore) continue;
+      ids.push(d.id);
+    }
+    if (!pagination || page >= pagination.totalPages) break;
+    page += 1;
+  }
+
+  const r = batch(ids, { action, by, reason });
+  return { matched: ids.length, total, ...r };
+}
+
 /** 到点发布：待审池中已通过且定时时间已到的条目 + 稿件库中的定时稿件 */
 async function publishDue({ by = 'system' } = {}) {
   const now = Date.now();
@@ -919,7 +995,7 @@ module.exports = {
   getSettings, patchSettings,
   listSources, createSource, updateSource, removeSource, testSourceById,
   scoreItem, evaluate, findDuplicate,
-  runCollect, autoReviewPending, publishInboxItem, approve, reject, batch, publishDue, runDailyJob,
+  runCollect, autoReviewPending, publishInboxItem, approve, reject, batch, batchByFilter, publishDue, runDailyJob,
   collectStatus, ensureImages, ensureInboxCovers,
   listInbox, stats, listRuns, nextRunAt,
   startScheduler, stopScheduler, flushAll

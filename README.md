@@ -114,6 +114,27 @@ npm run collect
 - 手动补跑一次全流程：`npm run daily`（采集 → 补配图 → 刷榜，并输出简报）；
 - Windows / 单机常驻：`npm run schedule`（每 30 分钟刷榜、每 2 小时采集）。
 
+> **坑：RSS 的 pubDate 不可信。** 部分源（如人民网）会在 pubDate 里给出存档旧日期（实测出现过 2008 年），
+> 直接采信会把"刚抓到的新闻"判成过期稿 —— 既被时效规则成批误杀，侥幸发出去也会沉到列表底部。
+> 采集入库统一走 `pipeline.trustPublishedAt`：只采信最近 48 小时内且不是未来的时间，其余按入库时间处理，
+> 原值保留在 `rssPublishedAt` 供溯源。历史数据可用 `npm run fix:dates` 一次性纠正并重新评分
+> （只动采集来源的稿件与待审池，编辑手工设置的时间不动）。
+
+### 4.1 待审池几百条，怎么审得过来
+
+采集源每天能进池上百条，一页 20 条地勾选不现实。审核池工具栏提供了两个**沿用当前筛选条件**
+（状态 / 频道 / 关键词 / 排序）的批量按钮，保证"筛什么就处理什么"：
+
+| 按钮 | 行为 | 适用场景 |
+| --- | --- | --- |
+| **按筛选通过前 N 条** | 按当前排序（默认分值）取前 N 条一键通过并发布，配图自动进入后台队列 | 每天挑一批最高分的发出去 |
+| **按筛选清空低分** | 驳回当前筛选下分值不高于指定线（默认 55，即准入线）的全部条目 | 池子越堆越大时定期瘦身 |
+
+对应接口 `POST /api/v1/admin/inbox/batch-by-filter`
+（参数 `status / channel / keyword / sort / minScore / maxScore / limit / action`）。
+批量发布**秒级返回**，配图下载（分钟级）交给后台队列按批推进、每批落盘，
+进度可查 `GET /api/v1/admin/images/status`，中途异常也会记进 `logs/server-error.log` 而不是无声退出。
+
 ### 5. 配图自动化与图库管理（配图必须对应内容、全站不重复）
 
 每条自动或人工发布的稿件都会走同一套配图流水线（`server/lib/image-service.js`，与 `npm run fetch:images` 同源）：
@@ -286,6 +307,16 @@ curl "http://localhost:3000/api/v1/sync?since=2026-09-14T08:00:00.000Z"
 `POST /admin/login`、`GET /admin/me`、`GET /admin/stats`、
 `GET/POST /admin/news`、`GET/PUT/DELETE /admin/news/:id`、`POST /admin/news/:id/publish`、
 `POST /admin/refresh-ranks`、`GET/PUT /admin/site`。
+
+采集流水线：`GET /admin/pipeline/status`（采集进度）、`POST /admin/pipeline/collect`（立即采集，内容与配图一起跑完）、
+`POST /admin/pipeline/auto-review`、`POST /admin/pipeline/daily`。
+
+待审池：`GET /admin/inbox`、`POST /admin/inbox/:id/approve`、`POST /admin/inbox/:id/reject`、
+`POST /admin/inbox/:id/image`（单条补图）、`POST /admin/inbox/batch`、
+`POST /admin/inbox/batch-by-filter`（按筛选批量处理）。
+
+图库：`GET /admin/images`、`GET /admin/images/status`（补图队列进度）、`POST /admin/images/fill`、
+`POST /admin/images/fetch`、`GET /admin/images/duplicates`、`POST /admin/images/rebuild`、`DELETE /admin/images/:file`。
 
 ---
 

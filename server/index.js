@@ -61,36 +61,86 @@ function actorOf(req) {
  * 现在改为：审核结果立即返回，配图交给后台队列慢慢跑。
  */
 const imageTask = { running: false, total: 0, filled: 0, failed: 0, startedAt: '', finishedAt: '', error: '' };
-let imageQueue = [];
+let imageQueue = [];        // 待审 id（发布后补图）
+let articleImageQueue = []; // 稿件 id（已发布稿件的批量补图）
 
-function queueImages(inboxIds = []) {
-  const list = [...new Set(inboxIds.filter(Boolean))];
-  if (!list.length) return null;
-  imageQueue = [...new Set([...imageQueue, ...list])];
-  imageTask.total += list.length;
-  if (imageTask.running) return { queued: list.length, pending: imageQueue.length };
+/** 每批处理的条数：一次吃下整个队列会让进程长时间高压（实测会把服务拖崩），按每轮上限切成小批 */
+function imageChunkSize() {
+  const n = Number(pipeline.getSettings().imagePerRun) || 12;
+  return Math.max(1, Math.min(20, n));
+}
 
+function pendingImageCount() {
+  return imageQueue.length + articleImageQueue.length;
+}
+
+/** 启动后台补图循环；已经在跑就只排队，不会开出第二个循环互相抢图 */
+function startImageWorker() {
+  if (imageTask.running) return false;
   imageTask.running = true;
   imageTask.startedAt = new Date().toISOString();
   imageTask.finishedAt = '';
   imageTask.error = '';
   (async () => {
-    while (imageQueue.length) {
-      const batch = imageQueue.splice(0, imageQueue.length);
+    while (imageQueue.length || articleImageQueue.length) {
+      const inboxBatch = imageQueue.splice(0, imageChunkSize());
+      const articleBatch = articleImageQueue.splice(0, imageChunkSize());
       try {
-        const r = await pipeline.ensureImages({ inboxIds: batch });
+        const r = await pipeline.ensureImages({ inboxIds: inboxBatch, articleIds: articleBatch });
         imageTask.filled += r.filled || 0;
         imageTask.failed += r.failed || 0;
+        pipeline.flushAll(); // 每批落盘：万一进程中途异常，已经下好的图不会白跑
+        console.log(`  [配图] 本批完成：成功 ${r.filled || 0} 张 / 失败 ${r.failed || 0} 张，剩余 ${pendingImageCount()} 条`);
       } catch (e) {
         imageTask.error = e.message;
+        console.error('  [配图] 本批失败：', e.message);
       }
     }
     imageTask.running = false;
     imageTask.finishedAt = new Date().toISOString();
     console.log(`  [配图] 后台任务完成：成功 ${imageTask.filled} 张 / 失败 ${imageTask.failed} 张`);
   })();
-  return { queued: list.length, pending: imageQueue.length };
+  return true;
 }
+
+function queueImages(inboxIds = []) {
+  const list = [...new Set(inboxIds.filter(Boolean))];
+  if (!list.length) return null;
+  imageQueue = [...new Set([...imageQueue, ...list])];
+  imageTask.total += list.length;
+  startImageWorker();
+  return { queued: list.length, pending: pendingImageCount() };
+}
+
+/** 已发布稿件缺图时的补图队列（后台「一键补图」等批量场景） */
+function queueArticleImages(articleIds = []) {
+  const list = [...new Set(articleIds.filter(Boolean))];
+  if (!list.length) return null;
+  articleImageQueue = [...new Set([...articleImageQueue, ...list])];
+  imageTask.total += list.length;
+  startImageWorker();
+  return { queued: list.length, pending: pendingImageCount() };
+}
+
+/**
+ * 本机服务常年无人值守，进程一旦被异常拖死就只剩"后台打不开"这一个现象，无从查起。
+ * 这里把所有未捕获异常与未处理拒绝写进 logs/server-error.log，并尽量让服务继续活着。
+ */
+function logCrash(tag, err) {
+  const line = `[${new Date().toISOString()}] ${tag}: ${err && err.stack ? err.stack : err}\n`;
+  console.error(line.trim());
+  try {
+    const fs = require('fs');
+    const dir = path.resolve(__dirname, '../logs');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.appendFileSync(path.join(dir, 'server-error.log'), line, 'utf8');
+  } catch {
+    // 日志都写不了的时候，至少不能再崩一次
+  }
+}
+
+process.on('uncaughtException', (e) => logCrash('uncaughtException', e));
+process.on('unhandledRejection', (e) => logCrash('unhandledRejection', e));
 
 /** SVG 占位图：离线环境下保证页面不出现破图 */
 function placeholderSvg({ w = 800, h = 450, text = '寰宇新闻网', theme = 'blue' }) {
@@ -655,6 +705,32 @@ app.post('/api/v1/admin/inbox/batch', async (req, res) => {
   ok(res, result);
 });
 
+/** 按筛选条件批量处理：待审池几百条时，用它"发掉最高分的 N 条"或"清掉低分的那一堆" */
+app.post('/api/v1/admin/inbox/batch-by-filter', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const action = String(body.action || 'approve');
+  try {
+    const result = pipeline.batchByFilter(
+      {
+        status: body.status || 'pending',
+        channel: body.channel || '',
+        keyword: body.keyword || '',
+        sort: body.sort || 'score',
+        minScore: Number(body.minScore) || 0,
+        maxScore: Number(body.maxScore) || 0
+      },
+      { action, by: actorOf(req), reason: body.reason || '', limit: int(body.limit, 20) }
+    );
+    if (result.publishedIds && result.publishedIds.length) {
+      result.imagesQueued = queueImages(result.publishedIds);
+    }
+    ok(res, result);
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
 app.delete('/api/v1/admin/inbox/:id', (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   if (!pipeline.inbox.findById(req.params.id)) return fail(res, '内容不存在', 404);
@@ -777,10 +853,19 @@ app.post('/api/v1/admin/images/fetch', async (req, res) => {
 app.post('/api/v1/admin/images/fill', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   const body = await readBody(req);
+  const limit = int(body.limit, 8);
+  const ids = Array.isArray(body.ids) ? body.ids : [];
   try {
+    // 大批量补图改走后台队列：同步下几十张要挂十几分钟，中途出事还会前功尽弃
+    if (!ids.length && limit > 12 && body.async !== false) {
+      const queued = image.missingArticles().slice(0, limit).map((a) => a.id);
+      if (!queued.length) return ok(res, { checked: 0, filled: 0, failed: 0, queued: 0 });
+      const q = queueArticleImages(queued);
+      return ok(res, { checked: 0, filled: 0, failed: 0, queued: q.queued, pending: q.pending });
+    }
     const r = await image.fillMissing({
-      limit: int(body.limit, 8),
-      ids: Array.isArray(body.ids) ? body.ids : [],
+      limit,
+      ids,
       proxy: pipeline.getSettings().proxy || '',
       force: !!body.force,
       maxSlots: int(body.maxSlots, 2)
@@ -790,6 +875,12 @@ app.post('/api/v1/admin/images/fill', async (req, res) => {
   } catch (e) {
     fail(res, e.message);
   }
+});
+
+/** 补图任务进度：批量发布后据此判断"图下到哪了" */
+app.get('/api/v1/admin/images/status', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, { ...imageTask, pending: pendingImageCount() });
 });
 
 /** 删除未被任何栏目引用的图片（被引用的会被拒绝，避免前台破图） */

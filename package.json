@@ -19,6 +19,7 @@
     "rank": "node scripts/refresh-ranks.js",
     "schedule": "node scripts/scheduler.js",
     "sync": "node scripts/sync-github.js",
+    "fix:dates": "node scripts/fix-published-at.js",
     "test:api": "node scripts/smoke-test.js"
   },
   "engines": {
