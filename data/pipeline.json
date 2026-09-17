@@ -57,7 +57,9 @@
   "autoImage": true,
   "imagePerRun": 12,
   "imagePerArticle": 2,
+  "imagePool": true,
+  "imageRoundMs": 150000,
   "proxy": "",
-  "lastRunAt": "2026-09-16T10:04:13.665Z",
+  "lastRunAt": "2026-09-17T01:06:09.201Z",
   "lastDailyAt": "2026-09-16T10:25:21.796Z"
 }

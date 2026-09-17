@@ -426,11 +426,12 @@ async function raceCandidates(candidates, { proxy, dstFile, selfFile, minW, minH
  *   3) 图库关键词检索（按「标题 + 频道视觉词」检索，多档高清门槛逐级放宽）
  * 每一步都做 dHash 去重，重复即丢弃换下一张，因此全站不会出现两张一样的配图。
  */
-async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl = '', dstFile, selfFile, proxy = '', fast = false }) {
+async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl = '', dstFile, selfFile, proxy = '', fast = false, budgetMs = 0 }) {
   const self = selfFile || path.basename(dstFile);
   const rejectReasons = [];
   let dupRejected = 0;
-  const deadline = Date.now() + 45000; // 单张图最长 45s，避免个别慢源拖垮整轮采集
+  // 单张图的等待上限，默认 45s；批量配图时会调小，免得几张慢图拖垮整轮采集
+  const deadline = Date.now() + (Number(budgetMs) || 45000);
 
   const tryOrigin = async (url, label) => {
     for (const [minW, minH] of ORIGIN_TIERS) {
@@ -622,7 +623,7 @@ async function ensureArticleImages(article, { proxy = '', force = false, sourceI
  * 为「待审池」条目下载封面 —— 稿件还没创建，所以文件名用 i-<待审id>-cover.jpg。
  * 审核通过发布时这篇文件会被直接沿用为稿件封面（不重复下载、不重复占图）。
  */
-async function ensureInboxImages(item, { proxy = '', force = false, query = '', fast = true } = {}) {
+async function ensureInboxImages(item, { proxy = '', force = false, query = '', fast = true, budgetMs = 0 } = {}) {
   if (!item || !item.id) return { ok: false, why: '待审条目不存在' };
   if (item.cover && !force) return { ok: false, skipped: true, why: '已有配图' };
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -638,7 +639,8 @@ async function ensureInboxImages(item, { proxy = '', force = false, query = '', 
     dstFile: path.join(OUT_DIR, file),
     selfFile: file,
     proxy,
-    fast
+    fast,
+    budgetMs
   });
   if (!r.ok) {
     // 换图失败时恢复原指纹，避免旧图失去保护被别的条目占用

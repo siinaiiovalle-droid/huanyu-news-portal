@@ -55,6 +55,8 @@ const DEFAULT_SETTINGS = {
   autoImage: true,
   imagePerRun: 12,          // 每轮最多补图张数（含封面与正文图），避免拖慢采集
   imagePerArticle: 2,       // 每篇稿件最多补几张（1 = 只补封面）
+  imagePool: true,          // 采集时就给待审池条目下载封面，后台审核时直接看得到图
+  imageRoundMs: 150000,     // 每轮配图的总时间上限，超时的条目留到下一轮或手动补图
   // 采集代理：留空则读取环境变量 HTTPS_PROXY / HTTP_PROXY；国内服务器访问境外源时可填 http://127.0.0.1:7897
   proxy: '',
   lastRunAt: null,
@@ -65,6 +67,37 @@ const inbox = new Store('inbox', []);
 const runs = new Store('collect-runs', []);
 const sources = new Store('sources', DEFAULT_SOURCES);
 const settings = new ConfigStore('pipeline', DEFAULT_SETTINGS);
+
+/**
+ * 本轮采集的运行状态：后台点一次「本地采集」要把内容和配图一起跑完，
+ * 跑完之前不允许再点第二下，所以这里记着"是否正在跑 + 跑到哪一步"，供前端轮询。
+ */
+const collectState = {
+  running: false,
+  startedAt: '',
+  stage: 'idle',            // idle | fetch | images | done
+  stageText: '',
+  images: { total: 0, done: 0, filled: 0, failed: 0 },
+  lastRun: null,
+  error: ''
+};
+
+function setStage(stage, stageText) {
+  collectState.stage = stage;
+  collectState.stageText = stageText || '';
+}
+
+function collectStatus() {
+  return {
+    running: collectState.running,
+    startedAt: collectState.startedAt,
+    stage: collectState.stage,
+    stageText: collectState.stageText,
+    images: { ...collectState.images },
+    lastRun: collectState.lastRun,
+    error: collectState.error
+  };
+}
 
 /* ------------------------------ 配置 ------------------------------ */
 
@@ -283,6 +316,24 @@ function normalizeInboxItem(raw, source) {
  * 执行一轮采集：抓源 → 去重 → 评分 → 自动审核 → 入库 →（可选）自动发布
  */
 async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by = 'system', autoPublish } = {}) {
+  // 一次采集要连内容带配图一起跑完，跑完前不允许再来一轮（否则两轮会抢同一批图）
+  if (collectState.running) {
+    throw new Error('上一轮采集还没跑完（' + (collectState.stageText || '正在下载配图') + '），请等它结束再点');
+  }
+  collectState.running = true;
+  collectState.startedAt = nowISO();
+  collectState.error = '';
+  collectState.images = { total: 0, done: 0, filled: 0, failed: 0 };
+  setStage('fetch', '正在抓取采集源');
+  try {
+    return await runCollectInner({ trigger, limit, sourceIds, by, autoPublish });
+  } finally {
+    collectState.running = false;
+    setStage('done', '本轮采集结束');
+  }
+}
+
+async function runCollectInner({ trigger = 'manual', limit = 0, sourceIds = null, by = 'system', autoPublish } = {}) {
   const cfg = getSettings();
   const started = Date.now();
   const list = listSources().filter((s) => s.enabled !== false && (!sourceIds || sourceIds.includes(s.id)));
@@ -340,6 +391,19 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
     }
   }
 
+  // 给本轮新进池的条目先下载封面：后台审核时就能看到图，
+  // 审核通过发布时这张图直接沿用，不会再下载一次、也不会重复占图。
+  let poolStat = null;
+  const roundDeadline = Date.now() + Math.max(30000, Number(cfg.imageRoundMs) || 150000);
+  if (cfg.autoImage && cfg.imagePool && candidates.length) {
+    setStage('images', '正在下载配图');
+    try {
+      poolStat = await ensureInboxCovers({ ids: candidates.map((d) => d.id), deadlineAt: roundDeadline });
+    } catch (e) {
+      console.error('[pipeline] 待审池配图失败：', e.message);
+    }
+  }
+
   const shouldPublish = autoPublish === undefined ? cfg.autoPublish : autoPublish;
   const publishedIds = [];
   if (shouldPublish && candidates.length) {
@@ -358,11 +422,12 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
     });
   }
 
-  // 自动配图：新发布的稿件立即补上「内容相关且全站唯一」的高清图
+  // 自动配图：发布出去但还没封面的稿件继续补（用本轮剩下的时间，超时留到下一轮）
   let imageStat = null;
   if (cfg.autoImage && publishedIds.length) {
+    setStage('images', '正在为已发布稿件配图');
     try {
-      imageStat = await ensureImages({ articleIds: publishedIds });
+      imageStat = await ensureImages({ articleIds: publishedIds, deadlineAt: roundDeadline });
     } catch (e) {
       console.error('[pipeline] 自动配图失败：', e.message);
     }
@@ -379,12 +444,20 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
     rejected,
     autoPublished,
     failed,
-    images: imageStat ? { filled: imageStat.filled, failed: imageStat.failed } : null,
+    images: (imageStat || poolStat) ? {
+      filled: (poolStat ? poolStat.filled : 0) + (imageStat ? imageStat.filled : 0),
+      failed: (poolStat ? poolStat.failed : 0) + (imageStat ? imageStat.failed : 0),
+      pool: poolStat ? { checked: poolStat.checked, filled: poolStat.filled, failed: poolStat.failed } : null
+    } : null,
     durationMs: Date.now() - started,
     perSource,
     finishedAt: nowISO()
   });
   patchSettings({ lastRunAt: run.finishedAt });
+  collectState.lastRun = {
+    id: run.id, finishedAt: run.finishedAt, fetched: run.fetched, added: run.added,
+    autoPublished: run.autoPublished, durationMs: run.durationMs, images: run.images
+  };
   flushAll();
   return run;
 }
@@ -394,7 +467,7 @@ async function runCollect({ trigger = 'manual', limit = 0, sourceIds = null, by 
  *   - 优先使用采集源的原文配图（内容一定相关），失败再走关键词图库检索；
  *   - 每张图都会与全站指纹库比对，重复的自动换图，保证"各种新闻不出现重复配图"。
  */
-async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlots = 0, force = false } = {}) {
+async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlots = 0, force = false, deadlineAt = 0 } = {}) {
   const cfg = getSettings();
   const budget = Math.max(1, Number(limit) || Number(cfg.imagePerRun) || 10);
   const slots = Math.max(1, Number(maxSlots) || Number(cfg.imagePerArticle) || 2);
@@ -402,6 +475,7 @@ async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlot
     ...articleIds,
     ...inboxIds.map((iid) => (inbox.findById(iid) || {}).articleId).filter(Boolean)
   ])];
+  image.beginBatch();
 
   let pool = svc.news.all().filter((a) => a.status !== 'deleted');
   if (ids.length) pool = pool.filter((a) => ids.includes(a.id));
@@ -412,6 +486,7 @@ async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlot
   let failed = 0;
   const articles = [];
   for (const article of pool) {
+    if (deadlineAt && Date.now() > deadlineAt) break;
     const source = (inbox.findById(article.inboxId) || {}).sourceImage || '';
     const r = await image.ensureArticleImages(article, {
       proxy: cfg.proxy || '', force, sourceImage: source, maxSlots: slots
@@ -421,6 +496,63 @@ async function ensureImages({ articleIds = [], inboxIds = [], limit = 0, maxSlot
     articles.push({ id: article.id, title: article.title, filled: r.filled, failed: r.failed, details: r.details });
   }
   return { checked: pool.length, filled, failed, articles };
+}
+
+/**
+ * 给「待审池」条目下载封面：文件名 i-<待审id>-cover.jpg，写回条目的 cover 字段。
+ * 两轮取图、都受本轮时间上限约束、3 路并发：
+ *   第一轮走原文直链 / 原文页（几秒一条、内容与原文一致）；
+ *   第一轮没配上的再按标题检索图库（十几秒一张，但大部分能配上）。
+ * 超出预算或超时的条目保持无图，由后台单条「补图」或发布时再补。
+ */
+async function ensureInboxCovers({ ids = [], limit = 0, force = false, deadlineAt = 0, concurrency = 3 } = {}) {
+  const cfg = getSettings();
+  image.beginBatch();
+  let pool = inbox.all().filter((d) => d.status !== 'rejected' && !d.articleId && (force || !d.cover));
+  if (ids.length) pool = pool.filter((d) => ids.includes(d.id));
+  pool.sort((a, b) => (b.score || 0) - (a.score || 0));
+  const budget = Math.max(1, Number(limit) || Number(cfg.imagePerRun) || 10);
+  pool = pool.slice(0, budget);
+
+  const out = { checked: pool.length, filled: 0, failed: 0, budget: pool.length, items: [] };
+  const okIds = new Set();
+
+  const runPass = async (docs, fast) => {
+    let cursor = 0;
+    let passDone = 0;
+    collectState.images = { total: docs.length, done: 0, filled: out.filled, failed: out.failed };
+    const worker = async () => {
+      while (cursor < docs.length) {
+        if (deadlineAt && Date.now() > deadlineAt) return;
+        const doc = docs[cursor++];
+        const r = await image.ensureInboxImages(doc, {
+          proxy: cfg.proxy || '', force, fast, budgetMs: fast ? 8000 : 25000
+        });
+        passDone += 1;
+        collectState.images.done = passDone;
+        if (r.ok) {
+          inbox.update(doc.id, { cover: r.url });
+          okIds.add(doc.id);
+          out.filled += 1;
+          collectState.images.filled = out.filled;
+          out.items.push({ id: doc.id, title: doc.title, ok: true, why: '' });
+        } else if (!fast) {
+          // 两轮都没配上才计失败
+          out.failed += 1;
+          collectState.images.failed = out.failed;
+          out.items.push({ id: doc.id, title: doc.title, ok: false, why: r.why || '' });
+        }
+      }
+    };
+    await Promise.all(Array.from({ length: Math.max(1, concurrency) }, () => worker()));
+  };
+
+  await runPass(pool, true);
+  // 检索兜底慢得多（十几秒到几十秒一张），每轮只给一半预算，剩下的下一轮或手动补
+  const todo = pool.filter((d) => !okIds.has(d.id)).slice(0, Math.max(1, Math.round(budget / 2)));
+  if (todo.length) await runPass(todo, false);
+  inbox.flush();
+  return out;
 }
 
 /** 对池中待审条目按当前规则重新判定（规则调整后可一键重跑） */
@@ -501,7 +633,8 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
     author: merged.author || merged.sourceName,
     source: merged.sourceName || merged.author || '网络采集',
     sourceUrl: merged.sourceUrl,
-    cover: '',
+    // 采集时已经给待审条目下好封面就直接用，避免发布时再下载一次、再占一张图
+    cover: merged.cover || '',
     content: merged.content,
     status: target,
     publishedAt: merged.publishedAt,
@@ -787,7 +920,7 @@ module.exports = {
   listSources, createSource, updateSource, removeSource, testSourceById,
   scoreItem, evaluate, findDuplicate,
   runCollect, autoReviewPending, publishInboxItem, approve, reject, batch, publishDue, runDailyJob,
-  ensureImages,
+  collectStatus, ensureImages, ensureInboxCovers,
   listInbox, stats, listRuns, nextRunAt,
   startScheduler, stopScheduler, flushAll
 };

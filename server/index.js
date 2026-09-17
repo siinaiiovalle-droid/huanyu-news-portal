@@ -498,7 +498,13 @@ app.put('/api/v1/admin/pipeline/settings', async (req, res) => {
   ok(res, pipeline.patchSettings(next));
 });
 
-/** 立即采集：可限定源与条数 */
+/** 采集进度：前端靠它锁按钮、显示"正在下载配图 3/12" */
+app.get('/api/v1/admin/pipeline/status', (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  ok(res, pipeline.collectStatus());
+});
+
+/** 立即采集：可限定源与条数（内容与配图一起跑完才返回，跑完前拒绝再跑一轮） */
 app.post('/api/v1/admin/pipeline/collect', async (req, res) => {
   if (!auth.requireAuth(req, res)) return;
   const body = await readBody(req);
@@ -510,6 +516,30 @@ app.post('/api/v1/admin/pipeline/collect', async (req, res) => {
       by: actorOf(req)
     });
     ok(res, run);
+  } catch (e) {
+    // 上一轮还没跑完时用 409，前端据此把按钮继续锁住而不是弹一个莫名的失败
+    if (/还没跑完/.test(e.message)) return fail(res, e.message, 409);
+    fail(res, e.message);
+  }
+});
+
+/** 给单条待审内容补图（走完整路径：原文图 → 原文页 → 图库检索，慢但尽量配上） */
+app.post('/api/v1/admin/inbox/:id/image', async (req, res) => {
+  if (!auth.requireAuth(req, res)) return;
+  const body = await readBody(req);
+  const item = pipeline.inbox.findById(req.params.id);
+  if (!item) return fail(res, '内容不存在', 404);
+  try {
+    const r = await image.ensureInboxImages(item, {
+      proxy: pipeline.getSettings().proxy || '',
+      force: true,
+      query: body.query || '',
+      fast: false
+    });
+    if (!r.ok) return fail(res, r.why || '没找到合适的配图');
+    pipeline.inbox.update(item.id, { cover: r.url });
+    pipeline.inbox.flush();
+    ok(res, { cover: r.url, from: r.from, kind: r.kind, size: r.size });
   } catch (e) {
     fail(res, e.message);
   }
@@ -681,6 +711,7 @@ app.post('/api/v1/admin/sources/:id/collect', async (req, res) => {
   try {
     ok(res, await pipeline.runCollect({ trigger: 'manual', sourceIds: [req.params.id], limit: int(body.limit, 0), by: actorOf(req) }));
   } catch (e) {
+    if (/还没跑完/.test(e.message)) return fail(res, e.message, 409);
     fail(res, e.message);
   }
 });
