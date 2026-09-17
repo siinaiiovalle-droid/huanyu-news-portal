@@ -46,16 +46,25 @@ function pickImg(block) {
   return m ? m[1] : '';
 }
 
-/** 正文里第一张图（跳过 1x1 像素、图标等明显不是配图的地址） */
-function firstContentImage(block) {
+/** 相对地址补全（人民网等站点在 RSS 里给的是 /NMediaFile/xxx.jpg 这种相对路径） */
+function toAbsolute(src, base) {
+  if (!src) return '';
+  if (/^https?:\/\//i.test(src)) return src;
+  if (!base) return '';
+  try { return new URL(src, base).toString(); } catch (e) { return ''; }
+}
+
+/** 正文里第一张图（跳过 1x1 像素、图标等明显不是配图的地址，相对路径按原文地址补全） */
+function firstContentImage(block, base = '') {
   const re = /<img[^>]+src=["']([^"']+)["']/gi;
   let m;
   while ((m = re.exec(block))) {
     const src = decodeEntities(m[1]).trim();
-    if (!/^https?:\/\//i.test(src)) continue;
+    if (!src || src.startsWith('data:')) continue;
     if (/\.(gif|svg)(\?|$)/i.test(src)) continue;
-    if (/logo|icon|avatar|blank|spacer|1x1|pixel/i.test(src)) continue;
-    return src;
+    if (/logo|icon|avatar|blank|spacer|1x1|pixel|qrcode|share/i.test(src)) continue;
+    const abs = toAbsolute(src, base);
+    if (/^https?:\/\//i.test(abs)) return abs;
   }
   return '';
 }
@@ -64,7 +73,7 @@ function firstContentImage(block) {
  * 原文配图：优先 media:content / media:thumbnail / enclosure（RSS 里最可靠的原文直链），
  * 其次正文第一张 <img>。入池时只记地址，发布前会把它下载到本地再使用，避免外链破图。
  */
-function pickSourceImage(block) {
+function pickSourceImage(block, pageUrl = '') {
   const media = /<media:content[^>]+url=["']([^"']+)["'][^>]*>/i.exec(block)
     || /<media:thumbnail[^>]+url=["']([^"']+)["'][^>]*>/i.exec(block);
   if (media && /^https?:\/\//i.test(decodeEntities(media[1]))) return decodeEntities(media[1]);
@@ -77,7 +86,7 @@ function pickSourceImage(block) {
       return url;
     }
   }
-  return firstContentImage(block);
+  return firstContentImage(block, pageUrl);
 }
 
 /** 摘要按句切段，过滤过短碎片 */
@@ -108,7 +117,7 @@ function parseFeed(xml) {
       paragraphs: splitParagraphs(desc),
       cover: pickImg(block),
       // 原文配图直链：发布前会本地化下载，用来保证"配图与内容一致"
-      image: pickSourceImage(block),
+      image: pickSourceImage(block, link),
       publishedAt: Number.isNaN(t) ? null : new Date(t).toISOString()
     });
   });

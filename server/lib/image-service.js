@@ -56,6 +56,17 @@ const DUP_THRESHOLD = 6;
 const WEB_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 const SIZE_FILTERS = ['+filterui:imagesize-large', '+filterui:imagesize-wallpaper'];
 
+/**
+ * 本轮已占用但指纹还没落盘的照片哈希。
+ * 采集时多路并发下配图，若不先占位，两条内容可能同时选中同一张图。
+ */
+const pendingHashes = new Set();
+
+/** 每轮批量配图开始时调用，清掉上一轮的占位 */
+function beginBatch() {
+  pendingHashes.clear();
+}
+
 /* ------------------------------ 基础读写 ------------------------------ */
 
 function readJSON(file, fallback) {
@@ -150,6 +161,7 @@ function isCard(file) {
 /** 找出与给定指纹重复的图片；selfFile 用于排除自身 */
 function findDuplicate(hash, selfFile = '') {
   if (!hash) return null;
+  if (pendingHashes.has(hash)) return '本轮并发占用的同款图';
   const map = loadFingerprints();
   for (const [file, h] of Object.entries(map)) {
     if (file === selfFile || !h) continue;
@@ -295,9 +307,26 @@ function queryVariants(query) {
   return [...new Set(list.filter(Boolean))];
 }
 
-/** 抓原文页面的 og:image / twitter:image —— 比图库检索精准得多，且天然对应内容 */
-async function fetchOgImage(pageUrl, { proxy = '', timeout = 12000 } = {}) {
-  if (!pageUrl || !/^https?:\/\//i.test(pageUrl)) return '';
+/** 原文地址里的"当天"特征（如 /2026/09-16/、/n1/2025/0605/），用来滤掉模板图和往期推荐图 */
+function dateTokens(pageUrl) {
+  const m = /\/(20\d{2})[/-]?(\d{2})[/-]?(\d{2})[./]/.exec(String(pageUrl || ''));
+  if (!m) return [];
+  const [, y, mm, dd] = m;
+  return [`${y}${mm}${dd}`, `${y}/${mm}-${dd}`, `${y}/${mm}/${dd}`, `${y}-${mm}-${dd}`, `${mm}-${dd}`];
+}
+
+const BODY_KEYS = ['class="content_desc"', 'class="content"', 'id="content"', 'class="article"', 'class="rm_txt_con"', 'class="box_con"', 'class="art_content"'];
+const VOID_SRC = /logo|icon|avatar|blank|spacer|1x1|pixel|qrcode|erweima|weixin|weibo|share|\/ad|ad_|banner|arrow|btn|button/i;
+
+/**
+ * 原文页候选配图（按可靠度排序）：
+ *   1) og:image / twitter:image —— 最准；
+ *   2) 正文区里 URL 带"当天日期"的图 —— 新闻站的正文图多按 /2026/09-16/ 这类路径存放；
+ *   3) 正文区第一张合格图。
+ * 整页乱搜容易混进 logo、导航图和往期推荐图，所以找不到正文容器就不猜。
+ */
+async function listPageImages(pageUrl, { proxy = '', timeout = 12000, limit = 4, ogOnly = false } = {}) {
+  if (!pageUrl || !/^https?:\/\//i.test(pageUrl)) return [];
   let html = '';
   try {
     html = await feed.httpGetText(pageUrl, {
@@ -306,7 +335,7 @@ async function fetchOgImage(pageUrl, { proxy = '', timeout = 12000 } = {}) {
       headers: { 'User-Agent': WEB_UA, Accept: 'text/html,application/xhtml+xml', 'Accept-Language': 'zh-CN,zh;q=0.9' }
     });
   } catch {
-    return '';
+    return [];
   }
   const head = html.slice(0, 200000);
   const patterns = [
@@ -315,15 +344,47 @@ async function fetchOgImage(pageUrl, { proxy = '', timeout = 12000 } = {}) {
     /<meta[^>]+(?:property|name)=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
     /<meta[^>]+content=["']([^"']+)["'][^>]+(?:property|name)=["']twitter:image["']/i
   ];
+  const out = [];
   for (const re of patterns) {
     const m = re.exec(head);
     if (!m) continue;
     const url = feed.decodeEntities(m[1]).trim();
     if (!/^https?:\/\//i.test(url)) continue;
     if (/logo|icon|avatar|default|blank|placeholder|share-?logo/i.test(url)) continue;
-    return url;
+    out.push(url);
+    break;
   }
-  return '';
+  if (ogOnly || out.length >= limit) return out.slice(0, limit);
+
+  const key = BODY_KEYS.find((k) => head.indexOf(k) >= 0);
+  if (!key) return out; // 认不出正文区就别乱猜，宁可换别的途径取图
+  const at = head.indexOf(key);
+  const region = head.slice(at, at + 30000);
+  const tokens = dateTokens(pageUrl);
+  const seen = new Set(out);
+  const all = [];
+  const re = /<img[^>]+src=["']([^"']+)["']/gi;
+  let m;
+  while ((m = re.exec(region))) {
+    let src = feed.decodeEntities(m[1]).trim();
+    if (!src || src.startsWith('data:')) continue;
+    if (/\.(gif|svg)(\?|$)/i.test(src)) continue;
+    if (VOID_SRC.test(src)) continue;
+    if (!/^https?:\/\//i.test(src)) {
+      try { src = new URL(src, pageUrl).toString(); } catch { continue; }
+    }
+    if (!/^https?:\/\//i.test(src) || seen.has(src)) continue;
+    seen.add(src);
+    all.push(src);
+  }
+  const dated = all.filter((u) => tokens.some((t) => u.indexOf(t) >= 0));
+  return [...new Set([...out, ...dated, ...all])].slice(0, limit);
+}
+
+/** 抓原文页面的 og:image / twitter:image —— 比图库检索精准得多，且天然对应内容 */
+async function fetchOgImage(pageUrl, { proxy = '', timeout = 12000 } = {}) {
+  const list = await listPageImages(pageUrl, { proxy, timeout, limit: 1, ogOnly: true });
+  return list[0] || '';
 }
 
 /** 并行竞速下载候选：谁先拿到合格且不重复的图就用谁（默认 4 路并发） */
@@ -345,6 +406,8 @@ async function raceCandidates(candidates, { proxy, dstFile, selfFile, minW, minH
       if (!done.ok) { reasons.push(done.why); continue; }
       const dup = findDuplicate(done.hash, selfFile);
       if (dup) { dupRejected += 1; reasons.push(`与已用配图重复（${dup}）`); continue; }
+      if (winner) return;
+      pendingHashes.add(done.hash);
       winner = { ...candidate, hash: done.hash, size: `${got.size.w}x${got.size.h}` };
       return;
     }
@@ -363,7 +426,7 @@ async function raceCandidates(candidates, { proxy, dstFile, selfFile, minW, minH
  *   3) 图库关键词检索（按「标题 + 频道视觉词」检索，多档高清门槛逐级放宽）
  * 每一步都做 dHash 去重，重复即丢弃换下一张，因此全站不会出现两张一样的配图。
  */
-async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl = '', dstFile, selfFile, proxy = '' }) {
+async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl = '', dstFile, selfFile, proxy = '', fast = false }) {
   const self = selfFile || path.basename(dstFile);
   const rejectReasons = [];
   let dupRejected = 0;
@@ -376,7 +439,10 @@ async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl =
       const done = normalizeBuffer(got.buf, dstFile);
       if (!done.ok) { rejectReasons.push(`${label}：${done.why}`); return null; }
       const dup = findDuplicate(done.hash, self);
-      if (!dup) return { ok: true, hash: done.hash, from: url, kind: 'origin', size: `${got.size.w}x${got.size.h}`, dupRejected };
+      if (!dup) {
+        pendingHashes.add(done.hash);
+        return { ok: true, hash: done.hash, from: url, kind: 'origin', size: `${got.size.w}x${got.size.h}`, dupRejected };
+      }
       dupRejected += 1;
       rejectReasons.push(`${label}已被其它稿件使用（${dup}）`);
       return null;
@@ -390,11 +456,23 @@ async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl =
   }
 
   if (pageUrl) {
-    const og = await fetchOgImage(pageUrl, { proxy });
-    if (og && og !== preferUrl) {
-      const hit = await tryOrigin(og, '原文页配图');
+    const list = await listPageImages(pageUrl, { proxy });
+    for (const url of list) {
+      if (url === preferUrl) continue;
+      const hit = await tryOrigin(url, '原文页配图');
       if (hit) return hit;
     }
+  }
+
+  // 快速模式只走"原文直链 + 原文页"这两条又准又快的路，不做图库检索：
+  // 检索动辄 60s 以上、失败率高，还经常配出一张与内容无关的图，
+  // 只适合用户在后台明确点「补图」时慢慢跑。
+  if (fast) {
+    return {
+      ok: false,
+      why: '原文没有可用配图（' + (rejectReasons.slice(0, 2).join(' / ') || '原文页未找到合格图片') + '）',
+      dupRejected
+    };
   }
 
   const variants = [...new Set([
@@ -540,6 +618,41 @@ async function ensureArticleImages(article, { proxy = '', force = false, sourceI
   };
 }
 
+/**
+ * 为「待审池」条目下载封面 —— 稿件还没创建，所以文件名用 i-<待审id>-cover.jpg。
+ * 审核通过发布时这篇文件会被直接沿用为稿件封面（不重复下载、不重复占图）。
+ */
+async function ensureInboxImages(item, { proxy = '', force = false, query = '', fast = true } = {}) {
+  if (!item || !item.id) return { ok: false, why: '待审条目不存在' };
+  if (item.cover && !force) return { ok: false, skipped: true, why: '已有配图' };
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const file = `i-${safeName(item.id)}-cover.jpg`;
+  const prevHash = loadFingerprints()[file] || '';
+  if (force) dropFingerprint(file);
+  const q = query || buildQuery({ title: item.title, channel: item.channel, tags: item.tags });
+  const r = await resolveImage({
+    query: q,
+    visual: CHANNEL_VISUAL[item.channel] || '',
+    preferUrl: item.sourceImage || '',
+    pageUrl: item.sourceUrl || '',
+    dstFile: path.join(OUT_DIR, file),
+    selfFile: file,
+    proxy,
+    fast
+  });
+  if (!r.ok) {
+    // 换图失败时恢复原指纹，避免旧图失去保护被别的条目占用
+    if (force && prevHash) writeFingerprint(file, prevHash);
+    return { ok: false, why: r.why };
+  }
+  writeFingerprint(file, r.hash);
+  recordLibrary(file, {
+    inboxId: item.id, title: item.title, slot: 'cover',
+    query: q, from: r.from, kind: r.kind, size: r.size
+  });
+  return { ok: true, file, url: `/img/news/${file}`, from: r.from, kind: r.kind, size: r.size, query: q };
+}
+
 /** 批量补齐：扫描缺图稿件，逐篇配图（默认只补封面 + 1 张正文图） */
 async function fillMissing({ limit = 8, ids = [], proxy = '', force = false, maxSlots = 2 } = {}) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -586,8 +699,8 @@ function usageMap() {
     if (a.video && a.video.poster) push(a.video.poster, { id: a.id, title: a.title, slot: '视频海报' });
   });
 
-  // 其它集合（广场动态、用户资料等）里出现的同目录图片一并算作"已使用"，避免误删
-  [['posts.json', '广场动态'], ['profiles.json', '用户资料'], ['site.json', '站点配置']].forEach(([name, label]) => {
+  // 其它集合（广场动态、用户资料、待审池等）里出现的同目录图片一并算作"已使用"，避免误删
+  [['posts.json', '广场动态'], ['profiles.json', '用户资料'], ['site.json', '站点配置'], ['inbox.json', '待审池']].forEach(([name, label]) => {
     const raw = readJSON(path.join(DATA_DIR, name), null);
     if (!raw) return;
     const found = JSON.stringify(raw).match(/\/img\/news\/[^"'\\\s]+\.jpg/g) || [];
@@ -707,8 +820,8 @@ function rebuildFingerprints() {
 module.exports = {
   OUT_DIR, FINGERPRINT_FILE, LIBRARY_FILE,
   hammingHex, findDuplicate, hashFiles, ensureFingerprints, rebuildFingerprints, duplicatePairs,
-  readSize, downloadImage, searchCandidates, resolveImage, fetchOgImage,
-  ensureArticleImages, fillMissing,
+  readSize, downloadImage, searchCandidates, resolveImage, fetchOgImage, listPageImages,
+  ensureArticleImages, ensureInboxImages, beginBatch, fillMissing,
   listImages, missingArticles, usageMap, stats, removeImage,
   python
 };
