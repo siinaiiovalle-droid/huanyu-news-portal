@@ -233,6 +233,9 @@
               <div class="field"><label>正文最少字数</label><input type="number" id="p-minContentLen" min="20" max="1000"></div>
               <div class="field"><label>每轮自动置头条条数</label><input type="number" id="p-headlineTopN" min="0" max="10"></div>
               <div class="field"><label>每轮自动加入焦点条数</label><input type="number" id="p-focusTopN" min="0" max="10"></div>
+              <div class="switch-row" style="margin-top:10px;"><span>采集时同步下载配图（待审池条目也有图，未下载完不能再次采集）</span><label class="switch"><input type="checkbox" id="p-imagePool"><span></span></label></div>
+              <div class="field"><label>每轮采集下载配图张数（含已发布稿件）</label><input type="number" id="p-imagePerRun" min="1" max="60"></div>
+              <div class="field"><label>每轮配图时间上限（秒，超时的条目下一轮再补）</label><input type="number" id="p-imageRoundSec" min="30" max="900"></div>
             </div>
           </div>
 

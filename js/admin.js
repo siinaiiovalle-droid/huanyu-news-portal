@@ -103,6 +103,8 @@
       channels = [];
     }
     fillChannelSelects();
+    // 若定时任务/别人正在采集，一进后台就把按钮锁住并跟进度
+    syncCollectState();
 
     if (token) {
       try {
@@ -337,6 +339,9 @@
     return `<tr>
       <td><input type="checkbox" class="ib-check" value="${esc(d.id)}"></td>
       <td>
+        ${d.cover
+          ? `<img class="ib-thumb" src="${esc(d.cover)}" alt="配图" loading="lazy">`
+          : `<span class="ib-thumb ib-thumb-empty">待配图</span>`}
         <div class="row-title">${esc(d.title)}</div>
         <div class="row-meta">${esc(d.sourceName || '未知来源')} · ${esc(d.author || '')} · ${statusMap[d.status] || d.status}</div>
         <div class="row-meta">${esc((d.summary || '').slice(0, 70))}</div>
@@ -355,7 +360,8 @@
       <td class="ops-cell">
         <button class="icon-btn" data-act="preview" data-id="${esc(d.id)}">预览</button>
         ${d.status !== 'published'
-          ? `<button class="icon-btn" data-act="publish" data-id="${esc(d.id)}">通过发布</button>
+          ? `<button class="icon-btn" data-act="image" data-id="${esc(d.id)}">${d.cover ? '换图' : '补图'}</button>
+             <button class="icon-btn" data-act="publish" data-id="${esc(d.id)}">通过发布</button>
              <button class="icon-btn" data-act="draft" data-id="${esc(d.id)}">仅通过</button>
              <button class="icon-btn" data-act="schedule" data-id="${esc(d.id)}">定时</button>
              <button class="icon-btn danger" data-act="reject" data-id="${esc(d.id)}">驳回</button>`
@@ -368,7 +374,11 @@
   async function inboxAction(act, id) {
     try {
       if (act === 'preview') return previewInbox(id);
-      if (act === 'publish') {
+      if (act === 'image') {
+        toast('正在检索并下载配图，约需十几秒到一分钟…', 8000);
+        const r = await req(`./api/v1/admin/inbox/${id}/image`, { method: 'POST', body: {} });
+        toast(`配图已下载：${r.cover}${r.size ? `（${r.size}）` : ''}`, 5000);
+      } else if (act === 'publish') {
         await req(`./api/v1/admin/inbox/${id}/approve`, { method: 'POST', body: { publish: true } });
         toast('已审核通过并发布到前台');
       } else if (act === 'draft') {
@@ -402,6 +412,9 @@
         <h4>${esc(item.title)}</h4>
         <p class="preview-note">${esc(item.sourceName || '')} · ${fmt(item.publishedAt)} · 原文：
           ${item.sourceUrl ? `<a href="${esc(item.sourceUrl)}" target="_blank">${esc(item.sourceUrl)}</a>` : '—'}</p>
+        ${item.cover
+          ? `<img src="${esc(item.cover)}" alt="配图" style="width:100%;max-width:520px;border-radius:8px;margin:8px 0;">`
+          : '<p class="preview-note">（这条还没配到图，可在列表里点「补图」）</p>'}
         <div class="score-detail">
           <span>综合分 <b>${item.score || 0}</b></span>
           <span>基础分 ${m.base == null ? 30 : m.base}</span>
@@ -501,14 +514,68 @@
     }
   }
 
+  /* ------------------------------ 采集（含同步下载配图） ------------------------------ */
+
+  /**
+   * 一次采集要把内容和配图一起跑完，跑完前不允许再点第二下：
+   * 两个「立即采集」按钮同时锁住，并按服务端返回的进度刷新文案（下载配图 3/12）。
+   */
+  let collectTimer = null;
+  let collectWasRunning = false;
+
+  function lockCollectButtons(locked, text) {
+    ['btn-run-collect', 'ib-collect'].forEach((id) => {
+      const b = $(id);
+      if (!b) return;
+      b.disabled = !!locked;
+      b.textContent = locked ? (text || '采集中…') : '立即采集';
+      b.style.opacity = locked ? '0.55' : '';
+      b.style.cursor = locked ? 'not-allowed' : '';
+    });
+  }
+
+  async function syncCollectState() {
+    let s = null;
+    try { s = await req('./api/v1/admin/pipeline/status'); } catch (e) { return; }
+    const img = s.images || {};
+    const text = img.total ? `下载配图 ${img.done}/${img.total}…` : (s.stageText || '采集中…');
+    lockCollectButtons(!!s.running, text);
+    if (s.running && !collectTimer) collectTimer = setInterval(syncCollectState, 3000);
+    if (!s.running && collectTimer) {
+      clearInterval(collectTimer);
+      collectTimer = null;
+    }
+    // 跑完的那一刻刷新列表，让新内容和刚下好的配图直接显示出来
+    if (collectWasRunning && !s.running) {
+      loadInbox(inboxPage);
+      loadDashboard();
+    }
+    collectWasRunning = !!s.running;
+  }
+
   async function triggerCollect() {
-    if (!confirm('将按已启用的采集源立即拉取最新内容并自动审核，是否继续？')) return;
+    if (!confirm('将按已启用的采集源拉取最新内容、自动审核，并同步下载配图（配图下载完成前不能再次采集），是否继续？')) return;
+    lockCollectButtons(true, '采集中…');
+    collectWasRunning = true;
     try {
       const r = await req('./api/v1/admin/pipeline/collect', { method: 'POST', body: {} });
-      toast(`采集完成：抓取 ${r.fetched} 条，入库 ${r.added} 条，自动发布 ${r.autoPublished} 条`);
+      const im = r.images || {};
+      const imgText = (im.filled || im.failed)
+        ? `，下载配图 ${im.filled} 张${im.failed ? `（${im.failed} 条没配上，可在列表里单独点「补图」）` : ''}`
+        : '';
+      toast(`采集完成：抓取 ${r.fetched} 条，入库 ${r.added} 条，自动发布 ${r.autoPublished} 条${imgText}`, 8000);
+      lockCollectButtons(false);
       loadInbox(1);
+      loadDashboard();
     } catch (e) {
-      toast(e.message);
+      // 上一轮还没跑完：按钮保持锁定，继续跟进度
+      if (/还没跑完/.test(e.message)) {
+        toast(e.message, 4000);
+        if (!collectTimer) collectTimer = setInterval(syncCollectState, 3000);
+        return;
+      }
+      lockCollectButtons(false);
+      toast(e.message, 5000);
     }
   }
 
@@ -651,6 +718,9 @@
       $('p-minContentLen').value = s.minContentLen;
       $('p-headlineTopN').value = s.headlineTopN;
       $('p-focusTopN').value = s.focusTopN;
+      $('p-imagePool').checked = s.imagePool !== false;
+      $('p-imagePerRun').value = s.imagePerRun || 12;
+      $('p-imageRoundSec').value = Math.round((s.imageRoundMs || 150000) / 1000);
       $('p-blockKeywords').value = (s.blockKeywords || []).join(',');
       $('p-boostKeywords').value = (s.boostKeywords || []).join(',');
     } catch (e) {
@@ -672,6 +742,9 @@
       minContentLen: Number($('p-minContentLen').value),
       headlineTopN: Number($('p-headlineTopN').value),
       focusTopN: Number($('p-focusTopN').value),
+      imagePool: $('p-imagePool').checked,
+      imagePerRun: Number($('p-imagePerRun').value) || 12,
+      imageRoundMs: (Number($('p-imageRoundSec').value) || 150) * 1000,
       proxy: $('p-proxy').value.trim(),
       blockKeywords: $('p-blockKeywords').value.split(/[,，\n]/).map((s) => s.trim()).filter(Boolean),
       boostKeywords: $('p-boostKeywords').value.split(/[,，\n]/).map((s) => s.trim()).filter(Boolean),
