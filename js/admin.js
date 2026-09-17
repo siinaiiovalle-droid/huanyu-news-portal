@@ -568,8 +568,8 @@
       loadInbox(1);
       loadDashboard();
     } catch (e) {
-      // 上一轮还没跑完：按钮保持锁定，继续跟进度
-      if (/还没跑完/.test(e.message)) {
+      // 上一轮还没跑完（409）：按钮保持锁定，继续跟进度
+      if (e.status === 409 || /还没跑完/.test(e.message)) {
         toast(e.message, 4000);
         if (!collectTimer) collectTimer = setInterval(syncCollectState, 3000);
         return;
