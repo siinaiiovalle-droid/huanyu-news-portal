@@ -1,8 +1,16 @@
 [
   {
-    "id": "i_mu53d3msvq3vul",
-    "createdAt": "2026-09-17T05:31:01.156Z",
-    "updatedAt": "2026-09-17T05:31:01.156Z",
+    "id": "i_mu5qzcbonq59c4",
+    "createdAt": "2026-09-17T16:32:10.020Z",
+    "updatedAt": "2026-09-17T16:32:10.020Z",
+    "articleId": "n_mu5oggwpi72n9t",
+    "userId": "smoke-test",
+    "type": "like"
+  },
+  {
+    "id": "i_mu52s4phms7xd0",
+    "createdAt": "2026-09-17T05:14:42.773Z",
+    "updatedAt": "2026-09-17T05:14:42.773Z",
     "articleId": "n_mu52a5qrltjs91",
     "userId": "smoke-test",
     "type": "like"

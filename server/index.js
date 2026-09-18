@@ -12,6 +12,7 @@ const portal = require('./lib/portal');
 const svc = require('./lib/news-service');
 const social = require('./lib/social-service');
 const auth = require('./lib/auth');
+const mall = require('./lib/mall-service');
 const pipeline = require('./lib/pipeline');
 const image = require('./lib/image-service');
 
@@ -329,6 +330,43 @@ app.post('/api/v1/square/:id/replies', async (req, res) => {
     if (!result) return fail(res, '动态不存在', 404);
     ok(res, result);
   });
+});
+
+/* ------------------------------ 寰宇严选（商城） ------------------------------ */
+/* 注意：固定路径必须注册在 /api/v1/mall/:id 之前，否则会被动态 id 抢匹配 */
+
+app.get('/api/v1/mall/home', (req, res) => ok(res, mall.getHome()));
+
+app.get('/api/v1/mall/categories', (req, res) => ok(res, mall.listCategories()));
+
+app.get('/api/v1/mall/seckill', (req, res) => ok(res, mall.getSeckill(int(req.query.size, 4))));
+
+app.get('/api/v1/mall/orders', (req, res) => ok(res, mall.listOrders(clientId(req))));
+
+app.post('/api/v1/mall/orders', async (req, res) => {
+  const body = await readBody(req);
+  try {
+    ok(res, mall.createOrder({ uid: body.uid || clientId(req), items: body.items || [], receiver: body.receiver, remark: body.remark }));
+  } catch (e) {
+    fail(res, e.message);
+  }
+});
+
+app.get('/api/v1/mall/products', (req, res) =>
+  ok(res, mall.listProducts({
+    category: req.query.category || '',
+    keyword: req.query.keyword || req.query.q || '',
+    tag: req.query.tag || '',
+    sort: req.query.sort || 'recommend',
+    page: int(req.query.page, 1),
+    pageSize: int(req.query.pageSize, 12)
+  }))
+);
+
+app.get('/api/v1/mall/:id', (req, res) => {
+  const detail = mall.getProduct(req.params.id);
+  if (!detail) return fail(res, '商品不存在', 404);
+  ok(res, detail);
 });
 
 /* ------------------------------ 互动：评论 / 点赞 / 收藏 ------------------------------ */
@@ -1036,6 +1074,12 @@ app.get('/admin', (req, res) => {
   res.end();
 });
 
+app.get('/mall', (req, res) => {
+  res.statusCode = 302;
+  res.setHeader('Location', '/mall.html');
+  res.end();
+});
+
 /* ------------------------------ 启动 ------------------------------ */
 
 async function bootstrap() {
@@ -1047,6 +1091,7 @@ async function bootstrap() {
   console.log(`  门户首页 ： http://localhost:${PORT}/`);
   console.log(`  广场栏目 ： http://localhost:${PORT}/square.html`);
   console.log(`  视频频道 ： http://localhost:${PORT}/video.html`);
+  console.log(`  寰宇严选 ： http://localhost:${PORT}/mall.html`);
   console.log(`  运营后台 ： http://localhost:${PORT}/admin.html`);
   console.log(`  开放 API ： http://localhost:${PORT}/api/v1/home`);
   console.log(`  内容流水线：${cfg.enabled

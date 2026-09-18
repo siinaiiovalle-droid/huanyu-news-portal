@@ -1,5 +1,323 @@
 [
   {
+    "id": "mu6sg6zcq6gpkx",
+    "createdAt": "2026-09-18T10:01:02.040Z",
+    "updatedAt": "2026-09-18T10:01:02.040Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 931,
+    "added": 30,
+    "duplicated": 754,
+    "rejected": 0,
+    "autoPublished": 1,
+    "failed": 0,
+    "images": {
+      "filled": 8,
+      "failed": 0,
+      "pool": {
+        "checked": 12,
+        "filled": 7,
+        "failed": 0
+      }
+    },
+    "durationMs": 45084,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 5
+      }
+    ],
+    "finishedAt": "2026-09-18T10:01:02.040Z"
+  },
+  {
+    "id": "mu65zs7pu4v6dw",
+    "createdAt": "2026-09-17T23:32:24.853Z",
+    "updatedAt": "2026-09-17T23:32:24.853Z",
+    "type": "collect",
+    "trigger": "cli",
+    "fetched": 931,
+    "added": 18,
+    "duplicated": 868,
+    "rejected": 11,
+    "autoPublished": 1,
+    "failed": 0,
+    "images": {
+      "filled": 5,
+      "failed": 4,
+      "pool": {
+        "checked": 7,
+        "filled": 4,
+        "failed": 3
+      }
+    },
+    "durationMs": 118080,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 2
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 1
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-17T23:32:24.853Z"
+  },
+  {
+    "id": "mu5ogl67e26en5",
+    "createdAt": "2026-09-17T15:21:35.791Z",
+    "updatedAt": "2026-09-17T15:21:35.791Z",
+    "type": "collect",
+    "trigger": "manual",
+    "fetched": 931,
+    "added": 60,
+    "duplicated": 710,
+    "rejected": 2,
+    "autoPublished": 4,
+    "failed": 0,
+    "images": {
+      "filled": 0,
+      "failed": 8,
+      "pool": {
+        "checked": 12,
+        "filled": 0,
+        "failed": 6
+      }
+    },
+    "durationMs": 156605,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 5
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 5
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 5
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 5
+      }
+    ],
+    "finishedAt": "2026-09-17T15:21:35.791Z"
+  },
+  {
     "id": "mu5d2x9c4gflxm",
     "createdAt": "2026-09-17T10:03:02.496Z",
     "updatedAt": "2026-09-17T10:03:02.496Z",

@@ -18,13 +18,15 @@
  */
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { spawnSync } = require('child_process');
 const { buildQuery } = require('./lib/keywords');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_FILE = path.join(ROOT, 'data', 'news.json');
 const OUT_DIR = path.join(ROOT, 'public', 'img', 'news');
-const TMP_DIR = path.join(ROOT, '.tmp-images');
+// 临时目录放系统临时区：重复图移入这里等系统清理，不在工作区内删除文件
+const TMP_DIR = path.join(os.tmpdir(), 'hynews-images-tmp');
 const INDEX_FILE = path.join(__dirname, 'data', 'photo-index.json');
 const FINGERPRINT_FILE = path.join(__dirname, 'data', 'image-fingerprints.json');
 const LAST_RUN_FILE = path.join(__dirname, 'data', 'last-image-run.json');
@@ -377,7 +379,11 @@ async function resolveImage({ query, visual = '', dstFile, force }) {
           if (dup) {
             dupRejected += 1;
             reasons.push(`与已有配图重复（${dup}）`);
-            if (fs.existsSync(dstFile)) fs.unlinkSync(dstFile);
+            if (fs.existsSync(dstFile)) {
+              try {
+                fs.renameSync(dstFile, path.join(TMP_DIR, 'rej-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7) + path.extname(dstFile)));
+              } catch { /* 移不走就留着，不影响流程 */ }
+            }
             continue;
           }
 

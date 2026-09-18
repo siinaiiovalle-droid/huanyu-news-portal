@@ -1,0 +1,29 @@
+[
+  {
+    "id": "HYmu6r8u2hjnx4ms",
+    "createdAt": "2026-09-18T09:27:19.097Z",
+    "updatedAt": "2026-09-18T09:27:19.097Z",
+    "uid": "u_pydn88m6",
+    "lines": [
+      {
+        "id": "g011",
+        "title": "云朵 抗菌擦手巾 6 条装",
+        "cover": "/api/v1/placeholder?w=600&h=600&text=%E4%BA%91%E6%9C%B5%20%E6%8A%97%E8%8F%8C%E6%93%A6%E6%89%8B%E5%B7%BE&theme=sky",
+        "price": 49,
+        "qty": 1,
+        "theme": "sky"
+      }
+    ],
+    "amount": 49,
+    "freight": 12,
+    "payable": 61,
+    "saved": 30,
+    "receiver": {
+      "name": "黄巍",
+      "phone": "13971691656",
+      "address": "湖北省武汉市青山区"
+    },
+    "remark": "",
+    "status": "待付款"
+  }
+]
