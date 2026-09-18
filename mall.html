@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script src="./static-shim.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>寰宇严选 - 好物商城 | 寰宇新闻网</title>
+  <meta name="description" content="寰宇严选是寰宇新闻网旗下品质生活商城，买手选品、编辑部试用，涵盖数码影音、图书文创、家居生活、健康食品、运动户外、美妆个护。">
+  <meta name="keywords" content="寰宇严选,好物商城,买手选品,数码,文创,家居,严选">
+  <link rel="icon" href="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23e8eef6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23cfd9e6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Microsoft%20YaHei%2CPingFang%20SC%2Csans-serif%22%20font-size%3D%225%22%20fill%3D%22%237b8794%22%3E%E4%B8%A5%E9%80%89%3C%2Ftext%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/mall.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <!-- 商城专属品牌条：搜索、购物车、订单入口常驻，滚到哪儿都能买 -->
+  <div class="mall-bar" id="mall-bar">
+    <div class="container mall-bar-inner">
+      <a class="mall-brand" href="/mall.html">
+        <span class="mall-brand-mark">严选</span>
+        <span class="mall-brand-text">
+          <b>寰宇严选</b>
+          <i>HUANYU SELECT · 买手选品 · 编辑部试用</i>
+        </span>
+      </a>
+      <form class="mall-search" id="mall-search">
+        <input type="search" name="q" placeholder="搜索商品：耳机、保温杯、绿茶…" autocomplete="off">
+        <button type="submit" aria-label="搜索">搜索好物</button>
+      </form>
+      <div class="mall-bar-actions">
+        <button class="mall-ghost" id="btn-orders" type="button">我的订单</button>
+        <button class="mall-cart-btn" id="btn-cart" type="button">
+          <span>购物车</span>
+          <em id="cart-badge" hidden>0</em>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container mall-main">
+
+    <!-- 楼层一：轮播 + 今日必买 -->
+    <section class="mall-showcase">
+      <div class="mall-banner" id="banner">
+        <div class="mall-banner-slides" id="banner-slides"></div>
+        <div class="mall-banner-dots" id="banner-dots"></div>
+      </div>
+      <div class="mall-pick">
+        <div class="mall-pick-head">
+          <b>今日必买</b>
+          <span id="mall-total"></span>
+        </div>
+        <ul class="mall-pick-list" id="pick-list"></ul>
+      </div>
+    </section>
+
+    <!-- 楼层二：类目导航 -->
+    <section class="mall-floor">
+      <div class="mall-cats" id="cat-nav"></div>
+    </section>
+
+    <!-- 楼层三：限时秒杀 -->
+    <section class="mall-floor" id="seckill">
+      <div class="floor-head">
+        <div class="floor-title">
+          <span class="floor-badge hot">限时秒杀</span>
+          <h2>每天 10 点上新 · 售完即止</h2>
+        </div>
+        <div class="floor-extra">
+          <span class="countdown-label">距本场结束</span>
+          <div class="countdown" id="countdown"><span>--</span><i>:</i><span>--</span><i>:</i><span>--</span></div>
+        </div>
+      </div>
+      <div class="seckill-grid" id="seckill-grid"></div>
+    </section>
+
+    <!-- 楼层四：全部好物（侧栏筛选 + 网格） -->
+    <section class="mall-floor" id="goods">
+      <div class="floor-head">
+        <div class="floor-title">
+          <span class="floor-badge">全部好物</span>
+          <h2>买手精选 · 层层试用</h2>
+        </div>
+        <div class="floor-sort" id="sort-tabs">
+          <button class="active" data-sort="recommend">综合推荐</button>
+          <button data-sort="sales">销量优先</button>
+          <button data-sort="new">上新</button>
+          <button data-sort="discount">折扣最高</button>
+          <button data-sort="priceAsc">价格 ↑</button>
+          <button data-sort="priceDesc">价格 ↓</button>
+        </div>
+      </div>
+
+      <div class="mall-shop">
+        <aside class="mall-side">
+          <div class="side-card">
+            <div class="side-title">商品分类</div>
+            <ul class="side-cats" id="side-cats"></ul>
+          </div>
+          <div class="side-card">
+            <div class="side-title">特色标签</div>
+            <div class="side-tags" id="side-tags"></div>
+          </div>
+          <div class="side-card side-note">
+            <div class="side-title">为什么叫严选</div>
+            <p>每件商品先由买手筛选，再进编辑部试用两周，通过才会上架。上架后仍留样检测，出现质量问题先行赔付。</p>
+          </div>
+        </aside>
+
+        <div class="mall-goods">
+          <div class="goods-toolbar">
+            <div class="goods-count" id="goods-count">加载中…</div>
+            <div class="goods-keyword" id="goods-keyword" hidden></div>
+          </div>
+          <div class="goods-grid" id="goods-grid">
+            <div class="skeleton" style="height:320px"></div>
+            <div class="skeleton" style="height:320px"></div>
+            <div class="skeleton" style="height:320px"></div>
+            <div class="skeleton" style="height:320px"></div>
+          </div>
+          <div class="pager" id="pager"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 楼层五：服务保障 -->
+    <section class="mall-floor" id="promise">
+      <div class="promise-row" id="promise-row"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+
+  <!-- 商品详情弹窗 -->
+  <div class="mall-modal" id="detail-modal" hidden>
+    <div class="mall-modal-mask" data-close></div>
+    <div class="mall-modal-panel detail-panel">
+      <button class="mall-modal-close" data-close type="button" aria-label="关闭">×</button>
+      <div class="detail-body" id="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- 购物车抽屉 -->
+  <div class="mall-drawer" id="cart-drawer" hidden>
+    <div class="mall-modal-mask" data-close></div>
+    <aside class="cart-panel">
+      <div class="cart-head">
+        <b>购物车</b>
+        <button class="mall-modal-close" data-close type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="cart-body" id="cart-body"></div>
+      <div class="cart-foot" id="cart-foot"></div>
+    </aside>
+  </div>
+
+  <!-- 订单结算 / 提交结果 -->
+  <div class="mall-modal" id="order-modal" hidden>
+    <div class="mall-modal-mask" data-close></div>
+    <div class="mall-modal-panel order-panel">
+      <button class="mall-modal-close" data-close type="button" aria-label="关闭">×</button>
+      <div class="order-body" id="order-body"></div>
+    </div>
+  </div>
+
+  <script src="./js/common.js"></script>
+  <script src="./js/mall.js"></script>
+</body>
+</html>
