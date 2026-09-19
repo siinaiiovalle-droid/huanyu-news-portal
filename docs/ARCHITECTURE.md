@@ -806,3 +806,13 @@ refundOrder          → 原路退回 → 账单负收入 → status=refunded �
 | `docs/DEV_LOG.md` | 两侧**同源同步** | 开发过程、环境搭建、验收问题与修复清单、对话记录 |
 
 规则：**App 细节以 App 仓库为准，门户 §8 只做摘要**；`CONTENT_ARCHITECTURE.md` 与 `DEV_LOG.md` 两边必须逐字同步，任一改动当日内互拷一次。
+
+### 8.16 商城大栏目子页接线（2026-09-19）
+
+**现象**：App 商城首页的轮播、金刚区、活动行、秒杀楼层点下去只有 toast 或"首页筛选变了"，商详「客服 / 店铺 / 分享」更是 `onTap: () {}` 空壳，用户感知就是"大栏目没有链接子页"。
+
+**根因**：商城模块只有 `shop_page.dart` / `order_page.dart` 两个页面文件，分类、活动、秒杀专场、券包、店铺、搜索结果这些二级页从未实现；改版时重心在首页楼层视觉，入口先用了占位反馈。
+
+**修法**：新增通用集合页 `lib/modules/shop/collection_page.dart`（标题 + 说明条 + 排序条 + 两列瀑布流，可选搜索框 / 排名角标 / 秒杀倒计时），10 处入口全部落到具体页面；`_ProductCard` 提为公开 `ProductCard`，首页瀑布流与集合页共用。清单见 `docs/DEV_LOG.md` §4.4。
+
+**校验**：`flutter analyze` 0 error / 0 warning；`flutter build web --release` 通过；模拟器实点金刚区「数码」与商详「店铺」均正常进页。
