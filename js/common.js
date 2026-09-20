@@ -79,8 +79,9 @@
     return { initial, bg: `linear-gradient(140deg, ${c2}, ${c1})` };
   }
 
-  function ph(text, theme) {
-    return `./api/v1/placeholder?w=800&h=450&text=${encodeURIComponent(text || '寰宇新闻网')}${theme ? `&theme=${theme}` : ''}`;
+  /** 占位图 URL：w/h 可选，默认 800×450（静态版由 static-shim 换成内联 SVG，走 ph 才能被接管） */
+  function ph(text, theme, w, h) {
+    return `./api/v1/placeholder?w=${w || 800}&h=${h || 450}&text=${encodeURIComponent(text || '寰宇新闻网')}${theme ? `&theme=${theme}` : ''}`;
   }
 
   function imgOf(item, w, h) {
@@ -174,7 +175,7 @@
             <span class="dot"></span>
             <a href="./">首页</a>
             <a href="./video.html">视频</a>
-            <a href="/mall.html">严选商城</a>
+            <a href="./mall.html">严选商城</a>
             <span class="dot"></span>
             <a href="./admin.html">内容后台</a>
           </div>
@@ -202,7 +203,7 @@
       </div>
       <nav class="nav container">
         <a href="./" class="${!active ? 'active' : ''}">要闻</a>
-        <a href="/mall.html" class="${active === 'mall' ? 'active' : ''}">严选商城</a>
+        <a href="./mall.html" class="${active === 'mall' ? 'active' : ''}">严选商城</a>
         ${order.map((c) => `<a href="${c.isSocial ? './square.html' : `./channel.html?id=${encodeURIComponent(c.id)}`}" class="${active === c.id ? 'active' : ''}">${escapeHtml(c.name)}</a>`).join('')}
       </nav>`;
     const form = document.getElementById('search-form');
@@ -248,7 +249,7 @@
         <div class="footer-col">
           <h5>关于我们</h5>
           <ul>
-            <li><a href="/mall.html">寰宇严选 · 买手好物</a></li>
+            <li><a href="./mall.html">寰宇严选 · 买手好物</a></li>
             <li>新闻热线：400-000-0000</li>
             <li>商务合作：bd@huanyu.example</li>
             <li>内容纠错：editor@huanyu.example</li>
