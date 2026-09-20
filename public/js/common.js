@@ -79,8 +79,9 @@
     return { initial, bg: `linear-gradient(140deg, ${c2}, ${c1})` };
   }
 
-  function ph(text, theme) {
-    return `/api/v1/placeholder?w=800&h=450&text=${encodeURIComponent(text || '寰宇新闻网')}${theme ? `&theme=${theme}` : ''}`;
+  /** 占位图 URL：w/h 可选，默认 800×450（静态版由 static-shim 换成内联 SVG，走 ph 才能被接管） */
+  function ph(text, theme, w, h) {
+    return `/api/v1/placeholder?w=${w || 800}&h=${h || 450}&text=${encodeURIComponent(text || '寰宇新闻网')}${theme ? `&theme=${theme}` : ''}`;
   }
 
   function imgOf(item, w, h) {

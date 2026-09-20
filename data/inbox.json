@@ -1,5 +1,5116 @@
 [
   {
+    "id": "mu9nb1j37t16g0",
+    "createdAt": "2026-09-20T10:00:22.143Z",
+    "updatedAt": "2026-09-20T10:00:22.143Z",
+    "title": "吃外卖会长胆结石吗？专家提醒",
+    "summary": "26岁小伙三餐几乎全靠外卖",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "专家提醒"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-18/10698657.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "26岁小伙三餐几乎全靠外卖"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "吃外卖会长胆结石吗？专家提醒"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-18/10698657.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T10:00:22.142Z",
+    "rssPublishedAt": "2026-09-18T01:04:48.000Z",
+    "publishedAtAdjusted": true,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-20T10:00:22.143Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（27 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-20T10:00:22.143Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb1ix6nbiut",
+    "createdAt": "2026-09-20T10:00:22.137Z",
+    "updatedAt": "2026-09-20T10:00:22.137Z",
+    "title": "别买！多地海关查获“三无”减肥药 含有冰毒成分",
+    "summary": "宽松长裤、右脚袜子、裤子口袋、客车后备箱的夹层……这些地方藏的都是同一样东西。近期，济南、武汉等多地海关接连查获旅客违规携带“三无”减肥药；在深圳，一些因具有减肥效果而受到追捧的注射针剂，也接连在旅检、客运等多渠道被海关",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "别买",
+      "冰毒成分"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699420.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "宽松长裤、右脚袜子、裤子口袋、客车后备箱的夹层……这些地方藏的都是同一样东西。"
+      },
+      {
+        "type": "p",
+        "text": "近期，济南、武汉等多地海关接连查获旅客违规携带“三无”减肥药；在深圳，一些因具有减肥效果而受到追捧的注射针剂，也接连在旅检、客运等多渠道被海关查获。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "别买！多地海关查获“三无”减肥药 含有冰毒成分"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699420.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T04:43:02.000Z",
+    "rssPublishedAt": "2026-09-19T04:43:02.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-20T10:00:22.137Z",
+    "score": 42,
+    "metrics": {
+      "ageHours": 29.3,
+      "base": 30,
+      "freshness": 6,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 42 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-20T10:00:22.137Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:00:22.137Z",
+      "comment": "分值 42 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb1itcjydtw",
+    "createdAt": "2026-09-20T10:00:22.133Z",
+    "updatedAt": "2026-09-20T10:00:22.133Z",
+    "title": "京东健康联合北肿沈琳团队发布消化道肿瘤内科诊疗评测集",
+    "summary": "9月19日，在第29届中国临床肿瘤学会(CSCO)学术年会胃癌会场上，京东健康联合北京大学肿瘤医院沈琳教授团队正式发布“消化道肿瘤内科诊疗评测集及模型成果v1.0”。",
+    "channel": "health",
+    "tags": [
+      "健康"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-20/10699823.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月19日，在第29届中国临床肿瘤学会(CSCO)学术年会胃癌会场上，京东健康联合北京大学肿瘤医院沈琳教授团队正式发布“消化道肿瘤内科诊疗评测集及模型成果v1.0”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "京东健康联合北肿沈琳团队发布消化道肿瘤内科诊疗评"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-20/10699823.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T02:44:21.000Z",
+    "rssPublishedAt": "2026-09-20T02:44:21.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-20T10:00:22.133Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-20T10:00:22.133Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:00:22.133Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb1ircu0p38",
+    "createdAt": "2026-09-20T10:00:22.131Z",
+    "updatedAt": "2026-09-20T10:00:22.131Z",
+    "title": "中新健康｜干眼不只是“眼睛缺水” 患者呈现年轻化趋势",
+    "summary": "中新网北京9月20日电(记者 赵方园)干眼就是眼睛缺水吗？近视和干眼有关系吗？",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "“眼睛缺水”"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-20/10699889.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月20日电(记者 赵方园)干眼就是眼睛缺水吗。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中新健康｜干眼不只是“眼睛缺水” 患者呈现年轻化"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-20/10699889.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T04:35:48.000Z",
+    "rssPublishedAt": "2026-09-20T04:35:48.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-20T10:00:22.131Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 5.4,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:22.131Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb1ipzde7ts",
+    "createdAt": "2026-09-20T10:00:22.129Z",
+    "updatedAt": "2026-09-20T10:00:22.129Z",
+    "title": "山东消化道早癌亚专科：让早癌治疗不必“伤筋动骨”",
+    "summary": "中新网济南9月20日电 题：山东消化道早癌亚专科：让早癌治疗不必“伤筋动骨”",
+    "channel": "health",
+    "tags": [
+      "健康"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-20/10700035.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网济南9月20日电 题：山东消化道早癌亚专科：让早癌治疗不必“伤筋动骨”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "山东消化道早癌亚专科：让早癌治疗不必“伤筋动骨”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-20/10700035.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T07:31:39.000Z",
+    "rssPublishedAt": "2026-09-20T07:31:39.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-20T10:00:22.129Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 2.5,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:22.129Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb13a35unjp",
+    "createdAt": "2026-09-20T10:00:21.574Z",
+    "updatedAt": "2026-09-20T10:00:21.574Z",
+    "title": "2026年中华龙狮大赛（陕西三原站）鸣锣 海内外龙狮队伍同台竞技",
+    "summary": "中新网陕西咸阳9月20日电 (记者 张一辰)2026年中华龙狮大赛(陕西三原站)19日在咸阳市三原县城隍庙广场鸣锣开赛，这是该项国家级品牌赛事首次落地陕西。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "2026年",
+      "华龙狮大赛"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-20/10700082.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网陕西咸阳9月20日电 (记者 张一辰)2026年中华龙狮大赛(陕西三原站)19日在咸阳市三原县城隍庙广场鸣锣开赛，这是该项国家级品牌赛事首次落地陕西。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026年中华龙狮大赛（陕西三原站）鸣锣 海内外"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-20/10700082.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T07:51:30.000Z",
+    "rssPublishedAt": "2026-09-20T07:51:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-20T10:00:21.574Z",
+    "score": 63,
+    "metrics": {
+      "ageHours": 2.1,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "首次"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 63 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:21.574Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb137pdj0l0",
+    "createdAt": "2026-09-20T10:00:21.571Z",
+    "updatedAt": "2026-09-20T10:00:21.571Z",
+    "title": "从城市会客厅到国际音乐剧窗口 北京天桥演艺区打造立体生态集群",
+    "summary": "中新网北京9月20日电 (记者 徐婧)天桥艺术中心持续引入佳作，成为北京观众音乐剧观演“首选”；天桥印象博物馆深挖历史底蕴，讲述老北京市井风情；“天桥一号”汇聚各类演艺要素，建设立体产业园区……从剧目创制到场景消费，位于",
+    "channel": "culture",
+    "tags": [
+      "文化"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-20/10700097.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月20日电 (记者 徐婧)天桥艺术中心持续引入佳作，成为北京观众音乐剧观演“首选”；天桥印象博物馆深挖历史底蕴，讲述老北京市井风情；“天桥一号”汇聚各类演艺要素，建设立体产业园区……从剧目创制到场景消费，位于北京西城的天桥演艺区正在形成演艺生态集群。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "从城市会客厅到国际音乐剧窗口 北京天桥演艺区打造"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-20/10700097.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:06:22.000Z",
+    "rssPublishedAt": "2026-09-20T08:06:22.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-20T10:00:21.571Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.9,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:21.571Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb13504tkgm",
+    "createdAt": "2026-09-20T10:00:21.569Z",
+    "updatedAt": "2026-09-20T10:00:21.569Z",
+    "title": "陕西公布唐昭陵两批遗物修复情况：器物以各类陶俑为主",
+    "summary": "中新网西安9月20日电 (记者 梅镱泷 阿琳娜)记者20日从陕西省考古研究院获悉，考古人员对1965年与2002年两次采集的唐昭陵遗物进行了统一拼对修复，器物以各类陶俑为主，包括文官俑、武士俑、奏乐俑等，还有陶鼎、陶奁、",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "器物",
+      "各类陶俑"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-20/10700185.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网西安9月20日电 (记者 梅镱泷 阿琳娜)记者20日从陕西省考古研究院获悉，考古人员对1965年与2002年两次采集的唐昭陵遗物进行了统一拼对修复，器物以各类陶俑为主，包括文官俑、武士俑、奏乐俑等，还有陶鼎、陶奁、耳杯等陶器等。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "陕西公布唐昭陵两批遗物修复情况：器物以各类陶俑为"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-20/10700185.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:49:38.000Z",
+    "rssPublishedAt": "2026-09-20T08:49:38.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-20T10:00:21.569Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:21.569Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb133xu5psu",
+    "createdAt": "2026-09-20T10:00:21.567Z",
+    "updatedAt": "2026-09-20T10:00:21.567Z",
+    "title": "《岳飞在安徽》首发 填补岳飞文化区域研究空白",
+    "summary": "中新网合肥9月20日电 (记者 张强)《岳飞在安徽》一书20日在合肥首发。该书是一部能让读者全面了解岳飞与江淮大地深厚渊源的学术文化专著。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "岳飞",
+      "安徽"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-20/10700153.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网合肥9月20日电 (记者 张强)《岳飞在安徽》一书20日在合肥首发。"
+      },
+      {
+        "type": "p",
+        "text": "该书是一部能让读者全面了解岳飞与江淮大地深厚渊源的学术文化专著。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《岳飞在安徽》首发 填补岳飞文化区域研究空白"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-20/10700153.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:50:26.000Z",
+    "rssPublishedAt": "2026-09-20T08:50:26.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-20T10:00:21.567Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:21.567Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb132vt1t0s",
+    "createdAt": "2026-09-20T10:00:21.566Z",
+    "updatedAt": "2026-09-20T10:00:21.566Z",
+    "title": "“阿尔泰山—天山地区考古发现与研究”国际学术研讨会召开",
+    "summary": "中新网西安9月20日电 (记者 阿琳娜 梅镱泷)记者20日从丝绸之路考古合作研究中心获悉，由新疆维吾尔自治区文物局、陕西省文物局、西北大学指导，丝绸之路考古合作研究中心、哈密市文博院主办，哈密市博物馆、丝绸之路考古合作研",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "“阿尔泰山"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-20/10700181.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网西安9月20日电 (记者 阿琳娜 梅镱泷)记者20日从丝绸之路考古合作研究中心获悉，由新疆维吾尔自治区文物局、陕西省文物局、西北大学指导，丝绸之路考古合作研究中心、哈密市文博院主办，哈密市博物馆、丝绸之路考古合作研究中心哈密分中心承办的“阿尔泰山—天山地区考古发现与研究”国际学术研讨会17日至19日在新疆哈密举办。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“阿尔泰山—天山地区考古发现与研究”国际学术研讨"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-20/10700181.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:16:54.000Z",
+    "rssPublishedAt": "2026-09-20T09:16:54.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-20T10:00:21.566Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:21.566Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb04ez1pckq",
+    "createdAt": "2026-09-20T10:00:20.318Z",
+    "updatedAt": "2026-09-20T10:01:08.690Z",
+    "title": "中国选手李冰洁夺得女子1500米自由泳冠军",
+    "summary": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子1500米自由泳决赛中，中国选手、卫冕冠军李冰洁以15分53秒52夺得冠军。中国选手高唯中获得第五名。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700209.shtml",
+    "cover": "/img/news/i-mu9nb04ez1pckq-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子1500米自由泳决赛中，中国选手、卫冕冠军李冰洁以15分53秒52夺得冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手李冰洁夺得女子1500米自由泳冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700209.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:54:54.000Z",
+    "rssPublishedAt": "2026-09-20T08:54:54.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-20T10:00:20.318Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:20.318Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.690Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1g2d4rpng",
+    "publishedInboxAt": "2026-09-20T10:01:08.690Z"
+  },
+  {
+    "id": "mu9nb04d9az853",
+    "createdAt": "2026-09-20T10:00:20.317Z",
+    "updatedAt": "2026-09-20T10:00:20.317Z",
+    "title": "汪顺亚运摘铜：比赛很开心，能够在体育中获得快乐",
+    "summary": "中新网9月20日电(记者 朱晨曦)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子200米个人混合泳决赛中，第五次参加亚运会的中国老将、该项目亚洲纪录保持者汪顺以1分57秒14夺得铜牌。日本选手包揽金银牌。汪顺在赛后",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "汪顺亚运摘铜",
+      "比赛很开心"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700211.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电(记者 朱晨曦)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子200米个人混合泳决赛中，第五次参加亚运会的中国老将、该项目亚洲纪录保持者汪顺以1分57秒14夺得铜牌。"
+      },
+      {
+        "type": "p",
+        "text": "汪顺在赛后接受采访时说，比赛中对手发挥得非常出色，自己也尽力去游了，今天比赛还是很开心的。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "汪顺亚运摘铜：比赛很开心，能够在体育中获得快乐"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700211.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:59:13.000Z",
+    "rssPublishedAt": "2026-09-20T08:59:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-20T10:00:20.317Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:20.317Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nb04b7ahk6u",
+    "createdAt": "2026-09-20T10:00:20.315Z",
+    "updatedAt": "2026-09-20T10:01:08.657Z",
+    "title": "亚运会 | 男子100米自由泳潘展乐成功卫冕",
+    "summary": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会男子100米自由泳比赛中，中国队选手潘展乐成功卫冕。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700227.shtml",
+    "cover": "/img/news/i-mu9nb04b7ahk6u-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会男子100米自由泳比赛中，中国队选手潘展乐成功卫冕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "亚运会 | 男子100米自由泳潘展乐成功卫冕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700227.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:13:16.000Z",
+    "rssPublishedAt": "2026-09-20T09:13:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-20T10:00:20.315Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "刚刚"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:20.315Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.657Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1f5k2zhyz",
+    "publishedInboxAt": "2026-09-20T10:01:08.657Z"
+  },
+  {
+    "id": "mu9nb0491dqszo",
+    "createdAt": "2026-09-20T10:00:20.313Z",
+    "updatedAt": "2026-09-20T10:01:08.623Z",
+    "title": "亚运会 | 女子50米蛙泳唐钱婷成功卫冕",
+    "summary": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会女子50米蛙泳比赛中，中国队选手唐钱婷成功卫冕。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700228.shtml",
+    "cover": "/img/news/i-mu9nb0491dqszo-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会女子50米蛙泳比赛中，中国队选手唐钱婷成功卫冕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "亚运会 | 女子50米蛙泳唐钱婷成功卫冕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700228.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:19:42.000Z",
+    "rssPublishedAt": "2026-09-20T09:19:42.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-20T10:00:20.313Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "刚刚"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:20.313Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.623Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1e75kdtsb",
+    "publishedInboxAt": "2026-09-20T10:01:08.623Z"
+  },
+  {
+    "id": "mu9nb047qzbb55",
+    "createdAt": "2026-09-20T10:00:20.311Z",
+    "updatedAt": "2026-09-20T10:01:08.588Z",
+    "title": "中国选手潘展乐获得男子100米自由泳冠军",
+    "summary": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子100米自由泳决赛中，中国选手、世界纪录保持者潘展乐以47秒61获得冠军，另一名中国选手张展硕排名第四。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700230.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子100米自由泳决赛中，中国选手、世界纪录保持者潘展乐以47秒61获得冠军，另一名中国选手张展硕排名第四。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手潘展乐获得男子100米自由泳冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700230.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:28:23.000Z",
+    "rssPublishedAt": "2026-09-20T09:28:23.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-20T10:00:20.311Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:20.311Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.588Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1d8h23g12",
+    "publishedInboxAt": "2026-09-20T10:01:08.588Z"
+  },
+  {
+    "id": "mu9naziytk0j6f",
+    "createdAt": "2026-09-20T10:00:19.546Z",
+    "updatedAt": "2026-09-20T10:00:19.546Z",
+    "title": "商务部：1-8月全国网上商品和服务零售额增长4.6%",
+    "summary": "中新网9月20日电 据商务部网站消息，2026年1-8月，我国电子商务向好向新发展，融合线上线下推动消费扩容提质，数智化赋能助力产业转型升级，“丝路电商”伙伴国持续扩围，深化国际经贸合作。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "商务部",
+      "8月"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-20/10700213.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电 据商务部网站消息，2026年1-8月，我国电子商务向好向新发展，融合线上线下推动消费扩容提质，数智化赋能助力产业转型升级，“丝路电商”伙伴国持续扩围，深化国际经贸合作。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "商务部：1-8月全国网上商品和服务零售额增长4."
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-20/10700213.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:10:42.000Z",
+    "rssPublishedAt": "2026-09-20T09:10:42.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-20T10:00:19.546Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:19.546Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nazixud32u4",
+    "createdAt": "2026-09-20T10:00:19.545Z",
+    "updatedAt": "2026-09-20T10:00:19.545Z",
+    "title": "从“资源驱动”迈向“创新驱动”：专家建言让 “流量”变 “留量”",
+    "summary": "中新网海口9月20日电 (记者 符宇群)人气与留量之间的落差，已经成为文体旅融合发展的现实考题。19日在海口举行的2026“十五五·同心聚力自贸港”三期沙龙活动上，民盟海南省委专家咨询委员会副会长、成化宣德(海南)文旅有",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "“创新驱动”",
+      "专家建言让"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-20/10700160.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网海口9月20日电 (记者 符宇群)人气与留量之间的落差，已经成为文体旅融合发展的现实考题。"
+      },
+      {
+        "type": "p",
+        "text": "19日在海口举行的2026“十五五·同心聚力自贸港”三期沙龙活动上，民盟海南省委专家咨询委员会副会长、成化宣德(海南)文旅有限公司董事长焦涌作专题分享时表示，海南文体旅正处于从“资源驱动”迈向“创新驱动”的关键期，唯有让 “网红”变 “长红”、让 “流量”变 “留量”，才能留住客流、抢占先机。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "从“资源驱动”迈向“创新驱动”：专家建言让 “流"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-20/10700160.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:12:10.000Z",
+    "rssPublishedAt": "2026-09-20T09:12:10.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-20T10:00:19.545Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:19.545Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9naziwed37f3",
+    "createdAt": "2026-09-20T10:00:19.544Z",
+    "updatedAt": "2026-09-20T10:00:19.544Z",
+    "title": "（活力中国）中国县域经济的湖北样板：特色集群激活产业动能",
+    "summary": "中新社武汉9月20日电 题：中国县域经济的湖北样板：特色集群激活产业动能",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "活力",
+      "国县域经济"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-20/10700176.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社武汉9月20日电 题：中国县域经济的湖北样板：特色集群激活产业动能。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（活力中国）中国县域经济的湖北样板：特色集群激活"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-20/10700176.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:13:16.000Z",
+    "rssPublishedAt": "2026-09-20T09:13:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-20T10:00:19.544Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:19.544Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nazitj221bv",
+    "createdAt": "2026-09-20T10:00:19.541Z",
+    "updatedAt": "2026-09-20T10:00:19.541Z",
+    "title": "（活力中国调研行）江苏丰县：产业园串起产业链 足不出县配齐全件",
+    "summary": "中新网徐州9月20日电 题：江苏丰县：产业园串起产业链 足不出县配齐全件",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "活力",
+      "国调研行"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-20/10700179.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网徐州9月20日电 题：江苏丰县：产业园串起产业链 足不出县配齐全件。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（活力中国调研行）江苏丰县：产业园串起产业链 足"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-20/10700179.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:15:56.000Z",
+    "rssPublishedAt": "2026-09-20T09:15:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-20T10:00:19.541Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:19.541Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9naziq05dry6",
+    "createdAt": "2026-09-20T10:00:19.538Z",
+    "updatedAt": "2026-09-20T10:00:19.538Z",
+    "title": "海南产经新观察：文旅融合不是一句口号",
+    "summary": "中新网海口9月20日电 (张月和)“文旅融合不是一句口号，而是实实在在的产品创新与业态重塑。”在民盟盟员、海南师范大学副教授贾寒看来，文化是旅游的灵魂，但文化不能只停留在博物馆里，必须通过IP化让它“沉下去、活起来”。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "文旅融合不",
+      "一句口号"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-20/10700225.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网海口9月20日电 (张月和)“文旅融合不是一句口号，而是实实在在的产品创新与业态重塑。"
+      },
+      {
+        "type": "p",
+        "text": "”在民盟盟员、海南师范大学副教授贾寒看来，文化是旅游的灵魂，但文化不能只停留在博物馆里，必须通过IP化让它“沉下去、活起来”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "海南产经新观察：文旅融合不是一句口号"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-20/10700225.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:34:39.000Z",
+    "rssPublishedAt": "2026-09-20T09:34:39.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-20T10:00:19.538Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:19.538Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayyu0o5gbx",
+    "createdAt": "2026-09-20T10:00:18.822Z",
+    "updatedAt": "2026-09-20T10:00:18.822Z",
+    "title": "日本民众举行集会 反对高市扩军修宪动向",
+    "summary": "19日，大批日本民众在日本国会前举行抗议集会，要求日本首相高市早苗撤回涉台错误言论，反对日本政府扩军修宪动向。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "日本民众",
+      "集会"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10700199.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "19日，大批日本民众在日本国会前举行抗议集会，要求日本首相高市早苗撤回涉台错误言论，反对日本政府扩军修宪动向。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "日本民众举行集会 反对高市扩军修宪动向"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10700199.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:44:06.000Z",
+    "rssPublishedAt": "2026-09-20T08:44:06.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-20T10:00:18.822Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.822Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayytfdp8ju",
+    "createdAt": "2026-09-20T10:00:18.821Z",
+    "updatedAt": "2026-09-20T10:00:18.821Z",
+    "title": "这场世界级大赛即将在上海开幕，一群人为“接住”这场大赛坚守十年",
+    "summary": "为了“接住”这场大赛，上海走过了整整十年。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "上海开幕",
+      "一群人"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10700206.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "为了“接住”这场大赛，上海走过了整整十年。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "这场世界级大赛即将在上海开幕，一群人为“接住”这"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10700206.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:49:06.000Z",
+    "rssPublishedAt": "2026-09-20T08:49:06.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-20T10:00:18.821Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（52 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.821Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayysaud7el",
+    "createdAt": "2026-09-20T10:00:18.820Z",
+    "updatedAt": "2026-09-20T10:00:18.820Z",
+    "title": "加拿大官员：将选择性与欧盟合作 不会直接向欧盟预算缴款",
+    "summary": "中新网北京9月20日电 综合消息：即将出任加拿大常驻欧盟代表的乔纳森·威尔金森当地时间19日表示，加方将“有选择地”推进同欧盟的“独特联盟”，不会直接向欧盟预算缴款，但会为部分合作项目出资。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "加拿大官员",
+      "选择性"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10700134.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月20日电 综合消息：即将出任加拿大常驻欧盟代表的乔纳森·威尔金森当地时间19日表示，加方将“有选择地”推进同欧盟的“独特联盟”，不会直接向欧盟预算缴款，但会为部分合作项目出资。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "加拿大官员：将选择性与欧盟合作 不会直接向欧盟预"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10700134.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:56:34.000Z",
+    "rssPublishedAt": "2026-09-20T08:56:34.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-20T10:00:18.820Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.820Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayyrtv6gys",
+    "createdAt": "2026-09-20T10:00:18.819Z",
+    "updatedAt": "2026-09-20T10:00:18.819Z",
+    "title": "线下教学中断近三年后 超50万加沙学生迎来新学年",
+    "summary": "中新网北京9月20日电 据巴勒斯坦通讯社报道，在因本轮巴以冲突导致线下教学中断近三年后，加沙地带超50万名学生于当地时间19日迎来新学年。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "线下教学",
+      "断近三年后"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10700138.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月20日电 据巴勒斯坦通讯社报道，在因本轮巴以冲突导致线下教学中断近三年后，加沙地带超50万名学生于当地时间19日迎来新学年。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "线下教学中断近三年后 超50万加沙学生迎来新学年"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10700138.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:57:05.000Z",
+    "rssPublishedAt": "2026-09-20T08:57:05.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-20T10:00:18.819Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.819Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayyodlf3vh",
+    "createdAt": "2026-09-20T10:00:18.816Z",
+    "updatedAt": "2026-09-20T10:00:18.816Z",
+    "title": "莫斯科遭大规模无人机袭击 俄军打击基辅等地目标",
+    "summary": "中新社莫斯科9月20日电 (记者 田冰)俄罗斯首都莫斯科市市长索比亚宁20日表示，俄防空部队成功击退针对莫斯科发动的前所未有的大规模无人机袭击。俄国防部表示，当天对乌克兰境内多地目标发动打击。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "俄军打击基辅",
+      "地目标"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10700175.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社莫斯科9月20日电 (记者 田冰)俄罗斯首都莫斯科市市长索比亚宁20日表示，俄防空部队成功击退针对莫斯科发动的前所未有的大规模无人机袭击。"
+      },
+      {
+        "type": "p",
+        "text": "俄国防部表示，当天对乌克兰境内多地目标发动打击。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "莫斯科遭大规模无人机袭击 俄军打击基辅等地目标"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10700175.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T08:57:31.000Z",
+    "rssPublishedAt": "2026-09-20T08:57:31.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-20T10:00:18.816Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.816Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9naylk20jhcu",
+    "createdAt": "2026-09-20T10:00:18.344Z",
+    "updatedAt": "2026-09-20T10:01:08.553Z",
+    "title": "中国选手唐钱婷夺得女子50米蛙泳冠军",
+    "summary": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子50米蛙泳决赛中，中国选手、卫冕冠军唐钱婷以29秒45，夺得冠军，再次刷新预赛中创造的赛会纪录。",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700233.shtml",
+    "cover": "/img/news/i-mu9naylk20jhcu-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电(记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子50米蛙泳决赛中，中国选手、卫冕冠军唐钱婷以29秒45，夺得冠军，再次刷新预赛中创造的赛会纪录。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手唐钱婷夺得女子50米蛙泳冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700233.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:38:13.000Z",
+    "rssPublishedAt": "2026-09-20T09:38:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-20T10:00:18.344Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.344Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.553Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1c98bf0r2",
+    "publishedInboxAt": "2026-09-20T10:01:08.553Z"
+  },
+  {
+    "id": "mu9nayli283gt8",
+    "createdAt": "2026-09-20T10:00:18.342Z",
+    "updatedAt": "2026-09-20T10:01:08.517Z",
+    "title": "亚运会｜男子100米仰泳徐嘉余成功卫冕",
+    "summary": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会男子100米仰泳比赛中，中国队选手徐嘉余成功卫冕。",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700234.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社东京9月20日电 在刚刚结束的爱知·名古屋亚运会男子100米仰泳比赛中，中国队选手徐嘉余成功卫冕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "亚运会｜男子100米仰泳徐嘉余成功卫冕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700234.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:38:41.000Z",
+    "rssPublishedAt": "2026-09-20T09:38:41.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-20T10:00:18.342Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "刚刚"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.342Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.517Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1b9pb3qpd",
+    "publishedInboxAt": "2026-09-20T10:01:08.517Z"
+  },
+  {
+    "id": "mu9naylfloi1rl",
+    "createdAt": "2026-09-20T10:00:18.339Z",
+    "updatedAt": "2026-09-20T10:00:18.339Z",
+    "title": "华西秋雨超长待机 四川重庆陕西局地雨量或破纪录",
+    "summary": "中国天气网讯 最近出门，北方朋友是不是觉得早晚凉飕飕，得加件薄外套了？而南方的朋友还在喊热，空调依旧“加班”中。未来一周，我国的天气舞台依旧多变：华西秋雨持续发力，北方冷空气频繁“串场”，南方则被副热带高压牢牢掌控，秋老",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-20/10700235.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中国天气网讯 最近出门，北方朋友是不是觉得早晚凉飕飕，得加件薄外套了。"
+      },
+      {
+        "type": "p",
+        "text": "而南方的朋友还在喊热，空调依旧“加班”中。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "华西秋雨超长待机 四川重庆陕西局地雨量或破纪录"
+      },
+      {
+        "type": "p",
+        "text": "未来一周，我国的天气舞台依旧多变：华西秋雨持续发力，北方冷空气频繁“串场”，南方则被副热带高压牢牢掌控，秋老虎发威。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-20/10700235.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:47:18.000Z",
+    "rssPublishedAt": "2026-09-20T09:47:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-20T10:00:18.339Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.339Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu9nayld8gf3jr",
+    "createdAt": "2026-09-20T10:00:18.337Z",
+    "updatedAt": "2026-09-20T10:01:08.478Z",
+    "title": "中国选手徐嘉余夺得亚运会男子100米仰泳冠军",
+    "summary": "中新网9月20日电 (记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子100米仰泳决赛中，中国选手、亚洲纪录保持者徐嘉余以51秒98夺金，成功卫冕，并刷新由本人保持的赛会纪录。中国选手姜呈霖获得第",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700237.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电 (记者 朱晨曦 周昕)当地时间9月20日，在爱知·名古屋亚运会游泳项目男子100米仰泳决赛中，中国选手、亚洲纪录保持者徐嘉余以51秒98夺金，成功卫冕，并刷新由本人保持的赛会纪录。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手徐嘉余夺得亚运会男子100米仰泳冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700237.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:50:20.000Z",
+    "rssPublishedAt": "2026-09-20T09:50:20.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-20T10:00:18.337Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.337Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.478Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc1a5w2hme5",
+    "publishedInboxAt": "2026-09-20T10:01:08.478Z"
+  },
+  {
+    "id": "mu9naylasop5gk",
+    "createdAt": "2026-09-20T10:00:18.334Z",
+    "updatedAt": "2026-09-20T10:01:08.440Z",
+    "title": "于子迪亚运会摘金：我相信下次会更好",
+    "summary": "中新网9月20日电(记者 朱晨曦)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子200米蝶泳决赛中，首次参加亚运会的13岁中国小将于子迪以2分05秒08刷新赛会纪录，夺得冠军。这是中国队在本届亚运会游泳项目上获得的",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "我相信下次会"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-20/10700238.shtml",
+    "cover": "/img/news/i-mu9naylasop5gk-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电(记者 朱晨曦)当地时间9月20日，在爱知·名古屋亚运会游泳项目女子200米蝶泳决赛中，首次参加亚运会的13岁中国小将于子迪以2分05秒08刷新赛会纪录，夺得冠军。"
+      },
+      {
+        "type": "p",
+        "text": "这是中国队在本届亚运会游泳项目上获得的首枚金牌。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "于子迪亚运会摘金：我相信下次会更好"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-20/10700238.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-20T09:52:30.000Z",
+    "rssPublishedAt": "2026-09-20T09:52:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-20T10:00:18.334Z",
+    "score": 71,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 2,
+      "keywordScore": 10,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "首次",
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 71 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-20T10:00:18.334Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-20T10:01:08.440Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu9nc194r1orw1",
+    "publishedInboxAt": "2026-09-20T10:01:08.440Z"
+  },
+  {
+    "id": "mu90syr9p3f6rn",
+    "createdAt": "2026-09-19T23:30:27.189Z",
+    "updatedAt": "2026-09-19T23:30:27.189Z",
+    "title": "卵巢癌为何被称为“沉默的杀手”？专家：警惕这些易被忽视的信号",
+    "summary": "中新网郑州9月19日电 (王士豪)9月20日是世界妇科肿瘤日。卵巢癌为何常被称为“沉默的杀手”？郑州大学第二附属医院妇产科主任医师王志红接受中新网采访时表示，卵巢癌早期症状往往不明显，且缺乏特异性，容易与胃肠道疾病等混淆",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "卵巢癌",
+      "“沉默"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699571.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网郑州9月19日电 (王士豪)9月20日是世界妇科肿瘤日。"
+      },
+      {
+        "type": "p",
+        "text": "卵巢癌为何常被称为“沉默的杀手”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "卵巢癌为何被称为“沉默的杀手”？专家：警惕这些易"
+      },
+      {
+        "type": "p",
+        "text": "郑州大学第二附属医院妇产科主任医师王志红接受中新网采访时表示，卵巢癌早期症状往往不明显，且缺乏特异性，容易与胃肠道疾病等混淆；因此出现症状就诊时，约70%的患者已处于晚期。"
+      },
+      {
+        "type": "p",
+        "text": "目前，对于普通人群尚无满意的筛查方法。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699571.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T11:10:12.000Z",
+    "rssPublishedAt": "2026-09-19T11:10:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-19T23:30:27.189Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 12.3,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:27.189Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:27.189Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90syr7cm2lw1",
+    "createdAt": "2026-09-19T23:30:27.187Z",
+    "updatedAt": "2026-09-19T23:30:27.187Z",
+    "title": "中医药业者、传承人等倡议加强中医药非遗特色诊疗平台建设",
+    "summary": "中新网济南9月19日电 2026中医药非物质文化遗产保护年会19日在济南举行，中国非物质文化遗产保护协会中医药专业委员会在现场发布《关于加强中医药非物质文化遗产特色诊疗平台建设的倡议》(以下简称“倡议”)，旨在以加强中医",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "医药业者",
+      "传承人"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699647.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网济南9月19日电 2026中医药非物质文化遗产保护年会19日在济南举行，中国非物质文化遗产保护协会中医药专业委员会在现场发布《关于加强中医药非物质文化遗产特色诊疗平台建设的倡议》(以下简称“倡议”)，旨在以加强中医药非遗特色诊疗平台建设为切入点，全面推动中医药非遗系统性保护与高质量发展。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中医药业者、传承人等倡议加强中医药非遗特色诊疗平"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699647.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:26:47.000Z",
+    "rssPublishedAt": "2026-09-19T12:26:47.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-19T23:30:27.187Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:27.187Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:27.187Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90syr6wde40j",
+    "createdAt": "2026-09-19T23:30:27.186Z",
+    "updatedAt": "2026-09-19T23:30:27.186Z",
+    "title": "报告：广州幽门螺杆菌抗生素耐药率连年下降",
+    "summary": "中新网广州9月19日电 (记者 蔡敏婕)《2022-2026广州Hp抗生素耐药年度监测报告》19日在广州发布。报告显示，广州幽门螺杆菌抗生素耐药率连年下降，与广州市民良好的健康素养和深厚的岭南中医药文化相关。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "报告"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699640.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网广州9月19日电 (记者 蔡敏婕)《2022-2026广州Hp抗生素耐药年度监测报告》19日在广州发布。"
+      },
+      {
+        "type": "p",
+        "text": "报告显示，广州幽门螺杆菌抗生素耐药率连年下降，与广州市民良好的健康素养和深厚的岭南中医药文化相关。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "报告：广州幽门螺杆菌抗生素耐药率连年下降"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699640.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:36:50.000Z",
+    "rssPublishedAt": "2026-09-19T12:36:50.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-19T23:30:27.186Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:27.186Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:27.186Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90syr4gc4viw",
+    "createdAt": "2026-09-19T23:30:27.184Z",
+    "updatedAt": "2026-09-19T23:30:27.184Z",
+    "title": "2026中医药文化国际传播交流会在蓉举行",
+    "summary": "中新网成都9月19日电(祝欢)19日，2026中医药文化国际传播交流会在成都中医药大学举行。来自各高校、科研机构、学术出版与行业组织的专家学者200余人，围绕中医药文化国际传播的区域国别研究、翻译与跨文化交流、多语种人才",
+    "channel": "health",
+    "tags": [
+      "健康"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699617.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网成都9月19日电(祝欢)19日，2026中医药文化国际传播交流会在成都中医药大学举行。"
+      },
+      {
+        "type": "p",
+        "text": "来自各高校、科研机构、学术出版与行业组织的专家学者200余人，围绕中医药文化国际传播的区域国别研究、翻译与跨文化交流、多语种人才培养、全球健康治理等前沿议题展开深入研讨。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026中医药文化国际传播交流会在蓉举行"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699617.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:41:00.000Z",
+    "rssPublishedAt": "2026-09-19T12:41:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-19T23:30:27.184Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.8,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:27.184Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:27.184Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90syr27myblv",
+    "createdAt": "2026-09-19T23:30:27.182Z",
+    "updatedAt": "2026-09-19T23:30:27.182Z",
+    "title": "5G搭起“空中手术室” 南京医生远程为青海患者操刀",
+    "summary": "中新网南京9月19日电 (蒋雯 胥林花)依托5G高速网络与国产手术机器人，江苏省肿瘤医院专家18日在南京的手术室，远程为青海省第五人民医院的一名肾癌患者完成高难度保肾肿瘤剜除手术。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "5G搭起“空",
+      "手术室”"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-19/10699673.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网南京9月19日电 (蒋雯 胥林花)依托5G高速网络与国产手术机器人，江苏省肿瘤医院专家18日在南京的手术室，远程为青海省第五人民医院的一名肾癌患者完成高难度保肾肿瘤剜除手术。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "5G搭起“空中手术室” 南京医生远程为青海患者操"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-19/10699673.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:11:02.000Z",
+    "rssPublishedAt": "2026-09-19T13:11:02.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-19T23:30:27.182Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:27.182Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:27.182Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sybje7ecpb",
+    "createdAt": "2026-09-19T23:30:26.623Z",
+    "updatedAt": "2026-09-19T23:30:26.623Z",
+    "title": "山西寿阳：青年傩舞狂欢派对让古老非遗“潮”起来",
+    "summary": "图为学生展示傩舞竹马表演。李静 摄 中新网晋中9月19日电(高雨晴 王静)9月19日，“怡然见晋中·傩舞燃青春”寿阳县青年傩舞狂欢派对在山西省晋中市寿阳县平头镇黑水村福田谷景区拉开帷幕。活动以国家级非物质文化遗产代表性项",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "山西寿阳"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-19/10699702.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "李静 摄 中新网晋中9月19日电(高雨晴 王静)9月19日，“怡然见晋中·傩舞燃青春”寿阳县青年傩舞狂欢派对在山西省晋中市寿阳县平头镇黑水村福田谷景区拉开帷幕。"
+      },
+      {
+        "type": "p",
+        "text": "活动以国家级非物质文化遗产代表性项目傩舞(寿阳爱社)为内核，将古老傩文化与青春创意、现代潮流深度融合。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "山西寿阳：青年傩舞狂欢派对让古老非遗“潮”起来"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-19/10699702.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:03:04.000Z",
+    "rssPublishedAt": "2026-09-19T13:03:04.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-19T23:30:26.623Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:26.623Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:26.623Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sybitqqwb4",
+    "createdAt": "2026-09-19T23:30:26.622Z",
+    "updatedAt": "2026-09-19T23:30:26.622Z",
+    "title": "“营造”千年文脉：山东推动运河古建从“保得住”走向“活起来”",
+    "summary": "中新网济南9月19日电 题：“营造”千年文脉：山东推动运河古建从“保得住”走向“活起来”",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "“保得住”走",
+      "“活起来”"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-19/10699680.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网济南9月19日电 题：“营造”千年文脉：山东推动运河古建从“保得住”走向“活起来”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“营造”千年文脉：山东推动运河古建从“保得住”走"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-19/10699680.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:09:12.000Z",
+    "rssPublishedAt": "2026-09-19T13:09:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-19T23:30:26.622Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.4,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:26.622Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:26.622Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sybhc2vdtn",
+    "createdAt": "2026-09-19T23:30:26.621Z",
+    "updatedAt": "2026-09-19T23:30:26.621Z",
+    "title": "2026长江文化艺术季在武汉开幕",
+    "summary": "中新社武汉9月19日电 (记者 梁婷)2026长江文化艺术季19日在武汉启幕，汇聚长江流域及全国优质文化资源，以多元文化艺术形式全方位展示长江文明、讲述中国故事。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "武汉开幕"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-19/10699710.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社武汉9月19日电 (记者 梁婷)2026长江文化艺术季19日在武汉启幕，汇聚长江流域及全国优质文化资源，以多元文化艺术形式全方位展示长江文明、讲述中国故事。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026长江文化艺术季在武汉开幕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-19/10699710.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:50:40.000Z",
+    "rssPublishedAt": "2026-09-19T13:50:40.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-19T23:30:26.621Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.7,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:26.621Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:26.621Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sybgbduozz",
+    "createdAt": "2026-09-19T23:30:26.620Z",
+    "updatedAt": "2026-09-19T23:30:26.620Z",
+    "title": "“巴蜀鬼才”魏明伦遗作《铁木高娃》在成都首演",
+    "summary": "中新社成都9月19日电 (单鹏)由成都市川剧研究院排演的新编川剧《铁木高娃》19日晚在成都锦江剧场首演。该剧是著名剧作家、“巴蜀鬼才”魏明伦的遗作。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "铁木高娃",
+      "首演"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-19/10699716.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社成都9月19日电 (单鹏)由成都市川剧研究院排演的新编川剧《铁木高娃》19日晚在成都锦江剧场首演。"
+      },
+      {
+        "type": "p",
+        "text": "该剧是著名剧作家、“巴蜀鬼才”魏明伦的遗作。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“巴蜀鬼才”魏明伦遗作《铁木高娃》在成都首演"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-19/10699716.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:59:05.000Z",
+    "rssPublishedAt": "2026-09-19T13:59:05.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-19T23:30:26.620Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:26.620Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:26.620Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sybesb8xan",
+    "createdAt": "2026-09-19T23:30:26.618Z",
+    "updatedAt": "2026-09-19T23:30:26.619Z",
+    "title": "灯火映古塔 雅乐遇秦腔",
+    "summary": "中新社西安9月19日电 (记者 张一辰)夜幕低垂，华灯点亮千年大雁塔，塔身光影流转。大雁塔北广场人头攒动，市民与游客在细雨中共赴一场音乐之约。19日晚间，西安交响乐团大雁塔户外公演如期上演。古塔之下，气势磅礴的交响乐与高",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "灯火映古塔",
+      "雅乐遇秦腔"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-19/10699739.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社西安9月19日电 (记者 张一辰)夜幕低垂，华灯点亮千年大雁塔，塔身光影流转。"
+      },
+      {
+        "type": "p",
+        "text": "大雁塔北广场人头攒动，市民与游客在细雨中共赴一场音乐之约。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "灯火映古塔 雅乐遇秦腔"
+      },
+      {
+        "type": "p",
+        "text": "19日晚间，西安交响乐团大雁塔户外公演如期上演。"
+      },
+      {
+        "type": "p",
+        "text": "古塔之下，气势磅礴的交响乐与高亢豪迈的秦腔完成了一场中西文化的相遇。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-19/10699739.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T15:40:11.000Z",
+    "rssPublishedAt": "2026-09-19T15:40:11.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-19T23:30:26.618Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.8,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:26.618Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:26.619Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sxqy2fb9fu",
+    "createdAt": "2026-09-19T23:30:25.882Z",
+    "updatedAt": "2026-09-19T23:30:25.882Z",
+    "title": "名古屋亚运会开幕式举行 中国体育代表团入场",
+    "summary": "9月19日，名古屋亚运会开幕式举行，中国体育代表团入场。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699556.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月19日，名古屋亚运会开幕式举行，中国体育代表团入场。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "名古屋亚运会开幕式举行 中国体育代表团入场"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699556.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T09:24:18.000Z",
+    "rssPublishedAt": "2026-09-19T09:24:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:25.882Z",
+    "score": 47,
+    "metrics": {
+      "ageHours": 14.1,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 47 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.882Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.882Z",
+      "comment": "分值 47 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sxqvxxh9q2",
+    "createdAt": "2026-09-19T23:30:25.879Z",
+    "updatedAt": "2026-09-19T23:30:25.879Z",
+    "title": "第二十届亚洲运动会开幕",
+    "summary": "新华社快讯：第二十届亚洲运动会19日晚在日本名古屋开幕。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699579.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社快讯：第二十届亚洲运动会19日晚在日本名古屋开幕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第二十届亚洲运动会开幕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699579.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T10:17:11.000Z",
+    "rssPublishedAt": "2026-09-19T10:17:11.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:25.879Z",
+    "score": 47,
+    "metrics": {
+      "ageHours": 13.2,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 47 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.879Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.879Z",
+      "comment": "分值 47 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sxquxoheoh",
+    "createdAt": "2026-09-19T23:30:25.878Z",
+    "updatedAt": "2026-09-19T23:30:25.878Z",
+    "title": "第二十届亚洲运动会主火炬点燃",
+    "summary": "9月19日，第二十届亚洲运动会正式开幕，主火炬点燃。亚运之火熊熊燃起，将一直燃烧到10月4日晚间，闭幕式熄火的那一刻。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699587.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月19日，第二十届亚洲运动会正式开幕，主火炬点燃。"
+      },
+      {
+        "type": "p",
+        "text": "亚运之火熊熊燃起，将一直燃烧到10月4日晚间，闭幕式熄火的那一刻。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第二十届亚洲运动会主火炬点燃"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699587.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T10:50:47.000Z",
+    "rssPublishedAt": "2026-09-19T10:50:47.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:25.878Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 12.7,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.878Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.878Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sxqtd4boyy",
+    "createdAt": "2026-09-19T23:30:25.877Z",
+    "updatedAt": "2026-09-19T23:30:25.877Z",
+    "title": "（爱知·名古屋亚运会）第20届亚运会在日本爱知名古屋开幕",
+    "summary": "中新社日本名古屋9月19日电 (记者 国璇) 第20届亚运会于当地时间9月19日在日本爱知县名古屋市开幕。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699653.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月19日电 (记者 国璇) 第20届亚运会于当地时间9月19日在日本爱知县名古屋市开幕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）第20届亚运会在日本爱知名"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699653.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:25:53.000Z",
+    "rssPublishedAt": "2026-09-19T12:25:53.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:25.877Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.877Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.877Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sxqsh4y1qc",
+    "createdAt": "2026-09-19T23:30:25.876Z",
+    "updatedAt": "2026-09-19T23:30:25.876Z",
+    "title": "2026贵阳国际网球公开赛：中韩组合获男双冠军",
+    "summary": "中新网贵阳9月19日电 (记者 瞿宏伦)2026贵阳国际网球公开赛男双决赛19日在贵州省贵阳市观山湖区举行。中国选手陈显峰搭档韩国选手郑允成战胜德国组合巴尔苏科夫/艾伦施耐德，夺得本届赛事男双冠军。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699625.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网贵阳9月19日电 (记者 瞿宏伦)2026贵阳国际网球公开赛男双决赛19日在贵州省贵阳市观山湖区举行。"
+      },
+      {
+        "type": "p",
+        "text": "中国选手陈显峰搭档韩国选手郑允成战胜德国组合巴尔苏科夫/艾伦施耐德，夺得本届赛事男双冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026贵阳国际网球公开赛：中韩组合获男双冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699625.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:47:18.000Z",
+    "rssPublishedAt": "2026-09-19T12:47:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:25.876Z",
+    "score": 59,
+    "metrics": {
+      "ageHours": 10.7,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 59 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.876Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90sx91wvufmq",
+    "createdAt": "2026-09-19T23:30:25.237Z",
+    "updatedAt": "2026-09-19T23:30:25.237Z",
+    "title": "商务部新闻发言人就美方将《2026年格雷厄姆制裁俄罗斯和伊朗法案》签署成法答记者问",
+    "summary": "中新网9月19日电 据商务部网站19日消息，商务部新闻发言人就美方将《2026年格雷厄姆制裁俄罗斯和伊朗法案》签署成法答记者问。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "美方",
+      "伊朗法案"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699608.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月19日电 据商务部网站19日消息，商务部新闻发言人就美方将《2026年格雷厄姆制裁俄罗斯和伊朗法案》签署成法答记者问。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "商务部新闻发言人就美方将《2026年格雷厄姆制裁"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699608.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T11:58:37.000Z",
+    "rssPublishedAt": "2026-09-19T11:58:37.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:25.237Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.237Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.237Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sx90269xn8",
+    "createdAt": "2026-09-19T23:30:25.236Z",
+    "updatedAt": "2026-09-19T23:30:25.236Z",
+    "title": "“世界陶瓷之都”德化投入逾30亿元推动陶瓷产业国际化",
+    "summary": "中新社福建德化9月19日电 (记者 孙虹)有“世界陶瓷之都”之誉的福建德化19日正式发布推动历史经典产业高质量发展“6+6+6”发展战略体系，以超30亿元(人民币，下同)总投入，从政策、平台、项目等维度全方位推动千年陶瓷",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "“世界陶瓷之"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699597.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社福建德化9月19日电 (记者 孙虹)有“世界陶瓷之都”之誉的福建德化19日正式发布推动历史经典产业高质量发展“6+6+6”发展战略体系，以超30亿元(人民币，下同)总投入，从政策、平台、项目等维度全方位推动千年陶瓷产业转型升级、走向世界。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“世界陶瓷之都”德化投入逾30亿元推动陶瓷产业国"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699597.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:30:05.000Z",
+    "rssPublishedAt": "2026-09-19T12:30:05.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:25.236Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.236Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.236Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sx8z8njqsa",
+    "createdAt": "2026-09-19T23:30:25.235Z",
+    "updatedAt": "2026-09-19T23:30:25.235Z",
+    "title": "全球产业链重构，湘企如何破浪出海？",
+    "summary": "中新网长沙9月19日电 (记者 唐小晴)19日，2026“湘企出海”投资合作对接会在长沙举办，近20个国家和地区的120余名政府官员、工商界代表，与湖南省内150余家企业代表，以国际友城合作为纽带，共探国际产能合作新机遇",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "产业链重构",
+      "湘企"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699670.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网长沙9月19日电 (记者 唐小晴)19日，2026“湘企出海”投资合作对接会在长沙举办，近20个国家和地区的120余名政府官员、工商界代表，与湖南省内150余家企业代表，以国际友城合作为纽带，共探国际产能合作新机遇。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "全球产业链重构，湘企如何破浪出海？"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699670.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:34:20.000Z",
+    "rssPublishedAt": "2026-09-19T12:34:20.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:25.235Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.235Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.235Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sx8y2a2xfb",
+    "createdAt": "2026-09-19T23:30:25.234Z",
+    "updatedAt": "2026-09-19T23:30:25.234Z",
+    "title": "《中国威士忌千岛湖产区团体标准》发布",
+    "summary": "中新网杭州9月19日电(记者 王逸飞)9月19日，由中国酒业协会主办的2026威士忌文化交流大会暨第三届千岛湖威士忌嘉年华在杭州市淳安县千岛湖畔开幕。会上，《中国威士忌千岛湖产区团体标准》(下称团标)正式发布。",
+    "channel": "finance",
+    "tags": [
+      "财经"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699662.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网杭州9月19日电(记者 王逸飞)9月19日，由中国酒业协会主办的2026威士忌文化交流大会暨第三届千岛湖威士忌嘉年华在杭州市淳安县千岛湖畔开幕。"
+      },
+      {
+        "type": "p",
+        "text": "会上，《中国威士忌千岛湖产区团体标准》(下称团标)正式发布。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《中国威士忌千岛湖产区团体标准》发布"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699662.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:37:50.000Z",
+    "rssPublishedAt": "2026-09-19T12:37:50.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:25.234Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.234Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.234Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sx8wrep7ll",
+    "createdAt": "2026-09-19T23:30:25.232Z",
+    "updatedAt": "2026-09-19T23:30:25.232Z",
+    "title": "50余个无人装备项目扬州竞逐 聚焦水上水下低空赛道",
+    "summary": "中新网南京9月19日电 (徐珊珊 王濯璐)9月19日，以“双高协同引领新赛道，空水融合打造新场景”为主题的第十五届中国创新创业大赛无人装备(内河低空)专业赛在扬州举行。来自全国各地的50余个晋级项目同台竞逐，聚焦水上、水",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "50余"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699639.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网南京9月19日电 (徐珊珊 王濯璐)9月19日，以“双高协同引领新赛道，空水融合打造新场景”为主题的第十五届中国创新创业大赛无人装备(内河低空)专业赛在扬州举行。"
+      },
+      {
+        "type": "p",
+        "text": "来自全国各地的50余个晋级项目同台竞逐，聚焦水上、水下、低空无人装备赛道展开激烈比拼。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "50余个无人装备项目扬州竞逐 聚焦水上水下低空赛"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699639.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:40:16.000Z",
+    "rssPublishedAt": "2026-09-19T12:40:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:25.232Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.8,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:25.232Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:25.232Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swq5x5d1be",
+    "createdAt": "2026-09-19T23:30:24.557Z",
+    "updatedAt": "2026-09-19T23:30:24.557Z",
+    "title": "揭秘“特别移送” 日本军国主义“国家犯罪”铁证如山",
+    "summary": "今天是“九一八”事变爆发95周年，一起走进哈尔滨市平房区侵华日军第七三一部队罪证陈列馆，了解“特别移送”档案。",
+    "channel": "world",
+    "tags": [
+      "国际"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699375.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "今天是“九一八”事变爆发95周年，一起走进哈尔滨市平房区侵华日军第七三一部队罪证陈列馆，了解“特别移送”档案。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "揭秘“特别移送” 日本军国主义“国家犯罪”铁证如"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699375.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T02:53:07.000Z",
+    "rssPublishedAt": "2026-09-19T02:53:07.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:24.557Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 20.6,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.557Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.557Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swq4nfgeq0",
+    "createdAt": "2026-09-19T23:30:24.556Z",
+    "updatedAt": "2026-09-19T23:30:24.556Z",
+    "title": "俄罗斯一座纪念碑，为何让日本破防？",
+    "summary": "零时差｜俄罗斯一座纪念碑，为何让日本破防？",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "何让日本破防"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699380.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "零时差｜俄罗斯一座纪念碑，为何让日本破防。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "俄罗斯一座纪念碑，为何让日本破防？"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699380.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T02:56:03.000Z",
+    "rssPublishedAt": "2026-09-19T02:56:03.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:24.556Z",
+    "score": 47,
+    "metrics": {
+      "ageHours": 20.6,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 47 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.556Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.556Z",
+      "comment": "分值 47 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swq3yf1twk",
+    "createdAt": "2026-09-19T23:30:24.555Z",
+    "updatedAt": "2026-09-19T23:30:24.555Z",
+    "title": "95年了，日本一些人仍活在军国主义迷梦中",
+    "summary": "导读：以三名右翼学者抛出涉台错误主张为代表，日本全然不顾国际准则和国家主权原则，正在走向军国主义扩张的历史覆辙。九一八事变的历史警钟依旧回荡，奉劝日本当局迷途知返，用实际行动赢得亚洲邻国与国际社会信任。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "95年",
+      "军国主义迷梦"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699382.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "导读：以三名右翼学者抛出涉台错误主张为代表，日本全然不顾国际准则和国家主权原则，正在走向军国主义扩张的历史覆辙。"
+      },
+      {
+        "type": "p",
+        "text": "九一八事变的历史警钟依旧回荡，奉劝日本当局迷途知返，用实际行动赢得亚洲邻国与国际社会信任。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "95年了，日本一些人仍活在军国主义迷梦中"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699382.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T02:57:17.000Z",
+    "rssPublishedAt": "2026-09-19T02:57:17.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:24.555Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 20.6,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.555Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.555Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swq1aimbtl",
+    "createdAt": "2026-09-19T23:30:24.553Z",
+    "updatedAt": "2026-09-19T23:30:24.553Z",
+    "title": "外媒：伊朗处决一名被指控为以色列提供情报的男子",
+    "summary": "中新网9月19日电 据《以色列时报》援引伊朗方面当地时间19日消息，伊朗一名男子被指控向以色列情报机构提供关于伊朗军事基地的情报，已被处决。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "外媒",
+      "伊朗处决一名"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699659.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月19日电 据《以色列时报》援引伊朗方面当地时间19日消息，伊朗一名男子被指控向以色列情报机构提供关于伊朗军事基地的情报，已被处决。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "外媒：伊朗处决一名被指控为以色列提供情报的男子"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699659.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:22:25.000Z",
+    "rssPublishedAt": "2026-09-19T12:22:25.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:24.553Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.553Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.553Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swpz00ys1q",
+    "createdAt": "2026-09-19T23:30:24.551Z",
+    "updatedAt": "2026-09-19T23:30:24.551Z",
+    "title": "外媒：迈克尔·马拉当选英国苏格兰工党新任党首",
+    "summary": "中新网9月19日电 据英国广播公司(BBC)当地时间19日报道，迈克尔·马拉当选为英国苏格兰工党新任党首，接替此前辞职的阿纳斯·萨瓦尔。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "外媒",
+      "迈克尔"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699660.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月19日电 据英国广播公司(BBC)当地时间19日报道，迈克尔·马拉当选为英国苏格兰工党新任党首，接替此前辞职的阿纳斯·萨瓦尔。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "外媒：迈克尔·马拉当选英国苏格兰工党新任党首"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699660.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:24:05.000Z",
+    "rssPublishedAt": "2026-09-19T12:24:05.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:24.551Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.551Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.551Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swg0n0tkvj",
+    "createdAt": "2026-09-19T23:30:24.192Z",
+    "updatedAt": "2026-09-19T23:30:24.192Z",
+    "title": "怎么折都有面？这座北方小城用折叠箱房圈粉全球",
+    "summary": "1台吊车、4位工人、1天时间，",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "怎么折"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-20/10699741.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "1台吊车、4位工人、1天时间，。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "怎么折都有面？这座北方小城用折叠箱房圈粉全球"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-20/10699741.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T16:47:19.000Z",
+    "rssPublishedAt": "2026-09-19T16:47:19.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:24.192Z",
+    "score": 53,
+    "metrics": {
+      "ageHours": 6.7,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 53 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.192Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:24.192Z",
+      "comment": "分值 53 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90swfzjwndcr",
+    "createdAt": "2026-09-19T23:30:24.191Z",
+    "updatedAt": "2026-09-19T23:30:43.774Z",
+    "title": "第58届东盟经济部长会议在菲举行 聚焦提升区域竞争力",
+    "summary": "中新社马尼拉9月19日电 (记者 周璟)第58届东盟经济部长会议及相关会议19日在菲律宾帕赛市举行。菲律宾贸易和工业部长克里斯蒂娜·罗克主持会议。会议围绕贸易投资、数字化转型、中小微企业发展、创新和可持续增长等议题展开讨",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "聚焦",
+      "区域竞争力"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/aseaninfo/2026/09-20/10699742.shtml",
+    "cover": "/img/news/i-mu90swfzjwndcr-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社马尼拉9月19日电 (记者 周璟)第58届东盟经济部长会议及相关会议19日在菲律宾帕赛市举行。"
+      },
+      {
+        "type": "p",
+        "text": "菲律宾贸易和工业部长克里斯蒂娜·罗克主持会议。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第58届东盟经济部长会议在菲举行 聚焦提升区域竞"
+      },
+      {
+        "type": "p",
+        "text": "会议围绕贸易投资、数字化转型、中小微企业发展、创新和可持续增长等议题展开讨论。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/aseaninfo/2026/09-20/10699742.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T21:56:09.000Z",
+    "rssPublishedAt": "2026-09-19T21:56:09.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:24.191Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.6,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.191Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90swfyzwffrj",
+    "createdAt": "2026-09-19T23:30:24.190Z",
+    "updatedAt": "2026-09-19T23:30:42.179Z",
+    "title": "（台湾写真）《黑神话：悟空》音乐会奏响台北 “天命人”随乐西游",
+    "summary": "中新社台北9月20日电 题：《黑神话：悟空》音乐会奏响台北 “天命人”随乐西游",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "台湾写真",
+      "黑神话"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gn/2026/09-20/10699743.shtml",
+    "cover": "/img/news/i-mu90swfyzwffrj-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社台北9月20日电 题：《黑神话：悟空》音乐会奏响台北 “天命人”随乐西游。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（台湾写真）《黑神话：悟空》音乐会奏响台北 “天"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gn/2026/09-20/10699743.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T21:56:37.000Z",
+    "rssPublishedAt": "2026-09-19T21:56:37.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:24.190Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.6,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.190Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90swfxhbcok5",
+    "createdAt": "2026-09-19T23:30:24.189Z",
+    "updatedAt": "2026-09-19T23:31:13.395Z",
+    "title": "东博会公众开放日怎么逛？三个“首次”别错过",
+    "summary": "9月20日至21日，第23届中国—东盟博览会迎来公众开放日。开放日第一天，怎么逛？记者为你划出三个必看“首次”亮点。",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/aseaninfo/2026/09-20/10699744.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月20日至21日，第23届中国—东盟博览会迎来公众开放日。"
+      },
+      {
+        "type": "p",
+        "text": "记者为你划出三个必看“首次”亮点。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "东博会公众开放日怎么逛？三个“首次”别错过"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/aseaninfo/2026/09-20/10699744.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T21:59:19.000Z",
+    "rssPublishedAt": "2026-09-19T21:59:19.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:24.189Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 1.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "首次"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.189Z"
+    },
+    "review": {
+      "by": "collector",
+      "at": "2026-09-19T23:31:13.395Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mu90tyerdpa7r3",
+    "publishedInboxAt": "2026-09-19T23:31:13.395Z"
+  },
+  {
+    "id": "mu90swfvesan3z",
+    "createdAt": "2026-09-19T23:30:24.187Z",
+    "updatedAt": "2026-09-19T23:30:24.187Z",
+    "title": "四川盐边县泥石流已致2人遇难 3人失联",
+    "summary": "记者19日晚从四川省攀枝花市盐边县泥石流前方救援指挥部现场获悉，截至9月19日22时，救援人员搜救到2名失联人员，已无生命体征；其余3名失联人员正在全力搜救中。(央视新闻客户端）",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "3人失联"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-20/10699746.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "记者19日晚从四川省攀枝花市盐边县泥石流前方救援指挥部现场获悉，截至9月19日22时，救援人员搜救到2名失联人员，已无生命体征；其余3名失联人员正在全力搜救中。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "四川盐边县泥石流已致2人遇难 3人失联"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-20/10699746.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T22:01:30.000Z",
+    "rssPublishedAt": "2026-09-19T22:01:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:24.187Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:24.187Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90svit6crtw2",
+    "createdAt": "2026-09-19T23:30:22.997Z",
+    "updatedAt": "2026-09-19T23:30:22.997Z",
+    "title": "2026长沙（秋季）走娃大赛开赛 2000组亲子家庭逐趣健走",
+    "summary": "中新网长沙9月19日电(熊星 )2026长沙(秋季)走娃少儿健走大赛19日正式开赛。2000组亲子家庭以脚步丈量星城山水，顺利完成13.5公里亲子健走挑战。本届赛事创新融合中华汉字文化与健走赛道，打造一座流动的“汉字博物",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "2026长沙",
+      "秋季"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699628.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网长沙9月19日电(熊星 )2026长沙(秋季)走娃少儿健走大赛19日正式开赛。"
+      },
+      {
+        "type": "p",
+        "text": "2000组亲子家庭以脚步丈量星城山水，顺利完成13.5公里亲子健走挑战。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026长沙（秋季）走娃大赛开赛 2000组亲子"
+      },
+      {
+        "type": "p",
+        "text": "本届赛事创新融合中华汉字文化与健走赛道，打造一座流动的“汉字博物馆”。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699628.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:49:24.000Z",
+    "rssPublishedAt": "2026-09-19T12:49:24.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:22.997Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.7,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.997Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.997Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sviskmh88o",
+    "createdAt": "2026-09-19T23:30:22.996Z",
+    "updatedAt": "2026-09-19T23:30:22.996Z",
+    "title": "中外选手在重庆竞逐中国国际山地户外运动公开赛",
+    "summary": "中新社重庆9月19日电 (梁钦卿 肖江川)2026“仙隆杯”第21届中国国际山地户外运动公开赛(重庆·武隆)暨全国徒步大会(重庆武隆站)19日开赛。近3000名国内外选手及户外运动爱好者齐聚武隆，在喀斯特山水间展开户外竞",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "外选手",
+      "重庆竞逐"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699694.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社重庆9月19日电 (梁钦卿 肖江川)2026“仙隆杯”第21届中国国际山地户外运动公开赛(重庆·武隆)暨全国徒步大会(重庆武隆站)19日开赛。"
+      },
+      {
+        "type": "p",
+        "text": "近3000名国内外选手及户外运动爱好者齐聚武隆，在喀斯特山水间展开户外竞技与徒步体验。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中外选手在重庆竞逐中国国际山地户外运动公开赛"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699694.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:52:59.000Z",
+    "rssPublishedAt": "2026-09-19T12:52:59.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:22.996Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.6,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.996Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.996Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sviqteu0on",
+    "createdAt": "2026-09-19T23:30:22.994Z",
+    "updatedAt": "2026-09-19T23:30:22.994Z",
+    "title": "劳里·塔姆斩获2026“犀旺杯”环黄山国际公路自行车赛第二赛段冠军",
+    "summary": "中新网黄山9月19日电 9月19日，2026“犀旺杯”环黄山国际公路自行车赛进入第二个比赛日。中国安踏-Mentech洲际队的爱沙尼亚车手劳里·塔姆以2小时10分55秒的成绩率先过线，拿下第二赛段冠军。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "劳里"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699683.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网黄山9月19日电 9月19日，2026“犀旺杯”环黄山国际公路自行车赛进入第二个比赛日。"
+      },
+      {
+        "type": "p",
+        "text": "中国安踏-Mentech洲际队的爱沙尼亚车手劳里·塔姆以2小时10分55秒的成绩率先过线，拿下第二赛段冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "劳里·塔姆斩获2026“犀旺杯”环黄山国际公路自"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699683.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:08:22.000Z",
+    "rssPublishedAt": "2026-09-19T13:08:22.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:22.994Z",
+    "score": 59,
+    "metrics": {
+      "ageHours": 10.4,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 59 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.994Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90svipxzrnwl",
+    "createdAt": "2026-09-19T23:30:22.993Z",
+    "updatedAt": "2026-09-19T23:30:22.993Z",
+    "title": "第二十届亚运会19日开幕，中国体育健儿加油",
+    "summary": "原标题：第二十届亚运会19日开幕",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699705.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "原标题：第二十届亚运会19日开幕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第二十届亚运会19日开幕，中国体育健儿加油"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699705.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:13:40.000Z",
+    "rssPublishedAt": "2026-09-19T13:13:40.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:22.993Z",
+    "score": 53,
+    "metrics": {
+      "ageHours": 10.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 53 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.993Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.993Z",
+      "comment": "分值 53 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sviowv6s0p",
+    "createdAt": "2026-09-19T23:30:22.992Z",
+    "updatedAt": "2026-09-19T23:30:22.992Z",
+    "title": "青海省第二十二届农牧民男子篮球赛开赛",
+    "summary": "中新网西宁9月19日电 (记者 孙睿)9月19日，青海省第二十二届农牧民男子篮球赛在西宁市城西区全民健身中心开赛。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-19/10699636.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网西宁9月19日电 (记者 孙睿)9月19日，青海省第二十二届农牧民男子篮球赛在西宁市城西区全民健身中心开赛。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "青海省第二十二届农牧民男子篮球赛开赛"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-19/10699636.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:24:19.000Z",
+    "rssPublishedAt": "2026-09-19T13:24:19.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-19T23:30:22.992Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.992Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.992Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90suxcet8sro",
+    "createdAt": "2026-09-19T23:30:22.224Z",
+    "updatedAt": "2026-09-19T23:30:22.224Z",
+    "title": "《中国金融学大纲》发布 系统梳理中国特色金融发展之路",
+    "summary": "中新网北京9月19日电 (记者 李京泽)9月19日，《中国金融学大纲》(以下简称《大纲》)新书发布会暨构建中国金融学自主知识体系学术研讨会在北京举行。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "国金融学大纲",
+      "系统梳理"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699685.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月19日电 (记者 李京泽)9月19日，《中国金融学大纲》(以下简称《大纲》)新书发布会暨构建中国金融学自主知识体系学术研讨会在北京举行。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《中国金融学大纲》发布 系统梳理中国特色金融发展"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699685.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:52:33.000Z",
+    "rssPublishedAt": "2026-09-19T12:52:33.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:22.224Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.6,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.224Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.224Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90suxb3kiprc",
+    "createdAt": "2026-09-19T23:30:22.223Z",
+    "updatedAt": "2026-09-19T23:30:22.223Z",
+    "title": "美国对进口俄罗斯石油或天然气的第三国加征所谓“次级关税” 商务部回应",
+    "summary": "中新社北京9月19日电 (记者 尹倩芸)就美方将《2026年格雷厄姆制裁俄罗斯和伊朗法案》签署成法，中国商务部新闻发言人19日答记者问时称，中方反对以涉及第三方为由，对他国采取所谓次级制裁措施。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "美国",
+      "商务部回应"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699695.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社北京9月19日电 (记者 尹倩芸)就美方将《2026年格雷厄姆制裁俄罗斯和伊朗法案》签署成法，中国商务部新闻发言人19日答记者问时称，中方反对以涉及第三方为由，对他国采取所谓次级制裁措施。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "美国对进口俄罗斯石油或天然气的第三国加征所谓“次"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699695.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T12:57:29.000Z",
+    "rssPublishedAt": "2026-09-19T12:57:29.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:22.223Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.223Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.223Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90suxazla13e",
+    "createdAt": "2026-09-19T23:30:22.222Z",
+    "updatedAt": "2026-09-19T23:30:22.222Z",
+    "title": "解码广东雷州半岛的“热”力如何煮沸中国果盘？",
+    "summary": "中新网湛江9月19日电 题：解码广东雷州半岛的“热”力如何煮沸中国果盘？",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "“热”力",
+      "煮沸"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699633.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网湛江9月19日电 题：解码广东雷州半岛的“热”力如何煮沸中国果盘。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "解码广东雷州半岛的“热”力如何煮沸中国果盘？"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699633.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:00:35.000Z",
+    "rssPublishedAt": "2026-09-19T13:00:35.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:22.222Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.222Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.222Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sux9loqju8",
+    "createdAt": "2026-09-19T23:30:22.221Z",
+    "updatedAt": "2026-09-19T23:30:22.221Z",
+    "title": "加快构建房地产发展新模式",
+    "summary": "房地产市场进入存量阶段，供求关系发生重大变化",
+    "channel": "finance",
+    "tags": [
+      "财经"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699703.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "房地产市场进入存量阶段，供求关系发生重大变化。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "加快构建房地产发展新模式"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699703.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:12:00.000Z",
+    "rssPublishedAt": "2026-09-19T13:12:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:22.221Z",
+    "score": 53,
+    "metrics": {
+      "ageHours": 10.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 53 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.221Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.221Z",
+      "comment": "分值 53 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sux7gu47ib",
+    "createdAt": "2026-09-19T23:30:22.219Z",
+    "updatedAt": "2026-09-19T23:30:22.219Z",
+    "title": "外商看好安徽新兴产业投资潜力：\"这里充满活力\"",
+    "summary": "中新社合肥9月19日电 (记者 赵强)“这里充满活力。”谈及对安徽的印象，梅塞尔亚太区首席运营官兼梅塞尔中国首席执行官沃赫德(Marc Wachter)19日说，安徽新兴产业发展速度快、创新力强，合肥等地已形成成功的产业",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "里充满活力"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-19/10699719.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社合肥9月19日电 (记者 赵强)“这里充满活力。"
+      },
+      {
+        "type": "p",
+        "text": "”谈及对安徽的印象，梅塞尔亚太区首席运营官兼梅塞尔中国首席执行官沃赫德(Marc Wachter)19日说，安徽新兴产业发展速度快、创新力强，合肥等地已形成成功的产业发展样式。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "外商看好安徽新兴产业投资潜力：\"这里充满活力\""
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-19/10699719.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T14:09:32.000Z",
+    "rssPublishedAt": "2026-09-19T14:09:32.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-19T23:30:22.219Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:22.219Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:22.219Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sucmzg7tjw",
+    "createdAt": "2026-09-19T23:30:21.478Z",
+    "updatedAt": "2026-09-19T23:30:21.478Z",
+    "title": "认知·锐见｜警惕日本新型“历史洗白术”之一：日本往政务AI系统里输入了什么？",
+    "summary": "5月27日，日本参议院全体会议上出现了值得警惕的一幕：时任数字大臣松本尚的国会答辩稿，由政务AI系统“源内”起草，经工作人员核验与本人审定后正式提交。所谓“源内”，是日本政府耗资44亿日元、面向公职人员开放的生成式AI大",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "认知",
+      "日本往政务AI系统里输入"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699707.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "5月27日，日本参议院全体会议上出现了值得警惕的一幕：时任数字大臣松本尚的国会答辩稿，由政务AI系统“源内”起草，经工作人员核验与本人审定后正式提交。"
+      },
+      {
+        "type": "p",
+        "text": "所谓“源内”，是日本政府耗资44亿日元、面向公职人员开放的生成式AI大模型，表面是“提升行政效率的数字化系统”，实质却是日本右翼推进历史修正主义的新型认知战武器。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "认知·锐见｜警惕日本新型“历史洗白术”之一：日本"
+      },
+      {
+        "type": "p",
+        "text": "“源内”将历史修正主义从舆论宣传升级为算法系统，正在制造具有政府印记的“高权威污染源”。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699707.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:18:30.000Z",
+    "rssPublishedAt": "2026-09-19T13:18:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:21.478Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.478Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:21.478Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sucl6ahoci",
+    "createdAt": "2026-09-19T23:30:21.477Z",
+    "updatedAt": "2026-09-19T23:30:21.477Z",
+    "title": "突发：沙特首都主要机场附近出现大量黑烟",
+    "summary": "中新网9月19日电 据路透社等外媒当地时间19日报道，沙特首都利雅得主要机场附近当天出现大量黑烟。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "突发",
+      "沙特首"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699715.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月19日电 据路透社等外媒当地时间19日报道，沙特首都利雅得主要机场附近当天出现大量黑烟。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "突发：沙特首都主要机场附近出现大量黑烟"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699715.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T13:54:56.000Z",
+    "rssPublishedAt": "2026-09-19T13:54:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:21.477Z",
+    "score": 59,
+    "metrics": {
+      "ageHours": 9.6,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "突发"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 59 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.477Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90suckjeh7jl",
+    "createdAt": "2026-09-19T23:30:21.476Z",
+    "updatedAt": "2026-09-19T23:30:21.476Z",
+    "title": "伊朗消息人士：美方称已准备好与伊朗进行谈判",
+    "summary": "当地时间19日，总台记者从伊朗一位不愿透露姓名的高级别消息人士处获悉，卡塔尔和巴基斯坦作为调解方已告知伊朗，美国已准备好进行谈判并达成协议，且在推进这一进程方面态度认真。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "伊朗",
+      "人士"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699738.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "当地时间19日，总台记者从伊朗一位不愿透露姓名的高级别消息人士处获悉，卡塔尔和巴基斯坦作为调解方已告知伊朗，美国已准备好进行谈判并达成协议，且在推进这一进程方面态度认真。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "伊朗消息人士：美方称已准备好与伊朗进行谈判"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699738.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T15:23:24.000Z",
+    "rssPublishedAt": "2026-09-19T15:23:24.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:21.476Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 8.1,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.476Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:21.476Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90sucjr3bgk5",
+    "createdAt": "2026-09-19T23:30:21.475Z",
+    "updatedAt": "2026-09-19T23:30:21.475Z",
+    "title": "欧盟敦促美国重新考虑针对联合国大会巴勒斯坦代表团的拒签制裁",
+    "summary": "中新社布鲁塞尔9月19日电 (记者 德永健)在联合国大会高级别会议召开前夕，欧盟19日发表声明，敦促美国重新考虑针对联合国大会巴勒斯坦代表团的拒签制裁。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "拒签制裁"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-19/10699740.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社布鲁塞尔9月19日电 (记者 德永健)在联合国大会高级别会议召开前夕，欧盟19日发表声明，敦促美国重新考虑针对联合国大会巴勒斯坦代表团的拒签制裁。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "欧盟敦促美国重新考虑针对联合国大会巴勒斯坦代表团"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-19/10699740.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T15:59:36.000Z",
+    "rssPublishedAt": "2026-09-19T15:59:36.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:21.475Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.475Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-19T23:30:21.475Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mu90suchif36qk",
+    "createdAt": "2026-09-19T23:30:21.473Z",
+    "updatedAt": "2026-09-19T23:30:21.473Z",
+    "title": "伊朗称已向美政府传达7项谈判条件",
+    "summary": "当地时间19日晚，伊朗最高国家安全委员会秘书雷扎伊表示，伊朗已向美国政府传达了开启任何谈判所需的七项条件。伊朗发出的信息明确，即如果美国希望摆脱其一手造成的困境，并避免越陷越深，那么除了接受伊朗的条件外，别无他途。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "伊朗称已"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10699745.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "当地时间19日晚，伊朗最高国家安全委员会秘书雷扎伊表示，伊朗已向美国政府传达了开启任何谈判所需的七项条件。"
+      },
+      {
+        "type": "p",
+        "text": "伊朗发出的信息明确，即如果美国希望摆脱其一手造成的困境，并避免越陷越深，那么除了接受伊朗的条件外，别无他途。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "伊朗称已向美政府传达7项谈判条件"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10699745.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T22:00:12.000Z",
+    "rssPublishedAt": "2026-09-19T22:00:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-19T23:30:21.473Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.473Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90su0bt0bve1",
+    "createdAt": "2026-09-19T23:30:21.035Z",
+    "updatedAt": "2026-09-19T23:30:21.035Z",
+    "title": "伊朗称已向美国传达谈判条件 正等待特朗普回应",
+    "summary": "中新网9月20日电 据卡塔尔半岛电视台报道，当地时间19日，伊朗最高国家安全委员会秘书穆赫辛·雷扎伊接受该媒体采访时，阐述了伊朗的谈判条件，并表示卡塔尔作为调解方已向美国方面转达条件，正等待美国总统特朗普的回应。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "伊朗称已",
+      "待特朗普回应"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-20/10699747.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电 据卡塔尔半岛电视台报道，当地时间19日，伊朗最高国家安全委员会秘书穆赫辛·雷扎伊接受该媒体采访时，阐述了伊朗的谈判条件，并表示卡塔尔作为调解方已向美国方面转达条件，正等待美国总统特朗普的回应。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "伊朗称已向美国传达谈判条件 正等待特朗普回应"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-20/10699747.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T22:33:03.000Z",
+    "rssPublishedAt": "2026-09-19T22:33:03.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:21.035Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.035Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90su0958pb6a",
+    "createdAt": "2026-09-19T23:30:21.033Z",
+    "updatedAt": "2026-09-19T23:30:21.033Z",
+    "title": "特朗普：将组建一支“人工智能部队” 并任命一名负责人",
+    "summary": "中新网9月20日电 据美国有线电视新闻网(CNN)等外媒报道，当地时间19日，美国总统特朗普在社交媒体发文称，他计划组建一支“人工智能部队”，并将任命一名人工智能事务“总管”。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "特朗普"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/kong/2026/09-20/10699748.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电 据美国有线电视新闻网(CNN)等外媒报道，当地时间19日，美国总统特朗普在社交媒体发文称，他计划组建一支“人工智能部队”，并将任命一名人工智能事务“总管”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "特朗普：将组建一支“人工智能部队” 并任命一名负"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/kong/2026/09-20/10699748.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T22:44:56.000Z",
+    "rssPublishedAt": "2026-09-19T22:44:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:21.033Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.033Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90su08q97992",
+    "createdAt": "2026-09-19T23:30:21.032Z",
+    "updatedAt": "2026-09-19T23:30:21.032Z",
+    "title": "9月20日新闻早报",
+    "summary": "",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/iframe/2026/09-20/10699749.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月20日新闻早报"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "9月20日新闻早报"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/iframe/2026/09-20/10699749.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T22:57:29.000Z",
+    "rssPublishedAt": "2026-09-19T22:57:29.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:21.032Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（9 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.032Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90su075v89ml",
+    "createdAt": "2026-09-19T23:30:21.031Z",
+    "updatedAt": "2026-09-19T23:30:21.031Z",
+    "title": "美国国务院发布安全提醒 称中东地区局势可能升级",
+    "summary": "中新网9月20日电 由于中东局势紧张，当地时间19日，美国国务院发布安全提醒，建议身处中东地区的美国公民保持高度警惕，其他地区的美国公民慎重前往中东地区。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "美国国务院",
+      "安全提醒"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/kong/2026/09-20/10699750.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月20日电 由于中东局势紧张，当地时间19日，美国国务院发布安全提醒，建议身处中东地区的美国公民保持高度警惕，其他地区的美国公民慎重前往中东地区。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "美国国务院发布安全提醒 称中东地区局势可能升级"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/kong/2026/09-20/10699750.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T23:14:12.000Z",
+    "rssPublishedAt": "2026-09-19T23:14:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:21.031Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.031Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mu90su06jytcki",
+    "createdAt": "2026-09-19T23:30:21.030Z",
+    "updatedAt": "2026-09-19T23:30:21.030Z",
+    "title": "刷新多项纪录！我国硬核科技与重大工程捷报频传",
+    "summary": "本周",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "刷新多项纪录",
+      "硬核科技"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gn/2026/09-20/10699751.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "本周"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "刷新多项纪录！我国硬核科技与重大工程捷报频传"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gn/2026/09-20/10699751.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-19T23:20:46.000Z",
+    "rssPublishedAt": "2026-09-19T23:20:46.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-19T23:30:21.030Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（24 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-19T23:30:21.030Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
     "id": "mu87uz5vu860oo",
     "createdAt": "2026-09-19T10:00:12.163Z",
     "updatedAt": "2026-09-19T10:00:12.163Z",

@@ -3,6 +3,7 @@
 > 记录范围：2026-09-18 这一轮「把 App 跑起来 → 现场验收 → 修 bug」的完整过程。
 > 最近更新（2026-09-18 末轮）：新增 §3.6「订单商品图改真实高清实拍」，并补齐三份架构/内容/日志文档的**两侧同源同步**约定（见 §3.7）。
 > 2026-09-19：新增 §3.8 / §4.4「商城大栏目接子页」——通用商品集合页 `collection_page.dart`，10 处入口全部落到具体页面。
+> 2026-09-20：新增 §3.9 / §4.5「网站的严选商城打不开」——本地站点正常，静态导出漏了 mall 页面与商城接口快照。
 > 架构细节见 `docs/ARCHITECTURE.md`，内容架构见 `docs/CONTENT_ARCHITECTURE.md`，本文件只记**做了什么、为什么、怎么复现**。
 > 同源文件：门户仓库 `docs/DEV_LOG.md`（两边需同步）。
 
@@ -170,6 +171,19 @@ constraints: BoxConstraints(0.0<=w<=302.7, 0.0<=h<=43.5)
 
 **处理**：新增通用商品集合页 `modules/shop/collection_page.dart`，所有大栏目统一落到它。详见 §4.4。
 
+### 3.9 本轮：网站的严选商城打不开（2026-09-20）
+> 「网站的严选商城打不开」
+
+先分清**哪个"网站"**：本地 `npm start`（3000 端口）一切正常 —— `/mall.html` 200、`/api/v1/mall/home` / `products` / `{id}` 全部有数据，用 headless 浏览器实点也是 12 张商品卡 + 24 件选品 + 7 类目 + 4 秒杀 + 8 榜单，console **0 报错**。所以问题在**静态打包出来的 GitHub Pages 版本**。
+
+**根因**（`scripts/build-static.js` 两处遗漏，商城页从上线起就没进过静态包）：
+1. `const PAGES = [...]` 里**没有 `'mall'`** —— `toRelative()` 靠这份清单把 `/xxx.html` 改写成 `./xxx.html`，漏登记就保持绝对路径，在子路径部署（`*.github.io/仓库名/`）时导航点过去直接落到站点根的 404；
+2. `collectUrls()` **没收集任何 `/api/v1/mall/**` 接口** —— 静态包里一个商城数据快照都没有，shim 取不到数据就 `emptyData()` 兜个空壳回去了，页面看着就是"空的/打不开"。
+
+配套还修了三处：`fileFor` / shim 的查询值文件名算法原本把中文直接塌缩成短横（「新品」「热销」都变成 `--`，共用一份快照），改成先 `encodeURIComponent` 再落盘；首页 banner 背景图写死 `/api/v1/placeholder`（CSS background 请求 shim 拦不住），改走 `HY.ph()` 让 shim 换成内联 SVG；shim 补上商城下单的本地模拟，否则静态版「我的订单」永远空白。
+
+改动清单见 §4.5。
+
 ---
 
 ## 4. 本轮修复清单
@@ -247,6 +261,18 @@ constraints: BoxConstraints(0.0<=w<=302.7, 0.0<=h<=43.5)
 
 **验证**：`flutter analyze` 0 error / 0 warning（18 条均为历史 `unnecessary_underscores` info）；`flutter build web --release` 通过；模拟器实点 —— 金刚区「数码」→ 集合页显示「共 2 件商品 · 支持销量 / 价格 / 评分排序」，商详「店铺」→「声海数码专营店 · 共 1 件在售」。
 
+### 4.5 静态导出补上严选商城（2026-09-20）
+
+| 文件 | 改动 |
+| --- | --- |
+| `scripts/build-static.js` | `PAGES` 补 `'mall'`（否则导航链接保持绝对路径；同时给这行加注释说明用途）；`collectUrls()` 新增**商城段**：`mall/home`（漏 push 就是空壳的直接原因）、`mall/orders`、`mall/products` 无参兜底、逐类目 × 3 页列表、逐标签 × 3 页列表、24 条商品详情；快照 README 的页面清单同步 |
+| `scripts/build-static.js` + `scripts/static-shim.js` | 新增 `sanitize()`：**查询值先 `encodeURIComponent` 再把 `%` 换成 `_`**，两侧算法保持一致，消灭中文参数塌缩冲突（纯 ASCII 值文件名不变，所以历史快照不受影响） |
+| `scripts/static-shim.js` | 新增商城写操作：`POST /api/v1/mall/orders` 从预渲染的 `products.json` 取真实标题/价格/封面拼出订单（含 `amount / freight / saved / payable / receiver`），存 `localStorage` 键 `hy_static_mall_orders`；`withLocalOrders()` 把本地订单并在 GET 列表前面（`listOrders` 返回的是**数组**，不是 `{list}`，一开始按对象写会被 `JSON.stringify` 丢字段） |
+| `public/js/common.js` | `HY.ph(text, theme, w, h)` 增加可选尺寸参数，默认仍是 800×450，向后兼容 |
+| `public/js/mall.js` | banner 背景图由手写 `/api/v1/placeholder?...` 改为 `HY.ph(b.tag, b.theme, 1200, 520)` —— 只有走 `HY.ph` 才会被 shim 的 `patchHy` 接管成内联 SVG |
+
+**验证**（`npm run build:static` 后 `python -m http.server --directory gh-pages`）：`api/v1/mall/` 下 59 个快照（24 商品详情 + home/orders/products + 类目/标签分页）；headless 打开 `mall.html` → 24 件选品 / 12 张商品卡 / 7 类目 / 4 秒杀 / 8 榜单 / 3 banner 全部有数据，console 仅剩 1 条 shim「精确快照未命中 → 放宽到兜底」的 404（设计内的降级尝试）；加购 → 徽标变 1；`POST` 下单返回 `M91180754`，`GET ?uid=` 能看到该订单（待发货）。本地 3000 站点回归同样 0 报错。
+
 ---
 
 ## 5. 遗留待办（下一次继续）
@@ -255,6 +281,7 @@ constraints: BoxConstraints(0.0<=w<=302.7, 0.0<=h<=43.5)
 2. **图片治理**：新闻图仍依赖本地 `assets/` 打底，接后端后应走 `core/api.dart` 的 CDN 图；**商城 / 生活 / 订单已切真实实拍图**，但 `fetch_assets.js` 仍需加「下载后校验尺寸与灰度标准差（≥1200×900、stddev ≥12）」的入库体检，避免再次混入 `p9_2`、`p9_3` 那类失效图（当前靠一次性 Python 脚本抽查，未纳入流程）。
 3. **后端接入**：`core/mock.dart` → 门户 `/api/v1`（契约见门户 ARCHITECTURE.md 8.10）。
 4. **发布构建**：当前一直是 debug（所以才看得见溢出条）；出包前用 `flutter build apk --release` 复验布局。
+5. **静态导出对新页面不免疫**：`scripts/build-static.js` 的 `PAGES` 与 `collectUrls()` 需要手工登记，本次就是漏了 `mall` 导致线上商城空壳。**建议加自检**：构建时遍历 `public/*.html` 与 `PAGES` 比对，缺一个就报警；同理定期比对API路由与预渲染清单。另注意 gh-pages 包约 525MB（近千张图），本机磁盘吃紧可直接删目录，`npm run build:static` 能完全重建。
 
 ---
 
@@ -305,3 +332,4 @@ adb -s emulator-5554 reverse --remove-all
 | 「订单里的照片要真实的高清的」 | 见 §3.6：不是图不清晰，是 `OrderItem` 无 `image` 字段；已加字段 + 三处下单带图 + `_ItemThumb` 渲染真实图（失败回退渐变块） |
 | 「修改和补充所有开发架构、开发内容、对话」 | 见 §3.7：三份文档补齐并两侧同步（App §2/§4.4/§7、门户 §8.12/8.14/8.15、内容架构 §3.8） |
 | 「为什么 app 的商城板块大栏目没有链接子页」 | 见 §3.8 / §4.4：商城只有两个页面文件 + 入口写成了 toast/空壳；已新增通用集合页 `collection_page.dart` 并把 10 处入口全部接线 |
+| 「网站的严选商城打不开」 | 见 §3.9 / §4.5：本地站点正常，是静态导出漏登记；已把 `mall` 加入 `PAGES`、补齐商城接口快照、修正中文查询值塌缩与 banner 占位图，静态站下单链路也已打通 |

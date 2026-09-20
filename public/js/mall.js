@@ -78,7 +78,7 @@
     const dots = $('#banner-dots');
     host.innerHTML = list.map((b, i) => `
       <div class="mall-banner-item${i === 0 ? ' active' : ''}" data-idx="${i}"
-        style="background-image:linear-gradient(120deg, rgba(8,26,50,.72), rgba(8,26,50,.35)), url('/api/v1/placeholder?w=1200&h=520&text=${encodeURIComponent(b.tag)}&theme=${b.theme}')">
+        style="background-image:linear-gradient(120deg, rgba(8,26,50,.72), rgba(8,26,50,.35)), url('${escapeHtml(global.HY.ph(b.tag, b.theme, 1200, 520))}')">
         <span class="mall-banner-tag">${escapeHtml(b.tag)}</span>
         <h3>${escapeHtml(b.title)}</h3>
         <p>${escapeHtml(b.desc)}</p>

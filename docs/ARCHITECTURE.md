@@ -816,3 +816,35 @@ refundOrder          → 原路退回 → 账单负收入 → status=refunded �
 **修法**：新增通用集合页 `lib/modules/shop/collection_page.dart`（标题 + 说明条 + 排序条 + 两列瀑布流，可选搜索框 / 排名角标 / 秒杀倒计时），10 处入口全部落到具体页面；`_ProductCard` 提为公开 `ProductCard`，首页瀑布流与集合页共用。清单见 `docs/DEV_LOG.md` §4.4。
 
 **校验**：`flutter analyze` 0 error / 0 warning；`flutter build web --release` 通过；模拟器实点金刚区「数码」与商详「店铺」均正常进页。
+
+## 9. 静态导出与 GitHub Pages（2026-09-20 补齐）
+
+静态包由 `npm run build:static`（`scripts/build-static.js`）生成到 `gh-pages/`（已在 `.gitignore` 里，约 525MB，可随时删了重建），再推 `gh-pages` 分支；运行时由 `scripts/static-shim.js` 把 `fetch('/api/v1/...')` 重定向到预渲染好的 `.json` 快照。
+
+### 9.1 新增页面必须登记两处，否则线上就是"打不开"
+
+| 位置 | 作用 | 漏登记的后果 |
+| --- | --- | --- |
+| `const PAGES = [...]` | `toRelative()` 靠它把 `/xxx.html` 改写为 `./xxx.html` | 仓库子路径部署（`*.github.io/仓库名/`）时，导航点过去落到站点根 → 404 |
+| `collectUrls()` | 枚举需要预渲染的 `/api/v1/**` 接口 | 静态包里没有对应快照，shim 取不到数据 → `emptyData()` 兜成空壳页面 |
+
+当前登记：页面 `index / channel / article / video / search / square / admin / mall`；接口覆盖新闻 / 视频 / 搜索 / 广场 / 后台 / **商城**（`mall/home`、`mall/products` 逐类目与逐标签分页、24 条商品详情、`mall/orders`）。
+
+### 9.2 快照文件名规则（两侧必须一致）
+
+`scripts/build-static.js` 的 `fileFor()` 与 `scripts/static-shim.js` 的 `parts()` / `candidatesFor()` 是同一套算法：
+
+1. 丢掉 `uid / token / _ / t / ts` 这类易变参数；
+2. 其余按 key 排序拼成 `k-v`，用 `_` 连接，整体前缀 `__`；
+3. 查询值先 `encodeURIComponent` 再把 `%` 换成 `_` —— **不能把非 ASCII 直接塌缩成 `-`**，否则「新品」「热销」这类同长度中文会共用同一份快照；
+4. 例：`/api/v1/mall/products?category=all&page=1&pageSize=12` → `api/v1/mall/products__category-all_page-1_pageSize-12.json`。
+
+运行时先找精确快照，找不到按 `SOFT_DROP`（`sort / keyword / channel`）逐级放宽，最后退到无参数快照 —— 所以控制台偶发一次 404 是设计内的降级尝试，不是故障。
+
+### 9.3 静态版的"写操作"
+
+`simulate()` 有界地模拟：`POST /api/v1/mall/orders` 会从预渲染的 `products.json` 取真实标题/价格/封面拼出订单，写进 `localStorage` 的 `hy_static_mall_orders`，再由 `withLocalOrders()` 并回 GET 列表（注意 `listOrders` 返回的是**数组**，不是 `{list}`）；广场发帖/点赞同理走 `hy_static_local_posts`、`hy_static_liked`。`/admin/**` 一律返回演示态失败，避免让人误以为改动已持久化。
+
+### 9.4 占位图
+
+只有 `global.HY.ph(text, theme, w, h)` 生成的 `/api/v1/placeholder?...` 才会被 shim 的 `patchHy()` 换成内联 SVG。**直接写在 CSS `background-image` 里的 `/api/v1/placeholder` 拦不住**（背景请求不经过 fetch/XHR），线上就是 404 破图 —— 商城 banner 正是这么踩的坑，已改走 `HY.ph`。

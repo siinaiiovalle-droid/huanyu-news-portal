@@ -8,8 +8,14 @@
   'use strict';
 
   var DROP = { uid: 1, token: 1, _: 1, t: 1, ts: 1 };
+
+  /** 与 scripts/build-static.js 的 sanitize 保持一致：中文必须编码保留，不能塌缩成短横 */
+  function sanitize(v) {
+    return encodeURIComponent(String(v)).replace(/%/g, '_');
+  }
   var LOCAL_KEY = 'hy_static_local_posts';
   var LIKE_KEY = 'hy_static_liked';
+  var MALL_KEY = 'hy_static_mall_orders';
 
   /* ------------------------------ 请求 → 静态文件 ------------------------------ */
 
@@ -23,7 +29,7 @@
     u.searchParams.forEach(function (v, k) { if (!DROP[k] && v !== '' && v != null) q[k] = v; });
     var keys = Object.keys(q).sort();
     var suffix = keys.length
-      ? '__' + keys.map(function (k) { return k + '-' + q[k]; }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
+      ? '__' + keys.map(function (k) { return k + '-' + sanitize(q[k]); }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
       : '';
     return { rest: rest, suffix: suffix, q: q };
   }
@@ -47,7 +53,7 @@
     var seen = {};
     var add = function (arr) {
       var suffix = arr.length
-        ? '__' + arr.map(function (k) { return k + '-' + p.q[k]; }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
+        ? '__' + arr.map(function (k) { return k + '-' + sanitize(p.q[k]); }).join('_').replace(/[^A-Za-z0-9_\-]/g, '-')
         : '';
       var rel = './api/v1/' + p.rest + suffix + '.json';
       if (!seen[rel]) { seen[rel] = 1; out.push(rel); }
@@ -97,6 +103,8 @@
     try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* 隐私模式下忽略 */ }
   }
   function localPosts() { return readJson(LOCAL_KEY, []); }
+  function mallOrders() { return readJson(MALL_KEY, []); }
+  function writeMallOrders(list) { writeJson(MALL_KEY, list.slice(0, 30)); }
   function toggleLiked(id) {
     var set = readJson(LIKE_KEY, {});
     set[id] = !set[id];
@@ -135,6 +143,46 @@
     }
     if (path.indexOf('admin/') === 0) {
       return Promise.resolve({ code: 0, message: 'ok', data: { ok: true } });
+    }
+
+    // 商城：提交订单（静态演示态，落在 localStorage，「我的订单」里能看到）
+    if (path.indexOf('mall/orders') === 0 && (init && init.method) === 'POST') {
+      // 价目取自预渲染的商品列表，保证退货仓协同 —— 订单里能看到真实的标题 / 价格 / 封面
+      return origFetch('./api/v1/mall/products.json')
+        .then(function (r) { return r && r.ok ? r.json() : { data: { list: [] } }; })
+        .catch(function () { return { data: { list: [] } }; })
+        .then(function (j) {
+          var map = {};
+          (((j && j.data && j.data.list) || [])).forEach(function (p) { map[p.id] = p; });
+          var lines = (Array.isArray(body.items) ? body.items : []).map(function (i) {
+            var p = map[i.id] || {};
+            return {
+              id: i.id, title: p.title || i.id, cover: p.cover || '',
+              price: Number(p.price) || 0, qty: Number(i.qty) || 1,
+              originalPrice: Number(p.originalPrice) || 0
+            };
+          });
+          var amount = lines.reduce(function (s, l) { return s + l.price * l.qty; }, 0);
+          var freight = amount >= 199 || !amount ? 0 : 12;
+          var saved = lines.reduce(function (s, l) {
+            return s + Math.max(0, (l.originalPrice || 0) - l.price) * l.qty;
+          }, 0);
+          var order = {
+            id: 'M' + String(Date.now()).slice(-8),
+            status: '待发货',
+            createdAt: new Date().toISOString(),
+            lines: lines,
+            amount: amount,
+            freight: freight,
+            saved: saved,
+            payable: amount + freight,
+            receiver: body.receiver || { name: '', phone: '', address: '' }
+          };
+          var mine = mallOrders();
+          mine.unshift(order);
+          writeMallOrders(mine);
+          return { code: 0, message: 'ok', data: order };
+        });
     }
 
     // 广场：点赞 / 转发 / 收藏
@@ -212,6 +260,17 @@
     if (!data || !Array.isArray(data.list)) return res;
     data.list = mine.concat(data.list);
     data.total = (data.total || 0) + mine.length;
+    return res;
+  }
+
+  /** 静态站的「我的订单」：把本地下的单并到预渲染列表前面（订单列表接口返回的是数组） */
+  function withLocalOrders(url, res) {
+    if (!/api\/v1\/mall\/orders(\?|$)/.test(url)) return res;
+    var mine = mallOrders();
+    if (!mine.length) return res;
+    var data = (res && 'data' in res) ? res.data : res;
+    var merged = mine.concat(Array.isArray(data) ? data : []);
+    if (res && 'data' in res) res.data = merged; else res = merged;
     return res;
   }
 
@@ -317,7 +376,7 @@
         return r.text().then(function (text) {
           var json = null;
           try { json = JSON.parse(text); } catch (e) { json = null; }
-          if (json) json = withLocalPosts(url, json);
+          if (json) json = withLocalOrders(url, withLocalPosts(url, json));
           return new Response(json ? JSON.stringify(json) : text, {
             status: 200,
             headers: { 'Content-Type': r.headers.get('Content-Type') || 'application/json' }

@@ -16,7 +16,8 @@ const OUT = path.join(ROOT, 'gh-pages');
 const PORT = Number(process.env.STATIC_PORT || 4799);
 const BASE = `http://127.0.0.1:${PORT}`;
 const DROP = new Set(['uid', 'token', '_', 't', 'ts']);
-const PAGES = ['index', 'channel', 'article', 'video', 'search', 'square', 'admin'];
+// 页面清单：toRelative 靠它把 /xxx.html 改成 ./xxx.html（缺一个，导航到该页就会 404）
+const PAGES = ['index', 'channel', 'article', 'video', 'search', 'square', 'admin', 'mall'];
 
 function request(urlStr, method = 'GET', body) {
   return new Promise((resolve, reject) => {
@@ -51,6 +52,11 @@ async function postJson(url, body) {
   try { return JSON.parse((await request(url, 'POST', body)).text); } catch { return null; }
 }
 
+/** 查询值 → 文件名安全片段。中文必须编码后保留（否则「新品」「热销」都塌缩成 --，两个标签共用一份快照） */
+function sanitize(v) {
+  return encodeURIComponent(String(v)).replace(/%/g, '_');
+}
+
 /** 请求 URL → 静态文件路径（必须与 static-shim.js 的算法保持一致） */
 function fileFor(urlStr) {
   const u = new URL(urlStr, BASE);
@@ -61,7 +67,7 @@ function fileFor(urlStr) {
   const q = {};
   u.searchParams.forEach((v, k) => { if (!DROP.has(k) && v !== '' && v != null) q[k] = v; });
   const keys = Object.keys(q).sort();
-  const suffix = keys.length ? '__' + keys.map((k) => `${k}-${q[k]}`).join('_').replace(/[^A-Za-z0-9_\-]/g, '-') : '';
+  const suffix = keys.length ? '__' + keys.map((k) => `${k}-${sanitize(q[k])}`).join('_').replace(/[^A-Za-z0-9_\-]/g, '-') : '';
   return 'api/v1/' + rest + suffix + '.json';
 }
 
@@ -121,6 +127,29 @@ async function collectUrls() {
       cursor = r.nextCursor;
     }
   }
+
+  /* ---------------------------- 商城（寰宇严选） ---------------------------- */
+  // 不预渲染的话 mall.html 在静态版上没有任何数据快照，页面只能是个空壳。
+  push('/api/v1/mall/home'); // 聚合首页：类目浮层 / 榜单 / 秒杀 / 服务承诺全靠它
+  push('/api/v1/mall/orders'); // 「我的订单」的空列表兜底
+  push('/api/v1/mall/products'); // 无参数兜底：shim 找不到精确组合时会逐级放宽到它
+  const mallHome = await getData('/api/v1/mall/home');
+  if (mallHome) {
+    (mallHome.categories || []).forEach((c) => {
+      if (!c || !c.id) return;
+      // 24 件选品 × pageSize 12，最多 3 页足够；sort / keyword 由 shim 放宽匹配，无需枚举
+      for (let p = 1; p <= 3; p += 1) push(`/api/v1/mall/products?category=${c.id}&page=${p}&pageSize=12`);
+    });
+  }
+  try {
+    const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'mall.json'), 'utf8'));
+    const goods = Array.isArray(raw) ? raw : (raw.items || raw.list || []);
+    goods.forEach((p) => { if (p && p.id) push(`/api/v1/mall/${p.id}`); });
+    // 标签导航与 public/js/mall.js 的 TAGS 同源，这里按库里实际出现的 tag 全量铺
+    Array.from(new Set(goods.map((p) => p && p.tag).filter(Boolean))).forEach((t) => {
+      for (let p = 1; p <= 3; p += 1) push(`/api/v1/mall/products?tag=${encodeURIComponent(t)}&page=${p}&pageSize=12`);
+    });
+  } catch { /* 商品库缺失则跳过详情与标签页 */ }
 
   let posts = [];
   try {
@@ -322,7 +351,7 @@ async function main() {
     '',
     '由 `npm run build:static` 自动生成，请勿手改（下次构建会覆盖）。',
     '',
-    `- 页面：index / channel / article / video / search / square / admin`,
+    `- 页面：index / channel / article / video / search / square / admin / mall`,
     `- 数据：${articles.length} 篇稿件、${posts.length} 条广场动态，预渲染为 api/v1/**.json（${ok} 个文件）`,
     `- 图片：${imgCount} 个素材文件随包发布`,
     '- 交互：发帖、点赞、评论、后台登录为本地模拟，存在浏览器 localStorage，不回写服务器',
