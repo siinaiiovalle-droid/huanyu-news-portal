@@ -4,7 +4,7 @@
 
 - 页面：index / channel / article / video / search / square / admin / mall
 - 数据：200 篇稿件、98 条广场动态，预渲染为 api/v1/**.json（742 个文件）
-- 图片：9 个素材文件随包发布
+- 图片：10 个素材文件随包发布
 - 交互：发帖、点赞、评论、后台登录为本地模拟，存在浏览器 localStorage，不回写服务器
 
 ## 发布（需先 gh auth login）
