@@ -19,7 +19,28 @@
   };
 
   const CART_KEY = 'hy_mall_cart';
+  const RECEIVER_KEY = 'hy_mall_receiver';
   const TAGS = ['编辑推荐', '新品', '热销', '回购王', '产地直发', '编辑部同款', '礼盒装'];
+
+  /** 默认收货信息：结算页直接带出来，看完就能下单，需要改再改 */
+  const DEFAULT_RECEIVER = {
+    name: '张明',
+    phone: '13800138000',
+    address: '北京市朝阳区建国路 88 号 寰宇传媒大厦 18 层',
+    remark: '工作日 9:00–18:00 送达，到楼下电话联系'
+  };
+
+  /** 收货信息本地记忆：上次填过就用上次的，没填过用默认值 */
+  function loadReceiver() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(RECEIVER_KEY) || 'null');
+      if (saved && saved.name && saved.phone && saved.address) return saved;
+    } catch { /* 数据坏了就用默认 */ }
+    return Object.assign({}, DEFAULT_RECEIVER);
+  }
+  function saveReceiver(r) {
+    try { localStorage.setItem(RECEIVER_KEY, JSON.stringify(r)); } catch { /* 隐私模式下忽略 */ }
+  }
 
   /* ------------------------------ 购物车本地持久化 ------------------------------ */
 
@@ -65,6 +86,12 @@
     return Number.isInteger(v) ? String(v) : v.toFixed(2);
   }
   function $(sel) { return document.querySelector(sel); }
+  /** 站内楼层跳转：锚点统一走平滑滚动，静态版（相对路径）也不会跳丢 */
+  function goSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
   /** 中文折扣口径：7.3 折 = 现价 / 原价 × 10 */
   function offText(p) {
     if (!p.originalPrice) return 10;
@@ -95,6 +122,15 @@
 
     dots.querySelectorAll('span').forEach((d) => {
       d.addEventListener('click', () => switchTo(Number(d.dataset.idx)));
+    });
+    // 轮播里的 CTA 指向站内楼层，接过来做平滑滚动（锚点在静态版会带着查询串跳丢）
+    host.querySelectorAll('.mall-banner-cta').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href') || '';
+        if (href.charAt(0) !== '#') return;
+        e.preventDefault();
+        goSection(href.slice(1));
+      });
     });
     function switchTo(idx) {
       host.querySelectorAll('.mall-banner-item').forEach((el, i) => el.classList.toggle('active', i === idx));
@@ -145,6 +181,17 @@
         </div>
       </li>`).join('');
     $('#pick-list').querySelectorAll('.mall-pick-item').forEach((el) => el.addEventListener('click', () => openDetail(el.dataset.id)));
+    const all = $('#pick-all');
+    if (all) all.addEventListener('click', () => {
+      state.category = 'all';
+      state.tag = '';
+      state.keyword = '';
+      state.page = 1;
+      if (state.home) renderCategories(state.home.categories);
+      renderTags();
+      loadGoods();
+      goSection('goods');
+    });
   }
 
   function renderPromise(list) {
@@ -161,7 +208,7 @@
       const sold = p.quota - 40;
       const rate = Math.round((sold / p.quota) * 100);
       return `
-      <div class="goods-card seckill-card" data-id="${escapeHtml(p.id)}">
+      <div class="goods-card seckill-card" data-id="${escapeHtml(p.id)}" data-price="${Number(p.seckillPrice) || 0}">
         <div class="goods-media">
           <img src="${escapeHtml(p.cover)}" alt="${escapeHtml(p.title)}" loading="lazy">
           <span class="goods-flag">秒杀 ${Math.round(p.seckillPrice / p.originalPrice * 100) / 10} 折</span>
@@ -179,6 +226,12 @@
         <button class="goods-add" data-add="${escapeHtml(p.id)}">加入购物车</button>
       </div>`;
     }).join('');
+    // 秒杀价只在秒杀楼层生效：先按秒杀价登记，加购才不会按日常价结算
+    data.list.forEach((p) => {
+      goodsCache[p.id] = { id: p.id, title: p.title, cover: p.cover, price: Number(p.seckillPrice) || p.price };
+    });
+    // 不绑事件的话秒杀卡片是"死的"：点卡片开详情、点按钮加购都靠它
+    bindCards($('#seckill-grid'));
     startCountdown(new Date(data.endsAt).getTime());
   }
 
@@ -273,7 +326,7 @@
 
   function bindCards(scope) {
     scope.querySelectorAll('.goods-card').forEach((card) => {
-      card.addEventListener('click', () => openDetail(card.dataset.id));
+      card.addEventListener('click', () => openDetail(card.dataset.id, Number(card.dataset.price) || 0));
     });
     scope.querySelectorAll('[data-add]').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
@@ -309,7 +362,8 @@
 
   /* ------------------------------ 商品详情 ------------------------------ */
 
-  async function openDetail(id) {
+  /** 从秒杀楼层点进来会带 seckillPrice：详情里的价格与加购都按秒杀价走 */
+  async function openDetail(id, seckillPrice) {
     const modal = $('#detail-modal');
     const body = $('#detail-body');
     modal.hidden = false;
@@ -317,6 +371,7 @@
     body.innerHTML = '<div class="skeleton" style="height:420px"></div>';
     try {
       const { product, related } = await api(`./api/v1/mall/${encodeURIComponent(id)}`);
+      const unitPrice = Number(seckillPrice) > 0 ? Number(seckillPrice) : product.price;
       state.detailQty = 1;
       body.innerHTML = `
         <div>
@@ -338,9 +393,9 @@
             <span>库存 ${product.stock} 件</span>
           </div>
           <div class="detail-price-box">
-            <b><i>¥</i>${money(product.price)}</b>
+            <b><i>¥</i>${money(unitPrice)}</b>
             <del>¥${money(product.originalPrice)}</del>
-            ${product.discount ? `<span class="saved">已为你省 ¥${money(product.saved)}（${offText(product)} 折）</span>` : ''}
+            ${Number(seckillPrice) > 0 ? '<span class="saved">限时秒杀价</span>' : (product.discount ? `<span class="saved">已为你省 ¥${money(product.saved)}（${offText(product)} 折）</span>` : '')}
           </div>
           <div class="detail-highlights">${(product.highlights || []).map((h) => `<span>${escapeHtml(h)}</span>`).join('')}</div>
           <div class="detail-buy">
@@ -393,10 +448,10 @@
           : `<p class="detail-text">${escapeHtml(product.desc || '编辑部试用中，详细介绍随后补上。')}</p>`;
       }));
       $('#detail-add').addEventListener('click', () => {
-        addToCart({ id: product.id, title: product.title, cover: product.cover, price: product.price }, state.detailQty);
+        addToCart({ id: product.id, title: product.title, cover: product.cover, price: unitPrice }, state.detailQty);
       });
       $('#detail-now').addEventListener('click', () => {
-        addToCart({ id: product.id, title: product.title, cover: product.cover, price: product.price }, state.detailQty);
+        addToCart({ id: product.id, title: product.title, cover: product.cover, price: unitPrice }, state.detailQty);
         closeAll();
         openCart();
       });
@@ -419,8 +474,12 @@
     const body = $('#cart-body');
     const foot = $('#cart-foot');
     if (!state.cart.length) {
-      body.innerHTML = '<div class="empty">购物车还是空的<br><span style="font-size:13px">去下面挑几件试试 →</span></div>';
-      foot.innerHTML = '<button class="cart-checkout" disabled>去结算</button>';
+      body.innerHTML = '<div class="empty">购物车还是空的<br><button class="mall-link-btn" type="button" id="cart-empty-go">去挑几件好物 →</button></div>';
+      foot.innerHTML = '<button class="cart-checkout" type="button" id="cart-empty-close">去逛街</button>';
+      ['#cart-empty-go', '#cart-empty-close'].forEach((sel) => {
+        const btn = $(sel);
+        if (btn) btn.addEventListener('click', () => { closeAll(); goSection('goods'); });
+      });
       return;
     }
     body.innerHTML = state.cart.map((i) => `
@@ -468,6 +527,7 @@
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
     const { amount, freight } = cartSum();
+    const r = loadReceiver();
     $('#order-body').innerHTML = `
       <h3>确认订单</h3>
       <div class="order-lines">
@@ -476,24 +536,35 @@
       </div>
       <div class="order-total"><span style="color:var(--m-text-3)">应付金额</span><b>¥${money(amount + freight)}</b></div>
       <form class="order-form" id="order-form">
+        <div class="order-form-head">
+          <span>收货信息（已为你预填，可自行修改）</span>
+          <button class="mall-link-btn" type="button" id="o-reset">恢复默认</button>
+        </div>
         <div>
           <label for="o-name">收货人姓名</label>
-          <input id="o-name" name="name" placeholder="请输入收货人" value="">
+          <input id="o-name" name="name" placeholder="请输入收货人" value="${escapeHtml(r.name)}">
         </div>
         <div>
           <label for="o-phone">联系电话</label>
-          <input id="o-phone" name="phone" placeholder="11 位手机号" value="">
+          <input id="o-phone" name="phone" placeholder="11 位手机号" value="${escapeHtml(r.phone)}">
         </div>
         <div>
           <label for="o-addr">收货地址</label>
-          <input id="o-addr" name="address" placeholder="省 / 市 / 区 + 详细地址" value="">
+          <input id="o-addr" name="address" placeholder="省 / 市 / 区 + 详细地址" value="${escapeHtml(r.address)}">
         </div>
         <div>
           <label for="o-remark">订单备注（选填）</label>
-          <textarea id="o-remark" name="remark" rows="2" placeholder="配送时间、开票信息等"></textarea>
+          <textarea id="o-remark" name="remark" rows="2" placeholder="配送时间、开票信息等">${escapeHtml(r.remark || '')}</textarea>
         </div>
         <button class="btn-submit" type="submit">提交订单并支付 ¥${money(amount + freight)}</button>
       </form>`;
+    $('#o-reset').addEventListener('click', () => {
+      $('#o-name').value = DEFAULT_RECEIVER.name;
+      $('#o-phone').value = DEFAULT_RECEIVER.phone;
+      $('#o-addr').value = DEFAULT_RECEIVER.address;
+      $('#o-remark').value = DEFAULT_RECEIVER.remark;
+      toast('已恢复默认收货信息');
+    });
     $('#order-form').addEventListener('submit', submitOrder);
   }
 
@@ -506,10 +577,12 @@
     if (!name || !phone || !address) return toast('请填写收货人、联系电话与收货地址');
     if (!/^1[3-9]\d{9}$/.test(phone)) return toast('手机号格式不正确');
     try {
+      const receiver = { name, phone, address };
       const order = await api('./api/v1/mall/orders', {
         method: 'POST',
-        body: { uid: uid(), items: state.cart.map(({ id, qty }) => ({ id, qty })), receiver: { name, phone, address }, remark }
+        body: { uid: uid(), items: state.cart.map(({ id, qty }) => ({ id, qty })), receiver, remark }
       });
+      saveReceiver(Object.assign({}, receiver, { remark }));
       state.cart = [];
       saveCart();
       renderOrderSuccess(order);
@@ -550,7 +623,9 @@
     try {
       const list = await api(`./api/v1/mall/orders?uid=${encodeURIComponent(uid())}`);
       if (!list.length) {
-        $('#order-body').innerHTML = '<h3>我的订单</h3><div class="empty">当前账号还没有订单</div>';
+        $('#order-body').innerHTML = '<h3>我的订单</h3><div class="empty">当前账号还没有订单<br><button class="mall-link-btn" type="button" id="order-empty-go">去严挑选几件 →</button></div>';
+        const go = $('#order-empty-go');
+        if (go) go.addEventListener('click', () => { closeAll(); goSection('goods'); });
         return;
       }
       $('#order-body').innerHTML = `
@@ -626,7 +701,10 @@
       renderPromise(home.promises);
       renderSeckill(home.seckill);
       $('#mall-total').textContent = `${home.total} 件选品在售`;
-      home.top.forEach((p) => { goodsCache[p.id] = { id: p.id, title: p.title, cover: p.cover, price: p.price }; });
+      // 秒杀价优先：已登记过的价格（秒杀价）不被日常价覆盖
+      home.top.forEach((p) => {
+        if (!goodsCache[p.id]) goodsCache[p.id] = { id: p.id, title: p.title, cover: p.cover, price: p.price };
+      });
     } catch (e) {
       toast('商城数据加载失败：' + e.message);
     }
