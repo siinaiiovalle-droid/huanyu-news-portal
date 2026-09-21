@@ -8,11 +8,11 @@
     "originalPrice": 1099,
     "tag": "编辑部同款",
     "theme": "indigo",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E5%AF%B0%E5%AE%87%E5%A3%B0%E5%AD%A6%20%E4%B8%BB%E5%8A%A8%E9%99%8D&theme=indigo",
+    "cover": "/img/mall/g001-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E5%AF%B0%E5%AE%87%E5%A3%B0%E5%AD%A6%20%E4%B8%BB%E5%8A%A8%E9%99%8D&theme=indigo",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=indigo",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=indigo"
+      "/img/mall/g001-g1.jpg",
+      "/img/mall/g001-g2.jpg",
+      "/img/mall/g001-g3.jpg"
     ],
     "sales": 3862,
     "rating": 4.9,
@@ -42,7 +42,7 @@
     ],
     "desc": "编辑部出差标配：飞机与地铁上的低频噪声衰减明显，开放式通透模式不用摘耳机也能听清播报。",
     "createdAt": "2026-09-16T17:35:13.168Z",
-    "updatedAt": "2026-09-17T17:36:01.570Z"
+    "updatedAt": "2026-09-21T00:39:29.078Z"
   },
   {
     "id": "g002",
@@ -53,11 +53,11 @@
     "originalPrice": 429,
     "tag": "热销",
     "theme": "slate",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E4%BA%91%E5%9B%BE%20%E4%BE%BF%E6%90%BA%E5%BC%8F%E8%93%9D%E7%89%99&theme=slate",
+    "cover": "/img/mall/g002-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E4%BA%91%E5%9B%BE%20%E4%BE%BF%E6%90%BA%E5%BC%8F%E8%93%9D%E7%89%99&theme=slate",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=slate",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=slate"
+      "/img/mall/g002-g1.jpg",
+      "/img/mall/g002-g2.jpg",
+      "/img/mall/g002-g3.jpg"
     ],
     "sales": 5240,
     "rating": 4.7,
@@ -86,7 +86,8 @@
       ]
     ],
     "desc": "露营与厨房都能放，低音算法让步子更实，两台串联可做立体声。",
-    "createdAt": "2026-09-15T17:35:13.169Z"
+    "createdAt": "2026-09-15T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g003",
@@ -97,11 +98,11 @@
     "originalPrice": 499,
     "tag": "",
     "theme": "cyan",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%99%A8%E9%9B%BE%20%E9%AB%98%E6%B8%85%E6%99%BA%E8%83%BD%E6%91%84&theme=cyan",
+    "cover": "/img/mall/g003-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%99%A8%E9%9B%BE%20%E9%AB%98%E6%B8%85%E6%99%BA%E8%83%BD%E6%91%84&theme=cyan",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=cyan",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=cyan"
+      "/img/mall/g003-g1.jpg",
+      "/img/mall/g003-g2.jpg",
+      "/img/mall/g003-g3.jpg"
     ],
     "sales": 1876,
     "rating": 4.6,
@@ -130,7 +131,8 @@
       ]
     ],
     "desc": "值守家中或店面够用了，隐私遮蔽与本地存储可按需关闭云端。",
-    "createdAt": "2026-09-14T17:35:13.169Z"
+    "createdAt": "2026-09-14T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g004",
@@ -141,11 +143,11 @@
     "originalPrice": 1399,
     "tag": "新品",
     "theme": "violet",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%A1%8C%E8%80%85%20%E8%BF%90%E5%8A%A8%E6%99%BA%E8%83%BD%E6%89%8B&theme=violet",
+    "cover": "/img/mall/g004-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%A1%8C%E8%80%85%20%E8%BF%90%E5%8A%A8%E6%99%BA%E8%83%BD%E6%89%8B&theme=violet",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=violet",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=violet"
+      "/img/mall/g004-g1.jpg",
+      "/img/mall/g004-g2.jpg",
+      "/img/mall/g004-g3.jpg"
     ],
     "sales": 942,
     "rating": 4.8,
@@ -174,7 +176,8 @@
       ]
     ],
     "desc": "跑步轨迹在城市峡谷里仍稳，双频 GPS 修正明显，日常监测项够全。",
-    "createdAt": "2026-09-13T17:35:13.169Z"
+    "createdAt": "2026-09-13T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g005",
@@ -185,11 +188,11 @@
     "originalPrice": 228,
     "tag": "编辑推荐",
     "theme": "gold",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E3%80%8A%E7%9C%8B%E8%A7%81%E4%B8%96%E7%95%8C%E3%80%8B%E6%96%B0%E9%97%BB&theme=gold",
+    "cover": "/img/mall/g005-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E3%80%8A%E7%9C%8B%E8%A7%81%E4%B8%96%E7%95%8C%E3%80%8B%E6%96%B0%E9%97%BB&theme=gold",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=gold",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=gold"
+      "/img/mall/g005-g1.jpg",
+      "/img/mall/g005-g2.jpg",
+      "/img/mall/g005-g3.jpg"
     ],
     "sales": 2170,
     "rating": 4.9,
@@ -218,7 +221,8 @@
       ]
     ],
     "desc": "从突发现场到日常角落，每一帧都配了记者的拍摄手记，是本会让人安静下来的书。",
-    "createdAt": "2026-09-12T17:35:13.169Z"
+    "createdAt": "2026-09-12T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g006",
@@ -229,11 +233,11 @@
     "originalPrice": 89,
     "tag": "",
     "theme": "amber",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%AE%B0%E8%80%85%E6%89%8B%E8%B4%A6%E6%9C%AC%20%C2%B7%20&theme=amber",
+    "cover": "/img/mall/g006-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%AE%B0%E8%80%85%E6%89%8B%E8%B4%A6%E6%9C%AC%20%C2%B7%20&theme=amber",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=amber",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=amber"
+      "/img/mall/g006-g1.jpg",
+      "/img/mall/g006-g2.jpg",
+      "/img/mall/g006-g3.jpg"
     ],
     "sales": 6128,
     "rating": 4.8,
@@ -262,7 +266,8 @@
       ]
     ],
     "desc": "采访本改到第四版：钢笔也不洇，摊开能一直写，封面耐脏。",
-    "createdAt": "2026-09-11T17:35:13.169Z"
+    "createdAt": "2026-09-11T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g007",
@@ -273,11 +278,11 @@
     "originalPrice": 359,
     "tag": "",
     "theme": "orange",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E5%9C%B0%E7%90%83%E4%BB%AA%20%C2%B7%20%E5%A4%9C%E7%81%AF&theme=orange",
+    "cover": "/img/mall/g007-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%B0%E7%90%83%E4%BB%AA%20%C2%B7%20%E5%A4%9C%E7%81%AF&theme=orange",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=orange",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=orange"
+      "/img/mall/g007-g1.jpg",
+      "/img/mall/g007-g2.jpg",
+      "/img/mall/g007-g3.jpg"
     ],
     "sales": 1354,
     "rating": 4.7,
@@ -306,7 +311,8 @@
       ]
     ],
     "desc": "书桌上的小地球，夜里当灯，白天当摆件，孩子认地名也顺手。",
-    "createdAt": "2026-09-10T17:35:13.169Z"
+    "createdAt": "2026-09-10T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g008",
@@ -317,11 +323,11 @@
     "originalPrice": 59,
     "tag": "",
     "theme": "purple",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E5%9F%8E%E5%B8%82%E8%AE%B0%E5%BF%86%20%C2%B7%20%E6%89%8B&theme=purple",
+    "cover": "/img/mall/g008-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9F%8E%E5%B8%82%E8%AE%B0%E5%BF%86%20%C2%B7%20%E6%89%8B&theme=purple",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=purple",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=purple"
+      "/img/mall/g008-g1.jpg",
+      "/img/mall/g008-g2.jpg",
+      "/img/mall/g008-g3.jpg"
     ],
     "sales": 8430,
     "rating": 4.6,
@@ -350,7 +356,8 @@
       ]
     ],
     "desc": "十二座城市的手绘街景，写完寄出去，剩下的夹在书里当书签。",
-    "createdAt": "2026-09-09T17:35:13.169Z"
+    "createdAt": "2026-09-09T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g009",
@@ -361,11 +368,11 @@
     "originalPrice": 279,
     "tag": "",
     "theme": "teal",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%BD%BB%E6%B0%A7%20%E6%A1%8C%E9%9D%A2%E9%A6%99%E8%96%B0%E5%8A%A0&theme=teal",
+    "cover": "/img/mall/g009-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%BD%BB%E6%B0%A7%20%E6%A1%8C%E9%9D%A2%E9%A6%99%E8%96%B0%E5%8A%A0&theme=teal",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=teal",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=teal"
+      "/img/mall/g009-g1.jpg",
+      "/img/mall/g009-g2.jpg",
+      "/img/mall/g009-g3.jpg"
     ],
     "sales": 2461,
     "rating": 4.7,
@@ -394,7 +401,8 @@
       ]
     ],
     "desc": "夜里几乎听不见，雾量细不打湿桌面，加几滴精油就是香薰机。",
-    "createdAt": "2026-09-08T17:35:13.169Z"
+    "createdAt": "2026-09-08T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g010",
@@ -405,11 +413,11 @@
     "originalPrice": 189,
     "tag": "",
     "theme": "green",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%99%A8%E5%85%89%20%E7%9C%9F%E7%A9%BA%E4%BF%9D%E6%B8%A9%E6%9D%AF&theme=green",
+    "cover": "/img/mall/g010-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%99%A8%E5%85%89%20%E7%9C%9F%E7%A9%BA%E4%BF%9D%E6%B8%A9%E6%9D%AF&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=green"
+      "/img/mall/g010-g1.jpg",
+      "/img/mall/g010-g2.jpg",
+      "/img/mall/g010-g3.jpg"
     ],
     "sales": 9215,
     "rating": 4.8,
@@ -438,7 +446,8 @@
       ]
     ],
     "desc": "通勤编辑人手一个：早上灌的热水到傍晚还是热的，包里倒着也不漏。",
-    "createdAt": "2026-09-07T17:35:13.169Z"
+    "createdAt": "2026-09-07T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g011",
@@ -449,11 +458,11 @@
     "originalPrice": 79,
     "tag": "回购王",
     "theme": "sky",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E4%BA%91%E6%9C%B5%20%E6%8A%97%E8%8F%8C%E6%93%A6%E6%89%8B%E5%B7%BE&theme=sky",
+    "cover": "/img/mall/g011-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E4%BA%91%E6%9C%B5%20%E6%8A%97%E8%8F%8C%E6%93%A6%E6%89%8B%E5%B7%BE&theme=sky",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=sky",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=sky"
+      "/img/mall/g011-g1.jpg",
+      "/img/mall/g011-g2.jpg",
+      "/img/mall/g011-g3.jpg"
     ],
     "sales": 15621,
     "rating": 4.9,
@@ -483,7 +492,7 @@
     ],
     "desc": "回购率最高的一款：擦手擦桌都能用，洗完干得快，不容易有味。",
     "createdAt": "2026-09-06T17:35:13.169Z",
-    "updatedAt": "2026-09-18T09:27:19.097Z"
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g012",
@@ -494,11 +503,11 @@
     "originalPrice": 129,
     "tag": "",
     "theme": "slate",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%8A%98%E5%8F%A0%E6%94%B6%E7%BA%B3%E7%AE%B1%20%C2%B7%20&theme=slate",
+    "cover": "/img/mall/g012-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%8A%98%E5%8F%A0%E6%94%B6%E7%BA%B3%E7%AE%B1%20%C2%B7%20&theme=slate",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=slate",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=slate"
+      "/img/mall/g012-g1.jpg",
+      "/img/mall/g012-g2.jpg",
+      "/img/mall/g012-g3.jpg"
     ],
     "sales": 3327,
     "rating": 4.5,
@@ -527,7 +536,8 @@
       ]
     ],
     "desc": "不去量尺寸也能塞进柜子，正面开窗，找东西不用全倒出来。",
-    "createdAt": "2026-09-05T17:35:13.169Z"
+    "createdAt": "2026-09-05T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g013",
@@ -538,11 +548,11 @@
     "originalPrice": 168,
     "tag": "产地直发",
     "theme": "green",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E4%BA%91%E9%9B%BE%E5%B1%B1%20%E6%98%8E%E5%89%8D%E7%BB%BF%E8%8C%B6&theme=green",
+    "cover": "/img/mall/g013-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E4%BA%91%E9%9B%BE%E5%B1%B1%20%E6%98%8E%E5%89%8D%E7%BB%BF%E8%8C%B6&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=green"
+      "/img/mall/g013-g1.jpg",
+      "/img/mall/g013-g2.jpg",
+      "/img/mall/g013-g3.jpg"
     ],
     "sales": 4182,
     "rating": 4.8,
@@ -571,7 +581,8 @@
       ]
     ],
     "desc": "办公室工位上的常备：豆香明显，回甘快，耐泡三四道不出水味。",
-    "createdAt": "2026-09-04T17:35:13.169Z"
+    "createdAt": "2026-09-04T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g014",
@@ -582,11 +593,11 @@
     "originalPrice": 119,
     "tag": "",
     "theme": "amber",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E7%94%B0%E9%87%8E%20%E6%B7%B7%E5%90%88%E8%B0%B7%E7%89%A9%E4%BB%A3&theme=amber",
+    "cover": "/img/mall/g014-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E7%94%B0%E9%87%8E%20%E6%B7%B7%E5%90%88%E8%B0%B7%E7%89%A9%E4%BB%A3&theme=amber",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=amber",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=amber"
+      "/img/mall/g014-g1.jpg",
+      "/img/mall/g014-g2.jpg",
+      "/img/mall/g014-g3.jpg"
     ],
     "sales": 7834,
     "rating": 4.6,
@@ -615,7 +626,8 @@
       ]
     ],
     "desc": "早八人的早餐：热水一冲两分钟，坚果给得实在，不齁甜。",
-    "createdAt": "2026-09-03T17:35:13.169Z"
+    "createdAt": "2026-09-03T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g015",
@@ -626,11 +638,11 @@
     "originalPrice": 89,
     "tag": "",
     "theme": "rose",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%9E%9C%E5%AD%90%E6%97%A5%E8%AE%B0%20%E5%86%BB%E5%B9%B2%E6%B0%B4&theme=rose",
+    "cover": "/img/mall/g015-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%9E%9C%E5%AD%90%E6%97%A5%E8%AE%B0%20%E5%86%BB%E5%B9%B2%E6%B0%B4&theme=rose",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=rose",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=rose"
+      "/img/mall/g015-g1.jpg",
+      "/img/mall/g015-g2.jpg",
+      "/img/mall/g015-g3.jpg"
     ],
     "sales": 10240,
     "rating": 4.7,
@@ -659,7 +671,8 @@
       ]
     ],
     "desc": "开会时的小零嘴：草莓和芒果最好吃，孩子也愿意当零食。",
-    "createdAt": "2026-09-02T17:35:13.169Z"
+    "createdAt": "2026-09-02T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g016",
@@ -670,11 +683,11 @@
     "originalPrice": 299,
     "tag": "礼盒装",
     "theme": "gold",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%9A%96%E5%86%AC%E7%A4%BC%E7%9B%92%20%C2%B7%20%E5%9D%9A&theme=gold",
+    "cover": "/img/mall/g016-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%9A%96%E5%86%AC%E7%A4%BC%E7%9B%92%20%C2%B7%20%E5%9D%9A&theme=gold",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=gold",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=gold"
+      "/img/mall/g016-g1.jpg",
+      "/img/mall/g016-g2.jpg",
+      "/img/mall/g016-g3.jpg"
     ],
     "sales": 2960,
     "rating": 4.8,
@@ -703,7 +716,8 @@
       ]
     ],
     "desc": "过节走亲访友不出错的一款，独立小袋控制量，不容易受潮。",
-    "createdAt": "2026-09-01T17:35:13.169Z"
+    "createdAt": "2026-09-01T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g017",
@@ -714,11 +728,11 @@
     "originalPrice": 599,
     "tag": "",
     "theme": "cyan",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%BF%9C%E5%B1%B1%20%E9%9C%B2%E8%90%A5%E6%8A%98%E5%8F%A0%E6%A1%8C&theme=cyan",
+    "cover": "/img/mall/g017-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%BF%9C%E5%B1%B1%20%E9%9C%B2%E8%90%A5%E6%8A%98%E5%8F%A0%E6%A1%8C&theme=cyan",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=cyan",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=cyan"
+      "/img/mall/g017-g1.jpg",
+      "/img/mall/g017-g2.jpg",
+      "/img/mall/g017-g3.jpg"
     ],
     "sales": 1180,
     "rating": 4.7,
@@ -747,7 +761,8 @@
       ]
     ],
     "desc": "后备箱塞得下，展开稳当不晃，桌面竹木比铝板好打理。",
-    "createdAt": "2026-08-31T17:35:13.169Z"
+    "createdAt": "2026-08-31T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g018",
@@ -758,11 +773,11 @@
     "originalPrice": 259,
     "tag": "",
     "theme": "indigo",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%BD%BB%E9%A3%8E%20%E9%98%B2%E6%99%92%E5%87%89%E6%84%9F%E5%A4%96&theme=indigo",
+    "cover": "/img/mall/g018-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%BD%BB%E9%A3%8E%20%E9%98%B2%E6%99%92%E5%87%89%E6%84%9F%E5%A4%96&theme=indigo",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=indigo",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=indigo"
+      "/img/mall/g018-g1.jpg",
+      "/img/mall/g018-g2.jpg",
+      "/img/mall/g018-g3.jpg"
     ],
     "sales": 5621,
     "rating": 4.6,
@@ -791,7 +806,8 @@
       ]
     ],
     "desc": "夏天骑车通勤穿它：太阳直射不闷，洗完挂一晚就干。",
-    "createdAt": "2026-08-30T17:35:13.169Z"
+    "createdAt": "2026-08-30T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g019",
@@ -802,11 +818,11 @@
     "originalPrice": 199,
     "tag": "新品",
     "theme": "violet",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E9%9D%99%E9%BB%98%20%E7%91%9C%E4%BC%BD%E5%9E%AB%20T&theme=violet",
+    "cover": "/img/mall/g019-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E9%9D%99%E9%BB%98%20%E7%91%9C%E4%BC%BD%E5%9E%AB%20T&theme=violet",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=violet",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=violet"
+      "/img/mall/g019-g1.jpg",
+      "/img/mall/g019-g2.jpg",
+      "/img/mall/g019-g3.jpg"
     ],
     "sales": 2044,
     "rating": 4.8,
@@ -835,7 +851,8 @@
       ]
     ],
     "desc": "在家跟练够用：跪姿不硌膝，出汗也不打滑，收纳体积还行。",
-    "createdAt": "2026-08-29T17:35:13.169Z"
+    "createdAt": "2026-08-29T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g020",
@@ -846,11 +863,11 @@
     "originalPrice": 359,
     "tag": "",
     "theme": "teal",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E9%80%9A%E5%8B%A4%E5%8F%8C%E8%82%A9%E5%8C%85%2022&theme=teal",
+    "cover": "/img/mall/g020-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E9%80%9A%E5%8B%A4%E5%8F%8C%E8%82%A9%E5%8C%85%2022&theme=teal",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=teal",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=teal"
+      "/img/mall/g020-g1.jpg",
+      "/img/mall/g020-g2.jpg",
+      "/img/mall/g020-g3.jpg"
     ],
     "sales": 3776,
     "rating": 4.7,
@@ -879,7 +896,8 @@
       ]
     ],
     "desc": "出差装两台设备还有余量，主拉链贴背那一侧，挤地铁更安心。",
-    "createdAt": "2026-09-17T17:35:13.169Z"
+    "createdAt": "2026-09-17T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g021",
@@ -890,11 +908,11 @@
     "originalPrice": 129,
     "tag": "回购王",
     "theme": "rose",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E6%99%A8%E5%85%89%20%E6%B0%A8%E5%9F%BA%E9%85%B8%E6%B4%81%E9%9D%A2&theme=rose",
+    "cover": "/img/mall/g021-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E6%99%A8%E5%85%89%20%E6%B0%A8%E5%9F%BA%E9%85%B8%E6%B4%81%E9%9D%A2&theme=rose",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=rose",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=rose"
+      "/img/mall/g021-g1.jpg",
+      "/img/mall/g021-g2.jpg",
+      "/img/mall/g021-g3.jpg"
     ],
     "sales": 7218,
     "rating": 4.8,
@@ -923,7 +941,8 @@
       ]
     ],
     "desc": "换季不闹脾气的一款：泡沫细，冲得干净，洗完没有拉丝感。",
-    "createdAt": "2026-09-16T17:35:13.169Z"
+    "createdAt": "2026-09-16T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g022",
@@ -934,11 +953,11 @@
     "originalPrice": 229,
     "tag": "",
     "theme": "sky",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E4%BF%AE%E5%A4%8D%20%E7%A5%9E%E7%BB%8F%E9%85%B0%E8%83%BA%E9%9D%A2&theme=sky",
+    "cover": "/img/mall/g022-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E4%BF%AE%E5%A4%8D%20%E7%A5%9E%E7%BB%8F%E9%85%B0%E8%83%BA%E9%9D%A2&theme=sky",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=sky",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=sky"
+      "/img/mall/g022-g1.jpg",
+      "/img/mall/g022-g2.jpg",
+      "/img/mall/g022-g3.jpg"
     ],
     "sales": 4310,
     "rating": 4.7,
@@ -967,7 +986,8 @@
       ]
     ],
     "desc": "夜里厚敷一层，第二天脱皮明显好转，后续上妆也不搓泥。",
-    "createdAt": "2026-09-15T17:35:13.169Z"
+    "createdAt": "2026-09-15T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g023",
@@ -978,11 +998,11 @@
     "originalPrice": 349,
     "tag": "",
     "theme": "purple",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E5%87%80%E6%BE%88%20%E7%94%B5%E5%8A%A8%E7%89%99%E5%88%B7%20&theme=purple",
+    "cover": "/img/mall/g023-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E5%87%80%E6%BE%88%20%E7%94%B5%E5%8A%A8%E7%89%99%E5%88%B7%20&theme=purple",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=purple",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=purple"
+      "/img/mall/g023-g1.jpg",
+      "/img/mall/g023-g2.jpg",
+      "/img/mall/g023-g3.jpg"
     ],
     "sales": 5133,
     "rating": 4.6,
@@ -1011,7 +1031,8 @@
       ]
     ],
     "desc": "比同价位静一些，牙龈敏感用轻柔档也不出血，出差忘带充电器也撑得住。",
-    "createdAt": "2026-09-14T17:35:13.169Z"
+    "createdAt": "2026-09-14T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   },
   {
     "id": "g024",
@@ -1022,11 +1043,11 @@
     "originalPrice": 109,
     "tag": "",
     "theme": "green",
-    "cover": "/api/v1/placeholder?w=600&h=600&text=%E8%8D%89%E6%9C%AC%20%E5%A4%B4%E7%9A%AE%E8%88%92%E7%BC%93%E6%B4%97&theme=green",
+    "cover": "/img/mall/g024-cover.jpg",
     "gallery": [
-      "/api/v1/placeholder?w=900&h=900&text=%E8%8D%89%E6%9C%AC%20%E5%A4%B4%E7%9A%AE%E8%88%92%E7%BC%93%E6%B4%97&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E7%BB%86%E8%8A%82%20%C2%B7%20%E6%9D%90%E8%B4%A8&theme=green",
-      "/api/v1/placeholder?w=900&h=900&text=%E5%9C%BA%E6%99%AF%20%C2%B7%20%E5%AE%9E%E6%8B%8D&theme=green"
+      "/img/mall/g024-g1.jpg",
+      "/img/mall/g024-g2.jpg",
+      "/img/mall/g024-g3.jpg"
     ],
     "sales": 6880,
     "rating": 4.6,
@@ -1055,6 +1076,7 @@
       ]
     ],
     "desc": "油头救星：洗完蓬松度能撑到第二天下午，味道干净不刺鼻。",
-    "createdAt": "2026-09-13T17:35:13.169Z"
+    "createdAt": "2026-09-13T17:35:13.169Z",
+    "updatedAt": "2026-09-21T00:39:29.079Z"
   }
 ]

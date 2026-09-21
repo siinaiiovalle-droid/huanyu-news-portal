@@ -5,10 +5,35 @@
  * 数据落 data/mall.json（商品）与 data/orders.json（订单），
  * MVP 走 store.js 文件持久层，后续可替换数据库而不用改上层 API。
  *
- * 配图策略：不依赖外部图床（离线环境也能跑），统一用 /api/v1/placeholder
- * 生成主题渐变 SVG，每件商品一个主题色，视觉上有梯度且不出现破图。
+ * 配图策略：商品图用真实高清实拍图（scripts/fetch-mall-images.js 下载到
+ * public/img/mall/），读数据时校验文件是否真的存在，缺失或没下载过的图位一律
+ * 回退 /api/v1/placeholder 主题渐变 SVG —— 所以离线环境、图没下全也不会出现破图。
  */
+const fs = require('fs');
+const path = require('path');
 const { Store, genId, nowISO } = require('./store');
+
+const PUBLIC_DIR = path.join(__dirname, '..', '..', 'public');
+
+/* ------------------------------ 配图兜底 ------------------------------ */
+
+/**
+ * 只采用真实落在 public/ 下的图：数据里写了 /img/mall/xxx.jpg 但文件被删了，
+ * 直接输出就成了破图，所以读取时校验一次，缺了交回占位图。
+ */
+function localImage(link) {
+  if (!link || typeof link !== 'string' || !link.startsWith('/img/')) return '';
+  try {
+    return fs.existsSync(path.join(PUBLIC_DIR, link)) ? link : '';
+  } catch {
+    return '';
+  }
+}
+
+/** 主题渐变占位图：真实图缺失时的兜底 */
+function placeholderOf(p, w, h, text) {
+  return `/api/v1/placeholder?w=${w}&h=${h}&text=${encodeURIComponent(text || '')}&theme=${p && p.theme ? p.theme : 'blue'}`;
+}
 
 /* ------------------------------ 数据仓储 ------------------------------ */
 
@@ -325,12 +350,22 @@ function discountOf(p) {
 function decorate(p) {
   const discount = discountOf(p);
   const cat = CATEGORIES.find((c) => c.id === p.category);
+  const gallery = Array.isArray(p.gallery) ? p.gallery : [];
+  const ph = (w, h, text) => placeholderOf(p, w, h, text);
+  const name = String(p.title || '').slice(0, 8);
   return {
     ...p,
     discount,
     saved: Math.max(0, (p.originalPrice || p.price) - p.price),
     categoryName: cat ? cat.name : p.category,
-    categoryIcon: cat ? cat.icon : ''
+    categoryIcon: cat ? cat.icon : '',
+    // 真实高清图优先，缺一个图位就补对应含义的占位图，页面永远不破图
+    cover: localImage(p.cover) || ph(600, 600, name),
+    gallery: [
+      localImage(gallery[0]) || ph(900, 900, name),
+      localImage(gallery[1]) || ph(900, 900, '细节 · 材质'),
+      localImage(gallery[2]) || ph(900, 900, '场景 · 实拍')
+    ]
   };
 }
 
@@ -391,7 +426,11 @@ function getSeckill(size = 4) {
 /** 首页编排：楼层数据一次拿全，避免前端多次往返 */
 function getHome() {
   return {
-    banners: BANNERS,
+    // 轮播图同样按文件是否存在决定用实拍图还是占位图
+    banners: BANNERS.map((b, i) => {
+      const link = localImage(`/img/mall/banner-${i + 1}.jpg`);
+      return link ? { ...b, image: link } : b;
+    }),
     categories: listCategories(),
     promises: PROMISES,
     seckill: getSeckill(4),
