@@ -1,15 +1,9 @@
 {
-  "at": "2026-09-19T23:35:56.020Z",
+  "at": "2026-09-20T23:35:34.270Z",
   "total": 2,
-  "ok": 1,
+  "ok": 2,
   "downloaded": 0,
-  "cached": 1,
-  "dupRejected": 14,
-  "failed": [
-    {
-      "title": "2026能源绿色发展大会首次与国际数字能源展同台举办",
-      "slot": "figure:0",
-      "why": "体积过小 50KB / 分辨率不足 860x535 / 分辨率不足 860x574"
-    }
-  ]
+  "cached": 2,
+  "dupRejected": 0,
+  "failed": []
 }

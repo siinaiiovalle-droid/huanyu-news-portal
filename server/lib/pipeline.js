@@ -464,7 +464,13 @@ async function runCollectInner({ trigger = 'manual', limit = 0, sourceIds = null
     images: (imageStat || poolStat) ? {
       filled: (poolStat ? poolStat.filled : 0) + (imageStat ? imageStat.filled : 0),
       failed: (poolStat ? poolStat.failed : 0) + (imageStat ? imageStat.failed : 0),
-      pool: poolStat ? { checked: poolStat.checked, filled: poolStat.filled, failed: poolStat.failed } : null
+      pool: poolStat ? { checked: poolStat.checked, filled: poolStat.filled, failed: poolStat.failed } : null,
+      // 留几条失败原因，后台"任务日志"里能直接看出是网络不通还是没找到图
+      reasons: [
+        ...(poolStat ? (poolStat.items || []) : []),
+        ...(imageStat ? (imageStat.articles || []).flatMap((a) => (a.details || []).map((d) => ({ title: a.title, ok: d.ok, why: d.why }))) : [])
+      ].filter((x) => x && !x.ok && x.why).slice(0, 8)
+        .map((x) => `${String(x.title || '').slice(0, 18)}：${x.why}`)
     } : null,
     durationMs: Date.now() - started,
     perSource,
@@ -563,8 +569,9 @@ async function ensureInboxCovers({ ids = [], limit = 0, force = false, deadlineA
         if (deadlineAt && Date.now() > deadlineAt) return;
         const doc = docs[cursor++];
         // budgetMs 是图片服务内部的软预算，外面再套一层硬超时，防止个别请求挂住不放
+        // 单条预算：实测图库检索一张要 30s 上下，给得太窄（25s）会整轮一张都配不上
         const r = await withTimeout(
-          image.ensureInboxImages(doc, { proxy: cfg.proxy || '', force, fast, budgetMs: fast ? 8000 : 25000 }),
+          image.ensureInboxImages(doc, { proxy: cfg.proxy || '', force, fast, budgetMs: fast ? 10000 : 45000 }),
           (Number(cfg.imageArticleMs) || 90000),
           { ok: false, why: '单条配图超时，留到下次补图' }
         );
@@ -665,6 +672,18 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
   const merged = patch ? { ...item, ...patch, id: item.id } : item;
   const target = status || cfg.defaultStatus || 'published';
 
+  // 待审条目在池里放久了（隔几天才想起来审核）时，沿用入库时间会让稿子一发布就沉到
+  // 最新列表底部，前台等于"发了却看不见"。超过 6 小时的按发布时刻上线，
+  // 原始时间留在 rssPublishedAt 里供溯源；定时发布的用计划时间。
+  const STALE_MS = 6 * 3600000;
+  const originAt = Date.parse(merged.publishedAt || '') || 0;
+  const scheduledAt = Date.parse(merged.scheduledAt || '') || 0;
+  const stale = !originAt || originAt > Date.now() + 6 * 3600000 || Date.now() - originAt > STALE_MS;
+  const publishedAt = (scheduledAt && scheduledAt <= Date.now())
+    ? merged.scheduledAt
+    : (stale ? nowISO() : merged.publishedAt);
+  const rssPublishedAt = stale ? (merged.publishedAt || merged.rssPublishedAt || '') : (merged.rssPublishedAt || '');
+
   const article = svc.createArticle({
     title: merged.title,
     summary: merged.summary,
@@ -676,9 +695,12 @@ function publishInboxItem(id, { by = 'system', status = null, comment = '', auto
     // 采集时已经给待审条目下好封面就直接用，避免发布时再下载一次、再占一张图
     // 但必须是本机确有文件：路径写进数据而文件不在，上线就是一张破图，宁可先不带图
     cover: image.hasLocalImage(merged.cover) ? merged.cover : '',
-    content: merged.content,
+    // src 为空的图片块上线就是破图，发布前直接剔除（补图流程补上后会回填）
+    content: (Array.isArray(merged.content) ? merged.content : [])
+      .filter((b) => !(b && b.type === 'image' && !String(b.src || '').trim())),
     status: target,
-    publishedAt: merged.publishedAt,
+    publishedAt,
+    rssPublishedAt,
     origin: 'pipeline',
     inboxId: id,
     flags: {

@@ -1,5 +1,32 @@
 [
   {
+    "id": "HYmuak5ss7u0dh0s",
+    "createdAt": "2026-09-21T01:20:04.855Z",
+    "updatedAt": "2026-09-21T01:20:04.855Z",
+    "uid": "u_mfxxahph",
+    "lines": [
+      {
+        "id": "g011",
+        "title": "云朵 抗菌擦手巾 6 条装",
+        "cover": "/img/mall/g011-cover.jpg",
+        "price": 49,
+        "qty": 1,
+        "theme": "sky"
+      }
+    ],
+    "amount": 49,
+    "freight": 12,
+    "payable": 61,
+    "saved": 30,
+    "receiver": {
+      "name": "张明",
+      "phone": "13800138000",
+      "address": "北京市朝阳区建国路 88 号 寰宇传媒大厦 18 层"
+    },
+    "remark": "工作日 9:00–18:00 送达，到楼下电话联系",
+    "status": "待付款"
+  },
+  {
     "id": "HYmu6r8u2hjnx4ms",
     "createdAt": "2026-09-18T09:27:19.097Z",
     "updatedAt": "2026-09-18T09:27:19.097Z",

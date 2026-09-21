@@ -66,6 +66,8 @@ function normalize(input = {}) {
     flags: { ...defaultFlags(), ...(input.flags || {}) },
     stats: { ...defaultStats(), ...(input.stats || {}) },
     publishedAt: input.publishedAt || nowISO(),
+    // 采集源给的原始发布时间（RSS 日期不可信，只留作溯源，不参与排序）
+    rssPublishedAt: input.rssPublishedAt || '',
     // 定时发布：到达 scheduledAt 前状态为 scheduled，由流水线到点转 published
     scheduledAt: input.scheduledAt || '',
     // 内容来源：manual 编辑部录入 / pipeline 采集流水线

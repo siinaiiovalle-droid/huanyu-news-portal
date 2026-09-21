@@ -4,6 +4,7 @@
 > 最近更新（2026-09-18 末轮）：新增 §3.6「订单商品图改真实高清实拍」，并补齐三份架构/内容/日志文档的**两侧同源同步**约定（见 §3.7）。
 > 2026-09-19：新增 §3.8 / §4.4「商城大栏目接子页」——通用商品集合页 `collection_page.dart`，10 处入口全部落到具体页面。
 > 2026-09-20：新增 §3.9 / §4.5「网站的严选商城打不开」——本地站点正常，静态导出漏了 mall 页面与商城接口快照。
+> 2026-09-20（二）：新增 §3.10 / §4.6「商城图片换成真实高清实拍图」——`npm run fetch:mall`，24 件商品 + 3 张轮播共 99 张真实图，缺图回退占位图。
 > 架构细节见 `docs/ARCHITECTURE.md`，内容架构见 `docs/CONTENT_ARCHITECTURE.md`，本文件只记**做了什么、为什么、怎么复现**。
 > 同源文件：门户仓库 `docs/DEV_LOG.md`（两边需同步）。
 
@@ -184,6 +185,19 @@ constraints: BoxConstraints(0.0<=w<=302.7, 0.0<=h<=43.5)
 
 改动清单见 §4.5。
 
+### 3.10 本轮：商城图片换成真实高清实拍（2026-09-20）
+> 「网站的严选商城的图片要下载真实高清的」
+
+商城 24 件商品的 `cover` / `gallery` 与首页轮播全是 `/api/v1/placeholder` 主题渐变 SVG（当初刻意这么设计：不依赖外部图床，离线也能跑），看着就是色块加标题文字，不像商品。
+
+**做法**：把新闻配图链路（Bing 检索大图 → 下载校验 → Pillow 裁切 → dHash 全站去重）抽成公共库 `scripts/lib/image-search.js`，新闻侧 `fetch-images.js` 改为引用它（行为不变），商城侧新增 `scripts/fetch-mall-images.js`（`npm run fetch:mall`）。
+
+几个关键点：检索词**按品类不按品牌**（「寰宇声学」「云图」这些自有品牌图库里搜不到，用品类词才搜得到真实实拍图）；商品图统一输出 1000×1000 正方形、轮播 1600×900 横图；同一件商品的封面/主图/细节/场景四个图位共用全站 dHash 去重，本次拦截重复 39 次。
+
+**兜底**：任何一个图位下载失败都保留原占位图；服务侧 `decorate()` 还会校验 `/img/...` 文件是否真的存在，缺了就回退 `/api/v1/placeholder`，所以图没下全、图片被误删都不会出现破图。改动清单见 §4.6。
+
+**校验**：99 张全部成功，Pillow 体检（尺寸 + 灰度标准差 + 体积）99/99 通过、无纯色图；本地站点与重建后的静态站商品卡 12 张全部用 `/img/mall/` 真实图，轮播背景为实拍图，console 仅剩 shim 降级尝试的 1 条 404。
+
 ---
 
 ## 4. 本轮修复清单
@@ -272,6 +286,19 @@ constraints: BoxConstraints(0.0<=w<=302.7, 0.0<=h<=43.5)
 | `public/js/mall.js` | banner 背景图由手写 `/api/v1/placeholder?...` 改为 `HY.ph(b.tag, b.theme, 1200, 520)` —— 只有走 `HY.ph` 才会被 shim 的 `patchHy` 接管成内联 SVG |
 
 **验证**（`npm run build:static` 后 `python -m http.server --directory gh-pages`）：`api/v1/mall/` 下 59 个快照（24 商品详情 + home/orders/products + 类目/标签分页）；headless 打开 `mall.html` → 24 件选品 / 12 张商品卡 / 7 类目 / 4 秒杀 / 8 榜单 / 3 banner 全部有数据，console 仅剩 1 条 shim「精确快照未命中 → 放宽到兜底」的 404（设计内的降级尝试）；加购 → 徽标变 1；`POST` 下单返回 `M91180754`，`GET ?uid=` 能看到该订单（待发货）。本地 3000 站点回归同样 0 报错。
+
+---
+
+### 4.6 商城配图换真实高清实拍（2026-09-20）
+
+| 文件 | 改动 |
+| --- | --- |
+| `scripts/lib/image-search.js`（新增） | 从 `fetch-images.js` 抽出公共能力：Bing 检索、下载校验、Pillow 裁切、dHash 全站去重；尺寸 / 比例 / 门槛参数化（新闻要横图 ≥1.2，商品图允许 0.6~1.8） |
+| `scripts/fetch-images.js` | 改为引用公共库，新闻配图行为不变（门槛、文件名、photo-index 回写照旧） |
+| `scripts/fetch-mall-images.js`（新增） | 商城配图脚本：24 件商品 ×（封面 / 主图 / 细节 / 场景）+ 3 张轮播，检索词按品类，支持 `--apply / --only=g001 / --force / --limit=N` |
+| `server/lib/mall-service.js` | 新增 `localImage()` 校验 `/img/...` 是否真存在；`decorate()` 真实图优先、缺位回退占位图；`getHome()` 按文件是否存在给轮播补 `image` |
+| `public/js/mall.js` | 轮播背景改为 `b.image || HY.ph(...)`：有实拍图用实拍图，没有才走占位图 |
+| `package.json` | 新增 `npm run fetch:mall` |
 
 ---
 

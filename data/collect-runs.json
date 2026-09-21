@@ -1,5 +1,439 @@
 [
   {
+    "id": "mub2u1kb4e8517",
+    "createdAt": "2026-09-21T10:02:49.067Z",
+    "updatedAt": "2026-09-21T10:02:49.067Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 931,
+    "added": 25,
+    "duplicated": 795,
+    "rejected": 3,
+    "autoPublished": 4,
+    "failed": 0,
+    "images": {
+      "filled": 4,
+      "failed": 4,
+      "pool": {
+        "checked": 12,
+        "filled": 4,
+        "failed": 2
+      },
+      "reasons": [
+        "亚运会女子200米混合泳：于子迪刷新：单条配图超时，留到下次补图",
+        "亚运会男子4×200米自由泳接力：中：单条配图超时，留到下次补图",
+        "亚运会女子200米混合泳：于子迪刷新：单篇配图超时，留到下次补图"
+      ]
+    },
+    "durationMs": 156518,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-21T10:02:49.067Z"
+  },
+  {
+    "id": "muazdz7nkmyfq2",
+    "createdAt": "2026-09-21T08:26:20.675Z",
+    "updatedAt": "2026-09-21T08:26:20.675Z",
+    "type": "collect",
+    "trigger": "manual",
+    "fetched": 931,
+    "added": 29,
+    "duplicated": 813,
+    "rejected": 10,
+    "autoPublished": 2,
+    "failed": 0,
+    "images": {
+      "filled": 5,
+      "failed": 3,
+      "pool": {
+        "checked": 12,
+        "filled": 4,
+        "failed": 3
+      },
+      "reasons": [
+        "算力“冠军”，何以“胜算”？：超时未找到合格配图（原文页配图：分辨率不足 510x340 / 原文页配图：分辨率不足 510x340）",
+        "刘德文夺得亚运会武术男子太极拳太极剑：超时未找到合格配图（原文页配图：分辨率不足 510x340 / 原文页配图：分辨率不足 510x340）",
+        "胡塞武装称沙特空袭也门北部通信塔致4：超时未找到合格配图（原文页配图：体积过小 15KB / 原文页配图：分辨率不足 510x340）"
+      ]
+    },
+    "durationMs": 118984,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 4
+      }
+    ],
+    "finishedAt": "2026-09-21T08:26:20.675Z"
+  },
+  {
+    "id": "muayv8csfxa9rr",
+    "createdAt": "2026-09-21T08:11:46.060Z",
+    "updatedAt": "2026-09-21T08:11:46.060Z",
+    "type": "collect",
+    "trigger": "manual",
+    "fetched": 931,
+    "added": 30,
+    "duplicated": 756,
+    "rejected": 1,
+    "autoPublished": 2,
+    "failed": 0,
+    "images": {
+      "filled": 0,
+      "failed": 10,
+      "pool": {
+        "checked": 12,
+        "filled": 0,
+        "failed": 6
+      }
+    },
+    "durationMs": 158409,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 5
+      }
+    ],
+    "finishedAt": "2026-09-21T08:11:46.060Z"
+  },
+  {
+    "id": "muag9u6sqe1wbg",
+    "createdAt": "2026-09-20T23:31:14.837Z",
+    "updatedAt": "2026-09-20T23:31:14.837Z",
+    "type": "collect",
+    "trigger": "cli",
+    "fetched": 931,
+    "added": 25,
+    "duplicated": 818,
+    "rejected": 17,
+    "autoPublished": 0,
+    "failed": 0,
+    "images": {
+      "filled": 4,
+      "failed": 3,
+      "pool": {
+        "checked": 8,
+        "filled": 4,
+        "failed": 3
+      }
+    },
+    "durationMs": 57970,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-20T23:31:14.836Z"
+  },
+  {
     "id": "mu9ne9a986y8l7",
     "createdAt": "2026-09-20T10:02:52.161Z",
     "updatedAt": "2026-09-20T10:02:52.161Z",
