@@ -1,5 +1,3382 @@
 [
   {
+    "id": "muci6yeoy5h26u",
+    "createdAt": "2026-09-22T10:00:31.920Z",
+    "updatedAt": "2026-09-22T10:00:31.920Z",
+    "title": "眼镜越换越厚 警惕少年儿童滑向高度近视",
+    "summary": "【观察】",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "眼镜越换越厚",
+      "高度近视"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-22/10701209.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "【观察】"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "眼镜越换越厚 警惕少年儿童滑向高度近视"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-22/10701209.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T23:29:48.000Z",
+    "rssPublishedAt": "2026-09-21T23:29:48.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-22T10:00:31.920Z",
+    "score": 53,
+    "metrics": {
+      "ageHours": 10.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 53 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.920Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-22T10:00:31.920Z",
+      "comment": "分值 53 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "muci6yemnps8dg",
+    "createdAt": "2026-09-22T10:00:31.918Z",
+    "updatedAt": "2026-09-22T10:00:31.918Z",
+    "title": "最佳治疗期6岁前 孤独症干预康复指南来了",
+    "summary": "国家卫生健康委办公厅关于印发孤独症谱系障碍儿童干预康复指南(2026年版)的通知",
+    "channel": "health",
+    "tags": [
+      "健康"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-22/10701494.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "国家卫生健康委办公厅关于印发孤独症谱系障碍儿童干预康复指南(2026年版)的通知。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "最佳治疗期6岁前 孤独症干预康复指南来了"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-22/10701494.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T07:33:25.000Z",
+    "rssPublishedAt": "2026-09-22T07:33:25.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-22T10:00:31.918Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 2.5,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.918Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6yejftmfjq",
+    "createdAt": "2026-09-22T10:00:31.915Z",
+    "updatedAt": "2026-09-22T10:00:31.915Z",
+    "title": "国家卫健委印发孤独症干预康复指南 最佳治疗期6岁前",
+    "summary": "中新网9月22日电 据国家卫健委网站消息，为深入实施《儿童青少年“五健”促进行动计划(2026—2030年)》，规范儿童孤独症筛查干预服务有关工作，国家卫健委组织编写了《孤独症谱系障碍儿童干预康复指南(2026年版)》(",
+    "channel": "health",
+    "tags": [
+      "健康"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-22/10701530.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 据国家卫健委网站消息，为深入实施《儿童青少年“五健”促进行动计划(2026—2030年)》，规范儿童孤独症筛查干预服务有关工作，国家卫健委组织编写了《孤独症谱系障碍儿童干预康复指南(2026年版)》(以下简称《指南》)并印发。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "国家卫健委印发孤独症干预康复指南 最佳治疗期6岁"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-22/10701530.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:51:50.000Z",
+    "rssPublishedAt": "2026-09-22T08:51:50.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-22T10:00:31.915Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.915Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6xwv0rebnw",
+    "createdAt": "2026-09-22T10:00:31.279Z",
+    "updatedAt": "2026-09-22T10:00:31.279Z",
+    "title": "《欢迎来龙餐馆》导演文牧野：技术最好的样子是让你忘记技术",
+    "summary": "中新网上海9月22日电 (记者 郑莹莹 刘亮)“我越来越觉得技术最好的样子是让你忘记技术，只记得人。”《欢迎来龙餐馆》导演文牧野21日晚在上海出席一场品牌发布会时说。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "欢迎来龙餐馆",
+      "导演文牧野"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-22/10701443.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月22日电 (记者 郑莹莹 刘亮)“我越来越觉得技术最好的样子是让你忘记技术，只记得人。"
+      },
+      {
+        "type": "p",
+        "text": "”《欢迎来龙餐馆》导演文牧野21日晚在上海出席一场品牌发布会时说。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《欢迎来龙餐馆》导演文牧野：技术最好的样子是让你"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-22/10701443.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T06:40:11.000Z",
+    "rssPublishedAt": "2026-09-22T06:40:11.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-22T10:00:31.279Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 3.3,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.279Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6xwsw2l42y",
+    "createdAt": "2026-09-22T10:00:31.276Z",
+    "updatedAt": "2026-09-22T10:00:31.276Z",
+    "title": "（活力中国）宁夏传统掇绣融入现代生活 非遗文创俏销海外",
+    "summary": "中新社宁夏固原9月22日电 (记者 杨迪 刘洋)“掇绣在海外很火，我们每次带着文创产品参加国际展会，都是空着皮箱回来的。”宁夏固原市非物质文化遗产代表性项目(掇绣)传承人刘飞近日接受采访时说，随着中国文化的国际影响力日增",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "活力"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-22/10701462.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社宁夏固原9月22日电 (记者 杨迪 刘洋)“掇绣在海外很火，我们每次带着文创产品参加国际展会，都是空着皮箱回来的。"
+      },
+      {
+        "type": "p",
+        "text": "”宁夏固原市非物质文化遗产代表性项目(掇绣)传承人刘飞近日接受采访时说，随着中国文化的国际影响力日增，掇绣产品愈受海外民众欢迎。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（活力中国）宁夏传统掇绣融入现代生活 非遗文创俏"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-22/10701462.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T06:53:46.000Z",
+    "rssPublishedAt": "2026-09-22T06:53:46.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-22T10:00:31.276Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 3.1,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.276Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6xwpyi1xb6",
+    "createdAt": "2026-09-22T10:00:31.273Z",
+    "updatedAt": "2026-09-22T10:01:25.686Z",
+    "title": "壹时评：把话筒递给乡土，新大众文艺的“三重位移”",
+    "summary": "八斗才乐队把河南民歌与宁夏花儿揉进摇滚，七十岁的奶奶团踩着锣鼓点演皮影戏，新农人拿农具当乐器，把丰收搬上了舞台。央视农业农村频道《田野欢歌》特别主题《e路欢歌》连续两期聚焦新大众文艺在县域的一次具体落地，受到关注。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "壹时评",
+      "话筒递给乡土"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-22/10701537.shtml",
+    "cover": "/img/news/i-muci6xwpyi1xb6-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "八斗才乐队把河南民歌与宁夏花儿揉进摇滚，七十岁的奶奶团踩着锣鼓点演皮影戏，新农人拿农具当乐器，把丰收搬上了舞台。"
+      },
+      {
+        "type": "p",
+        "text": "央视农业农村频道《田野欢歌》特别主题《e路欢歌》连续两期聚焦新大众文艺在县域的一次具体落地，受到关注。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "壹时评：把话筒递给乡土，新大众文艺的“三重位移”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-22/10701537.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:34:17.000Z",
+    "rssPublishedAt": "2026-09-22T08:34:17.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-22T10:00:31.273Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.273Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6xwnvw6ju5",
+    "createdAt": "2026-09-22T10:00:31.271Z",
+    "updatedAt": "2026-09-22T10:01:29.966Z",
+    "title": "专访林依轮：那只越过时代的爱情鸟",
+    "summary": "中新社澳门9月22日电 (记者 戴小橦)澳门银河综艺馆的后台通道人声交错，彩排余音还在走廊回荡。歌手林依轮坐在候场室里接受中新社记者专访时，谈起那首流传30余年的歌曲《爱情鸟》。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "专访林依轮",
+      "只越过时代"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-22/10701460.shtml",
+    "cover": "/img/news/i-muci6xwnvw6ju5-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社澳门9月22日电 (记者 戴小橦)澳门银河综艺馆的后台通道人声交错，彩排余音还在走廊回荡。"
+      },
+      {
+        "type": "p",
+        "text": "歌手林依轮坐在候场室里接受中新社记者专访时，谈起那首流传30余年的歌曲《爱情鸟》。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "专访林依轮：那只越过时代的爱情鸟"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-22/10701460.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:41:35.000Z",
+    "rssPublishedAt": "2026-09-22T08:41:35.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-22T10:00:31.271Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.271Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6xwkrmdc61",
+    "createdAt": "2026-09-22T10:00:31.268Z",
+    "updatedAt": "2026-09-22T10:00:31.268Z",
+    "title": "山西闻喜发现金代僧侣墓 填补晋南地区研究空白",
+    "summary": "中新社太原9月22日电 (记者 胡健)山西省考古研究院22日对外公布运城市闻喜县东社村宋金文化遗存发掘资料，根据出土砖刻“崔祥院主”，推测该墓为僧侣墓，填补了晋南地区佛教僧侣埋葬考古研究空白。",
+    "channel": "culture",
+    "tags": [
+      "文化"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-22/10701571.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社太原9月22日电 (记者 胡健)山西省考古研究院22日对外公布运城市闻喜县东社村宋金文化遗存发掘资料，根据出土砖刻“崔祥院主”，推测该墓为僧侣墓，填补了晋南地区佛教僧侣埋葬考古研究空白。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "山西闻喜发现金代僧侣墓 填补晋南地区研究空白"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-22/10701571.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:38:13.000Z",
+    "rssPublishedAt": "2026-09-22T09:38:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-22T10:00:31.268Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:31.268Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6wuboqyn5a",
+    "createdAt": "2026-09-22T10:00:29.891Z",
+    "updatedAt": "2026-09-22T10:02:07.117Z",
+    "title": "成功卫冕！李冰洁夺得亚运会女子400米自由泳金牌",
+    "summary": "9月22日，名古屋亚运会女子400米自由泳决赛，中国选手李冰洁夺得金牌，成功卫冕冠军！",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "成功卫冕"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701556.shtml",
+    "cover": "/img/news/i-muci6wuboqyn5a-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月22日，名古屋亚运会女子400米自由泳决赛，中国选手李冰洁夺得金牌，成功卫冕冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "成功卫冕！李冰洁夺得亚运会女子400米自由泳金牌"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701556.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:16:01.000Z",
+    "rssPublishedAt": "2026-09-22T09:16:01.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-22T10:00:29.891Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-22T10:00:29.891Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-22T10:02:07.117Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_muci8zv1q84bjq",
+    "publishedInboxAt": "2026-09-22T10:02:07.117Z"
+  },
+  {
+    "id": "muci6wu98kfkyj",
+    "createdAt": "2026-09-22T10:00:29.889Z",
+    "updatedAt": "2026-09-22T10:02:07.063Z",
+    "title": "中国选手李冰洁获得亚运会女子400米自由泳冠军",
+    "summary": "中新网9月22日电 (记者 朱晨曦 周昕)当地时间9月22日，在爱知·名古屋亚运会游泳项目女子400米自由泳决赛中，中国选手、亚洲纪录保持者李冰洁以4分02秒71获得冠军，成功卫冕。中国选手杨佩琪获得第四名。",
+    "channel": "sports",
+    "tags": [
+      "体育"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701566.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 (记者 朱晨曦 周昕)当地时间9月22日，在爱知·名古屋亚运会游泳项目女子400米自由泳决赛中，中国选手、亚洲纪录保持者李冰洁以4分02秒71获得冠军，成功卫冕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手李冰洁获得亚运会女子400米自由泳冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701566.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:26:34.000Z",
+    "rssPublishedAt": "2026-09-22T09:26:34.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-22T10:00:29.889Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.6,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-22T10:00:29.889Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-22T10:02:07.063Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_muci8ztjzbil83",
+    "publishedInboxAt": "2026-09-22T10:02:07.063Z"
+  },
+  {
+    "id": "muci6wu7kft07u",
+    "createdAt": "2026-09-22T10:00:29.887Z",
+    "updatedAt": "2026-09-22T10:00:29.887Z",
+    "title": "（爱知·名古屋亚运会）中国武术在文莱“种”出亚运奖牌",
+    "summary": "中新社日本名古屋9月22日电 题：中国武术在文莱“种”出亚运奖牌",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701559.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月22日电 题：中国武术在文莱“种”出亚运奖牌。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）中国武术在文莱“种”出亚运"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701559.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:28:18.000Z",
+    "rssPublishedAt": "2026-09-22T09:28:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-22T10:00:29.887Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（58 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-22T10:00:29.887Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6wu58yhm7g",
+    "createdAt": "2026-09-22T10:00:29.885Z",
+    "updatedAt": "2026-09-22T10:00:29.885Z",
+    "title": "（爱知·名古屋亚运会）36年过去，北京亚运会为何依旧难忘",
+    "summary": "中新网北京9月22日电 题：36年过去，北京亚运会为何依旧难忘",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701567.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月22日电 题：36年过去，北京亚运会为何依旧难忘。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）36年过去，北京亚运会为何"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701567.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:34:10.000Z",
+    "rssPublishedAt": "2026-09-22T09:34:10.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-22T10:00:29.885Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（59 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-22T10:00:29.885Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6wu3yuq3ws",
+    "createdAt": "2026-09-22T10:00:29.883Z",
+    "updatedAt": "2026-09-22T10:00:29.883Z",
+    "title": "四连冠！中国队夺得亚运会男子4×100米混合泳接力金牌",
+    "summary": "9月22日，名古屋亚运会男子4×100米混合泳接力决赛，由徐嘉余、董志豪、徐放、潘展乐组成的中国队夺得金牌！中国队在男子4×100米混合泳接力项目实现四连冠，潘展乐与徐嘉余携手拿下本届亚运会个人第三金。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "四连冠"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701586.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月22日，名古屋亚运会男子4×100米混合泳接力决赛，由徐嘉余、董志豪、徐放、潘展乐组成的中国队夺得金牌。"
+      },
+      {
+        "type": "p",
+        "text": "中国队在男子4×100米混合泳接力项目实现四连冠，潘展乐与徐嘉余携手拿下本届亚运会个人第三金。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "四连冠！中国队夺得亚运会男子4×100米混合泳接"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701586.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:44:07.000Z",
+    "rssPublishedAt": "2026-09-22T09:44:07.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-22T10:00:29.883Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:29.883Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6w4butxs70",
+    "createdAt": "2026-09-22T10:00:28.955Z",
+    "updatedAt": "2026-09-22T10:00:28.955Z",
+    "title": "海峡两岸现代农业与海洋牧场产业对接交流会在湛江举办",
+    "summary": "中新社广东湛江9月22日电 (梁盛 谢剑锋)海峡两岸(湛江)现代农业与海洋牧场产业对接交流会22日在广东湛江举办，超60家台企与湛江产业龙头企业精准对接，聚焦种业创新、海洋牧场、精深加工、农文旅融合等重点领域，现场达成多",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "海洋牧场产业",
+      "接交流会"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701568.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社广东湛江9月22日电 (梁盛 谢剑锋)海峡两岸(湛江)现代农业与海洋牧场产业对接交流会22日在广东湛江举办，超60家台企与湛江产业龙头企业精准对接，聚焦种业创新、海洋牧场、精深加工、农文旅融合等重点领域，现场达成多项合作签约。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "海峡两岸现代农业与海洋牧场产业对接交流会在湛江举"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701568.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:32:54.000Z",
+    "rssPublishedAt": "2026-09-22T09:32:54.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-22T10:00:28.955Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:28.955Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6w493ttpn0",
+    "createdAt": "2026-09-22T10:00:28.953Z",
+    "updatedAt": "2026-09-22T10:00:28.953Z",
+    "title": "《第48届世界技能大赛》纪念邮票发行",
+    "summary": "中新社上海9月22日电 (记者 王梦瑶)第48届世界技能大赛22日在上海启幕。同日，中国邮政发行《第48届世界技能大赛》纪念邮票一套1枚，计划发行数量400万套。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "纪念邮票发行"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701561.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社上海9月22日电 (记者 王梦瑶)第48届世界技能大赛22日在上海启幕。"
+      },
+      {
+        "type": "p",
+        "text": "同日，中国邮政发行《第48届世界技能大赛》纪念邮票一套1枚，计划发行数量400万套。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《第48届世界技能大赛》纪念邮票发行"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701561.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:33:14.000Z",
+    "rssPublishedAt": "2026-09-22T09:33:14.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-22T10:00:28.953Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:28.953Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6w48305ox8",
+    "createdAt": "2026-09-22T10:00:28.952Z",
+    "updatedAt": "2026-09-22T10:00:28.952Z",
+    "title": "中国海洋生产总值2030年预计将突破13万亿元",
+    "summary": "中新社北京9月22日电 (记者 陈溯)记者22日从中国自然资源部获悉，预计到2030年，中国海洋生产总值将突破13万亿元人民币。",
+    "channel": "finance",
+    "tags": [
+      "财经"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701565.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社北京9月22日电 (记者 陈溯)记者22日从中国自然资源部获悉，预计到2030年，中国海洋生产总值将突破13万亿元人民币。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国海洋生产总值2030年预计将突破13万亿元"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701565.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:35:08.000Z",
+    "rssPublishedAt": "2026-09-22T09:35:08.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-22T10:00:28.952Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:28.952Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6w46xpbntu",
+    "createdAt": "2026-09-22T10:00:28.950Z",
+    "updatedAt": "2026-09-22T10:00:28.950Z",
+    "title": "中国交通运输部：去年交通物流成本降低约2000亿元",
+    "summary": "中新社北京9月22日电 (记者 刘文文)中国交通运输部部长刘伟22日在北京表示，中国着力打造更加经济的交通，有效降低全社会物流成本，2025年交通物流成本降低约2000亿元人民币。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "国交通运输部"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701573.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社北京9月22日电 (记者 刘文文)中国交通运输部部长刘伟22日在北京表示，中国着力打造更加经济的交通，有效降低全社会物流成本，2025年交通物流成本降低约2000亿元人民币。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国交通运输部：去年交通物流成本降低约2000亿"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701573.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:36:59.000Z",
+    "rssPublishedAt": "2026-09-22T09:36:59.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-22T10:00:28.950Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:28.950Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6w44upkk7y",
+    "createdAt": "2026-09-22T10:00:28.948Z",
+    "updatedAt": "2026-09-22T10:00:28.948Z",
+    "title": "广东推进人工智能全域全时全行业高水平应用",
+    "summary": "中新社广州9月22日电 (记者 许青青)第二届广东省人工智能应用对接大会22日在广州举行。记者从会上获悉，广东将深化人工智能与工业、农业、服务业、传统产业、新兴产业、未来产业高度融合，与民生社会事业、社会治理、个人需求深",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "广东"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701576.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社广州9月22日电 (记者 许青青)第二届广东省人工智能应用对接大会22日在广州举行。"
+      },
+      {
+        "type": "p",
+        "text": "记者从会上获悉，广东将深化人工智能与工业、农业、服务业、传统产业、新兴产业、未来产业高度融合，与民生社会事业、社会治理、个人需求深度融合，实现全域覆盖、全时响应、全行业渗透。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "广东推进人工智能全域全时全行业高水平应用"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701576.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:49:09.000Z",
+    "rssPublishedAt": "2026-09-22T09:49:09.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-22T10:00:28.948Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:28.948Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6vbgbcrzbz",
+    "createdAt": "2026-09-22T10:00:27.916Z",
+    "updatedAt": "2026-09-22T10:00:27.916Z",
+    "title": "金建希涉嫌“卖官鬻爵”案二审获刑5年 刑期较一审判决减轻",
+    "summary": "中新网9月22日电 综合韩联社、韩国《京乡新闻》报道，韩国首尔高等法院22日对前总统尹锡悦妻子金建希涉嫌“卖官鬻爵”案作出二审判决，判处其有期徒刑5年。刑期较一审判决减轻。",
+    "channel": "world",
+    "tags": [
+      "国际"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701433.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 综合韩联社、韩国《京乡新闻》报道，韩国首尔高等法院22日对前总统尹锡悦妻子金建希涉嫌“卖官鬻爵”案作出二审判决，判处其有期徒刑5年。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "金建希涉嫌“卖官鬻爵”案二审获刑5年 刑期较一审"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701433.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T06:27:27.000Z",
+    "rssPublishedAt": "2026-09-22T06:27:27.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-22T10:00:27.916Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 3.6,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.916Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6vbdf3zgij",
+    "createdAt": "2026-09-22T10:00:27.913Z",
+    "updatedAt": "2026-09-22T10:00:27.913Z",
+    "title": "阿根廷总统表态：不会用军事手段解决马岛主权争端",
+    "summary": "中新网9月22日电 综合外媒报道，阿根廷总统米莱当地时间21日表示，不会以军事手段解决马尔维纳斯群岛(简称马岛，英国称福克兰群岛)主权争端。",
+    "channel": "world",
+    "tags": [
+      "国际"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701451.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 综合外媒报道，阿根廷总统米莱当地时间21日表示，不会以军事手段解决马尔维纳斯群岛(简称马岛，英国称福克兰群岛)主权争端。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "阿根廷总统表态：不会用军事手段解决马岛主权争端"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701451.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T06:49:06.000Z",
+    "rssPublishedAt": "2026-09-22T06:49:06.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-22T10:00:27.913Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 3.2,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.913Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6vbb7g5nyg",
+    "createdAt": "2026-09-22T10:00:27.911Z",
+    "updatedAt": "2026-09-22T10:00:27.911Z",
+    "title": "白宫宣布推出“特朗普电视”：24小时播放、实时更新",
+    "summary": "中新网9月22日电 综合外媒报道，美国白宫当地时间21日宣布推出“特朗普电视”。美国媒体称之为“一个在优兔平台全天候24小时播放特朗普政府过往活动的流媒体频道”。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "白宫",
+      "24小时播放"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701490.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 综合外媒报道，美国白宫当地时间21日宣布推出“特朗普电视”。"
+      },
+      {
+        "type": "p",
+        "text": "美国媒体称之为“一个在优兔平台全天候24小时播放特朗普政府过往活动的流媒体频道”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "白宫宣布推出“特朗普电视”：24小时播放、实时更"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701490.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:02:25.000Z",
+    "rssPublishedAt": "2026-09-22T08:02:25.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-22T10:00:27.911Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.911Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6vb9l9g4iy",
+    "createdAt": "2026-09-22T10:00:27.909Z",
+    "updatedAt": "2026-09-22T10:00:27.909Z",
+    "title": "调查显示57%美国民众支持对华友好合作",
+    "summary": "新华社华盛顿9月21日电(记者颜亮)美国芝加哥全球事务委员会21日公布的调查报告显示，57%的美国民众认为美国应该同中国开展友好合作与接触，延续了自2024年以来美国民众逐渐转向支持对华接触的趋势。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "华友好合作"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701545.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社华盛顿9月21日电(记者颜亮)美国芝加哥全球事务委员会21日公布的调查报告显示，57%的美国民众认为美国应该同中国开展友好合作与接触，延续了自2024年以来美国民众逐渐转向支持对华接触的趋势。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "调查显示57%美国民众支持对华友好合作"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701545.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:50:21.000Z",
+    "rssPublishedAt": "2026-09-22T08:50:21.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-22T10:00:27.909Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.909Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6vb6a6h98o",
+    "createdAt": "2026-09-22T10:00:27.906Z",
+    "updatedAt": "2026-09-22T10:00:27.906Z",
+    "title": "在武汉邂逅“微笑天使”江豚，中外代表问出一个引人深思的问题 | 中国不一样",
+    "summary": "中新网9月22日电 (记者 吴辛茹)近日，“2026世界市长对话·武汉”活动举办。多国嘉宾走进长江江豚繁育保护中心，近距离邂逅被誉为“微笑天使”的长江江豚，实地感受武汉守护长江生态的实践与探索。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "外代表问出一",
+      "引人深思"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701428.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 (记者 吴辛茹)近日，“2026世界市长对话·武汉”活动举办。"
+      },
+      {
+        "type": "p",
+        "text": "多国嘉宾走进长江江豚繁育保护中心，近距离邂逅被誉为“微笑天使”的长江江豚，实地感受武汉守护长江生态的实践与探索。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "在武汉邂逅“微笑天使”江豚，中外代表问出一个引人"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701428.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T08:54:16.000Z",
+    "rssPublishedAt": "2026-09-22T08:54:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-22T10:00:27.906Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.906Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6uumvl1hjt",
+    "createdAt": "2026-09-22T10:00:27.310Z",
+    "updatedAt": "2026-09-22T10:00:27.310Z",
+    "title": "中国游泳队亚运会表现亮眼",
+    "summary": "中国游泳队亚运会表现亮眼",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701589.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中国游泳队亚运会表现亮眼"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国游泳队亚运会表现亮眼"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701589.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:50:03.000Z",
+    "rssPublishedAt": "2026-09-22T09:50:03.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-22T10:00:27.310Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（24 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.310Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6uui317uv7",
+    "createdAt": "2026-09-22T10:00:27.306Z",
+    "updatedAt": "2026-09-22T10:00:27.306Z",
+    "title": "香港约千名青少年完成心肺复苏术和自动体外除颤器训练",
+    "summary": "中新网香港9月22日电 (张语洽 邱兆翔)香港民众安全服务队(简称“民安队”)近日在香港为民安队少年团成员颁发心肺复苏术(CPR)及自动体外除颤器(AED)课程出席证书，约200名师生参加颁授典礼。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "心肺复苏术"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/dwq/2026/09-22/10701570.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网香港9月22日电 (张语洽 邱兆翔)香港民众安全服务队(简称“民安队”)近日在香港为民安队少年团成员颁发心肺复苏术(CPR)及自动体外除颤器(AED)课程出席证书，约200名师生参加颁授典礼。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "香港约千名青少年完成心肺复苏术和自动体外除颤器训"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/dwq/2026/09-22/10701570.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:52:19.000Z",
+    "rssPublishedAt": "2026-09-22T09:52:19.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-22T10:00:27.306Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.306Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6uueg7oj19",
+    "createdAt": "2026-09-22T10:00:27.302Z",
+    "updatedAt": "2026-09-22T10:00:27.302Z",
+    "title": "2026“中国文化日”活动在澳大利亚举行",
+    "summary": "中新网悉尼9月22日电 由中国驻墨尔本总领事馆主办的“中国文化日”活动日前在澳大利亚维多利亚州吉朗学院举行。中国驻墨尔本总领事房新文、驻墨尔本总领馆副总领事刘东源，吉朗学院校长西蒙·扬、吉朗华人协会主席袁茜敏、侨界代表等",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "澳大利亚"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701577.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网悉尼9月22日电 由中国驻墨尔本总领事馆主办的“中国文化日”活动日前在澳大利亚维多利亚州吉朗学院举行。"
+      },
+      {
+        "type": "p",
+        "text": "中国驻墨尔本总领事房新文、驻墨尔本总领馆副总领事刘东源，吉朗学院校长西蒙·扬、吉朗华人协会主席袁茜敏、侨界代表等800余人出席。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026“中国文化日”活动在澳大利亚举行"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701577.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:53:53.000Z",
+    "rssPublishedAt": "2026-09-22T09:53:53.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-22T10:00:27.302Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.302Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "muci6uu8hxuczl",
+    "createdAt": "2026-09-22T10:00:27.296Z",
+    "updatedAt": "2026-09-22T10:02:07.002Z",
+    "title": "彭旭玮亚运会摘金：希望能够激励更多亚洲仰泳运动员",
+    "summary": "中新网9月22日电 (记者 朱晨曦)当地时间9月22日，在爱知·名古屋亚运会游泳项目女子200米仰泳决赛中，中国选手彭旭玮以2分05秒77夺冠，刷新亚洲纪录。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "希望能够激励"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701595.shtml",
+    "cover": "/img/news/i-muci6uu8hxuczl-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 (记者 朱晨曦)当地时间9月22日，在爱知·名古屋亚运会游泳项目女子200米仰泳决赛中，中国选手彭旭玮以2分05秒77夺冠，刷新亚洲纪录。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "彭旭玮亚运会摘金：希望能够激励更多亚洲仰泳运动员"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701595.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:56:24.000Z",
+    "rssPublishedAt": "2026-09-22T09:56:24.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-22T10:00:27.296Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "夺冠"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.296Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-22T10:02:07.002Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_muci8zrur2zzk0",
+    "publishedInboxAt": "2026-09-22T10:02:07.002Z"
+  },
+  {
+    "id": "muci6utzb3darl",
+    "createdAt": "2026-09-22T10:00:27.287Z",
+    "updatedAt": "2026-09-22T10:00:27.287Z",
+    "title": "铸牢共同体 中华一家亲｜85%背后的绿色接力",
+    "summary": "昔日黄沙蔽日，今朝满目青翠！走进乌审旗毛乌素沙地生命共同体科研中心，新旧对比的生态图景扑面而来。鲜活的沙生植物、生动的治沙人物塑像、详实的沙盘数据、动态的生态大数据屏幕，清晰记录着毛乌素沙地从荒漠戈壁到绿洲沃野的惊艳蜕变",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "铸牢共同体",
+      "绿色接力"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-22/10701594.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "走进乌审旗毛乌素沙地生命共同体科研中心，新旧对比的生态图景扑面而来。"
+      },
+      {
+        "type": "p",
+        "text": "鲜活的沙生植物、生动的治沙人物塑像、详实的沙盘数据、动态的生态大数据屏幕，清晰记录着毛乌素沙地从荒漠戈壁到绿洲沃野的惊艳蜕变。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "铸牢共同体 中华一家亲｜85%背后的绿色接力"
+      },
+      {
+        "type": "p",
+        "text": "9月21日，“铸牢共同体 中华一家亲”主题宣传活动采访团走进乌审召镇，实地探寻这片土地逆袭变绿的秘密。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-22/10701594.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-22T09:56:46.000Z",
+    "rssPublishedAt": "2026-09-22T09:56:46.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-22T10:00:27.287Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-22T10:00:27.287Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvorcos32e5h",
+    "createdAt": "2026-09-21T23:30:31.416Z",
+    "updatedAt": "2026-09-21T23:30:31.416Z",
+    "title": "多方在沪探索罕见病保障与产业协同创新转化之路",
+    "summary": "中新网上海9月21日电 (记者 陈静)以“公益守护罕见生命，创新筑就健康未来”为主题的2026年上海罕见病公益关爱与创新发展交流会(下称：交流会)20日举行。上海市科学技术委员会副主任江舸称：“上海正不断完善‘研发+临床",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "多方"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-21/10700880.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月21日电 (记者 陈静)以“公益守护罕见生命，创新筑就健康未来”为主题的2026年上海罕见病公益关爱与创新发展交流会(下称：交流会)20日举行。"
+      },
+      {
+        "type": "p",
+        "text": "上海市科学技术委员会副主任江舸称：“上海正不断完善‘研发+临床+制造+应用’全产业链创新体系，推动医疗机构、高校院所、企业和投资机构加强合作，让更多科研成果加快走向临床、走向产业。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "多方在沪探索罕见病保障与产业协同创新转化之路"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-21/10700880.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T10:04:58.000Z",
+    "rssPublishedAt": "2026-09-21T10:04:58.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-21T23:30:31.416Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 13.4,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:31.416Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:31.416Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoqur1vq4t3",
+    "createdAt": "2026-09-21T23:30:30.771Z",
+    "updatedAt": "2026-09-21T23:30:30.771Z",
+    "title": "访艺术家经纬、黄京：让缂丝工艺在新的文化空间被理解",
+    "summary": "中新网北京9月21日电 题：访艺术家经纬、黄京：让缂丝工艺在新的文化空间被理解",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "访艺术家经纬",
+      "黄京"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-21/10701111.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月21日电 题：访艺术家经纬、黄京：让缂丝工艺在新的文化空间被理解。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "访艺术家经纬、黄京：让缂丝工艺在新的文化空间被理"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-21/10701111.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T14:05:47.000Z",
+    "rssPublishedAt": "2026-09-21T14:05:47.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-21T23:30:30.771Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.4,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:30.771Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:30.771Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoquoyv4jrj",
+    "createdAt": "2026-09-21T23:30:30.768Z",
+    "updatedAt": "2026-09-21T23:30:30.768Z",
+    "title": "《万物希声》获第十届现实题材网络文学征文大赛特等奖",
+    "summary": "中新网上海9月21日电 (记者 王笈)第十届现实题材网络文学征文大赛颁奖典礼21日在上海举行，揭晓14部获奖作品——《万物希声》获特等奖，《风华年代》获一等奖，《第四极有光》《浓情绮梦坊》获二等奖，《乐土》《老街食堂》等",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "万物希声"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-21/10701100.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月21日电 (记者 王笈)第十届现实题材网络文学征文大赛颁奖典礼21日在上海举行，揭晓14部获奖作品——《万物希声》获特等奖，《风华年代》获一等奖，《第四极有光》《浓情绮梦坊》获二等奖，《乐土》《老街食堂》等10部作品获优胜奖。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "《万物希声》获第十届现实题材网络文学征文大赛特等"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-21/10701100.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T14:11:49.000Z",
+    "rssPublishedAt": "2026-09-21T14:11:49.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-21T23:30:30.768Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:30.768Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:30.768Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoquiyj44hv",
+    "createdAt": "2026-09-21T23:30:30.762Z",
+    "updatedAt": "2026-09-21T23:30:30.762Z",
+    "title": "2026中国农民丰收节第九届乡村电影周将启幕",
+    "summary": "中新网北京9月21日电 (记者 李嘉薇)2026中国农民丰收节第九届乡村电影周新闻发布会21日在北京举行。据悉，今年丰收节以“丰收开新局 实干促振兴”为主题，推出重点配套活动第九届乡村电影周。该活动将于9月27日在北京市",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "启幕"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-21/10701069.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月21日电 (记者 李嘉薇)2026中国农民丰收节第九届乡村电影周新闻发布会21日在北京举行。"
+      },
+      {
+        "type": "p",
+        "text": "据悉，今年丰收节以“丰收开新局 实干促振兴”为主题，推出重点配套活动第九届乡村电影周。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026中国农民丰收节第九届乡村电影周将启幕"
+      },
+      {
+        "type": "p",
+        "text": "该活动将于9月27日在北京市怀柔区杨宋镇启幕，持续至10月3日。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-21/10701069.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T14:13:17.000Z",
+    "rssPublishedAt": "2026-09-21T14:13:17.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-21T23:30:30.762Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:30.762Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:30.762Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoquejt2rya",
+    "createdAt": "2026-09-21T23:30:30.758Z",
+    "updatedAt": "2026-09-21T23:30:30.758Z",
+    "title": "又见一“湾”明月——2026大湾区电影音乐晚会唱响“我们一家”",
+    "summary": "新华社澳门9月21日电 题：又见一“湾”明月——2026大湾区电影音乐晚会唱响“我们一家”",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "一家”"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-21/10701160.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社澳门9月21日电 题：又见一“湾”明月——2026大湾区电影音乐晚会唱响“我们一家”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "又见一“湾”明月——2026大湾区电影音乐晚会唱"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-21/10701160.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T14:20:00.000Z",
+    "rssPublishedAt": "2026-09-21T14:20:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-21T23:30:30.758Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:30.758Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:30.758Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoqu8h42u5r",
+    "createdAt": "2026-09-21T23:30:30.752Z",
+    "updatedAt": "2026-09-21T23:30:30.753Z",
+    "title": "纪录片《丝路青春·乌兹别克斯坦篇》在北京首映",
+    "summary": "【中亚专线】纪录片《丝路青春·乌兹别克斯坦篇》在北京首映",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "纪录片",
+      "丝路青春"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-21/10701174.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "【中亚专线】纪录片《丝路青春·乌兹别克斯坦篇》在北京首映。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "纪录片《丝路青春·乌兹别克斯坦篇》在北京首映"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-21/10701174.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:07:37.000Z",
+    "rssPublishedAt": "2026-09-21T15:07:37.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-21T23:30:30.752Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 8.4,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:30.752Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:30.753Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvopufuc1dxi",
+    "createdAt": "2026-09-21T23:30:29.463Z",
+    "updatedAt": "2026-09-21T23:30:29.463Z",
+    "title": "（爱知·名古屋亚运会）中国女排“复仇”泰国队 挺进亚运会决赛",
+    "summary": "中新社日本名古屋9月21日电 (记者 金旭)当地时间21日进行的爱知·名古屋亚运会女排项目半决赛中，中国队苦战五局，以3:2逆转战胜泰国队，晋级决赛。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-21/10701179.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月21日电 (记者 金旭)当地时间21日进行的爱知·名古屋亚运会女排项目半决赛中，中国队苦战五局，以3:2逆转战胜泰国队，晋级决赛。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）中国女排“复仇”泰国队 挺"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-21/10701179.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:09:51.000Z",
+    "rssPublishedAt": "2026-09-21T15:09:51.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-21T23:30:29.463Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 8.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:29.463Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:29.463Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvopucpbfb7r",
+    "createdAt": "2026-09-21T23:30:29.460Z",
+    "updatedAt": "2026-09-21T23:30:29.460Z",
+    "title": "（爱知·名古屋亚运会）男子4X200米自由泳极限翻盘 中国游泳队当日揽5金",
+    "summary": "中新社东京9月21日电 (记者 朱晨曦)爱知·名古屋亚运会游泳比赛21日在东京水上运动中心继续举行。游泳项目当日决出7枚金牌，中国游泳队摘下5金4银2铜。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-21/10701184.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社东京9月21日电 (记者 朱晨曦)爱知·名古屋亚运会游泳比赛21日在东京水上运动中心继续举行。"
+      },
+      {
+        "type": "p",
+        "text": "游泳项目当日决出7枚金牌，中国游泳队摘下5金4银2铜。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）男子4X200米自由泳极限"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-21/10701184.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:36:20.000Z",
+    "rssPublishedAt": "2026-09-21T15:36:20.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-21T23:30:29.460Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:29.460Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:29.460Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvopu97n2vg0",
+    "createdAt": "2026-09-21T23:30:29.457Z",
+    "updatedAt": "2026-09-21T23:30:29.457Z",
+    "title": "（爱知·名古屋亚运会）中国体操名将张博恒亚运会成功卫冕：全能信心“一直没丢”",
+    "summary": "中新社日本名古屋9月21日电 题：中国体操名将张博恒亚运会成功卫冕：全能信心“一直没丢”",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-21/10701185.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月21日电 题：中国体操名将张博恒亚运会成功卫冕：全能信心“一直没丢”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）中国体操名将张博恒亚运会成"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-21/10701185.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:36:54.000Z",
+    "rssPublishedAt": "2026-09-21T15:36:54.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-21T23:30:29.457Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:29.457Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:29.457Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvopu5adpd22",
+    "createdAt": "2026-09-21T23:30:29.453Z",
+    "updatedAt": "2026-09-21T23:30:29.453Z",
+    "title": "2026中网正赛外卡名单公布 郑钦文、孙心然领衔",
+    "summary": "9月21日，2026中国网球公开赛正赛外卡名单正式揭晓。除此前已公布的郑钦文、孙心然外，另外六张女单正赛外卡归属袁悦、朱琳、高馨妤、渠依含、邵羽杉、林禹君；四张男单正赛外卡则颁发给了布云朝克特、张之臻、商竣程和勒纳·钱。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "郑钦文",
+      "孙心然领衔"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701193.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月21日，2026中国网球公开赛正赛外卡名单正式揭晓。"
+      },
+      {
+        "type": "p",
+        "text": "除此前已公布的郑钦文、孙心然外，另外六张女单正赛外卡归属袁悦、朱琳、高馨妤、渠依含、邵羽杉、林禹君；四张男单正赛外卡则颁发给了布云朝克特、张之臻、商竣程和勒纳·钱。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026中网正赛外卡名单公布 郑钦文、孙心然领衔"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701193.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T18:37:06.000Z",
+    "rssPublishedAt": "2026-09-21T18:37:06.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-21T23:30:29.453Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 4.9,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:29.453Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvopu1qjwaom",
+    "createdAt": "2026-09-21T23:30:29.449Z",
+    "updatedAt": "2026-09-21T23:31:03.249Z",
+    "title": "今天，亚运赛场将决出25金！冲金点一览",
+    "summary": "9月22日，亚运会赛场将产生25枚金牌",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "亚运赛场",
+      "决出25金"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-22/10701207.shtml",
+    "cover": "/img/news/i-mubvopu1qjwaom-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月22日，亚运会赛场将产生25枚金牌。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "今天，亚运赛场将决出25金！冲金点一览"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-22/10701207.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T23:26:10.000Z",
+    "rssPublishedAt": "2026-09-21T23:26:10.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-21T23:30:29.449Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（38 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-21T23:30:29.449Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvop61ynmdqt",
+    "createdAt": "2026-09-21T23:30:28.585Z",
+    "updatedAt": "2026-09-21T23:30:28.586Z",
+    "title": "报告：北京、杭州、深圳位列中国人工智能算力城市排名前三",
+    "summary": "中新社北京9月21日电 (记者 吕少威)21日在北京发布的《2026年中国人工智能计算力发展评估报告》显示，在2026年中国人工智能算力城市排行榜中，北京、杭州、深圳位列前三，上海、广州、成都、南京、武汉、济南、苏州进入",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "报告",
+      "北京"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-21/10701180.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社北京9月21日电 (记者 吕少威)21日在北京发布的《2026年中国人工智能计算力发展评估报告》显示，在2026年中国人工智能算力城市排行榜中，北京、杭州、深圳位列前三，上海、广州、成都、南京、武汉、济南、苏州进入前十。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "报告：北京、杭州、深圳位列中国人工智能算力城市排"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-21/10701180.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:10:31.000Z",
+    "rssPublishedAt": "2026-09-21T15:10:31.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-21T23:30:28.585Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 8.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:28.585Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:28.585Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvop5xl7azhy",
+    "createdAt": "2026-09-21T23:30:28.581Z",
+    "updatedAt": "2026-09-21T23:30:28.581Z",
+    "title": "重庆新游轮“世纪梦想号”长江首航",
+    "summary": "中新社重庆9月21日电 (张旭)重庆新游轮“世纪梦想号”21日晚在朝天门码头正式首航，投入重庆—宜昌长江三峡航线运营。",
+    "channel": "finance",
+    "tags": [
+      "财经"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-21/10701181.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社重庆9月21日电 (张旭)重庆新游轮“世纪梦想号”21日晚在朝天门码头正式首航，投入重庆—宜昌长江三峡航线运营。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "重庆新游轮“世纪梦想号”长江首航"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-21/10701181.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:11:13.000Z",
+    "rssPublishedAt": "2026-09-21T15:11:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-21T23:30:28.581Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 8.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:28.581Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:28.581Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvop5svabzoq",
+    "createdAt": "2026-09-21T23:30:28.576Z",
+    "updatedAt": "2026-09-21T23:30:28.576Z",
+    "title": "“一次登记、全国通用” 解码“数据产权身份证”",
+    "summary": "时空观察丨“一次登记、全国通用” 解码“数据产权身份证”",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "“一次登记",
+      "通用”"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701194.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "时空观察丨“一次登记、全国通用” 解码“数据产权身份证”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“一次登记、全国通用” 解码“数据产权身份证”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701194.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T18:38:36.000Z",
+    "rssPublishedAt": "2026-09-21T18:38:36.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-21T23:30:28.576Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 4.9,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（51 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-21T23:30:28.576Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvop5ojxwypl",
+    "createdAt": "2026-09-21T23:30:28.572Z",
+    "updatedAt": "2026-09-21T23:30:44.157Z",
+    "title": "邀请消费者“来玩”，趣味赛事成为商场引流新“玩法”",
+    "summary": "近期，一批看似与购物不搭边的趣味比赛走进商场。郑州中原锦艺城推出“补作业大赛”，武汉群星城举行“嗑瓜子但不吃大赛”，东营吾悦广场则办起甩人字拖比赛。低门槛、强参与的趣味赛事，正成为一些商场吸引消费者的新玩法。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "趣味赛事成"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701199.shtml",
+    "cover": "/img/news/i-mubvop5ojxwypl-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "近期，一批看似与购物不搭边的趣味比赛走进商场。"
+      },
+      {
+        "type": "p",
+        "text": "郑州中原锦艺城推出“补作业大赛”，武汉群星城举行“嗑瓜子但不吃大赛”，东营吾悦广场则办起甩人字拖比赛。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "邀请消费者“来玩”，趣味赛事成为商场引流新“玩法"
+      },
+      {
+        "type": "p",
+        "text": "低门槛、强参与的趣味赛事，正成为一些商场吸引消费者的新玩法。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701199.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:36:13.000Z",
+    "rssPublishedAt": "2026-09-21T22:36:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-21T23:30:28.572Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.9,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:28.572Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvop5h655ogd",
+    "createdAt": "2026-09-21T23:30:28.565Z",
+    "updatedAt": "2026-09-21T23:30:28.565Z",
+    "title": "词元为何能贷款？专家解答",
+    "summary": "词元为何能贷款(有问有答)",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "词元",
+      "何能贷款"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701206.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "词元为何能贷款(有问有答)"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "词元为何能贷款？专家解答"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701206.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T23:23:12.000Z",
+    "rssPublishedAt": "2026-09-21T23:23:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-21T23:30:28.565Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（25 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-21T23:30:28.565Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvoogd7psebj",
+    "createdAt": "2026-09-21T23:30:27.661Z",
+    "updatedAt": "2026-09-21T23:30:27.661Z",
+    "title": "“天涯共此时”系列文旅活动亮相2026ATAS年会",
+    "summary": "中新社伦敦9月21日电 (记者 欧阳开宇)9月21日至22日，2026英国旅游供应商协会(ATAS)年会在英国北安普顿举行，中国以本届年会首席合作伙伴国身份亮相。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "“天涯共此时”系列文旅活动亮相2026ATAS年会"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-21/10701188.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社伦敦9月21日电 (记者 欧阳开宇)9月21日至22日，2026英国旅游供应商协会(ATAS)年会在英国北安普顿举行，中国以本届年会首席合作伙伴国身份亮相。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“天涯共此时”系列文旅活动亮相2026ATAS年"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-21/10701188.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:54:41.000Z",
+    "rssPublishedAt": "2026-09-21T15:54:41.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-21T23:30:27.661Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.6,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:27.661Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:27.661Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoogayez9wb",
+    "createdAt": "2026-09-21T23:30:27.658Z",
+    "updatedAt": "2026-09-21T23:30:27.658Z",
+    "title": "俄国家杜马选举初步结果揭晓 统俄党占绝对优势",
+    "summary": "中新社莫斯科9月21日电 (记者 田冰)俄罗斯中央选举委员会21日表示，根据第九届俄罗斯国家杜马(议会下院)选举投票初步结果，统一俄罗斯党得票率占据绝对优势。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "统俄党占绝",
+      "优势"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-21/10701189.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社莫斯科9月21日电 (记者 田冰)俄罗斯中央选举委员会21日表示，根据第九届俄罗斯国家杜马(议会下院)选举投票初步结果，统一俄罗斯党得票率占据绝对优势。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "俄国家杜马选举初步结果揭晓 统俄党占绝对优势"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-21/10701189.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T15:54:51.000Z",
+    "rssPublishedAt": "2026-09-21T15:54:51.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-21T23:30:27.658Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.6,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:27.658Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:27.658Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoog6l25xh9",
+    "createdAt": "2026-09-21T23:30:27.654Z",
+    "updatedAt": "2026-09-21T23:30:27.654Z",
+    "title": "“黄金周”临近 泰国旅游市场迎中国游客接待高峰",
+    "summary": "中新社曼谷9月21日电 (李映民 梁峻祥 王茜)随着中国中秋节、国庆节假期临近，泰国旅游市场迎来中国游客出行预订高峰。在线旅游平台Trip.com Group21日发布的数据显示，黄金周期间中国游客赴泰旅游呈现提前预订、",
+    "channel": "world",
+    "tags": [
+      "国际"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701191.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社曼谷9月21日电 (李映民 梁峻祥 王茜)随着中国中秋节、国庆节假期临近，泰国旅游市场迎来中国游客出行预订高峰。"
+      },
+      {
+        "type": "p",
+        "text": "在线旅游平台Trip.com Group21日发布的数据显示，黄金周期间中国游客赴泰旅游呈现提前预订、延长停留以及更加关注自然景观和特色城市等趋势。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“黄金周”临近 泰国旅游市场迎中国游客接待高峰"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701191.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T16:00:40.000Z",
+    "rssPublishedAt": "2026-09-21T16:00:40.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-21T23:30:27.654Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 7.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-21T23:30:27.654Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-21T23:30:27.654Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mubvoog3cvucb1",
+    "createdAt": "2026-09-21T23:30:27.651Z",
+    "updatedAt": "2026-09-21T23:30:27.651Z",
+    "title": "欧盟通过延长对俄制裁方案 期限长达三年",
+    "summary": "当地时间21日，经过长时间的磋商，欧盟成员国就延长对俄制裁达成一致，同意将相关制裁措施延长三年。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "欧盟",
+      "延长"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701195.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "当地时间21日，经过长时间的磋商，欧盟成员国就延长对俄制裁达成一致，同意将相关制裁措施延长三年。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "欧盟通过延长对俄制裁方案 期限长达三年"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701195.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T18:39:28.000Z",
+    "rssPublishedAt": "2026-09-21T18:39:28.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-21T23:30:27.651Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 4.8,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:27.651Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvoofzxsf49b",
+    "createdAt": "2026-09-21T23:30:27.647Z",
+    "updatedAt": "2026-09-21T23:30:42.948Z",
+    "title": "联合国大会期间 丹麦及格陵兰岛将和美国签署安全协议",
+    "summary": "中新网9月22日电 据法新社报道，当地时间21日，丹麦首相府宣布，丹麦及其自治领地格陵兰岛和美国将于联合国大会期间，在纽约签署一项安全协议。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "丹麦",
+      "格陵兰岛"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701198.shtml",
+    "cover": "/img/news/i-mubvoofzxsf49b-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 据法新社报道，当地时间21日，丹麦首相府宣布，丹麦及其自治领地格陵兰岛和美国将于联合国大会期间，在纽约签署一项安全协议。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "联合国大会期间 丹麦及格陵兰岛将和美国签署安全协"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701198.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:28:38.000Z",
+    "rssPublishedAt": "2026-09-21T22:28:38.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-21T23:30:27.647Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:27.647Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvonqutnrndw",
+    "createdAt": "2026-09-21T23:30:26.742Z",
+    "updatedAt": "2026-09-21T23:30:46.436Z",
+    "title": "巴西工业活动放缓 市场预期年内仍有降息空间",
+    "summary": "中新社圣保罗9月21日电 巴西全国工业联合会(CNI)21日发布的工业调查显示，8月工业生产变化指数为46.3点，较7月下降4.7点。该指数低于50点意味着生产下降，为2015年以来8月份最低水平。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "降息空间"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701201.shtml",
+    "cover": "/img/news/i-mubvonqutnrndw-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社圣保罗9月21日电 巴西全国工业联合会(CNI)21日发布的工业调查显示，8月工业生产变化指数为46.3点，较7月下降4.7点。"
+      },
+      {
+        "type": "p",
+        "text": "该指数低于50点意味着生产下降，为2015年以来8月份最低水平。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "巴西工业活动放缓 市场预期年内仍有降息空间"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701201.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:41:13.000Z",
+    "rssPublishedAt": "2026-09-21T22:41:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-21T23:30:26.742Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:26.742Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvonqms9dpf0",
+    "createdAt": "2026-09-21T23:30:26.734Z",
+    "updatedAt": "2026-09-21T23:30:26.734Z",
+    "title": "赛场上跑起来、工厂里干起来 中国机器人从“能用”走向“好用”",
+    "summary": "赛场上跑起来 工厂里干起来",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "赛场上跑起来",
+      "工厂里干起来"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-22/10701202.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "赛场上跑起来 工厂里干起来"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "赛场上跑起来、工厂里干起来 中国机器人从“能用”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-22/10701202.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:43:45.000Z",
+    "rssPublishedAt": "2026-09-21T22:43:45.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-21T23:30:26.734Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（43 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-21T23:30:26.734Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvonqkwac3fp",
+    "createdAt": "2026-09-21T23:30:26.732Z",
+    "updatedAt": "2026-09-21T23:30:58.212Z",
+    "title": "受台风影响 日本关东地区发生山体滑坡已致2死4失联",
+    "summary": "中新网9月22日电 据日本共同社等日媒22日报道，今年第25号台风“杜鹃”逼近日本，日本关东地区21日遭遇强降雨，发生多起山体滑坡，已致2人死亡，4人失联。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "受台风影响"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701203.shtml",
+    "cover": "/img/news/i-mubvonqkwac3fp-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 据日本共同社等日媒22日报道，今年第25号台风“杜鹃”逼近日本，日本关东地区21日遭遇强降雨，发生多起山体滑坡，已致2人死亡，4人失联。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "受台风影响 日本关东地区发生山体滑坡已致2死4失"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701203.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:57:32.000Z",
+    "rssPublishedAt": "2026-09-21T22:57:32.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-21T23:30:26.732Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:26.732Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvonqh9nn5fb",
+    "createdAt": "2026-09-21T23:30:26.729Z",
+    "updatedAt": "2026-09-21T23:30:36.036Z",
+    "title": "9月22日新闻早报",
+    "summary": "",
+    "channel": "china",
+    "tags": [
+      "国内"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/iframe/2026/09-22/10701204.shtml",
+    "cover": "/img/news/i-mubvonqh9nn5fb-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月22日新闻早报"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "9月22日新闻早报"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/iframe/2026/09-22/10701204.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T22:58:50.000Z",
+    "rssPublishedAt": "2026-09-21T22:58:50.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-21T23:30:26.729Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "正文偏少（9 字），建议人工补充",
+        "需人工补充后发布"
+      ],
+      "checkedAt": "2026-09-21T23:30:26.729Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mubvonqdpfwjc6",
+    "createdAt": "2026-09-21T23:30:26.725Z",
+    "updatedAt": "2026-09-21T23:30:26.725Z",
+    "title": "朝中社：朝鲜进行新型武器试验 金正恩观摩（图）",
+    "summary": "中新网9月22日电 据朝中社22日报道，朝鲜导弹总局20日成功进行新型武器试验。朝鲜劳动党总书记、国务委员长金正恩观摩了试验。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "朝鲜",
+      "新型武器试验"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-22/10701205.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月22日电 据朝中社22日报道，朝鲜导弹总局20日成功进行新型武器试验。"
+      },
+      {
+        "type": "p",
+        "text": "朝鲜劳动党总书记、国务委员长金正恩观摩了试验。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "朝中社：朝鲜进行新型武器试验 金正恩观摩（图）"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-22/10701205.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-21T23:19:36.000Z",
+    "rssPublishedAt": "2026-09-21T23:19:36.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-21T23:30:26.725Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-21T23:30:26.725Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
     "id": "mub2qta7ttd0fj",
     "createdAt": "2026-09-21T10:00:18.367Z",
     "updatedAt": "2026-09-21T10:01:07.964Z",

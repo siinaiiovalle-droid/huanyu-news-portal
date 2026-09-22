@@ -1,9 +1,9 @@
 {
-  "at": "2026-09-20T23:35:34.270Z",
+  "at": "2026-09-21T23:37:02.257Z",
   "total": 2,
   "ok": 2,
-  "downloaded": 0,
-  "cached": 2,
-  "dupRejected": 0,
+  "downloaded": 1,
+  "cached": 1,
+  "dupRejected": 16,
   "failed": []
 }

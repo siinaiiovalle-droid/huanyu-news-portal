@@ -1889,7 +1889,9 @@
   },
   "“中国经济圆桌会”聚焦加强新就业群体服务管理": {
     "cover": "/img/news/a-n_mu3u59f6m4r1z4-cover.jpg",
-    "figures": []
+    "figures": [
+      "/img/news/a-n_mu3u59f6m4r1z4-fig1.jpg"
+    ]
   },
   "行进中国丨红色落脚点，绿色再出发": {
     "cover": "/img/news/a-n_mu3u562c2fednb-cover.jpg",
@@ -2151,7 +2153,9 @@
   },
   "前4月规上互联网企业研发经费增长4.8%": {
     "cover": "/img/news/a-n_mu6r61ayh8ios4-cover.jpg",
-    "figures": []
+    "figures": [
+      "/img/news/a-n_mu6r61ayh8ios4-fig1.jpg"
+    ]
   },
   "2020年我国预计人均体育场地面积2.20平方米": {
     "cover": "/img/news/a-n_mu6r618baufzse-cover.jpg",
@@ -2344,5 +2348,49 @@
     "figures": [
       "/img/news/a-n_mu9nc194r1orw1-fig1.jpg"
     ]
+  },
+  "亚运会女子200米混合泳：于子迪刷新亚洲纪录夺冠": {
+    "cover": "/img/news/a-n_mub2t8ewlsxron-cover.jpg",
+    "figures": []
+  },
+  "亚运会男子4×200米自由泳接力：中国队刷新亚洲纪录夺冠": {
+    "cover": "/img/news/a-n_mub2t8csirlr39-cover.jpg",
+    "figures": []
+  },
+  "算力“冠军”，何以“胜算”？": {
+    "cover": "/img/news/a-n_muazdtukotgqnw-cover.jpg",
+    "figures": []
+  },
+  "巴西发现的化石或提供恐龙起源新线索": {
+    "cover": "/img/news/a-n_muaz9pyd0a9aup-cover.jpg",
+    "figures": []
+  },
+  "张博恒：最后一项降低了难度": {
+    "cover": "/img/news/a-n_mub2t8j8q0ke6z-cover.jpg",
+    "figures": []
+  },
+  "张博恒：在男子全能上的信心一直没丢": {
+    "cover": "/img/news/a-n_mub2t8h2tp5udv-cover.jpg",
+    "figures": []
+  },
+  "张博恒成功卫冕爱知·名古屋亚运会体操男子个人全能冠军": {
+    "cover": "/img/news/a-n_muayt6zjck5zyw-cover.jpg",
+    "figures": [
+      "/img/news/a-n_muayt6zjck5zyw-fig1.jpg"
+    ]
+  },
+  "（爱知·名古屋亚运会）中国香港代表团首金产生 沈晓榆武术女子长拳夺冠": {
+    "cover": "/img/news/a-n_muayt6y4rdhvwr-cover.jpg",
+    "figures": [
+      "/img/news/a-n_muayt6y4rdhvwr-fig1.jpg"
+    ]
+  },
+  "天问二号开启深空探测新征程": {
+    "cover": "/img/news/a-n_muaz2k99adbqye-cover.jpg",
+    "figures": []
+  },
+  "中国选手徐嘉余夺得男子50米仰泳冠军": {
+    "cover": "/img/news/a-n_muazdts4tywmld-cover.jpg",
+    "figures": []
   }
 }

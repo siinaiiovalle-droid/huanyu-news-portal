@@ -140,6 +140,18 @@ function slug(index, channel, kind) {
 }
 
 /**
+ * 人工映射表检索词：标题 / 图片说明按子串命中映射表（先命中先使用），
+ * 未命中则回退到按标题/标签/频道自动生成的检索词。
+ */
+function pickKeyword(map, text, fallback) {
+  if (!text) return fallback;
+  for (const [prefix, kw] of Object.entries(map)) {
+    if (text.includes(prefix)) return kw;
+  }
+  return fallback;
+}
+
+/**
  * 稳定的文件名前缀。
  * 不能用数组下标命名：新稿件是 unshift 到数组开头的，下标会整体后移，
  * 导致新稿件套用旧文件名（旧文件已存在 → 直接复用 → 配图与内容不符）。
