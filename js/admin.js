@@ -34,10 +34,33 @@
       },
       body: options.body ? JSON.stringify(options.body) : undefined
     });
+    // 令牌失效（服务重启、换了浏览器配置）必须显式回到登录页：
+    // 否则页面一直停在已登录的样子，按钮点了全是 401，看起来就像"功能坏了"
+    if (res.status === 401) {
+      const err = new Error('登录已过期，请重新登录');
+      err.status = 401;
+      showLoginView(err.message);
+      throw err;
+    }
     let json = null;
     try { json = await res.json(); } catch (e) { throw new Error('服务响应异常'); }
-    if (!json || json.code !== 0) throw new Error((json && json.message) || '请求失败');
+    if (!json || json.code !== 0) {
+      const err = new Error((json && json.message) || '请求失败');
+      err.status = res.status;
+      throw err;
+    }
     return json.data;
+  }
+
+  /** 回到登录页：顺手解锁采集按钮、停掉进度轮询，避免卡在"采集中…" */
+  function showLoginView(msg) {
+    if (collectTimer) { clearInterval(collectTimer); collectTimer = null; }
+    lockCollectButtons(false);
+    token = '';
+    localStorage.removeItem(tokenKey);
+    $('login-view').style.display = '';
+    $('shell').style.display = 'none';
+    if (msg) $('login-err').textContent = msg;
   }
 
   function fmt(iso) {
@@ -118,6 +141,7 @@
     }
     $('login-view').style.display = '';
     $('shell').style.display = 'none';
+    $('login-err').textContent = '';
   }
 
   async function login() {
@@ -577,9 +601,24 @@
     });
   }
 
+  let collectPollFail = 0;
+
   async function syncCollectState() {
     let s = null;
-    try { s = await req('./api/v1/admin/pipeline/status'); } catch (e) { return; }
+    try {
+      s = await req('./api/v1/admin/pipeline/status');
+      collectPollFail = 0;
+    } catch (e) {
+      // 服务重启或断网时轮询会一直失败；不设上限的话按钮将永远锁在"采集中…"
+      collectPollFail += 1;
+      if (collectPollFail >= 5) {
+        collectPollFail = 0;
+        if (collectTimer) { clearInterval(collectTimer); collectTimer = null; }
+        lockCollectButtons(false);
+        toast('采集进度获取失败，已解除锁定，可重新点击「立即采集」', 5000);
+      }
+      return;
+    }
     const img = s.images || {};
     const text = img.total ? `下载配图 ${img.done}/${img.total}…` : (s.stageText || '采集中…');
     lockCollectButtons(!!s.running, text);
