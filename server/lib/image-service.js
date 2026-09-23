@@ -23,7 +23,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const feed = require('./feed-parser');
 const svc = require('./news-service');
-const { buildQuery, CHANNEL_VISUAL } = require('./keywords');
+const { buildQuery, buildTerms, CHANNEL_VISUAL } = require('./keywords');
 
 const ROOT = path.resolve(__dirname, '../..');
 const OUT_DIR = path.join(ROOT, 'public', 'img', 'news');
@@ -304,7 +304,24 @@ function queryVariants(query) {
   const list = [query];
   if (words.length > 2) list.push(words.slice(0, 2).join(' '));
   if (words.length > 1) list.push(words[0]);
+  // 检索词是整句标题（无空格）时逐级截短，给 Bing 更多命中机会
+  if (words.length === 1 && words[0].length > 12) list.push(words[0].slice(0, 12), words[0].slice(0, 8));
   return [...new Set(list.filter(Boolean))];
+}
+
+/**
+ * 候选图相关性校验：Bing 返回的是"网页上出现过的图"，不校验就会配出一张
+ * 高清但八竿子打不着的图（实测用 2021 年的旧图配 2026 年的赛事）。
+ * 判据很朴素 —— 图的标题/来源页里必须出现这条新闻的实体词。
+ */
+function filterRelevant(candidates, terms) {
+  if (!terms || !terms.length) return candidates;
+  return candidates.filter((c) => {
+    let text = `${c.title || ''} ${c.page || ''}`;
+    try { text += ` ${decodeURIComponent(String(c.page || ''))}`; } catch { /* ignore */ }
+    text = text.toLowerCase();
+    return terms.some((t) => text.indexOf(String(t).toLowerCase()) >= 0);
+  });
 }
 
 /** 原文地址里的"当天"特征（如 /2026/09-16/、/n1/2025/0605/），用来滤掉模板图和往期推荐图 */
@@ -476,43 +493,59 @@ async function resolveImage({ query = '', visual = '', preferUrl = '', pageUrl =
     };
   }
 
-  const variants = [...new Set([
-    ...queryVariants(query),
-    ...(visual ? [visual] : [])
-  ])];
+  const terms = buildTerms(query);
+  let irrelevant = 0;
 
-  for (const [minW, minH] of TIERS) {
-    const tried = new Set();
-    for (const variant of variants) {
-      for (const filter of SIZE_FILTERS) {
-        if (Date.now() > deadline) {
-          return { ok: false, why: `超时未找到合格配图（${rejectReasons.slice(0, 2).join(' / ')}）`, dupRejected };
-        }
-        if (tried.size >= 90) break;
-        const candidates = (await searchCandidates(variant, filter, { proxy })).filter((c) => !tried.has(c.url));
-        candidates.forEach((c) => tried.add(c.url));
-        if (!candidates.length) continue;
-        const { winner, reasons, dupRejected: dup } = await raceCandidates(candidates, {
-          proxy, dstFile, selfFile: self, minW, minH, deadline
-        });
-        dupRejected += dup;
-        rejectReasons.push(...reasons);
-        if (winner) {
-          return {
-            ok: true,
-            hash: winner.hash,
-            from: winner.url,
-            page: winner.page,
-            kind: 'search',
-            hit: variant,
-            size: winner.size,
-            dupRejected
-          };
+  const runSearch = async (variantList, { requireTerms = true, kind = 'search' } = {}) => {
+    for (const [minW, minH] of TIERS) {
+      const tried = new Set();
+      for (const variant of variantList) {
+        for (const filter of SIZE_FILTERS) {
+          if (Date.now() > deadline) {
+            return { timedOut: true, why: `超时未找到合格配图（${rejectReasons.slice(0, 2).join(' / ')}）` };
+          }
+          if (tried.size >= 90) break;
+          const candidates = (await searchCandidates(variant, filter, { proxy })).filter((c) => !tried.has(c.url));
+          candidates.forEach((c) => tried.add(c.url));
+          if (!candidates.length) continue;
+          // 内容一致性优先：候选图的标题/来源页必须对得上这条新闻的实体词，
+          // 对不上就换下一个检索词，不落一张"高清但无关"的图
+          const usable = (requireTerms && terms.length) ? filterRelevant(candidates, terms) : candidates;
+          if (!usable.length) { irrelevant += candidates.length; continue; }
+          const { winner, reasons, dupRejected: dup } = await raceCandidates(usable, {
+            proxy, dstFile, selfFile: self, minW, minH, deadline
+          });
+          dupRejected += dup;
+          rejectReasons.push(...reasons);
+          if (winner) {
+            return {
+              ok: true,
+              hash: winner.hash,
+              from: winner.url,
+              page: winner.page,
+              kind,
+              hit: variant,
+              size: winner.size,
+              dupRejected
+            };
+          }
         }
       }
     }
+    return null;
+  };
+
+  const found = await runSearch(queryVariants(query));
+  if (found && found.ok) return found;
+  if (found && found.timedOut) return { ok: false, why: found.why, dupRejected };
+  // 内容词确实检索不到对应画面（不少突发稿当天没有图）时，退到频道视觉词：
+  // 至少是"体育赛场""金融交易"这一级的相关画面，并在图库里标记为 channel，方便人工替换
+  if (visual) {
+    const fallback = await runSearch([visual], { requireTerms: false, kind: 'channel' });
+    if (fallback && fallback.ok) return fallback;
   }
-  return { ok: false, why: rejectReasons.slice(0, 3).join(' / ') || '没有可用候选图', dupRejected };
+  const tail = irrelevant ? `（${irrelevant} 张候选与内容不匹配）` : '';
+  return { ok: false, why: (rejectReasons.slice(0, 3).join(' / ') || '没有可用候选图') + tail, dupRejected };
 }
 
 /* ------------------------------ 稿件配图 ------------------------------ */

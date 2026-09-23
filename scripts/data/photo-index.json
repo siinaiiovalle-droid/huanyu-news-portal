@@ -2387,10 +2387,24 @@
   },
   "天问二号开启深空探测新征程": {
     "cover": "/img/news/a-n_muaz2k99adbqye-cover.jpg",
-    "figures": []
+    "figures": [
+      "/img/news/a-n_muaz2k99adbqye-fig1.jpg"
+    ]
   },
   "中国选手徐嘉余夺得男子50米仰泳冠军": {
     "cover": "/img/news/a-n_muazdts4tywmld-cover.jpg",
+    "figures": []
+  },
+  "中国选手李冰洁获得亚运会女子400米自由泳冠军": {
+    "cover": "/img/news/a-n_muci8ztjzbil83-cover.jpg",
+    "figures": []
+  },
+  "成功卫冕！李冰洁夺得亚运会女子400米自由泳金牌": {
+    "cover": "/img/news/a-n_muci8zv1q84bjq-cover.jpg",
+    "figures": []
+  },
+  "彭旭玮亚运会摘金：希望能够激励更多亚洲仰泳运动员": {
+    "cover": "/img/news/a-n_muci8zrur2zzk0-cover.jpg",
     "figures": []
   }
 }

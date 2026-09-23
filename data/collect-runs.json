@@ -1,5 +1,223 @@
 [
   {
+    "id": "mudxnfmjzh91xm",
+    "createdAt": "2026-09-23T10:01:01.147Z",
+    "updatedAt": "2026-09-23T10:01:01.147Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 931,
+    "added": 29,
+    "duplicated": 781,
+    "rejected": 2,
+    "autoPublished": 4,
+    "failed": 0,
+    "images": {
+      "filled": 8,
+      "failed": 0,
+      "pool": {
+        "checked": 12,
+        "filled": 8,
+        "failed": 0
+      },
+      "reasons": []
+    },
+    "durationMs": 37285,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 4
+      }
+    ],
+    "finishedAt": "2026-09-23T10:01:01.147Z"
+  },
+  {
+    "id": "mudb6cutmdwdp0",
+    "createdAt": "2026-09-22T23:31:52.853Z",
+    "updatedAt": "2026-09-22T23:31:52.853Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 931,
+    "added": 27,
+    "duplicated": 781,
+    "rejected": 15,
+    "autoPublished": 2,
+    "failed": 0,
+    "images": {
+      "filled": 5,
+      "failed": 3,
+      "pool": {
+        "checked": 12,
+        "filled": 3,
+        "failed": 3
+      },
+      "reasons": [
+        "全球首列搭载具身智能技术地铁列车在德：超时未找到合格配图（原文页配图：分辨率不足 227x227 / 原文页配图：分辨率不足 700x525）",
+        "第81届联大一般性辩论开幕：超时未找到合格配图（原文页配图：分辨率不足 227x227 / 原文页配图：分辨率不足 700x466）",
+        "反向海淘兴起，外国游客的“中国购物清：超时未找到合格配图（原文页配图：分辨率不足 227x227 / 原文页配图：分辨率不足 880x172）"
+      ]
+    },
+    "durationMs": 107635,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 2
+      }
+    ],
+    "finishedAt": "2026-09-22T23:31:52.853Z"
+  },
+  {
     "id": "mucia66t1a3aoh",
     "createdAt": "2026-09-22T10:03:01.973Z",
     "updatedAt": "2026-09-22T10:03:01.973Z",
