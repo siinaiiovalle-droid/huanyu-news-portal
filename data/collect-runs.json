@@ -1,5 +1,228 @@
 [
   {
+    "id": "mufd5o26hngv1u",
+    "createdAt": "2026-09-24T10:02:52.302Z",
+    "updatedAt": "2026-09-24T10:02:52.302Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 931,
+    "added": 28,
+    "duplicated": 797,
+    "rejected": 5,
+    "autoPublished": 5,
+    "failed": 0,
+    "images": {
+      "filled": 4,
+      "failed": 5,
+      "pool": {
+        "checked": 12,
+        "filled": 3,
+        "failed": 3
+      },
+      "reasons": [
+        "菲律宾名将夺得亚运会男子自由体操冠军：超时未找到合格配图（原文页配图：分辨率不足 500x333 / 原文页配图：网络 HTTP 403）",
+        "亚运会男子800米自由泳：中国选手张：超时未找到合格配图（原文页配图：分辨率不足 700x466 / 原文页配图：分辨率不足 500x333）",
+        "个人第五金 张展硕获男子800米自由：超时未找到合格配图（原文页配图：分辨率不足 500x333 / 原文页配图：网络 HTTP 403）",
+        "菲律宾名将夺得亚运会男子自由体操冠军：单篇配图超时，留到下次补图"
+      ]
+    },
+    "durationMs": 157263,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 3
+      }
+    ],
+    "finishedAt": "2026-09-24T10:02:52.302Z"
+  },
+  {
+    "id": "mueqmpxgfl09y3",
+    "createdAt": "2026-09-23T23:32:16.708Z",
+    "updatedAt": "2026-09-23T23:32:16.708Z",
+    "type": "collect",
+    "trigger": "cli",
+    "fetched": 931,
+    "added": 25,
+    "duplicated": 816,
+    "rejected": 17,
+    "autoPublished": 0,
+    "failed": 0,
+    "images": {
+      "filled": 4,
+      "failed": 3,
+      "pool": {
+        "checked": 8,
+        "filled": 4,
+        "failed": 3
+      },
+      "reasons": [
+        "法国友人饶家驹生平展在巴黎揭幕：超时未找到合格配图（原文页配图：体积过小 21KB / 原文页配图：分辨率不足 227x227）",
+        "爱知·名古屋亚运会：国乒男女团晋级决：超时未找到合格配图（原文页配图：分辨率不足 510x340 / 原文页配图：分辨率不足 883x663）",
+        "直播外链：国新办就“十五五”时期推进：超时未找到合格配图（原文页配图：分辨率不足 700x394 / 原文页配图：分辨率不足 227x227）"
+      ]
+    },
+    "durationMs": 99321,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 0
+      }
+    ],
+    "finishedAt": "2026-09-23T23:32:16.708Z"
+  },
+  {
     "id": "mudxnfmjzh91xm",
     "createdAt": "2026-09-23T10:01:01.147Z",
     "updatedAt": "2026-09-23T10:01:01.147Z",
