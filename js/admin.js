@@ -1350,7 +1350,7 @@
 
   /* ------------------------------ 图库管理 ------------------------------ */
 
-  const KIND_LABEL = { origin: '原文配图', search: '图库检索', card: '品牌配图卡' };
+  const KIND_LABEL = { origin: '原文配图', search: '图库检索', channel: '频道兜底图（建议人工换图）', card: '品牌配图卡' };
 
   function fmtSize(b) {
     const n = Number(b) || 0;
