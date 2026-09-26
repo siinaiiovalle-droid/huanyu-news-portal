@@ -1,0 +1,54 @@
+- generic [ref=e16]:
+  - complementary [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]: 寰宇
+      - generic [ref=e20]: 内容中台HUANYU CMS
+    - navigation [ref=e21]:
+      - link "📊 运营概览" [ref=e22] [cursor=pointer]:
+        - /url: "#/dashboard"
+      - link "📥 采集审核池" [ref=e23] [cursor=pointer]:
+        - /url: "#/inbox"
+      - link "🛰 采集源管理" [ref=e24] [cursor=pointer]:
+        - /url: "#/sources"
+      - link "⚙️ 自动化规则" [ref=e25] [cursor=pointer]:
+        - /url: "#/automation"
+      - link "📰 稿件管理" [ref=e26] [cursor=pointer]:
+        - /url: "#/news"
+      - link "🖼 图库管理" [ref=e27] [cursor=pointer]:
+        - /url: "#/images"
+      - link "✍️ 撰写稿件" [ref=e28] [cursor=pointer]:
+        - /url: "#/editor"
+      - link "🔥 榜单运营" [ref=e29] [cursor=pointer]:
+        - /url: "#/ranks"
+      - link "💬 广场与评论" [ref=e30] [cursor=pointer]:
+        - /url: "#/social"
+      - link "📜 任务日志" [ref=e31] [cursor=pointer]:
+        - /url: "#/logs"
+      - link "👤 账号管理" [ref=e32] [cursor=pointer]:
+        - /url: "#/accounts"
+      - link "🛠 站点设置" [ref=e33] [cursor=pointer]:
+        - /url: "#/settings"
+    - generic [ref=e34]: 寰宇传媒信息技术股份有限公司 内容中台 v2.0 · 采集/审核/发布一体化
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - heading "运营概览" [level=2] [ref=e37]
+      - generic [ref=e38]:
+        - link "查看前台" [ref=e39] [cursor=pointer]:
+          - /url: /
+        - button "退出登录" [ref=e40] [cursor=pointer]
+    - generic [ref=e41]:
+      - generic [ref=e43]:
+        - heading "内容流水线" [level=3] [ref=e44]
+        - generic [ref=e45]:
+          - button "立即采集" [ref=e46] [cursor=pointer]
+          - button "自动审核待审" [ref=e47] [cursor=pointer]
+          - button "执行每日任务" [ref=e48] [cursor=pointer]
+          - button "刷新榜单" [ref=e49] [cursor=pointer]
+      - heading "频道稿件分布" [level=3] [ref=e52]
+      - generic [ref=e53]:
+        - heading "热点榜（自动计算）" [level=3] [ref=e56]
+        - heading "爆款增速榜" [level=3] [ref=e59]
+      - generic [ref=e61]:
+        - heading "最近任务" [level=3] [ref=e62]
+        - link "查看全部" [ref=e64] [cursor=pointer]:
+          - /url: "#/logs"

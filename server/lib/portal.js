@@ -159,6 +159,123 @@ function getVideoView({ page = 1, pageSize = 12 } = {}) {
   };
 }
 
+/* --------------------- AI 前沿技术瞭望台 --------------------- */
+
+/**
+ * 瞭望台的四条观察赛道。
+ * 稿件本身只带 channel=ai，不额外维护赛道字段 —— 靠关键词把内容分到赛道，
+ * 新增稿件无需人工归类，栏目也不会因为某个赛道暂时没稿而报错。
+ */
+const AI_TRACKS = [
+  {
+    id: 'model',
+    name: '大模型与算法',
+    desc: '基座模型、推理与训练范式的每一次跃迁',
+    keywords: ['大模型', '基座模型', '多模态', '生成式', '推理模型', '预训练', '微调', '开源模型', '参数',
+      '人工智能', '机器学习', '深度学习', '神经网络', '算法', '模型', 'llm', 'gpt', 'bert', 'nlp', 'openai', 'transformer', 'diffusion']
+  },
+  {
+    id: 'compute',
+    name: '算力与芯片',
+    desc: 'GPU、HBM 与数据中心背后的硬供给',
+    keywords: ['算力', '芯片', 'gpu', '显卡', '晶圆', '半导体', '数据中心', '智算', 'hbm', 'cuda', '英伟达', '光刻', '服务器']
+  },
+  {
+    id: 'agent',
+    name: '智能体与应用',
+    desc: '从对话框走向真实工作流的落地现场',
+    keywords: ['智能体', 'agent', '应用', '落地', '助手', 'copilot', '机器人', '具身', '编程', '办公', '客服', '自动驾驶', '数字人', '生产力']
+  },
+  {
+    id: 'governance',
+    name: '治理与产业',
+    desc: '监管、资本与产业格局的走向',
+    keywords: ['监管', '政策', '安全', '伦理', '合规', '标准', '版权', '治理', '产业', '融资', '估值', '上市', '法案', '备案', '开源协议']
+  }
+];
+
+/** 稿件与某条赛道的匹配度：命中关键词越多越靠前；未命中返回 0 */
+function aiTrackScore(a, track) {
+  const text = [a.title, a.summary, (a.tags || []).join(' '), a.source].filter(Boolean).join(' ').toLowerCase();
+  if (!text) return 0;
+  let score = 0;
+  track.keywords.forEach((k) => {
+    const key = String(k).toLowerCase();
+    if (!key) return;
+    // 标题命中的权重高于摘要：标题才是这条稿真正讲的事
+    if (String(a.title || '').toLowerCase().includes(key)) score += 2;
+    else if (text.includes(key)) score += 1;
+  });
+  return score;
+}
+
+function dayKey(iso) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/** AI 前沿技术瞭望台栏目页聚合 */
+function getAiView({ page = 1, pageSize = 12 } = {}) {
+  const channel = getChannel('ai');
+  if (!channel) return null;
+  const all = svc.listArticles({ channel: 'ai' });
+  const byNew = all.slice().sort((a, b) => Date.parse(b.publishedAt || 0) - Date.parse(a.publishedAt || 0));
+  const byHot = all.slice().sort((a, b) => svc.hotScore(b) - svc.hotScore(a));
+
+  const tracks = AI_TRACKS
+    .map((t) => ({
+      id: t.id,
+      name: t.name,
+      desc: t.desc,
+      list: all
+        .map((a) => ({ a, s: aiTrackScore(a, t) }))
+        .filter((x) => x.s > 0)
+        .sort((x, y) => y.s - x.s || Date.parse(y.a.publishedAt || 0) - Date.parse(x.a.publishedAt || 0))
+        .slice(0, 4)
+        .map((x) => svc.omitContent(x.a))
+    }))
+    .filter((t) => t.list.length);
+
+  const groups = new Map();
+  byNew.slice(0, 30).forEach((a) => {
+    const key = dayKey(a.publishedAt);
+    if (!key) return;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(svc.omitContent(a));
+  });
+
+  const counter = new Map();
+  all.forEach((a) => (a.tags || []).forEach((t) => {
+    const key = String(t).trim();
+    if (!key) return;
+    const prev = counter.get(key) || { name: key, count: 0, heat: 0 };
+    prev.count += 1;
+    prev.heat += svc.hotScore(a);
+    counter.set(key, prev);
+  }));
+
+  const week = 7 * 86400000;
+  return {
+    channel,
+    lead: byHot[0] ? svc.omitContent(byHot[0]) : null,
+    tracks,
+    timeline: [...groups.entries()].slice(0, 7).map(([date, items]) => ({ date, items })),
+    tags: [...counter.values()].sort((a, b) => b.heat - a.heat || b.count - a.count).slice(0, 12)
+      .map((t) => ({ name: t.name, count: t.count, heat: Number(t.heat.toFixed(1)) })),
+    hot: byHot.slice(0, 10).map((a, i) => ({ ...svc.omitContent(a), rank: i + 1, hotScore: Number(svc.hotScore(a).toFixed(1)) })),
+    ...svc.paginate(byNew, page, pageSize),
+    stats: {
+      total: all.length,
+      today: all.filter((a) => Date.now() - Date.parse(a.publishedAt || 0) < 86400000).length,
+      week: all.filter((a) => Date.now() - Date.parse(a.publishedAt || 0) < week).length,
+      tracks: tracks.length,
+      updatedAt: new Date().toISOString()
+    }
+  };
+}
+
 /** 搜索 */
 function search(q, { page = 1, pageSize = 20 } = {}) {
   const keyword = String(q || '').trim();
@@ -248,7 +365,7 @@ function refreshRanks() {
 }
 
 module.exports = {
-  getHome, getChannelView, getVideoView, search, getRelated,
+  getHome, getChannelView, getVideoView, getAiView, search, getRelated,
   getHeadlines, getHotRank, getBlastRank, getFocus, getVideos, getHotTags, getChannels,
   getFeed, getSync, refreshRanks
 };

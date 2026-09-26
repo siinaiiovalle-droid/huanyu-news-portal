@@ -17,7 +17,7 @@ const PORT = Number(process.env.STATIC_PORT || 4799);
 const BASE = `http://127.0.0.1:${PORT}`;
 const DROP = new Set(['uid', 'token', '_', 't', 'ts']);
 // 页面清单：toRelative 靠它把 /xxx.html 改成 ./xxx.html（缺一个，导航到该页就会 404）
-const PAGES = ['index', 'channel', 'article', 'video', 'search', 'square', 'admin', 'mall'];
+const PAGES = ['index', 'channel', 'article', 'video', 'search', 'square', 'admin', 'mall', 'ai'];
 
 function request(urlStr, method = 'GET', body) {
   return new Promise((resolve, reject) => {
@@ -89,10 +89,12 @@ async function collectUrls() {
   ].forEach(push);
 
   // 无参数版本：页面传了没预渲染的参数时，shim 会回退到它
-  ['/api/v1/news', '/api/v1/video', '/api/v1/rank', '/api/v1/tags', '/api/v1/search',
+  ['/api/v1/news', '/api/v1/video', '/api/v1/ai', '/api/v1/rank', '/api/v1/tags', '/api/v1/search',
     '/api/v1/square', '/api/v1/comments', '/api/v1/square/assets', '/api/v1/square/topics'].forEach(push);
 
   for (let p = 1; p <= 3; p += 1) push(`/api/v1/video?page=${p}&pageSize=12`);
+  // AI 瞭望台：赛道、时间线、热词全靠这一个接口，缺了整页就是空壳
+  for (let p = 1; p <= 3; p += 1) push(`/api/v1/ai?page=${p}&pageSize=12`);
 
   const channels = (await getData('/api/v1/channels')) || [];
   channels.forEach((c) => {

@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - banner
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - generic [ref=e9]: 最新发布
+            - link "更多要闻 ›" [ref=e10] [cursor=pointer]:
+              - /url: ./channel.html?id=china
+          - list [ref=e11]:
+            - listitem [ref=e12]: 加载中…
+        - generic [ref=e14]:
+          - generic [ref=e15]: 焦点专题
+          - generic [ref=e16]: 编辑部精选
+      - complementary [ref=e19]:
+        - generic [ref=e20]: 实时热点榜
+        - generic [ref=e26]:
+          - generic [ref=e27]: 爆款增速榜
+          - generic [ref=e28]: 近 48 小时
+        - generic [ref=e32]:
+          - generic [ref=e33]: 视频精选
+          - link "全部视频 ›" [ref=e34] [cursor=pointer]:
+            - /url: ./video.html
+        - generic [ref=e35]: 热门话题
+        - generic [ref=e38]:
+          - generic [ref=e39]: 寰宇 App 即将上线
+          - paragraph [ref=e40]: 资讯、短视频与直播、聊天、支付、在线购物、小程序服务一体化。新闻内容与本站实时同步，一处生产、多端触达。
+          - generic [ref=e41]:
+            - generic [ref=e42]: 新闻同步
+            - generic [ref=e43]: 短视频 · 直播
+            - generic [ref=e44]: 即时通讯
+            - generic [ref=e45]: 支付 · 购物
+            - generic [ref=e46]: 小程序生态
+    - generic [ref=e48]:
+      - generic [ref=e49]: 图集精选
+      - generic [ref=e50]: 现场影像
+  - contentinfo [ref=e51]

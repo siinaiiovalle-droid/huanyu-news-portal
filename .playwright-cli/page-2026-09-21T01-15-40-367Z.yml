@@ -1,0 +1,140 @@
+- generic [ref=f1e2]:
+  - generic [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - link "星潮互动 STARTIDE" [ref=f1e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=f1e11]:
+          - generic [ref=f1e12]: 星潮互动
+          - generic [ref=f1e13]: STARTIDE
+      - navigation [ref=f1e14]:
+        - link "首页" [ref=f1e15] [cursor=pointer]:
+          - /url: index.html
+        - link "游戏大厅" [ref=f1e16] [cursor=pointer]:
+          - /url: games.html
+        - link "排行榜" [ref=f1e17] [cursor=pointer]:
+          - /url: rank.html
+        - link "数据看板" [ref=f1e18] [cursor=pointer]:
+          - /url: dashboard.html
+        - link "管理后台" [ref=f1e19] [cursor=pointer]:
+          - /url: admin.html
+      - generic [ref=f1e20]:
+        - button "中" [ref=f1e21] [cursor=pointer]
+        - button "🔊" [ref=f1e23] [cursor=pointer]
+        - link "登录 / 注册" [ref=f1e26] [cursor=pointer]:
+          - /url: login.html
+    - generic [ref=f1e28]:
+      - generic [ref=f1e29]: 在线
+      - generic [ref=f1e31]: 中秋限定「月宴」活动进行中 — 登录即领限定皮肤「广寒」
+      - link "开始游戏 →" [ref=f1e32] [cursor=pointer]:
+        - /url: games.html
+  - main [ref=f1e33]:
+    - generic [ref=f1e34]:
+      - generic [ref=f1e36]:
+        - generic [ref=f1e38]:
+          - button "开始游戏" [ref=f1e39] [cursor=pointer]
+          - button "暂停" [ref=f1e40] [cursor=pointer]
+          - button "重开" [ref=f1e41] [cursor=pointer]
+          - button "手柄" [ref=f1e42] [cursor=pointer]
+          - button "🔊" [ref=f1e43] [cursor=pointer]
+          - button "全屏" [ref=f1e44] [cursor=pointer]
+        - generic [ref=f1e45]:
+          - generic [ref=f1e46]: 点击「开始游戏」立即开玩
+          - generic [ref=f1e47]:
+            - generic [ref=f1e48]: 登录后可保存成绩与排行
+            - link "登录 / 注册" [ref=f1e49] [cursor=pointer]:
+              - /url: login.html
+      - complementary [ref=f1e50]:
+        - generic [ref=f1e51]:
+          - generic [ref=f1e52]: 益智经典
+          - heading "扫雷 · Minesweeper" [level=3] [ref=f1e53]
+          - paragraph [ref=f1e54]: 经典扫雷：点击翻开格子，数字提示周围雷数，右键/长按插旗。全部安全格翻开即胜利，越快分越高！首次点击必有安全区。
+          - generic [ref=f1e55]: 经典
+        - generic [ref=f1e57]:
+          - generic [ref=f1e58]: 操作说明
+          - list
+        - generic [ref=f1e59]:
+          - generic [ref=f1e60]:
+            - generic [ref=f1e61]: 本游戏排行榜
+            - generic [ref=f1e62]: —
+          - list
+          - link "查看完整排行榜" [ref=f1e63] [cursor=pointer]:
+            - /url: rank.html?g=minesweeper
+        - generic [ref=f1e64]:
+          - generic [ref=f1e65]: 换个游戏
+          - generic [ref=f1e66]:
+            - link "🃏 空当接龙 牌桌经典 ▶" [ref=f1e67] [cursor=pointer]:
+              - /url: play.html?g=freecell
+              - generic [ref=f1e68]:
+                - generic [ref=f1e69]: 🃏
+                - generic [ref=f1e70]:
+                  - generic [ref=f1e71]: 空当接龙
+                  - text: 牌桌经典
+              - generic [ref=f1e72]: ▶
+            - link "📦 推箱子 益智经典 ▶" [ref=f1e73] [cursor=pointer]:
+              - /url: play.html?g=sokoban
+              - generic [ref=f1e74]:
+                - generic [ref=f1e75]: 📦
+                - generic [ref=f1e76]:
+                  - generic [ref=f1e77]: 推箱子
+                  - text: 益智经典
+              - generic [ref=f1e78]: ▶
+            - link "🍉 合成大西瓜 物理合成 ▶" [ref=f1e79] [cursor=pointer]:
+              - /url: play.html?g=suika
+              - generic [ref=f1e80]:
+                - generic [ref=f1e81]: 🍉
+                - generic [ref=f1e82]:
+                  - generic [ref=f1e83]: 合成大西瓜
+                  - text: 物理合成
+              - generic [ref=f1e84]: ▶
+  - contentinfo [ref=f1e86]:
+    - generic [ref=f1e87]:
+      - generic [ref=f1e88]:
+        - generic [ref=f1e89]:
+          - generic [ref=f1e95]:
+            - generic [ref=f1e96]: 星潮互动
+            - generic [ref=f1e97]: STARTIDE INTERACTIVE
+          - paragraph [ref=f1e98]: 打开即玩 · 无需下载 · 全球同服
+          - generic [ref=f1e99]:
+            - generic [ref=f1e100]: 在线
+            - generic [ref=f1e101]: Web / H5
+            - generic [ref=f1e102]: 中 / EN
+        - generic [ref=f1e103]:
+          - heading "游戏" [level=4] [ref=f1e104]
+          - list [ref=f1e105]:
+            - listitem [ref=f1e106]:
+              - link "游戏大厅" [ref=f1e107] [cursor=pointer]:
+                - /url: games.html
+            - listitem [ref=f1e108]:
+              - link "排行榜" [ref=f1e109] [cursor=pointer]:
+                - /url: rank.html
+            - listitem [ref=f1e110]:
+              - link "登录 / 注册" [ref=f1e111] [cursor=pointer]:
+                - /url: login.html
+            - listitem [ref=f1e112]:
+              - link "开始游戏 · 星际战机" [ref=f1e113] [cursor=pointer]:
+                - /url: play.html?g=shooter
+        - generic [ref=f1e114]:
+          - heading "关于" [level=4] [ref=f1e115]
+          - list [ref=f1e116]:
+            - listitem [ref=f1e117]:
+              - link "公司简介" [ref=f1e118] [cursor=pointer]:
+                - /url: team.html
+            - listitem [ref=f1e119]:
+              - link "商业计划" [ref=f1e120] [cursor=pointer]:
+                - /url: business-plan.html
+            - listitem [ref=f1e121]:
+              - link "数据看板" [ref=f1e122] [cursor=pointer]:
+                - /url: dashboard.html
+            - listitem [ref=f1e123]:
+              - link "管理后台" [ref=f1e124] [cursor=pointer]:
+                - /url: admin.html
+        - generic [ref=f1e125]:
+          - heading "联系" [level=4] [ref=f1e126]
+          - list [ref=f1e127]:
+            - listitem [ref=f1e128]: 商务合作bd@startide.example
+            - listitem [ref=f1e129]: 玩家支持support@startide.example
+            - listitem [ref=f1e130]: 深圳市南山区科技园 · 星潮大厦 18F
+      - generic [ref=f1e131]:
+        - generic [ref=f1e132]: © 2021-2026 星潮互动网络科技（深圳）有限公司 · 保留所有权利
+        - generic [ref=f1e133]: 粤 ICP 备 2021XXXXXX 号 · 增值电信业务经营许可证 · 网络文化经营许可证
+      - paragraph [ref=f1e134]: 本站为演示项目，全部数据由本地生成，不涉及真实业务与个人信息。

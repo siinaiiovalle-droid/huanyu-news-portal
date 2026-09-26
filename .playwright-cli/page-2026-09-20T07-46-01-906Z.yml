@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 2026年9月20日 星期日
+        - link "首页" [ref=e8] [cursor=pointer]:
+          - /url: ./
+        - link "视频" [ref=e9] [cursor=pointer]:
+          - /url: ./video.html
+        - link "严选商城" [ref=e10] [cursor=pointer]:
+          - /url: ./mall.html
+        - link "内容后台" [ref=e12] [cursor=pointer]:
+          - /url: ./admin.html
+      - generic [ref=e13]:
+        - generic [ref=e14]: 洞察世界 · 传递真相 · 连接未来
+        - link "开放API" [ref=e15] [cursor=pointer]:
+          - /url: ./api/v1/home
+    - generic [ref=e16]:
+      - link "寰宇 寰宇新闻网 HUANYU NEWS" [ref=e17] [cursor=pointer]:
+        - /url: ./
+        - generic [ref=e18]: 寰宇
+        - generic [ref=e19]:
+          - text: 寰宇新闻网
+          - generic [ref=e20]: HUANYU NEWS
+      - generic [ref=e21]:
+        - searchbox "搜索新闻、话题、关键词…" [ref=e22]
+        - button "搜索" [ref=e23] [cursor=pointer]: 🔍
+      - button "App / 小程序" [ref=e25] [cursor=pointer]
+    - navigation [ref=e26]:
+      - link "要闻" [ref=e27] [cursor=pointer]:
+        - /url: ./
+      - link "严选商城" [ref=e28] [cursor=pointer]:
+        - /url: ./mall.html
+      - link "广场" [ref=e29] [cursor=pointer]:
+        - /url: ./square.html
+      - link "国内" [ref=e30] [cursor=pointer]:
+        - /url: ./channel.html?id=china
+      - link "国际" [ref=e31] [cursor=pointer]:
+        - /url: ./channel.html?id=world
+      - link "财经" [ref=e32] [cursor=pointer]:
+        - /url: ./channel.html?id=finance
+      - link "科技" [ref=e33] [cursor=pointer]:
+        - /url: ./channel.html?id=tech
+      - link "体育" [ref=e34] [cursor=pointer]:
+        - /url: ./channel.html?id=sports
+      - link "娱乐" [ref=e35] [cursor=pointer]:
+        - /url: ./channel.html?id=ent
+      - link "汽车" [ref=e36] [cursor=pointer]:
+        - /url: ./channel.html?id=auto
+      - link "文化" [ref=e37] [cursor=pointer]:
+        - /url: ./channel.html?id=culture
+      - link "健康" [ref=e38] [cursor=pointer]:
+        - /url: ./channel.html?id=health
+      - link "视频" [ref=e39] [cursor=pointer]:
+        - /url: ./channel.html?id=video
+  - generic [ref=e41]:
+    - link "严选 寰宇严选 HUANYU SELECT · 买手选品 · 编辑部试用" [ref=e42] [cursor=pointer]:
+      - /url: ./mall.html
+      - generic [ref=e43]: 严选
+      - generic [ref=e44]:
+        - generic [ref=e45]: 寰宇严选
+        - generic [ref=e46]: HUANYU SELECT · 买手选品 · 编辑部试用
+    - generic [ref=e47]:
+      - searchbox "搜索商品：耳机、保温杯、绿茶…" [ref=e48]
+      - button "搜索" [ref=e49] [cursor=pointer]: 搜索好物
+    - generic [ref=e50]:
+      - button "我的订单" [ref=e51] [cursor=pointer]
+      - button "购物车 0" [ref=e52] [cursor=pointer]:
+        - generic [ref=e53]: 购物车
+        - emphasis [ref=e54]: "0"
+  - main [ref=e55]:
+    - generic [ref=e59]:
+      - generic [ref=e60]: 今日必买
+      - list
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e65]: 限时秒杀
+        - heading "每天 10 点上新 · 售完即止" [level=2] [ref=e66]
+      - generic [ref=e67]:
+        - text: 距本场结束
+        - generic [ref=e68]:
+          - generic [ref=e69]: "--"
+          - generic [ref=e70]: ":"
+          - generic [ref=e71]: "--"
+          - generic [ref=e72]: ":"
+          - generic [ref=e73]: "--"
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - generic [ref=e77]: 全部好物
+          - heading "买手精选 · 层层试用" [level=2] [ref=e78]
+        - generic [ref=e79]:
+          - button "综合推荐" [ref=e80] [cursor=pointer]
+          - button "销量优先" [ref=e81] [cursor=pointer]
+          - button "上新" [ref=e82] [cursor=pointer]
+          - button "折扣最高" [ref=e83] [cursor=pointer]
+          - button "价格 ↑" [ref=e84] [cursor=pointer]
+          - button "价格 ↓" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - complementary [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]: 商品分类
+            - list
+          - generic [ref=e90]:
+            - generic [ref=e91]: 特色标签
+            - generic [ref=e92]:
+              - button "编辑推荐" [ref=e93] [cursor=pointer]
+              - button "新品" [ref=e94] [cursor=pointer]
+              - button "热销" [ref=e95] [cursor=pointer]
+              - button "回购王" [ref=e96] [cursor=pointer]
+              - button "产地直发" [ref=e97] [cursor=pointer]
+              - button "编辑部同款" [ref=e98] [cursor=pointer]
+              - button "礼盒装" [ref=e99] [cursor=pointer]
+              - button "全部" [ref=e100] [cursor=pointer]
+          - generic [ref=e101]:
+            - generic [ref=e102]: 为什么叫严选
+            - paragraph [ref=e103]: 每件商品先由买手筛选，再进编辑部试用两周，通过才会上架。上架后仍留样检测，出现质量问题先行赔付。
+        - generic [ref=e104]: 加载中…
+  - contentinfo [ref=e114]:
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - heading "寰宇传媒信息技术股份有限公司" [level=5] [ref=e117]
+        - paragraph [ref=e118]: 洞察世界 · 传递真相 · 连接未来
+      - generic [ref=e119]:
+        - heading "内容频道" [level=5] [ref=e120]
+        - list [ref=e121]:
+          - listitem [ref=e122]:
+            - link "国内" [ref=e123] [cursor=pointer]:
+              - /url: ./channel.html?id=china
+            - text: ·
+            - link "国际" [ref=e124] [cursor=pointer]:
+              - /url: ./channel.html?id=world
+            - text: ·
+            - link "财经" [ref=e125] [cursor=pointer]:
+              - /url: ./channel.html?id=finance
+          - listitem [ref=e126]:
+            - link "科技" [ref=e127] [cursor=pointer]:
+              - /url: ./channel.html?id=tech
+            - text: ·
+            - link "体育" [ref=e128] [cursor=pointer]:
+              - /url: ./channel.html?id=sports
+            - text: ·
+            - link "娱乐" [ref=e129] [cursor=pointer]:
+              - /url: ./channel.html?id=ent
+          - listitem [ref=e130]:
+            - link "汽车" [ref=e131] [cursor=pointer]:
+              - /url: ./channel.html?id=auto
+            - text: ·
+            - link "文化" [ref=e132] [cursor=pointer]:
+              - /url: ./channel.html?id=culture
+            - text: ·
+            - link "健康" [ref=e133] [cursor=pointer]:
+              - /url: ./channel.html?id=health
+          - listitem [ref=e134]:
+            - link "广场" [ref=e135] [cursor=pointer]:
+              - /url: ./square.html
+            - text: ·
+            - link "视频频道" [ref=e136] [cursor=pointer]:
+              - /url: ./video.html
+      - generic [ref=e137]:
+        - heading "开放平台" [level=5] [ref=e138]
+        - list [ref=e139]:
+          - listitem [ref=e140]:
+            - link "门户数据接口" [ref=e141] [cursor=pointer]:
+              - /url: ./api/v1/home
+          - listitem [ref=e142]:
+            - link "App 信息流接口" [ref=e143] [cursor=pointer]:
+              - /url: ./api/v1/feed
+          - listitem [ref=e144]:
+            - link "增量同步接口" [ref=e145] [cursor=pointer]:
+              - /url: ./api/v1/sync
+          - listitem [ref=e146]:
+            - link "广场信息流接口" [ref=e147] [cursor=pointer]:
+              - /url: ./api/v1/square
+          - listitem [ref=e148]:
+            - link "内容运营后台" [ref=e149] [cursor=pointer]:
+              - /url: ./admin.html
+      - generic [ref=e150]:
+        - heading "关于我们" [level=5] [ref=e151]
+        - list [ref=e152]:
+          - listitem [ref=e153]:
+            - link "寰宇严选 · 买手好物" [ref=e154] [cursor=pointer]:
+              - /url: ./mall.html
+          - listitem [ref=e155]: 新闻热线：400-000-0000
+          - listitem [ref=e156]: 商务合作：bd@huanyu.example
+          - listitem [ref=e157]: 内容纠错：editor@huanyu.example
+    - generic [ref=e158]:
+      - generic [ref=e159]: Copyright © 2015-2026 寰宇传媒信息技术股份有限公司 版权所有
+      - generic [ref=e160]: 京ICP备XXXXXXXX号 · 互联网新闻信息服务许可：（示例）00000000 号 · 本站为演示站点，内容均为示例稿件
+  - generic: 商城数据加载失败：Cannot read properties of undefined (reading 'map')

@@ -312,6 +312,21 @@ function trustPublishedAt(raw, now = Date.now()) {
   return { publishedAt: src, rssPublishedAt: src, publishedAtAdjusted: false };
 }
 
+/**
+ * 频道话题门槛：只对登记在此的频道生效（目前仅 AI 瞭望台）。
+ * 综合科技源里混着大量与 AI 无关的稿（区块链、运维、终端测评…），
+ * 不做这道过滤，栏目会被冲淡成"第二个科技频道"。
+ */
+const CHANNEL_TOPIC = {
+  ai: /(\bai\b|人工智能|大模型|智能体|机器学习|深度学习|神经网络|生成式|多模态|算力|gpu|gpt|llm|bert|nlp|transformer|openai|芯片|机器人|自动驾驶|算法|模型)/i
+};
+
+function matchChannelTopic(item, source) {
+  const rule = CHANNEL_TOPIC[source.channel];
+  if (!rule) return true;
+  return rule.test([item.title, item.summary].filter(Boolean).join(' '));
+}
+
 function normalizeInboxItem(raw, source) {
   return {
     title: String(raw.title || '').trim(),
@@ -370,9 +385,11 @@ async function runCollectInner({ trigger = 'manual', limit = 0, sourceIds = null
       const items = await feed.fetchFeed(source.url, { timeout: source.timeout || 12000, proxy: cfg.proxy || '' });
       fetched += items.length;
       let addedThis = 0;
+      let offTopicThis = 0;
       for (const raw of items) {
         if (addedThis >= limitN) break;
         const item = normalizeInboxItem(raw, source);
+        if (!matchChannelTopic(item, source)) { offTopicThis += 1; continue; }
         const dup = findDuplicate(item);
         if (dup.duplicated) { duplicated += 1; continue; }
         const verdict = evaluate(item, source, cfg, dup);
@@ -399,7 +416,7 @@ async function runCollectInner({ trigger = 'manual', limit = 0, sourceIds = null
           candidates.push(doc);
         }
       }
-      perSource.push({ name: source.name, fetched: items.length, added: addedThis });
+      perSource.push({ name: source.name, fetched: items.length, added: addedThis, offTopic: offTopicThis });
       sources.update(source.id, { lastStatus: 'ok', lastCount: items.length, lastError: '', lastRunAt: nowISO() });
     } catch (e) {
       failed += 1;

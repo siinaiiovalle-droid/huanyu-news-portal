@@ -223,6 +223,10 @@ app.get('/api/v1/video', (req, res) =>
   ok(res, portal.getVideoView({ page: int(req.query.page, 1), pageSize: int(req.query.pageSize, 12) }))
 );
 
+app.get('/api/v1/ai', (req, res) =>
+  ok(res, portal.getAiView({ page: int(req.query.page, 1), pageSize: int(req.query.pageSize, 12) }))
+);
+
 app.get('/api/v1/rank', (req, res) => {
   const type = req.query.type || 'hot';
   const size = int(req.query.size, 0) || undefined;
@@ -1091,6 +1095,7 @@ async function bootstrap() {
   console.log(`  门户首页 ： http://localhost:${PORT}/`);
   console.log(`  广场栏目 ： http://localhost:${PORT}/square.html`);
   console.log(`  视频频道 ： http://localhost:${PORT}/video.html`);
+  console.log(`  AI 瞭望台： http://localhost:${PORT}/ai.html`);
   console.log(`  寰宇严选 ： http://localhost:${PORT}/mall.html`);
   console.log(`  运营后台 ： http://localhost:${PORT}/admin.html`);
   console.log(`  开放 API ： http://localhost:${PORT}/api/v1/home`);

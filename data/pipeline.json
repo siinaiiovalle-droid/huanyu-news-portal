@@ -7,7 +7,7 @@
   "maxPublishPerRun": 8,
   "maxAgeHours": 36,
   "minTitleLen": 8,
-  "minContentLen": 60,
+  "minContentLen": 20,
   "autoFlag": true,
   "headlineTopN": 2,
   "focusTopN": 3,
@@ -61,6 +61,6 @@
   "imageRoundMs": 150000,
   "imageArticleMs": 90000,
   "proxy": "",
-  "lastRunAt": "2026-09-25T10:01:13.369Z",
-  "lastDailyAt": "2026-09-25T10:01:13.432Z"
+  "lastRunAt": "2026-09-26T01:52:37.780Z",
+  "lastDailyAt": null
 }

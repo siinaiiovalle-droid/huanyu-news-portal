@@ -13,6 +13,15 @@ const CHANNELS = [
   { id: 'world', name: '国际', desc: '全球时事与外交观察' },
   { id: 'finance', name: '财经', desc: '宏观市场、产业与公司动态' },
   { id: 'tech', name: '科技', desc: '互联网、人工智能与前沿科技' },
+  // AI 瞭望台：科技频道的垂直深挖栏目，有自己的专题页（page 指向 ai.html），
+  // 稿件仍走普通稿件仓库，只是 channel 归到 ai，前后台无需特殊处理
+  {
+    id: 'ai',
+    name: 'AI瞭望台',
+    fullName: 'AI 前沿技术瞭望台',
+    desc: '大模型、算力芯片、智能体应用与 AI 治理的前沿观察',
+    page: '/ai.html'
+  },
   { id: 'sports', name: '体育', desc: '赛事报道与运动员动态' },
   { id: 'ent', name: '娱乐', desc: '影视综艺与明星资讯' },
   { id: 'auto', name: '汽车', desc: '新车、评测与出行产业' },

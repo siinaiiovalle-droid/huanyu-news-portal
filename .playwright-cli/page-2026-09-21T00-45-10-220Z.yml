@@ -1,0 +1,422 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 2026年9月21日 星期一
+        - link "首页" [ref=e8] [cursor=pointer]:
+          - /url: ./
+        - link "视频" [ref=e9] [cursor=pointer]:
+          - /url: ./video.html
+        - link "严选商城" [ref=e10] [cursor=pointer]:
+          - /url: ./mall.html
+        - link "内容后台" [ref=e12] [cursor=pointer]:
+          - /url: ./admin.html
+      - generic [ref=e13]:
+        - generic [ref=e14]: 洞察世界 · 传递真相 · 连接未来
+        - link "开放API" [ref=e15] [cursor=pointer]:
+          - /url: ./api/v1/home
+    - generic [ref=e16]:
+      - link "寰宇 寰宇新闻网 HUANYU NEWS" [ref=e17] [cursor=pointer]:
+        - /url: ./
+        - generic [ref=e18]: 寰宇
+        - generic [ref=e19]:
+          - text: 寰宇新闻网
+          - generic [ref=e20]: HUANYU NEWS
+      - generic [ref=e21]:
+        - searchbox "搜索新闻、话题、关键词…" [ref=e22]
+        - button "搜索" [ref=e23] [cursor=pointer]: 🔍
+      - button "App / 小程序" [ref=e25] [cursor=pointer]
+    - navigation [ref=e26]:
+      - link "要闻" [ref=e27] [cursor=pointer]:
+        - /url: ./
+      - link "严选商城" [ref=e28] [cursor=pointer]:
+        - /url: ./mall.html
+      - link "广场" [ref=e29] [cursor=pointer]:
+        - /url: ./square.html
+      - link "国内" [ref=e30] [cursor=pointer]:
+        - /url: ./channel.html?id=china
+      - link "国际" [ref=e31] [cursor=pointer]:
+        - /url: ./channel.html?id=world
+      - link "财经" [ref=e32] [cursor=pointer]:
+        - /url: ./channel.html?id=finance
+      - link "科技" [ref=e33] [cursor=pointer]:
+        - /url: ./channel.html?id=tech
+      - link "体育" [ref=e34] [cursor=pointer]:
+        - /url: ./channel.html?id=sports
+      - link "娱乐" [ref=e35] [cursor=pointer]:
+        - /url: ./channel.html?id=ent
+      - link "汽车" [ref=e36] [cursor=pointer]:
+        - /url: ./channel.html?id=auto
+      - link "文化" [ref=e37] [cursor=pointer]:
+        - /url: ./channel.html?id=culture
+      - link "健康" [ref=e38] [cursor=pointer]:
+        - /url: ./channel.html?id=health
+      - link "视频" [ref=e39] [cursor=pointer]:
+        - /url: ./channel.html?id=video
+  - generic [ref=e41]:
+    - link "严选 寰宇严选 HUANYU SELECT · 买手选品 · 编辑部试用" [ref=e42] [cursor=pointer]:
+      - /url: ./mall.html
+      - generic [ref=e43]: 严选
+      - generic [ref=e44]:
+        - generic [ref=e45]: 寰宇严选
+        - generic [ref=e46]: HUANYU SELECT · 买手选品 · 编辑部试用
+    - generic [ref=e47]:
+      - searchbox "搜索商品：耳机、保温杯、绿茶…" [ref=e48]
+      - button "搜索" [ref=e49] [cursor=pointer]: 搜索好物
+    - generic [ref=e50]:
+      - button "我的订单" [ref=e51] [cursor=pointer]
+      - button "购物车 0" [ref=e52] [cursor=pointer]:
+        - generic [ref=e53]: 购物车
+        - emphasis [ref=e54]: "0"
+  - main [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: 寰宇严选 · 开业季
+            - heading "看见世界，也把好物带回家" [level=3] [ref=e61]
+            - paragraph [ref=e62]: 首批 24 件买手选品全部通过编辑部试用，正品直营，全国包邮
+            - link "立即逛逛 →" [ref=e63] [cursor=pointer]:
+              - /url: "#goods"
+          - generic [ref=e64]:
+            - generic [ref=e65]: 限时秒杀
+            - heading "每天 10 点 · 四件好物限时抢" [level=3] [ref=e66]
+            - paragraph [ref=e67]: 先到先得，售完即止，秒杀价最低 5 折起
+            - link "查看秒杀 →" [ref=e68] [cursor=pointer]:
+              - /url: "#seckill"
+          - generic [ref=e69]:
+            - generic [ref=e70]: 会员权益
+            - heading "下单即享会员价与 7 天无理由" [level=3] [ref=e71]
+            - paragraph [ref=e72]: 媒体级品控，假一赔十，物流异常由客服先行赔付
+            - link "了解保障 →" [ref=e73] [cursor=pointer]:
+              - /url: "#promise"
+        - generic [ref=e74]:
+          - generic [ref=e75] [cursor=pointer]
+          - generic [ref=e76] [cursor=pointer]
+          - generic [ref=e77] [cursor=pointer]
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]: 今日必买
+          - generic [ref=e81]: 24 件选品在售
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - generic [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: "1"
+              - img "云朵 抗菌擦手巾 6 条装" [ref=e86]
+              - generic [ref=e87]:
+                - heading "云朵 抗菌擦手巾 6 条装" [level=5] [ref=e88]
+                - paragraph [ref=e89]: 已售 1.6 万 · 评分 4.9
+              - generic [ref=e90]: ¥49
+          - listitem [ref=e91]:
+            - generic [ref=e92] [cursor=pointer]:
+              - generic [ref=e93]: "2"
+              - img "寰宇声学 主动降噪耳机 Pro" [ref=e94]
+              - generic [ref=e95]:
+                - heading "寰宇声学 主动降噪耳机 Pro" [level=5] [ref=e96]
+                - paragraph [ref=e97]: 已售 3862 · 评分 4.9
+              - generic [ref=e98]: ¥799
+          - listitem [ref=e99]:
+            - generic [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: "3"
+              - img "《看见世界》新闻摄影集" [ref=e102]
+              - generic [ref=e103]:
+                - heading "《看见世界》新闻摄影集" [level=5] [ref=e104]
+                - paragraph [ref=e105]: 已售 2170 · 评分 4.9
+              - generic [ref=e106]: ¥168
+          - listitem [ref=e107]:
+            - generic [ref=e108] [cursor=pointer]:
+              - generic [ref=e109]: "4"
+              - img "晨光 真空保温杯 500ml" [ref=e110]
+              - generic [ref=e111]:
+                - heading "晨光 真空保温杯 500ml" [level=5] [ref=e112]
+                - paragraph [ref=e113]: 已售 9215 · 评分 4.8
+              - generic [ref=e114]: ¥129
+          - listitem [ref=e115]:
+            - generic [ref=e116] [cursor=pointer]:
+              - generic [ref=e117]: "5"
+              - img "晨光 氨基酸洁面乳 120g" [ref=e118]
+              - generic [ref=e119]:
+                - heading "晨光 氨基酸洁面乳 120g" [level=5] [ref=e120]
+                - paragraph [ref=e121]: 已售 7218 · 评分 4.8
+              - generic [ref=e122]: ¥89
+          - listitem [ref=e123]:
+            - generic [ref=e124] [cursor=pointer]:
+              - generic [ref=e125]: "6"
+              - img "记者手账本 · 第四版" [ref=e126]
+              - generic [ref=e127]:
+                - heading "记者手账本 · 第四版" [level=5] [ref=e128]
+                - paragraph [ref=e129]: 已售 6128 · 评分 4.8
+              - generic [ref=e130]: ¥69
+          - listitem [ref=e131]:
+            - generic [ref=e132] [cursor=pointer]:
+              - generic [ref=e133]: "7"
+              - img "云雾山 明前绿茶 100g" [ref=e134]
+              - generic [ref=e135]:
+                - heading "云雾山 明前绿茶 100g" [level=5] [ref=e136]
+                - paragraph [ref=e137]: 已售 4182 · 评分 4.8
+              - generic [ref=e138]: ¥128
+          - listitem [ref=e139]:
+            - generic [ref=e140] [cursor=pointer]:
+              - generic [ref=e141]: "8"
+              - img "暖冬礼盒 · 坚果 Mac 组合" [ref=e142]
+              - generic [ref=e143]:
+                - heading "暖冬礼盒 · 坚果 Mac 组合" [level=5] [ref=e144]
+                - paragraph [ref=e145]: 已售 2960 · 评分 4.8
+              - generic [ref=e146]: ¥199
+    - generic [ref=e148]:
+      - generic [ref=e149] [cursor=pointer]:
+        - generic [ref=e150]: ✦
+        - generic [ref=e151]: 全部好物
+        - generic [ref=e152]: 买手严选 · 编辑推荐
+        - text: 24 件在售
+      - generic [ref=e153] [cursor=pointer]:
+        - generic [ref=e154]: 🎧
+        - generic [ref=e155]: 数码影音
+        - generic [ref=e156]: 耳机 · 影像 · 智能穿戴
+        - text: 4 件在售
+      - generic [ref=e157] [cursor=pointer]:
+        - generic [ref=e158]: 📚
+        - generic [ref=e159]: 图书文创
+        - generic [ref=e160]: 出版读物 · 新闻周边
+        - text: 4 件在售
+      - generic [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 🛋️
+        - generic [ref=e163]: 家居生活
+        - generic [ref=e164]: 收纳 · 厨房 · 香氛
+        - text: 4 件在售
+      - generic [ref=e165] [cursor=pointer]:
+        - generic [ref=e166]: 🍵
+        - generic [ref=e167]: 健康食品
+        - generic [ref=e168]: 茶饮 · 谷物 · 轻食
+        - text: 4 件在售
+      - generic [ref=e169] [cursor=pointer]:
+        - generic [ref=e170]: 🏕️
+        - generic [ref=e171]: 运动户外
+        - generic [ref=e172]: 露营 · 健身 · 通勤
+        - text: 4 件在售
+      - generic [ref=e173] [cursor=pointer]:
+        - generic [ref=e174]: 🧴
+        - generic [ref=e175]: 美妆个护
+        - generic [ref=e176]: 护肤 · 清洁 · 护理
+        - text: 4 件在售
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - generic [ref=e180]: 限时秒杀
+          - heading "每天 10 点上新 · 售完即止" [level=2] [ref=e181]
+        - generic [ref=e182]:
+          - text: 距本场结束
+          - generic [ref=e183]:
+            - generic [ref=e184]: "25"
+            - generic [ref=e185]: ":"
+            - generic [ref=e186]: "14"
+            - generic [ref=e187]: ":"
+            - generic [ref=e188]: "49"
+      - generic [ref=e189]:
+        - generic [ref=e190] [cursor=pointer]:
+          - generic [ref=e191]:
+            - img "云朵 抗菌擦手巾 6 条装" [ref=e192]
+            - generic [ref=e193]: 秒杀 5.4 折
+            - generic [ref=e194]: 立省 ¥6
+          - generic [ref=e195]:
+            - heading "云朵 抗菌擦手巾 6 条装" [level=4] [ref=e196]
+            - paragraph [ref=e197]: A 类婴幼儿标准 · 速干不发黏
+            - generic [ref=e198]:
+              - generic [ref=e199]: ¥43
+              - deletion [ref=e200]: ¥79
+            - generic [ref=e203]: 已抢 80% · 仅剩 40 件
+          - button "加入购物车" [ref=e204]
+        - generic [ref=e205] [cursor=pointer]:
+          - generic [ref=e206]:
+            - img "果子日记 冻干水果脆 6 罐" [ref=e207]
+            - generic [ref=e208]: 秒杀 5.8 折
+            - generic [ref=e209]: 立省 ¥7
+          - generic [ref=e210]:
+            - heading "果子日记 冻干水果脆 6 罐" [level=4] [ref=e211]
+            - paragraph [ref=e212]: 整果冻干 · 无添加 · 六种口味
+            - generic [ref=e213]:
+              - generic [ref=e214]: ¥52
+              - deletion [ref=e215]: ¥89
+            - generic [ref=e218]: 已抢 77% · 仅剩 40 件
+          - button "加入购物车" [ref=e219]
+        - generic [ref=e220] [cursor=pointer]:
+          - generic [ref=e221]:
+            - img "城市记忆 · 手绘明信片套装" [ref=e222]
+            - generic [ref=e223]: 秒杀 5.8 折
+            - generic [ref=e224]: 立省 ¥5
+          - generic [ref=e225]:
+            - heading "城市记忆 · 手绘明信片套装" [level=4] [ref=e226]
+            - paragraph [ref=e227]: 12 城风貌 · 含邮票位 · 收藏卡盒
+            - generic [ref=e228]:
+              - generic [ref=e229]: ¥34
+              - deletion [ref=e230]: ¥59
+            - generic [ref=e233]: 已抢 74% · 仅剩 40 件
+          - button "加入购物车" [ref=e234]
+        - generic [ref=e235] [cursor=pointer]:
+          - generic [ref=e236]:
+            - img "田野 混合谷物代餐 30 包" [ref=e237]
+            - generic [ref=e238]: 秒杀 5.9 折
+            - generic [ref=e239]: 立省 ¥9
+          - generic [ref=e240]:
+            - heading "田野 混合谷物代餐 30 包" [level=4] [ref=e241]
+            - paragraph [ref=e242]: 低温烘焙 · 无额外添加糖 · 30 天装
+            - generic [ref=e243]:
+              - generic [ref=e244]: ¥70
+              - deletion [ref=e245]: ¥119
+            - generic [ref=e248]: 已抢 69% · 仅剩 40 件
+          - button "加入购物车" [ref=e249]
+    - generic [ref=e250]:
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]: 全部好物
+          - heading "买手精选 · 层层试用" [level=2] [ref=e254]
+        - generic [ref=e255]:
+          - button "综合推荐" [ref=e256] [cursor=pointer]
+          - button "销量优先" [ref=e257] [cursor=pointer]
+          - button "上新" [ref=e258] [cursor=pointer]
+          - button "折扣最高" [ref=e259] [cursor=pointer]
+          - button "价格 ↑" [ref=e260] [cursor=pointer]
+          - button "价格 ↓" [ref=e261] [cursor=pointer]
+      - generic [ref=e262]:
+        - complementary [ref=e263]:
+          - generic [ref=e264]:
+            - generic [ref=e265]: 商品分类
+            - list [ref=e266]:
+              - listitem [ref=e267] [cursor=pointer]:
+                - generic [ref=e268]:
+                  - emphasis [ref=e269]: ✦
+                  - text: 全部好物
+                - generic [ref=e270]: "24"
+              - listitem [ref=e271] [cursor=pointer]:
+                - generic [ref=e272]:
+                  - emphasis [ref=e273]: 🎧
+                  - text: 数码影音
+                - generic [ref=e274]: "4"
+              - listitem [ref=e275] [cursor=pointer]:
+                - generic [ref=e276]:
+                  - emphasis [ref=e277]: 📚
+                  - text: 图书文创
+                - generic [ref=e278]: "4"
+              - listitem [ref=e279] [cursor=pointer]:
+                - generic [ref=e280]:
+                  - emphasis [ref=e281]: 🛋️
+                  - text: 家居生活
+                - generic [ref=e282]: "4"
+              - listitem [ref=e283] [cursor=pointer]:
+                - generic [ref=e284]:
+                  - emphasis [ref=e285]: 🍵
+                  - text: 健康食品
+                - generic [ref=e286]: "4"
+              - listitem [ref=e287] [cursor=pointer]:
+                - generic [ref=e288]:
+                  - emphasis [ref=e289]: 🏕️
+                  - text: 运动户外
+                - generic [ref=e290]: "4"
+              - listitem [ref=e291] [cursor=pointer]:
+                - generic [ref=e292]:
+                  - emphasis [ref=e293]: 🧴
+                  - text: 美妆个护
+                - generic [ref=e294]: "4"
+          - generic [ref=e295]:
+            - generic [ref=e296]: 特色标签
+            - generic [ref=e297]:
+              - button "编辑推荐" [ref=e298] [cursor=pointer]
+              - button "新品" [ref=e299] [cursor=pointer]
+              - button "热销" [ref=e300] [cursor=pointer]
+              - button "回购王" [ref=e301] [cursor=pointer]
+              - button "产地直发" [ref=e302] [cursor=pointer]
+              - button "编辑部同款" [ref=e303] [cursor=pointer]
+              - button "礼盒装" [ref=e304] [cursor=pointer]
+              - button "全部" [ref=e305] [cursor=pointer]
+          - generic [ref=e306]:
+            - generic [ref=e307]: 为什么叫严选
+            - paragraph [ref=e308]: 每件商品先由买手筛选，再进编辑部试用两周，通过才会上架。上架后仍留样检测，出现质量问题先行赔付。
+        - generic [ref=e309]: 加载中…
+    - generic [ref=e318]:
+      - generic [ref=e319]:
+        - emphasis [ref=e320]: 🛡️
+        - generic [ref=e321]: 正品保障
+        - generic [ref=e322]: 品牌直供 · 假一赔十
+      - generic [ref=e323]:
+        - emphasis [ref=e324]: ↩️
+        - generic [ref=e325]: 7 天无理由
+        - generic [ref=e326]: 不喜欢随时退
+      - generic [ref=e327]:
+        - emphasis [ref=e328]: 🚚
+        - generic [ref=e329]: 极速发货
+        - generic [ref=e330]: 当日 18 点前出库
+      - generic [ref=e331]:
+        - emphasis [ref=e332]: 📰
+        - generic [ref=e333]: 媒体监督
+        - generic [ref=e334]: 编辑部全程品控
+  - contentinfo [ref=e335]:
+    - generic [ref=e336]:
+      - generic [ref=e337]:
+        - heading "寰宇传媒信息技术股份有限公司" [level=5] [ref=e338]
+        - paragraph [ref=e339]: 洞察世界 · 传递真相 · 连接未来
+      - generic [ref=e340]:
+        - heading "内容频道" [level=5] [ref=e341]
+        - list [ref=e342]:
+          - listitem [ref=e343]:
+            - link "国内" [ref=e344] [cursor=pointer]:
+              - /url: ./channel.html?id=china
+            - text: ·
+            - link "国际" [ref=e345] [cursor=pointer]:
+              - /url: ./channel.html?id=world
+            - text: ·
+            - link "财经" [ref=e346] [cursor=pointer]:
+              - /url: ./channel.html?id=finance
+          - listitem [ref=e347]:
+            - link "科技" [ref=e348] [cursor=pointer]:
+              - /url: ./channel.html?id=tech
+            - text: ·
+            - link "体育" [ref=e349] [cursor=pointer]:
+              - /url: ./channel.html?id=sports
+            - text: ·
+            - link "娱乐" [ref=e350] [cursor=pointer]:
+              - /url: ./channel.html?id=ent
+          - listitem [ref=e351]:
+            - link "汽车" [ref=e352] [cursor=pointer]:
+              - /url: ./channel.html?id=auto
+            - text: ·
+            - link "文化" [ref=e353] [cursor=pointer]:
+              - /url: ./channel.html?id=culture
+            - text: ·
+            - link "健康" [ref=e354] [cursor=pointer]:
+              - /url: ./channel.html?id=health
+          - listitem [ref=e355]:
+            - link "广场" [ref=e356] [cursor=pointer]:
+              - /url: ./square.html
+            - text: ·
+            - link "视频频道" [ref=e357] [cursor=pointer]:
+              - /url: ./video.html
+      - generic [ref=e358]:
+        - heading "开放平台" [level=5] [ref=e359]
+        - list [ref=e360]:
+          - listitem [ref=e361]:
+            - link "门户数据接口" [ref=e362] [cursor=pointer]:
+              - /url: ./api/v1/home
+          - listitem [ref=e363]:
+            - link "App 信息流接口" [ref=e364] [cursor=pointer]:
+              - /url: ./api/v1/feed
+          - listitem [ref=e365]:
+            - link "增量同步接口" [ref=e366] [cursor=pointer]:
+              - /url: ./api/v1/sync
+          - listitem [ref=e367]:
+            - link "广场信息流接口" [ref=e368] [cursor=pointer]:
+              - /url: ./api/v1/square
+          - listitem [ref=e369]:
+            - link "内容运营后台" [ref=e370] [cursor=pointer]:
+              - /url: ./admin.html
+      - generic [ref=e371]:
+        - heading "关于我们" [level=5] [ref=e372]
+        - list [ref=e373]:
+          - listitem [ref=e374]:
+            - link "寰宇严选 · 买手好物" [ref=e375] [cursor=pointer]:
+              - /url: ./mall.html
+          - listitem [ref=e376]: 新闻热线：400-000-0000
+          - listitem [ref=e377]: 商务合作：bd@huanyu.example
+          - listitem [ref=e378]: 内容纠错：editor@huanyu.example
+    - generic [ref=e379]:
+      - generic [ref=e380]: Copyright © 2015-2026 寰宇传媒信息技术股份有限公司 版权所有
+      - generic [ref=e381]: 京ICP备XXXXXXXX号 · 互联网新闻信息服务许可：（示例）00000000 号 · 本站为演示站点，内容均为示例稿件

@@ -40,6 +40,7 @@ const CHANNEL_VISUAL = {
   world: '城市 建筑 风光',
   finance: '金融 交易 市场',
   tech: '科技 数码 电子',
+  ai: '人工智能 数据 科技',
   sports: '体育 竞技 赛场',
   ent: '舞台 演出 表演',
   auto: '汽车 车辆',

@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - heading "寰宇新闻网 · 内容运营后台" [level=1] [ref=e4]
+  - paragraph [ref=e5]: 采集 → 审核 → 发布 一体化内容中台
+  - generic [ref=e6]:
+    - generic [ref=e7]: 账号
+    - textbox "请输入账号" [ref=e8]: admin
+  - generic [ref=e9]:
+    - generic [ref=e10]: 密码
+    - textbox "请输入密码" [ref=e11]
+  - button "登录后台" [ref=e13] [cursor=pointer]
+  - paragraph [ref=e14]:
+    - text: 默认账号：admin / admin888（首次部署后请立即修改） 返回前台：
+    - link "首页" [ref=e15] [cursor=pointer]:
+      - /url: /
