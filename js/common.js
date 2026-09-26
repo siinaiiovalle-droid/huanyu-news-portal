@@ -42,6 +42,7 @@
     world: { c: '#0b4f9e', bg: '#e8f1fb' },
     finance: { c: '#8a4b07', bg: '#fdf2e3' },
     tech: { c: '#4338ca', bg: '#ecebfd' },
+    ai: { c: '#7e22ce', bg: '#f5e9fe' },
     sports: { c: '#07734a', bg: '#e5f6ee' },
     ent: { c: '#b3165a', bg: '#fdeaf2' },
     auto: { c: '#0b6f68', bg: '#e3f5f3' },
@@ -204,7 +205,11 @@
       <nav class="nav container">
         <a href="./" class="${!active ? 'active' : ''}">要闻</a>
         <a href="./mall.html" class="${active === 'mall' ? 'active' : ''}">严选商城</a>
-        ${order.map((c) => `<a href="${c.isSocial ? './square.html' : `./channel.html?id=${encodeURIComponent(c.id)}`}" class="${active === c.id ? 'active' : ''}">${escapeHtml(c.name)}</a>`).join('')}
+        ${order.map((c) => {
+          // 有专属专题页的栏目（如 AI 瞭望台）直达 ai.html，其余走通用频道页
+          const href = c.page || (c.isSocial ? './square.html' : `./channel.html?id=${encodeURIComponent(c.id)}`);
+          return `<a href="${href}" class="${active === c.id ? 'active' : ''}">${escapeHtml(c.name)}</a>`;
+        }).join('')}
       </nav>`;
     const form = document.getElementById('search-form');
     form.addEventListener('submit', (e) => {
@@ -234,6 +239,7 @@
             <li><a href="./channel.html?id=tech">科技</a> · <a href="./channel.html?id=sports">体育</a> · <a href="./channel.html?id=ent">娱乐</a></li>
             <li><a href="./channel.html?id=auto">汽车</a> · <a href="./channel.html?id=culture">文化</a> · <a href="./channel.html?id=health">健康</a></li>
             <li><a href="./square.html">广场</a> · <a href="./video.html">视频频道</a></li>
+            <li><a href="./ai.html">AI 前沿技术瞭望台</a></li>
           </ul>
         </div>
         <div class="footer-col">
