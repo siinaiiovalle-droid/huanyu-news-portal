@@ -1,0 +1,36 @@
+name: huanyu
+description: "寰宇一体化平台 App：资讯 · 短视频直播 · 聊天 · 支付 · 商城 · 本地生活 · 小程序"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  video_player: ^2.9.1
+  qr_flutter: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/videos/
+    - assets/shop/
+    - assets/life/
+
+  # 内置中文字体：Web 端不再依赖 fonts.gstatic.com（受限网络下会乱码/白屏）
+  fonts:
+    - family: AppHei
+      fonts:
+        - asset: assets/fonts/SimHei.ttf

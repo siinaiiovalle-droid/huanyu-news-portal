@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>寰宇新闻网 · 海报</title>
+<style>
+  :root {
+    --paper: #f7f2e8;
+    --ink: #1d1b19;
+    --ink-soft: #5b534c;
+    --red: #d3402c;
+    --gold: #c8912b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1440px; height: 2160px; }
+  body {
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  /* 纸张质感：暖光 + 细微纹理 */
+  .paper-light {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 700px at 12% 8%, rgba(255,255,255,.85), transparent 60%),
+      radial-gradient(800px 600px at 92% 62%, rgba(211,64,44,.08), transparent 62%),
+      radial-gradient(700px 700px at 70% 100%, rgba(200,145,43,.12), transparent 60%);
+    pointer-events: none;
+  }
+  .grain {
+    position: absolute; inset: 0; opacity: .05; pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, #000 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, #000 0 1px, transparent 1px 4px);
+  }
+
+  .wrap { position: relative; height: 100%; padding: 96px 92px 70px; display: flex; flex-direction: column; }
+
+  /* 顶部小标识：像报纸刊头，不做成模块 */
+  .masthead { display: flex; align-items: flex-end; justify-content: space-between; }
+  .masthead .left { display: flex; align-items: center; gap: 16px; }
+  .masthead .mark {
+    width: 62px; height: 62px; border-radius: 14px; background: var(--red);
+    color: #fff; font-size: 34px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    transform: rotate(-3deg);
+    box-shadow: 0 10px 22px rgba(211,64,44,.28);
+  }
+  .masthead .en { font-size: 26px; letter-spacing: 8px; color: var(--ink-soft); font-weight: 600; }
+  .masthead .date { font-size: 25px; color: var(--ink-soft); letter-spacing: 2px; }
+  .hairline { height: 2px; background: rgba(29,27,25,.16); margin-top: 22px; }
+
+  /* 主标题 */
+  .headline { margin-top: 70px; }
+  .headline .kicker {
+    display: inline-block; font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 40px; color: var(--red); letter-spacing: 4px; transform: rotate(-1.5deg);
+  }
+  .headline h1 {
+    margin-top: 30px; font-size: 148px; line-height: 1.05; font-weight: 800; letter-spacing: 4px;
+  }
+  .headline h1 em {
+    font-style: normal; color: var(--red);
+    background: linear-gradient(transparent 68%, rgba(211,64,44,.22) 68%);
+  }
+  .headline .sub {
+    margin-top: 26px; font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 46px; letter-spacing: 6px; color: var(--ink-soft);
+  }
+
+  /* 生活化主图：出血到两侧，像杂志跨页照片 */
+  .photo {
+    position: relative; margin: 66px -92px 0; height: 760px; overflow: hidden;
+    box-shadow: 0 30px 70px rgba(29,27,25,.22);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,16,26,.42) 0%, rgba(10,16,26,.06) 42%, rgba(247,242,232,.86) 100%);
+  }
+  .photo .caption {
+    position: absolute; left: 92px; top: 60px;
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 50px; line-height: 1.5; color: #fff; letter-spacing: 3px; white-space: nowrap;
+    text-shadow: 0 4px 22px rgba(0,0,0,.65);
+  }
+  .photo .caption small {
+    display: block; margin-top: 16px; font-family: inherit; font-size: 30px; letter-spacing: 3px;
+    color: #fff; text-shadow: 0 3px 16px rgba(0,0,0,.75);
+  }
+
+  /* 生活化文案：一段话，不做卡片 */
+  .story { margin-top: 54px; font-size: 36px; line-height: 1.85; color: #3a3430; letter-spacing: 1px; max-width: 1180px; }
+  .story b { color: var(--red); font-weight: 700; }
+  .tags {
+    margin-top: 40px; font-size: 30px; line-height: 1.6; color: var(--ink-soft); letter-spacing: 0;
+    font-family: "KaiTi", "STKaiti", "楷体", serif; white-space: nowrap;
+  }
+  .tags i { font-style: normal; color: var(--red); margin: 0 7px; }
+
+  /* 扫码区：像贴在纸上的便签，轻微歪斜 */
+  .scan { margin-top: auto; display: flex; align-items: center; gap: 60px; }
+  .sticker {
+    position: relative; flex: none; width: 372px; padding: 22px; background: #fff; border-radius: 20px;
+    transform: rotate(-2.4deg);
+    box-shadow: 0 22px 44px rgba(29,27,25,.24);
+  }
+  .sticker .tape {
+    position: absolute; top: -20px; left: 50%; margin-left: -86px; width: 172px; height: 44px;
+    background: rgba(255,255,255,.55); border: 1px solid rgba(29,27,25,.08);
+    transform: rotate(-4deg);
+  }
+  .sticker img { width: 100%; display: block; border-radius: 10px; }
+  .scan-text .lead {
+    font-family: "KaiTi", "STKaiti", "楷体", serif; font-size: 62px; line-height: 1.3; color: var(--ink); letter-spacing: 2px;
+  }
+  .scan-text .lead u {
+    text-decoration: none; color: var(--red);
+    background: linear-gradient(transparent 72%, rgba(211,64,44,.25) 72%);
+  }
+  .scan-text .tip { margin-top: 22px; font-size: 28px; color: var(--ink-soft); letter-spacing: 1px; }
+  .scan-text .url { margin-top: 18px; font-size: 25px; font-weight: 700; color: #1c5c86; word-break: break-all; line-height: 1.5; }
+
+  .foot {
+    margin-top: 46px; padding-top: 26px; border-top: 2px solid rgba(29,27,25,.14);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 25px; color: var(--ink-soft); letter-spacing: 2px;
+  }
+  .foot .slogan { font-family: "KaiTi", "STKaiti", "楷体", serif; font-size: 30px; color: var(--ink); letter-spacing: 4px; }
+</style>
+</head>
+<body>
+  <div class="paper-light"></div>
+  <div class="grain"></div>
+
+  <div class="wrap">
+    <div class="masthead">
+      <div class="left">
+        <div class="mark">寰宇</div>
+        <div class="en">HUANYU NEWS</div>
+      </div>
+      <div class="date">每天更新 · 打开就看</div>
+    </div>
+    <div class="hairline"></div>
+
+    <div class="headline">
+      <div class="kicker">早上七点，世界已经更新</div>
+      <h1>寰宇<em>新闻网</em></h1>
+      <div class="sub">洞察世界 · 传递真相 · 连接未来</div>
+    </div>
+
+    <div class="photo">
+      <img src="bg-city.jpg" alt="城市生活街景">
+      <div class="veil"></div>
+      <div class="caption">
+        通勤路上、午休间隙、睡前十分钟
+        <small>一天的大小事，随时打开就看</small>
+      </div>
+    </div>
+
+    <div class="story">
+      从<b>国内国际</b>要闻，到<b>财经科技</b>动向，再到新开的 <b>AI 前沿技术瞭望台</b>；
+      想放松就逛<b>视频</b>、<b>广场</b>和<b>寰宇严选</b>。手机电脑都能看，不用下载。
+    </div>
+
+    <div class="tags">
+      国内<i>·</i>国际<i>·</i>财经<i>·</i>科技<i>·</i>AI瞭望台<i>·</i>体育<i>·</i>娱乐<i>·</i>汽车<i>·</i>文化<i>·</i>健康<i>·</i>视频<i>·</i>广场
+    </div>
+
+    <div class="scan">
+      <div class="sticker">
+        <div class="tape"></div>
+        <img src="qr.png" alt="扫码访问寰宇新闻网">
+      </div>
+      <div class="scan-text">
+        <div class="lead">扫一扫，<u>直接进站</u></div>
+        <div class="tip">手机相机 / 微信扫一扫即可打开全站</div>
+        <div class="url">https://siinaiiovalle-droid.github.io/huanyu-news-portal/</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div>寰宇传媒信息技术股份有限公司</div>
+      <div class="slogan">洞察世界 · 传递真相 · 连接未来</div>
+    </div>
+  </div>
+</body>
+</html>
