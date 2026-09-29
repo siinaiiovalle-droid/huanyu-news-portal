@@ -1,5 +1,286 @@
 [
   {
+    "id": "mumidu4bbx3sj2",
+    "createdAt": "2026-09-29T10:03:34.715Z",
+    "updatedAt": "2026-09-29T10:03:34.715Z",
+    "type": "collect",
+    "trigger": "schedule",
+    "fetched": 447,
+    "added": 26,
+    "duplicated": 315,
+    "rejected": 3,
+    "autoPublished": 6,
+    "failed": 10,
+    "images": {
+      "filled": 5,
+      "failed": 5,
+      "pool": {
+        "checked": 12,
+        "filled": 4,
+        "failed": 3
+      },
+      "reasons": [
+        "河南安阳发布甲骨文研究新成果：数智化：超时未找到合格配图（原文页配图：分辨率不足 510x340 / 原文页配图：分辨率不足 500x322）",
+        "亚运会｜再添一金！男子3米跳板王宗源：超时未找到合格配图（原文页配图：分辨率不足 500x322 / 原文页配图：分辨率不足 510x340）",
+        "动易科技刘晨澔：人形机器人羽毛球对拉：超时未找到合格配图（原文配图：网络 Client network socket disconnected before secure TLS connection was established）",
+        "亚运会｜再添一金！男子3米跳板王宗源：单篇配图超时，留到下次补图"
+      ]
+    },
+    "durationMs": 210490,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "error": "HTTP 502"
+      },
+      {
+        "name": "新浪·要闻",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "中新网·滚动",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "人民网·国际",
+        "error": "HTTP 502"
+      },
+      {
+        "name": "中新网·国际",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "新浪·财经",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "人民网·财经",
+        "error": "HTTP 502"
+      },
+      {
+        "name": "中新网·财经",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "新浪·科技",
+        "error": "Client network socket disconnected before secure TLS connection was established"
+      },
+      {
+        "name": "人民网·体育",
+        "error": "HTTP 502"
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 23,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "量子位·AI 前沿",
+        "fetched": 10,
+        "added": 2,
+        "offTopic": 4
+      },
+      {
+        "name": "雷峰网·AI 观察",
+        "fetched": 20,
+        "added": 4,
+        "offTopic": 10
+      },
+      {
+        "name": "InfoQ·技术前沿",
+        "fetched": 20,
+        "added": 0,
+        "offTopic": 10
+      },
+      {
+        "name": "钛媒体·科技产业",
+        "fetched": 19,
+        "added": 5,
+        "offTopic": 6
+      }
+    ],
+    "finishedAt": "2026-09-29T10:03:34.715Z"
+  },
+  {
+    "id": "mulz7uws5wjsgr",
+    "createdAt": "2026-09-29T01:07:03.100Z",
+    "updatedAt": "2026-09-29T01:07:03.100Z",
+    "type": "collect",
+    "trigger": "cli",
+    "fetched": 983,
+    "added": 38,
+    "duplicated": 783,
+    "rejected": 15,
+    "autoPublished": 2,
+    "failed": 0,
+    "images": {
+      "filled": 8,
+      "failed": 1,
+      "pool": {
+        "checked": 12,
+        "filled": 8,
+        "failed": 1
+      },
+      "reasons": [
+        "“国产外语剧”风起：各省的AI留子，：超时未找到合格配图（原文配图：比例过窄 1080x1611 / 分辨率不足 768x1146）"
+      ]
+    },
+    "durationMs": 67739,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 15,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "量子位·AI 前沿",
+        "fetched": 10,
+        "added": 1,
+        "offTopic": 2
+      },
+      {
+        "name": "雷峰网·AI 观察",
+        "fetched": 20,
+        "added": 6,
+        "offTopic": 6
+      },
+      {
+        "name": "InfoQ·技术前沿",
+        "fetched": 20,
+        "added": 0,
+        "offTopic": 10
+      },
+      {
+        "name": "钛媒体·科技产业",
+        "fetched": 17,
+        "added": 4,
+        "offTopic": 13
+      }
+    ],
+    "finishedAt": "2026-09-29T01:07:03.100Z"
+  },
+  {
     "id": "mukguhg67gyzrw",
     "createdAt": "2026-09-27T23:44:59.862Z",
     "updatedAt": "2026-09-27T23:44:59.862Z",

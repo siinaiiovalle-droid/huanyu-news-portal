@@ -11,11 +11,11 @@
     ],
     "id": "s_mu3fhi8h39ox9q",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 100,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:18.366Z",
-    "updatedAt": "2026-09-27T23:43:18.366Z"
+    "lastError": "HTTP 502",
+    "lastRunAt": "2026-09-29T10:00:07.561Z",
+    "updatedAt": "2026-09-29T10:00:07.561Z"
   },
   {
     "name": "新浪·要闻",
@@ -29,11 +29,11 @@
     ],
     "id": "s_mu3fhi8ht7dva2",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 1,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:18.520Z",
-    "updatedAt": "2026-09-27T23:43:18.520Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:10.181Z",
+    "updatedAt": "2026-09-29T10:00:10.181Z"
   },
   {
     "name": "中新网·滚动",
@@ -47,11 +47,11 @@
     ],
     "id": "s_mu3fhi8h94ra2n",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 30,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:18.714Z",
-    "updatedAt": "2026-09-27T23:43:18.714Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:13.786Z",
+    "updatedAt": "2026-09-29T10:00:13.786Z"
   },
   {
     "name": "人民网·国际",
@@ -65,11 +65,11 @@
     ],
     "id": "s_mu3fhi8hsk7hm4",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 100,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:19.069Z",
-    "updatedAt": "2026-09-27T23:43:19.069Z"
+    "lastError": "HTTP 502",
+    "lastRunAt": "2026-09-29T10:00:16.624Z",
+    "updatedAt": "2026-09-29T10:00:16.624Z"
   },
   {
     "name": "中新网·国际",
@@ -83,11 +83,11 @@
     ],
     "id": "s_mu3fhi8hxdolex",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 30,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:19.239Z",
-    "updatedAt": "2026-09-27T23:43:19.239Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:20.069Z",
+    "updatedAt": "2026-09-29T10:00:20.069Z"
   },
   {
     "name": "新浪·财经",
@@ -101,11 +101,11 @@
     ],
     "id": "s_mu3fhi8hynrwo5",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 40,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:19.547Z",
-    "updatedAt": "2026-09-27T23:43:19.547Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:22.269Z",
+    "updatedAt": "2026-09-29T10:00:22.269Z"
   },
   {
     "name": "人民网·财经",
@@ -119,11 +119,11 @@
     ],
     "id": "s_mu3fhi8hshmece",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 100,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:19.952Z",
-    "updatedAt": "2026-09-27T23:43:19.952Z"
+    "lastError": "HTTP 502",
+    "lastRunAt": "2026-09-29T10:00:25.194Z",
+    "updatedAt": "2026-09-29T10:00:25.194Z"
   },
   {
     "name": "中新网·财经",
@@ -137,11 +137,11 @@
     ],
     "id": "s_mu3fhi8hxuyicg",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 30,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:20.177Z",
-    "updatedAt": "2026-09-27T23:43:20.177Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:28.912Z",
+    "updatedAt": "2026-09-29T10:00:28.912Z"
   },
   {
     "name": "新浪·科技",
@@ -155,11 +155,11 @@
     ],
     "id": "s_mu3fhi8h6vqdxc",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 15,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:20.520Z",
-    "updatedAt": "2026-09-27T23:43:20.520Z"
+    "lastError": "Client network socket disconnected before secure TLS connection was established",
+    "lastRunAt": "2026-09-29T10:00:31.105Z",
+    "updatedAt": "2026-09-29T10:00:31.105Z"
   },
   {
     "name": "中新网·科技",
@@ -186,11 +186,11 @@
     ],
     "id": "s_mu3fhi8hm57bob",
     "weight": 1,
-    "lastStatus": "ok",
+    "lastStatus": "error",
     "lastCount": 100,
-    "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:20.881Z",
-    "updatedAt": "2026-09-27T23:43:20.881Z"
+    "lastError": "HTTP 502",
+    "lastRunAt": "2026-09-29T10:00:34.094Z",
+    "updatedAt": "2026-09-29T10:00:34.094Z"
   },
   {
     "name": "中新网·体育",
@@ -207,8 +207,8 @@
     "lastStatus": "ok",
     "lastCount": 30,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:21.123Z",
-    "updatedAt": "2026-09-27T23:43:21.123Z"
+    "lastRunAt": "2026-09-29T10:00:38.462Z",
+    "updatedAt": "2026-09-29T10:00:38.462Z"
   },
   {
     "name": "人民网·娱乐",
@@ -225,8 +225,8 @@
     "lastStatus": "ok",
     "lastCount": 99,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:21.892Z",
-    "updatedAt": "2026-09-27T23:43:21.892Z"
+    "lastRunAt": "2026-09-29T10:00:52.506Z",
+    "updatedAt": "2026-09-29T10:00:52.506Z"
   },
   {
     "name": "人民网·文化",
@@ -243,8 +243,8 @@
     "lastStatus": "ok",
     "lastCount": 96,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:22.835Z",
-    "updatedAt": "2026-09-27T23:43:22.836Z"
+    "lastRunAt": "2026-09-29T10:00:54.531Z",
+    "updatedAt": "2026-09-29T10:00:54.531Z"
   },
   {
     "name": "中新网·文化",
@@ -261,8 +261,8 @@
     "lastStatus": "ok",
     "lastCount": 30,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:23.102Z",
-    "updatedAt": "2026-09-27T23:43:23.102Z"
+    "lastRunAt": "2026-09-29T10:00:54.836Z",
+    "updatedAt": "2026-09-29T10:00:54.836Z"
   },
   {
     "name": "人民网·健康",
@@ -279,8 +279,8 @@
     "lastStatus": "ok",
     "lastCount": 100,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:24.017Z",
-    "updatedAt": "2026-09-27T23:43:24.017Z"
+    "lastRunAt": "2026-09-29T10:00:57.236Z",
+    "updatedAt": "2026-09-29T10:00:57.236Z"
   },
   {
     "name": "中新网·健康",
@@ -295,10 +295,10 @@
     "id": "s_mu3fhi8hg91b8o",
     "weight": 1,
     "lastStatus": "ok",
-    "lastCount": 28,
+    "lastCount": 23,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:24.270Z",
-    "updatedAt": "2026-09-27T23:43:24.270Z"
+    "lastRunAt": "2026-09-29T10:00:57.724Z",
+    "updatedAt": "2026-09-29T10:00:57.724Z"
   },
   {
     "name": "量子位·AI 前沿",
@@ -315,8 +315,8 @@
     "lastStatus": "ok",
     "lastCount": 10,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:24.467Z",
-    "updatedAt": "2026-09-27T23:43:24.467Z"
+    "lastRunAt": "2026-09-29T10:00:58.417Z",
+    "updatedAt": "2026-09-29T10:00:58.417Z"
   },
   {
     "name": "雷峰网·AI 观察",
@@ -333,8 +333,8 @@
     "lastStatus": "ok",
     "lastCount": 20,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:25.272Z",
-    "updatedAt": "2026-09-27T23:43:25.272Z"
+    "lastRunAt": "2026-09-29T10:00:59.746Z",
+    "updatedAt": "2026-09-29T10:00:59.746Z"
   },
   {
     "name": "InfoQ·技术前沿",
@@ -351,8 +351,8 @@
     "lastStatus": "ok",
     "lastCount": 20,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:25.740Z",
-    "updatedAt": "2026-09-27T23:43:25.740Z"
+    "lastRunAt": "2026-09-29T10:01:00.252Z",
+    "updatedAt": "2026-09-29T10:01:00.252Z"
   },
   {
     "name": "钛媒体·科技产业",
@@ -367,9 +367,9 @@
     "id": "s_a1w0tchtmt4xx",
     "weight": 1,
     "lastStatus": "ok",
-    "lastCount": 18,
+    "lastCount": 19,
     "lastError": "",
-    "lastRunAt": "2026-09-27T23:43:27.380Z",
-    "updatedAt": "2026-09-27T23:43:27.380Z"
+    "lastRunAt": "2026-09-29T10:01:01.640Z",
+    "updatedAt": "2026-09-29T10:01:01.640Z"
   }
 ]

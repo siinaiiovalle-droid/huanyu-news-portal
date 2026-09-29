@@ -1,5 +1,4389 @@
 [
   {
+    "id": "mumiak08n4nwfu",
+    "createdAt": "2026-09-29T10:01:01.640Z",
+    "updatedAt": "2026-09-29T10:01:01.640Z",
+    "title": "突破效率桎梏，系统性构建 Agentic 组织",
+    "summary": "智能体组织的本质，不在于部署了多少 AI 工具，而在于是否将 AI 能力系统性地写入了组织的架构、流程、知识体系与文化基因。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "效率桎梏",
+      "系统性构建"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8155252.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/20260929094930100.png",
+    "content": [
+      {
+        "type": "p",
+        "text": "智能体组织的本质，不在于部署了多少 AI 工具，而在于是否将 AI 能力系统性地写入了组织的架构、流程、知识体系与文化基因。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "突破效率桎梏，系统性构建 Agentic 组织"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8155252.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T08:52:34.000Z",
+    "rssPublishedAt": "2026-09-29T08:52:34.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T10:01:01.640Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:01:01.640Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiak024hcwnf",
+    "createdAt": "2026-09-29T10:01:01.634Z",
+    "updatedAt": "2026-09-29T10:01:01.634Z",
+    "title": "AI陪伴硬件，开始比拼“言外之意”",
+    "summary": "AI陪伴正在降低语言权重。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "AI陪伴硬件",
+      "比拼“言外之意”"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8155843.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/320289d10df808f9ebaea89b6efbbaec_1790674877.jpg",
+    "content": [
+      {
+        "type": "p",
+        "text": "AI陪伴正在降低语言权重。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "AI陪伴硬件，开始比拼“言外之意”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8155843.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:41:12.000Z",
+    "rssPublishedAt": "2026-09-29T09:41:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T10:01:01.634Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 60 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:01:01.634Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiajzu7fhreo",
+    "createdAt": "2026-09-29T10:01:01.626Z",
+    "updatedAt": "2026-09-29T10:01:01.626Z",
+    "title": "豆包盯上了出行酒旅等生意",
+    "summary": "一个日活超1.68亿的AI助手，开始跟你聊打车、酒店和晚饭了。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "豆包盯上了出",
+      "行酒旅等生意"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8155968.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2023/tkrss/53465uytj3.png",
+    "content": [
+      {
+        "type": "p",
+        "text": "一个日活超1.68亿的AI助手，开始跟你聊打车、酒店和晚饭了。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "豆包盯上了出行酒旅等生意"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8155968.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:43:56.000Z",
+    "rssPublishedAt": "2026-09-29T09:43:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T10:01:01.626Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 60 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:01:01.626Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiajzouqno8h",
+    "createdAt": "2026-09-29T10:01:01.620Z",
+    "updatedAt": "2026-09-29T10:01:01.620Z",
+    "title": "Muse企服版刚成立，百亿美金上市企业CEO就跳槽加入",
+    "summary": "MongoDB CEO离职加入Meta：大模型公司开始争夺生意操盘手。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "Muse企服版刚成立",
+      "百亿美金"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8155944.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/80e9e523b51a32623d8ef2c437c624e5_1790675053.jpg",
+    "content": [
+      {
+        "type": "p",
+        "text": "MongoDB CEO离职加入Meta：大模型公司开始争夺生意操盘手。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "Muse企服版刚成立，百亿美金上市企业CEO就跳"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8155944.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:44:09.000Z",
+    "rssPublishedAt": "2026-09-29T09:44:09.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T10:01:01.619Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:01:01.620Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiajzhwr5csu",
+    "createdAt": "2026-09-29T10:01:01.613Z",
+    "updatedAt": "2026-09-29T10:01:07.436Z",
+    "title": "海目星抛22.6亿定增计划，激光设备商跨界押注AI与固态电池",
+    "summary": "上半年刚实现扭亏，新赛道能否撑起第二增长曲线。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "海目星抛22",
+      "6亿定增计划"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8155935.html",
+    "cover": "/img/news/i-mumiajzhwr5csu-cover.jpg",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/f9f8a3d542522e354b457b71e2bfbd44_1790675829.png",
+    "content": [
+      {
+        "type": "p",
+        "text": "上半年刚实现扭亏，新赛道能否撑起第二增长曲线。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "海目星抛22.6亿定增计划，激光设备商跨界押注A"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8155935.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:57:07.000Z",
+    "rssPublishedAt": "2026-09-29T09:57:07.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T10:01:01.613Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:01:01.613Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaijl705ar9",
+    "createdAt": "2026-09-29T10:00:59.745Z",
+    "updatedAt": "2026-09-29T10:00:59.745Z",
+    "title": "海光1000系列发布，端侧市场为何需要另一颗CPU？",
+    "summary": "近日，海光信息发布了1000系列CPU，首次推出专门面向工业控制等端侧场景设计的处理器。 这颗芯片是海光迄今封装尺寸最小的一颗CPU，海光信息总裁助理、创新产品部 副总经理李成 在发布会上表示，这可能也是公司做过的最复杂",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "海光1000系列",
+      "端侧市场"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/chips/Vg21PfMOVphziqqK.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928//6ab9e970210d2.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "近日，海光信息发布了1000系列CPU，首次推出专门面向工业控制等端侧场景设计的处理器。"
+      },
+      {
+        "type": "p",
+        "text": "这颗芯片是海光迄今封装尺寸最小的一颗CPU，海光信息总裁助理、创新产品部 副总经理李成 在发布会上表示，这可能也是公司做过的最复杂的单SoC芯片。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "海光1000系列发布，端侧市场为何需要另一颗CP"
+      },
+      {
+        "type": "p",
+        "text": "从服务器、工作站走向更广泛的工业设备，海光需要为新的使用场景重新定义产品。"
+      },
+      {
+        "type": "p",
+        "text": "端侧CPU不能照搬服务器的设计 工业设备对处理器的要求，与服务器和普通消费终端存在明显差异。"
+      },
+      {
+        "type": "p",
+        "text": "服务器通常部署在机房，工业设备则可能安装在产线、控制柜或户外终端中。"
+      },
+      {
+        "type": "p",
+        "text": "不同设备留给主板的空间、供电和散热条件各异，还需要连接显示、网络、传感器及其他输入输出设备。"
+      },
+      {
+        "type": "p",
+        "text": "部分设备需要多年连续运行，产品一旦完成设计和验证，处理器及外围器件的更换甚至会涉及软硬件重新适配。"
+      },
+      {
+        "type": "p",
+        "text": "因此， 计算性能固然重要，却也只是工业设备选型时考虑的因素之一 ；增加核心数可能推高功耗和成本，增加片上功能又会占用芯片面积。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/chips/Vg21PfMOVphziqqK.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T04:20:00.000Z",
+    "rssPublishedAt": "2026-09-28T04:20:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T10:00:59.745Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 29.7,
+      "base": 30,
+      "freshness": 6,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": [
+        "首次"
+      ]
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T10:00:59.745Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:00:59.745Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mumiaijfvckvc8",
+    "createdAt": "2026-09-29T10:00:59.739Z",
+    "updatedAt": "2026-09-29T10:00:59.739Z",
+    "title": "从「算得快」到「干得了活」：AI推理时代，CPU如何重塑算力版图",
+    "summary": "记者：郭思 编辑：包永刚 “善弈者谋势，不善弈者谋子。”这句古老的智慧，正精准地映射出当下AI产业的演进轨迹。 当行业狂热于大模型训练阶段的算力军备竞赛时，一场更为深刻的重心迁移正在悄然发生，AI已经从回答问题走向解决问",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "从「算得快」",
+      "「干得了活」"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/chipdesign/v7Oa5s4M9TfJpegJ.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928//6ab9ff171fc0b.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "记者：郭思 编辑：包永刚 “善弈者谋势，不善弈者谋子。"
+      },
+      {
+        "type": "p",
+        "text": "”这句古老的智慧，正精准地映射出当下AI产业的演进轨迹。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "从「算得快」到「干得了活」：AI推理时代，CPU"
+      },
+      {
+        "type": "p",
+        "text": "当行业狂热于大模型训练阶段的算力军备竞赛时，一场更为深刻的重心迁移正在悄然发生，AI已经从回答问题走向解决问题，从单纯的模型训练走向复杂的智能体推理。"
+      },
+      {
+        "type": "p",
+        "text": "这种转变对底层算力架构的冲击，远比表面看起来要深远得多。"
+      },
+      {
+        "type": "p",
+        "text": "如果说训练阶段是GPU闷头计算的大兵团作战，那么推理时代则是一场需要精密调度的现代化战争。"
+      },
+      {
+        "type": "p",
+        "text": "在这场变革中，英特尔在9月22的Connection大会上给出了一个明确的判断：推理时代，CPU正从“配角”蜕变为整个系统的“控制中枢”。"
+      },
+      {
+        "type": "p",
+        "text": "当AI真正开始干活，算力的定义正在被重写。"
+      },
+      {
+        "type": "p",
+        "text": "01、数字AI：当智能体规模化，CPU为何重回C位。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/chipdesign/v7Oa5s4M9TfJpegJ.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T05:51:00.000Z",
+    "rssPublishedAt": "2026-09-28T05:51:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T10:00:59.739Z",
+    "score": 43,
+    "metrics": {
+      "ageHours": 28.2,
+      "base": 30,
+      "freshness": 6,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 43 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T10:00:59.739Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:00:59.739Z",
+      "comment": "分值 43 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mumiaiix011n2i",
+    "createdAt": "2026-09-29T10:00:59.721Z",
+    "updatedAt": "2026-09-29T10:00:59.721Z",
+    "title": "从创意落地到创业起步，嘉立创延长AI硬件创新支持链条",
+    "summary": "9月19日，由福田区科技和工业信息化局指导、嘉立创集团主办的第四届开源硬件星火会暨全球AI硬件创新生态大会在深圳会展中心（福田）举行。本届大会开源、闭源两大赛道累计征集超过400个项目作品，覆盖具身智能、机器人关键硬件、",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "从创意落地到",
+      "地到创业起步"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/industrynews/eDhvnoxGSSJk1eQo.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260929/6abb202ed6d50.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "9月19日，由福田区科技和工业信息化局指导、嘉立创集团主办的第四届开源硬件星火会暨全球AI硬件创新生态大会在深圳会展中心（福田）举行。"
+      },
+      {
+        "type": "p",
+        "text": "本届大会开源、闭源两大赛道累计征集超过400个项目作品，覆盖具身智能、机器人关键硬件、AI边缘计算、智能终端等方向，来自多个国家和地区的2200余名创新者到场参与。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "从创意落地到创业起步，嘉立创延长AI硬件创新支持"
+      },
+      {
+        "type": "p",
+        "text": "前一天，面向商业化项目的2026星火全球硬件创新大赛在福田新一代产业园举行总决赛，20支海内外团队在经历前期选拔、加速营赋能后展开角逐，最终诞生9个获奖项目。"
+      },
+      {
+        "type": "p",
+        "text": "同场，嘉立创开物孵化器正式启动。"
+      },
+      {
+        "type": "p",
+        "text": "大会发布新一轮硬件创新扶持措施，覆盖研发设施、产业场景与市场渠道、资本支持三个方面。"
+      },
+      {
+        "type": "p",
+        "text": "对于一家已经提供设计工具、元器件采购和制造服务的企业而言，启动孵化器意味着什么。"
+      },
+      {
+        "type": "p",
+        "text": "一个产品构想，需要经过电路设计、器件选型、打样和装配，才能成为可以运行、接受检验的实物。"
+      },
+      {
+        "type": "p",
+        "text": "开发者能否便捷地获得这些服务，影响着想法落地的速度，也影响着他们有多少机会尝试和修改。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/industrynews/eDhvnoxGSSJk1eQo.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T02:19:00.000Z",
+    "rssPublishedAt": "2026-09-29T02:19:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T10:00:59.721Z",
+    "score": 55,
+    "metrics": {
+      "ageHours": 7.7,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 55 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:59.721Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaiiqjz243l",
+    "createdAt": "2026-09-29T10:00:59.714Z",
+    "updatedAt": "2026-09-29T10:02:39.944Z",
+    "title": "动易科技刘晨澔：人形机器人羽毛球对拉 40 拍背后的分层革命 | IROS 2026",
+    "summary": "顶会上的人形机器人高动态运动场景的最新工业级进展。 作者丨 邓哲敏 编辑丨 齐铖湧 羽毛球大概是所有球类里最“不讲道理”的项目。 一颗球被重杀出去时，初速能飙到两三百公里每小时，却因为十六片羽毛带来的巨大空气阻力，速度在",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "动易科技刘晨澔",
+      "人形机器人羽"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/private/zoJ7chGiDi7IPHvN.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260929/6abb6cedb0335.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "顶会上的人形机器人高动态运动场景的最新工业级进展。"
+      },
+      {
+        "type": "p",
+        "text": "作者丨 邓哲敏 编辑丨 齐铖湧 羽毛球大概是所有球类里最“不讲道理”的项目。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "动易科技刘晨澔：人形机器人羽毛球对拉 40 拍背"
+      },
+      {
+        "type": "p",
+        "text": "一颗球被重杀出去时，初速能飙到两三百公里每小时，却因为十六片羽毛带来的巨大空气阻力，速度在飞行中急剧衰减。"
+      },
+      {
+        "type": "p",
+        "text": "轨迹也不再是抛物线，变为前段平直、后段陡降的不对称弧线。"
+      },
+      {
+        "type": "p",
+        "text": "同时，一头是软木、一头是羽毛，重心和压力中心错开，每颗球在半空都会自己翻跟头。"
+      },
+      {
+        "type": "p",
+        "text": "这个翻转，让它的轨迹变得更难预测。"
+      },
+      {
+        "type": "p",
+        "text": "可以说，打羽毛球是一场动态的冥想，身体要灵敏移动，心却要足够安静，才能提前一秒“看”到落球点。"
+      },
+      {
+        "type": "p",
+        "text": "对于人形机器人来说，这种难度系数的动静结合，需要一套分工明确的大小脑。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/private/zoJ7chGiDi7IPHvN.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T07:49:00.000Z",
+    "rssPublishedAt": "2026-09-29T07:49:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T10:00:59.714Z",
+    "score": 65,
+    "metrics": {
+      "ageHours": 2.2,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 2,
+      "weightScore": 6,
+      "media": 0,
+      "hits": [
+        "最新"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 65 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:59.714Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:39.944Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicnuw7jybqo",
+    "publishedInboxAt": "2026-09-29T10:02:39.944Z"
+  },
+  {
+    "id": "mumiahg3887kbn",
+    "createdAt": "2026-09-29T10:00:58.323Z",
+    "updatedAt": "2026-09-29T10:00:58.323Z",
+    "title": "李飞飞创业公司被苏姿丰550亿收购！世界模型最大交易落地",
+    "summary": "李飞飞将入职AMD首席科学家",
+    "channel": "ai",
+    "tags": [
+      "人工智能",
+      "李飞飞创业公",
+      "姿丰550亿"
+    ],
+    "author": "量子位·AI 前沿",
+    "sourceName": "量子位·AI 前沿",
+    "sourceUrl": "https://www.qbitai.com/2026/09/499098.html",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "李飞飞将入职AMD首席科学家"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "李飞飞创业公司被苏姿丰550亿收购！世界模型最大"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.qbitai.com/2026/09/499098.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:49:30.000Z",
+    "rssPublishedAt": "2026-09-29T00:49:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchm0de1x",
+    "collectedAt": "2026-09-29T10:00:58.323Z",
+    "score": 56,
+    "metrics": {
+      "ageHours": 9.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 8,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 56 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:58.323Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiahcvm1y3l6",
+    "createdAt": "2026-09-29T10:00:58.207Z",
+    "updatedAt": "2026-09-29T10:00:58.207Z",
+    "title": "OpenAI因新模型太强叫停发布",
+    "summary": "AGI计划暂停。",
+    "channel": "ai",
+    "tags": [
+      "人工智能",
+      "OpenAI",
+      "模型太强叫停"
+    ],
+    "author": "量子位·AI 前沿",
+    "sourceName": "量子位·AI 前沿",
+    "sourceUrl": "https://www.qbitai.com/2026/09/499140.html",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "AGI计划暂停。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "OpenAI因新模型太强叫停发布"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.qbitai.com/2026/09/499140.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T07:49:20.000Z",
+    "rssPublishedAt": "2026-09-29T07:49:20.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchm0de1x",
+    "collectedAt": "2026-09-29T10:00:58.206Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 2.2,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 8,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 60 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:58.207Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiagzg4d0he3",
+    "createdAt": "2026-09-29T10:00:57.724Z",
+    "updatedAt": "2026-09-29T10:00:57.724Z",
+    "title": "力量训练如何更有质量？专家解答",
+    "summary": "近期，国务院印发《全民健身计划(2026—2030年)》，对“十五五”时期推动全民健身事业高质量发展作出部署。我国全民健身也在不断从追求参与数量，向更加注重锻炼质量与实际健康效益转变。抗阻运动，被视作提升大众肌肉储备、延",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "力量训练",
+      "更有质量"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705383.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "近期，国务院印发《全民健身计划(2026—2030年)》，对“十五五”时期推动全民健身事业高质量发展作出部署。"
+      },
+      {
+        "type": "p",
+        "text": "我国全民健身也在不断从追求参与数量，向更加注重锻炼质量与实际健康效益转变。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "力量训练如何更有质量？专家解答"
+      },
+      {
+        "type": "p",
+        "text": "抗阻运动，被视作提升大众肌肉储备、延缓肌肉流失的重要运动方式。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705383.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T03:08:49.000Z",
+    "rssPublishedAt": "2026-09-29T03:08:49.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T10:00:57.724Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 6.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T10:00:57.724Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:00:57.724Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mumiagyas3hzlr",
+    "createdAt": "2026-09-29T10:00:57.682Z",
+    "updatedAt": "2026-09-29T10:00:57.682Z",
+    "title": "科学防控、尽早干预 儿童远离“小眼镜”这些办法很关键",
+    "summary": "教育部联合多部门开展第12个全国近视防控宣传教育月活动，今年活动的主题聚焦幼儿近视早期干预和科学防控高度近视。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "科学防控",
+      "尽早干预"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705453.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "教育部联合多部门开展第12个全国近视防控宣传教育月活动，今年活动的主题聚焦幼儿近视早期干预和科学防控高度近视。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "科学防控、尽早干预 儿童远离“小眼镜”这些办法很"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705453.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T05:44:55.000Z",
+    "rssPublishedAt": "2026-09-29T05:44:55.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T10:00:57.682Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 4.3,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:57.682Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiagwxqzm0k4",
+    "createdAt": "2026-09-29T10:00:57.633Z",
+    "updatedAt": "2026-09-29T10:00:57.633Z",
+    "title": "心脏最怕这些习惯！现在改来得及",
+    "summary": "今天(9月29日)是世界心脏日，心脏作为人体最“勤勉”的器官，每天跳动约10万次，为全身输送血液与氧气，但它也容易被不良生活习惯“拖累”。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "心脏最怕",
+      "习惯"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705510.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "今天(9月29日)是世界心脏日，心脏作为人体最“勤勉”的器官，每天跳动约10万次，为全身输送血液与氧气，但它也容易被不良生活习惯“拖累”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "心脏最怕这些习惯！现在改来得及"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705510.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T06:50:07.000Z",
+    "rssPublishedAt": "2026-09-29T06:50:07.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T10:00:57.633Z",
+    "score": 58,
+    "metrics": {
+      "ageHours": 3.2,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 58 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:57.633Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaguq6cmev1",
+    "createdAt": "2026-09-29T10:00:57.554Z",
+    "updatedAt": "2026-09-29T10:00:57.554Z",
+    "title": "一张合影里的跨越山海：四川援外医疗50年",
+    "summary": "中新网成都9月29日电 题：一张合影里的跨越山海：四川援外医疗50年",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "一张合影里的",
+      "里的跨越山海"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705593.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网成都9月29日电 题：一张合影里的跨越山海：四川援外医疗50年。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "一张合影里的跨越山海：四川援外医疗50年"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705593.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T08:12:38.000Z",
+    "rssPublishedAt": "2026-09-29T08:12:38.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T10:00:57.554Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:57.554Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiagrw6u1xbm",
+    "createdAt": "2026-09-29T10:00:57.452Z",
+    "updatedAt": "2026-09-29T10:00:57.452Z",
+    "title": "重庆“五方面”发力推进渝产中药高质量发展",
+    "summary": "中新网重庆9月29日电(陈媛)记者29日从重庆市药品监督管理局举行的新闻发布会上获悉，重庆市药监局将从抓源头、定标准、优服务、促创新、强监管五方面发力，全方位推进渝产中药高质量发展。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "重庆“五方面",
+      "五方面”发力"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705700.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网重庆9月29日电(陈媛)记者29日从重庆市药品监督管理局举行的新闻发布会上获悉，重庆市药监局将从抓源头、定标准、优服务、促创新、强监管五方面发力，全方位推进渝产中药高质量发展。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "重庆“五方面”发力推进渝产中药高质量发展"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705700.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:48:02.000Z",
+    "rssPublishedAt": "2026-09-29T09:48:02.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T10:00:57.452Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:57.452Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaer8h3t0kd",
+    "createdAt": "2026-09-29T10:00:54.836Z",
+    "updatedAt": "2026-09-29T10:00:54.836Z",
+    "title": "工业遗存邂逅节庆非遗 798老厂房街区焕新上演国潮夜",
+    "summary": "中新网北京9月29日电 (记者 应妮)将传统国风民俗搬进工业遗存街巷，798南门·慢生活商业街区日前迎来彩灯、舞狮、灯谜、汽车后备箱市集、好物交换、古风茶会、落日音乐会、京剧夜场与街巷沉浸式舞蹈等的轮番上演。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "工业遗存邂逅",
+      "邂逅节庆非遗"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-29/10705657.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月29日电 (记者 应妮)将传统国风民俗搬进工业遗存街巷，798南门·慢生活商业街区日前迎来彩灯、舞狮、灯谜、汽车后备箱市集、好物交换、古风茶会、落日音乐会、京剧夜场与街巷沉浸式舞蹈等的轮番上演。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "工业遗存邂逅节庆非遗 798老厂房街区焕新上演国"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-29/10705657.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T08:53:30.000Z",
+    "rssPublishedAt": "2026-09-29T08:53:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T10:00:54.836Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:54.836Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaequ0f330b",
+    "createdAt": "2026-09-29T10:00:54.822Z",
+    "updatedAt": "2026-09-29T10:02:38.604Z",
+    "title": "河南安阳发布甲骨文研究新成果：数智化开辟跨学科新赛道",
+    "summary": "中新社河南安阳9月29日电 (记者 王宇)甲骨文研究新成果展览及情况通报会29日在河南安阳举办，通报了近四年来甲骨文研究的最新成果。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "河南安阳",
+      "甲骨文研究新成果"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-29/10705653.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社河南安阳9月29日电 (记者 王宇)甲骨文研究新成果展览及情况通报会29日在河南安阳举办，通报了近四年来甲骨文研究的最新成果。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "河南安阳发布甲骨文研究新成果：数智化开辟跨学科新"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-29/10705653.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T08:54:18.000Z",
+    "rssPublishedAt": "2026-09-29T08:54:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T10:00:54.822Z",
+    "score": 71,
+    "metrics": {
+      "ageHours": 1.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 2,
+      "keywordScore": 10,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "最新",
+        "通报"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 71 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:54.822Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:38.604Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicmtnrz5h31",
+    "publishedInboxAt": "2026-09-29T10:02:38.604Z"
+  },
+  {
+    "id": "mumiaeqfcv5zr2",
+    "createdAt": "2026-09-29T10:00:54.807Z",
+    "updatedAt": "2026-09-29T10:00:54.807Z",
+    "title": "国内首个诺贝尔文学奖主题书店落址上海普陀",
+    "summary": "中新网上海9月29日电(高志苗)诺贝尔文学奖奖章长什么样？诺贝尔奖证书有何含义？关于诺贝尔文学奖你想知道的一切都可以在国内首个诺贝尔文学奖主题书店找到答案。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "国内",
+      "诺贝尔文学奖"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-29/10705670.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月29日电(高志苗)诺贝尔文学奖奖章长什么样。"
+      },
+      {
+        "type": "p",
+        "text": "关于诺贝尔文学奖你想知道的一切都可以在国内首个诺贝尔文学奖主题书店找到答案。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "国内首个诺贝尔文学奖主题书店落址上海普陀"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-29/10705670.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:43:18.000Z",
+    "rssPublishedAt": "2026-09-29T09:43:18.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T10:00:54.807Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:54.807Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaepykalxbt",
+    "createdAt": "2026-09-29T10:00:54.790Z",
+    "updatedAt": "2026-09-29T10:00:54.790Z",
+    "title": "第33届中国电视金鹰奖获奖名单今晚揭晓",
+    "summary": "第33届中国电视金鹰奖颁奖典礼暨第16届中国金鹰电视艺术节闭幕式晚会将于今晚在湖南长沙举行，最佳电视剧、最佳导演、最佳男女主角等各大奖项将逐一揭晓。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "第33届中国",
+      "名单今晚揭晓"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-29/10705710.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "第33届中国电视金鹰奖颁奖典礼暨第16届中国金鹰电视艺术节闭幕式晚会将于今晚在湖南长沙举行，最佳电视剧、最佳导演、最佳男女主角等各大奖项将逐一揭晓。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第33届中国电视金鹰奖获奖名单今晚揭晓"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-29/10705710.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:48:00.000Z",
+    "rssPublishedAt": "2026-09-29T09:48:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T10:00:54.790Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:54.790Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumiaepjfncmci",
+    "createdAt": "2026-09-29T10:00:54.775Z",
+    "updatedAt": "2026-09-29T10:02:39.629Z",
+    "title": "殷商史研究新进展：四大维度重构“活的商代”",
+    "summary": "中新网安阳9月29日电 (记者 王宇)距今三千多年的殷商王朝，至今仍笼罩着诸多神秘面纱。近年来，殷商史研究领域有哪些新突破？9月29日，在河南安阳举办的甲骨文研究新成果展览及情况通报会上，郑州大学文学院副院长、河南省文字",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "殷商史研究新进展",
+      "四大维度重构"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-29/10705679.shtml",
+    "cover": "/img/news/i-mumiaepjfncmci-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网安阳9月29日电 (记者 王宇)距今三千多年的殷商王朝，至今仍笼罩着诸多神秘面纱。"
+      },
+      {
+        "type": "p",
+        "text": "近年来，殷商史研究领域有哪些新突破。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "殷商史研究新进展：四大维度重构“活的商代”"
+      },
+      {
+        "type": "p",
+        "text": "9月29日，在河南安阳举办的甲骨文研究新成果展览及情况通报会上，郑州大学文学院副院长、河南省文字学会会长齐航福就上述问题回答了中新网记者的提问。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-29/10705679.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:55:34.000Z",
+    "rssPublishedAt": "2026-09-29T09:55:34.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T10:00:54.775Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "通报"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:54.775Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:39.629Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicnm52cdw4k",
+    "publishedInboxAt": "2026-09-29T10:02:39.629Z"
+  },
+  {
+    "id": "mumia24e48rr85",
+    "createdAt": "2026-09-29T10:00:38.462Z",
+    "updatedAt": "2026-09-29T10:00:38.462Z",
+    "title": "中国女足0:2不敌朝鲜无缘爱知·名古屋亚运会决赛",
+    "summary": "中新网9月29日电 (记者 国璇)当地时间9月29日进行的爱知·名古屋亚运会女足半决赛中，中国女足以0:2不敌朝鲜队，遗憾无缘决赛。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "中国女足0",
+      "2不敌朝鲜无"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-29/10705664.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 (记者 国璇)当地时间9月29日进行的爱知·名古屋亚运会女足半决赛中，中国女足以0:2不敌朝鲜队，遗憾无缘决赛。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国女足0:2不敌朝鲜无缘爱知·名古屋亚运会决赛"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-29/10705664.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T08:59:23.000Z",
+    "rssPublishedAt": "2026-09-29T08:59:23.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T10:00:38.462Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:38.462Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mumia23d3e40vl",
+    "createdAt": "2026-09-29T10:00:38.425Z",
+    "updatedAt": "2026-09-29T10:02:39.295Z",
+    "title": "中国选手李雯雯获亚运会举重女子86公斤以上级冠军",
+    "summary": "中新网9月29日电 (记者 金旭)爱知·名古屋亚运会当地时间29日进行举重女子86公斤以上级决赛，中国选手李雯雯以310公斤的总成绩夺得冠军。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "中国选手李雯",
+      "斤以上级冠军"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-29/10705684.shtml",
+    "cover": "/img/news/i-mumia23d3e40vl-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 (记者 金旭)爱知·名古屋亚运会当地时间29日进行举重女子86公斤以上级决赛，中国选手李雯雯以310公斤的总成绩夺得冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手李雯雯获亚运会举重女子86公斤以上级冠军"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-29/10705684.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:21:00.000Z",
+    "rssPublishedAt": "2026-09-29T09:21:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T10:00:38.425Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:38.425Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:39.295Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicncv8l6mev",
+    "publishedInboxAt": "2026-09-29T10:02:39.295Z"
+  },
+  {
+    "id": "mumia1v9korgmk",
+    "createdAt": "2026-09-29T10:00:38.133Z",
+    "updatedAt": "2026-09-29T10:02:39.072Z",
+    "title": "“梁王”组合摘银 印尼队时隔8年再夺亚运会男双冠军",
+    "summary": "中新网9月29日电(记者 李志全)当地时间9月29日，在爱知·名古屋亚运会羽毛球项目男双决赛中，梁伟铿/王昶以1:2不敌印度尼西亚组合卡尔南多/马丁，遗憾摘银。这也是印尼队时隔8年再次夺得亚运会男双冠军。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "“梁王”组合摘银",
+      "印尼队时隔8"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-29/10705685.shtml",
+    "cover": "/img/news/i-mumia1v9korgmk-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电(记者 李志全)当地时间9月29日，在爱知·名古屋亚运会羽毛球项目男双决赛中，梁伟铿/王昶以1:2不敌印度尼西亚组合卡尔南多/马丁，遗憾摘银。"
+      },
+      {
+        "type": "p",
+        "text": "这也是印尼队时隔8年再次夺得亚运会男双冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“梁王”组合摘银 印尼队时隔8年再夺亚运会男双冠"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-29/10705685.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:21:32.000Z",
+    "rssPublishedAt": "2026-09-29T09:21:32.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T10:00:38.133Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:38.133Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:39.072Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicn6ot1kd24",
+    "publishedInboxAt": "2026-09-29T10:02:39.072Z"
+  },
+  {
+    "id": "mumia1oydrjna9",
+    "createdAt": "2026-09-29T10:00:37.906Z",
+    "updatedAt": "2026-09-29T10:02:38.955Z",
+    "title": "亚运会｜再添一金！男子3米跳板王宗源成功卫冕",
+    "summary": "新华社东京9月29日电 在刚刚结束的爱知·名古屋亚运会男子3米跳板决赛中，中国队选手王宗源成功卫冕。这是他在本届赛事获得的第三金。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "亚运会｜再添一金",
+      "男子3米跳板"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-29/10705699.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "新华社东京9月29日电 在刚刚结束的爱知·名古屋亚运会男子3米跳板决赛中，中国队选手王宗源成功卫冕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "亚运会｜再添一金！男子3米跳板王宗源成功卫冕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-29/10705699.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:34:15.000Z",
+    "rssPublishedAt": "2026-09-29T09:34:15.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T10:00:37.906Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "刚刚"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T10:00:37.906Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T10:02:38.955Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mumicn3fnvrwlp",
+    "publishedInboxAt": "2026-09-29T10:02:38.955Z"
+  },
+  {
+    "id": "mumia1jh42e82c",
+    "createdAt": "2026-09-29T10:00:37.709Z",
+    "updatedAt": "2026-09-29T10:00:37.709Z",
+    "title": "中国选手王宗源摘得亚运会跳水男子3米板金牌",
+    "summary": "中新网9月29日电(记者 朱晨曦)当地时间9月29日，在爱知·名古屋亚运会跳水男子3米板决赛中，中国选手王宗源以总分494.40分获得金牌。另一名中国选手郑九源获得银牌。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "中国选手王宗源",
+      "亚运会跳水男"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-29/10705701.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电(记者 朱晨曦)当地时间9月29日，在爱知·名古屋亚运会跳水男子3米板决赛中，中国选手王宗源以总分494.40分获得金牌。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中国选手王宗源摘得亚运会跳水男子3米板金牌"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-29/10705701.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T09:35:29.000Z",
+    "rssPublishedAt": "2026-09-29T09:35:29.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T10:00:37.709Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T10:00:37.709Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6qcmarsbz0",
+    "createdAt": "2026-09-29T01:06:10.534Z",
+    "updatedAt": "2026-09-29T01:06:10.534Z",
+    "title": "【Fintech 周报】互联网保险拟设“十不得”划定负面清单；微信支付推出一款APP",
+    "summary": "上海发布银行业保险业AI应用措施；9月30日起，花呗、白条、平台月付等迎来新调整；全国村镇银行法人机构跌破千家；甘肃农商银行成立半年再吸并24家机构；“烟草系”拟600亿参与工行农行定增；消金公司加码分期与贴息；消金助贷",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "Fintech",
+      "周报"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8154273.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/dfff458ff9494b5ed4d79e3219d4f224_1790589655.jpg",
+    "content": [
+      {
+        "type": "p",
+        "text": "上海发布银行业保险业AI应用措施；9月30日起，花呗、白条、平台月付等迎来新调整；全国村镇银行法人机构跌破千家；甘肃农商银行成立半年再吸并24家机构；“烟草系”拟600亿参与工行农行定增；消金公司加码分期与贴息；消金助贷合作名单再洗牌；银行个人“炒金”通道加速关闭；重庆银行停投美团京东三款助贷；支付宝组织大调整；欧盟央行体系提议修订MiCA稳定币规则；加拿大六大银行联合探索加元代币化存款系统。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "【Fintech 周报】互联网保险拟设“十不得”"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8154273.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T10:00:51.000Z",
+    "rssPublishedAt": "2026-09-28T10:00:51.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T01:06:10.534Z",
+    "score": 49,
+    "metrics": {
+      "ageHours": 15.1,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 2,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 49 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:10.534Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:10.534Z",
+      "comment": "分值 49 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6qcjvpgadh",
+    "createdAt": "2026-09-29T01:06:10.531Z",
+    "updatedAt": "2026-09-29T01:06:10.531Z",
+    "title": "“国产外语剧”风起：各省的AI留子，抢着去韩美日谈恋爱",
+    "summary": "没有丑男丑女的AI短剧，成为偶像剧最适配的打开方式。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "“国产外语剧",
+      "外语剧”风起"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8154645.html",
+    "cover": "",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/745ac6ac4d1473cba1835a74bee87b7f_1790642021.jpg",
+    "content": [
+      {
+        "type": "p",
+        "text": "没有丑男丑女的AI短剧，成为偶像剧最适配的打开方式。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“国产外语剧”风起：各省的AI留子，抢着去韩美日"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8154645.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:33:36.000Z",
+    "rssPublishedAt": "2026-09-29T00:33:36.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T01:06:10.531Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:06:10.531Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6qch11ryoq",
+    "createdAt": "2026-09-29T01:06:10.529Z",
+    "updatedAt": "2026-09-29T01:06:27.418Z",
+    "title": "Edge AI Daily 早报（9月29日）",
+    "summary": "谷歌以安卓替换Chrome OS，Android Dev Summit预告XR统一平台，Colab算力会员化。微软Excel内嵌因果推理能力。OpenAI研发集中GPT-7，缺席澳洲听证暴露监管缺口。Anthropic ",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "Edge",
+      "AI"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8154712.html",
+    "cover": "/img/news/i-mulz6qch11ryoq-cover.jpg",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2023/tkrss/r2thrhrgr3.png",
+    "content": [
+      {
+        "type": "p",
+        "text": "谷歌以安卓替换Chrome OS，Android Dev Summit预告XR统一平台，Colab算力会员化。"
+      },
+      {
+        "type": "p",
+        "text": "微软Excel内嵌因果推理能力。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "Edge AI Daily 早报（9月29日）"
+      },
+      {
+        "type": "p",
+        "text": "OpenAI研发集中GPT-7，缺席澳洲听证暴露监管缺口。"
+      },
+      {
+        "type": "p",
+        "text": "Anthropic API工具Playground更名推动普惠化。"
+      },
+      {
+        "type": "p",
+        "text": "Apple A20 Pro移动芯片达桌面3A游戏性能。"
+      },
+      {
+        "type": "p",
+        "text": "台积电VIS新加坡成熟制程厂满产助力AI基建。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8154712.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:35:13.000Z",
+    "rssPublishedAt": "2026-09-29T00:35:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T01:06:10.529Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:06:10.529Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6qcgi70zoz",
+    "createdAt": "2026-09-29T01:06:10.528Z",
+    "updatedAt": "2026-09-29T01:06:13.347Z",
+    "title": "人形机器人还没成熟，Physical AI先去找了机械臂",
+    "summary": "机器人“大脑”和机器人“身体”，过去常被想象成一起成熟；现在市场开始允许它们分开商业化。",
+    "channel": "ai",
+    "tags": [
+      "AI产业",
+      "人形机器人还",
+      "器人还没成熟"
+    ],
+    "author": "钛媒体·科技产业",
+    "sourceName": "钛媒体·科技产业",
+    "sourceUrl": "https://www.tmtpost.com/8154412.html",
+    "cover": "/img/news/i-mulz6qcgi70zoz-cover.jpg",
+    "sourceImage": "https://images.tmtpost.com/uploads/images/2026/09/6ce313982ace2ea184045839b27808df_1790642028.jpg",
+    "content": [
+      {
+        "type": "p",
+        "text": "机器人“大脑”和机器人“身体”，过去常被想象成一起成熟；现在市场开始允许它们分开商业化。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "人形机器人还没成熟，Physical AI先去找"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.tmtpost.com/8154412.html"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:37:00.000Z",
+    "rssPublishedAt": "2026-09-29T00:37:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchtmt4xx",
+    "collectedAt": "2026-09-29T01:06:10.528Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:06:10.528Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oqwteaao5",
+    "createdAt": "2026-09-29T01:06:08.456Z",
+    "updatedAt": "2026-09-29T01:06:08.456Z",
+    "title": "三箭齐发！Sharpa三大新品IROS全球首秀，三位一体再次刷新灵巧操作上限",
+    "summary": "美国匹兹堡，9月28日——美国匹兹堡智能机器人与系统国际会议（IROS）现场，Sharpa正式发布三款重磅全自研新品：首个一体式触觉感知灵巧操作机器人D01、新一代全触觉超紧凑、轻量化灵巧手W02，以及高保真外骨骼触感数",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "三箭齐发",
+      "Sharpa"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/robot/PD6wmXBcwh6pLqU5.html",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "美国匹兹堡，9月28日——美国匹兹堡智能机器人与系统国际会议（IROS）现场，Sharpa正式发布三款重磅全自研新品：首个一体式触觉感知灵巧操作机器人D01、新一代全触觉超紧凑、轻量化灵巧手W02，以及高保真外骨骼触感数据手套AE01。"
+      },
+      {
+        "type": "p",
+        "text": "三款产品分别面向全身动作执行、手部精细操作与高质量操作数据采集，覆盖机器人如何运动、如何接触和操控物体，以及如何借助人的自然动作完成遥操作与数据获取三大关键环节，为真实环境中的复杂富接触操作提供了一套完整的硬件闭环。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "三箭齐发！Sharpa三大新品IROS全球首秀，"
+      },
+      {
+        "type": "p",
+        "text": "从机器人本体、末端执行器到连接人与机器人的数据采集设备，三款全自研新品共同指向同一个目标：进一步提升机器人完成复杂操作任务的速度、精度与触觉感知能力。"
+      },
+      {
+        "type": "p",
+        "text": "D01、W02与AE01的同时发布，标志着Sharpa将带有全身电子皮肤的高性能本体、全掌触觉灵巧手和高精度数据采集设备连接成一套完整系统，从动作执行、精细操控延伸至数据获取，以三位一体的方式将机器人灵巧操作的性能边界与任务复杂度推向崭新高度。"
+      },
+      {
+        "type": "p",
+        "text": "更强、更快、更精准：D01，专为灵巧操作而生的通用人形机器人 作为Sharpa推出的首款一体式触觉感知灵巧操作机器人，D01从设计之初即围绕灵巧性、敏捷性与精准性展开，面向需要同时兼顾高速运动、高精度控制与复杂物理接触的操作任务。"
+      },
+      {
+        "type": "p",
+        "text": "在富接触操作场景中，机器人常被迫在速度、力量与精度之间取舍：移动得快，难保精细；力量够大，又难谈灵敏。"
+      },
+      {
+        "type": "p",
+        "text": "D01打破这一取舍——手臂载荷自重比接近1:1，最大末端执行器速度超过10.5 m/s，通信频率达1,000 Hz，重复定位精度0.2 mm，球形腕关节采用1:1人体尺度设计，让高速运动与精细操作共存于同一副身体。"
+      },
+      {
+        "type": "p",
+        "text": "此外，D01配备身体电子皮肤，让机器人第一次能像人一样用\"皮肤\"直接感知接触与碰撞。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/robot/PD6wmXBcwh6pLqU5.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T06:42:00.000Z",
+    "rssPublishedAt": "2026-09-28T06:42:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.456Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 18.4,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": [
+        "重磅"
+      ]
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.456Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:08.456Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oquaoo0m9",
+    "createdAt": "2026-09-29T01:06:08.454Z",
+    "updatedAt": "2026-09-29T01:06:08.454Z",
+    "title": "阿里Qwen-Audio-3.1-TTS拿下权威语音榜全球冠军",
+    "summary": "9 月 28 日，在全球权威 AI 评测平台 Artificial Analysis 的语音排行榜（Controlled Voice Arena）上，阿里巴巴最近发布的语音大模型 Qwen-Audio-3.1-TTS 以",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "阿里Qwen",
+      "Audio"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/industrynews/PeujvZKDt4TjyaPK.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928/6aba435c95e0a.png?imageView2/2/w/740",
+    "content": [
+      {
+        "type": "p",
+        "text": "9 月 28 日，在全球权威 AI 评测平台 Artificial Analysis 的语音排行榜（Controlled Voice Arena）上，阿里巴巴最近发布的语音大模型 Qwen-Audio-3.1-TTS 以 1177 的 Elo 评分位列全球第一。"
+      },
+      {
+        "type": "p",
+        "text": "图说：权威三方评测Artificial Analysis显示，Qwen-Audio-3.1-TTS位列全球第一 Qwen-Audio-3.1-TTS 是阿里新一代语音合成大模型，支持多语种及方言合成。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "阿里Qwen-Audio-3.1-TTS拿下权威"
+      },
+      {
+        "type": "p",
+        "text": "该模型能够让同一音色在不同语言之间自然迁移，用一种声音自然讲出多种语言。"
+      },
+      {
+        "type": "p",
+        "text": "相比传统语音合成主要关注字音是否正确，Qwen-Audio-3.1-TTS 更强调声音是否符合具体内容和使用场景。"
+      },
+      {
+        "type": "p",
+        "text": "用户可通过指令控制情绪、语速和表达方式，让合成语音不只“说得对”，也能“说得像”。"
+      },
+      {
+        "type": "p",
+        "text": "此次登顶的是阿里在 2026 云栖大会发布的 Qwen-Audio-3.1 系列中的 TTS 模型，该系列还包括语音转写（ASR）和实时语音交互（Realtime）两类模型，三大模型的API服务均已上架千问AI平台。"
+      },
+      {
+        "type": "p",
+        "text": "此外，阿里语音团队开源的多款模型如 Qwen-Audio-Agent、CosyVoice 在 GitHub 上累计获得了数万星标，深受海内外开发者关注。"
+      },
+      {
+        "type": "p",
+        "text": "目前，Qwen-Audio 全线语音模型价格均已下调，最高降幅达 95%，为开发者和企业的广泛语音应用大幅节省成本。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/industrynews/PeujvZKDt4TjyaPK.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T10:38:00.000Z",
+    "rssPublishedAt": "2026-09-28T10:38:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.454Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 14.5,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": [
+        "冠军"
+      ]
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.454Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:08.454Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oqr4v3kuq",
+    "createdAt": "2026-09-29T01:06:08.451Z",
+    "updatedAt": "2026-09-29T01:06:08.451Z",
+    "title": "售价25.98万-38.98万元，智界RX正式上市，为驾驶而生，为价值而造",
+    "summary": "2026年9月28日，鸿蒙智行首款以X命名的SUV 智界RX正式上市，共光路舱内激光雷达版本售价25.98万元起，L3级自动驾驶架构版本售价31.98万元起，即刻下定可享至高价值40500元购车权益。 智界RX为驾驶而生",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "售价25.98万",
+      "38.98万元"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/industrynews/mBZRTV2kKjzdqqJZ.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928/6aba42f26653c.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "2026年9月28日，鸿蒙智行首款以X命名的SUV 智界RX正式上市，共光路舱内激光雷达版本售价25.98万元起，L3级自动驾驶架构版本售价31.98万元起，即刻下定可享至高价值40500元购车权益。"
+      },
+      {
+        "type": "p",
+        "text": "智界RX为驾驶而生，为价值而造，搭载专为驾控调校的华为途灵平台、ALPS健康座舱、华为终端专属鸿蒙座舱，首发华为巨鲸电池平台“黑匣子”技术；搭载虚拟主销四球头全铝双叉臂等百万级底盘硬件，经全球顶级调校大师领衔调校；是鸿蒙智行30万级唯一搭载L3级自动驾驶架构设计的车型，同时搭载智能环抱座椅、智能恒冷冰箱、电动隔层遮阳帘、双目后视镜等创新科技及旗舰根技术，以科技定义新驾趣，颠覆出行想象。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "售价25.98万-38.98万元，智界RX正式上"
+      },
+      {
+        "type": "p",
+        "text": "华为常务董事、产品投资评审委员会主任、终端BG董事长余承东表示，智界RX是鸿蒙智行30万级唯一搭载L3级自动驾驶架构设计的车型，也是鸿蒙智行迄今为止最好开的车。"
+      },
+      {
+        "type": "p",
+        "text": "奇瑞汽车股份有限公司董事长尹同跃表示，智界开启品牌2.0战略以来，实现了智造、产品和规模三大突破，全系累计交付即将突破20万辆。"
+      },
+      {
+        "type": "p",
+        "text": "在智能时代，智界要做终极驾控智能体，以硬核技术和创新科技把“好坐的豪华车”和“好开的性能车”做到极致。"
+      },
+      {
+        "type": "p",
+        "text": "智界V9把“喜欢坐车”做到极致，连续两个月稳坐MPV销量榜首；智界RX把“享受开车”做到极致，专为享受驾趣、喜欢开车的人打造智能又好开的座驾，用科技真正实现驾趣平权；智界R7焕新上市，投入5亿研发，实现8大核心升级，打造25万级家用SUV最优选。"
+      },
+      {
+        "type": "p",
+        "text": "顶级用料、顶级平台、顶级动能加持，智界RX打造新能源 SUV 驾控标杆 智界RX在浙江国际赛车场以01:43.210的成绩，创下中国品牌量产SUV的最快圈速纪录。"
+      },
+      {
+        "type": "p",
+        "text": "用料方面，高强钢和铝合金占比达90.5%、轻量化系数1.53、整车扭转刚度51040N·m/deg，为卓越操控打下坚实基础。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/industrynews/mBZRTV2kKjzdqqJZ.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T10:38:00.000Z",
+    "rssPublishedAt": "2026-09-28T10:38:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.451Z",
+    "score": 49,
+    "metrics": {
+      "ageHours": 14.5,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 49 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.451Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:08.451Z",
+      "comment": "分值 49 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oqouu4b2t",
+    "createdAt": "2026-09-29T01:06:08.448Z",
+    "updatedAt": "2026-09-29T01:06:08.448Z",
+    "title": "海尔洗空气空调AI科技将巴马好空气搬回家",
+    "summary": "为了一口好空气，有人给家里配齐空气净化器、新风系统，层层升级呼吸装备；更有人远赴广西巴马长寿村，斥资置业长居，天不亮就到百魔洞口排队吸氧。“巴马好空气”的说法流传多年，却少有人说清它到底好在哪。 9月28日，海尔空调联合",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "海尔洗空气空",
+      "好空气搬回家"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/industrynews/q7QGrV66x125kB8m.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928/6aba54617bb95.png?imageView2/2/w/740",
+    "content": [
+      {
+        "type": "p",
+        "text": "为了一口好空气，有人给家里配齐空气净化器、新风系统，层层升级呼吸装备；更有人远赴广西巴马长寿村，斥资置业长居，天不亮就到百魔洞口排队吸氧。"
+      },
+      {
+        "type": "p",
+        "text": "“巴马好空气”的说法流传多年，却少有人说清它到底好在哪。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "海尔洗空气空调AI科技将巴马好空气搬回家"
+      },
+      {
+        "type": "p",
+        "text": "9月28日，海尔空调联合科普博主无穷小亮，深入巴马长寿村实地探访，通过实地观察与专业检测，拆解巴马好空气的真实密码，也给出了把自然好空气带回家的解决方案。"
+      },
+      {
+        "type": "p",
+        "text": "实地溯源：巴马好空气不是玄学，是自然的馈赠 每年换季时节，大批外地人从全国各地奔赴巴马，有人连续多年往返旅居，有人干脆定居长住，核心诉求都指向当地的空气。"
+      },
+      {
+        "type": "p",
+        "text": "带着“巴马空气到底好在哪”的疑问，无穷小亮深入当地喀斯特溶洞实地探访，直观呈现溶洞内的独特环境：常年稳定的温湿度、极低的粉尘含量、水流撞击岩壁带来的清新体感。"
+      },
+      {
+        "type": "p",
+        "text": "中国环境科学研究院专家给出解释。"
+      },
+      {
+        "type": "p",
+        "text": "巴马地理位置优越，全域植被覆盖率高，生产生活污染物排放少；喀斯特溶洞中，水流持续撞击岩壁既能产生大量负氧离子，也能吸附沉降空气中的颗粒物，多重作用下形成了洁净、清新、体感舒适的宜居空气环境。"
+      },
+      {
+        "type": "p",
+        "text": "至此，流传已久的巴马长寿密码在空气维度终于清晰：人们奔赴巴马追求的不是坊间玄学，而是高洁净、高负氧离子、温湿度适宜的高品质呼吸体验。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/industrynews/q7QGrV66x125kB8m.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T11:54:00.000Z",
+    "rssPublishedAt": "2026-09-28T11:54:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.448Z",
+    "score": 49,
+    "metrics": {
+      "ageHours": 13.2,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 49 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.448Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:08.448Z",
+      "comment": "分值 49 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oqkhpxs5u",
+    "createdAt": "2026-09-29T01:06:08.444Z",
+    "updatedAt": "2026-09-29T01:06:08.445Z",
+    "title": "中训练、后训练持续升温，模型快速迭代，成为 AI for AI 最佳试炼场",
+    "summary": "当模型开始参与研发下一代模型，大模型的研发方式正在发生什么样的变化？ 作者丨 高允毅 编辑丨 岑 峰 大多数科研构想，从未被充分验证。 这并不是研究者缺少灵感。恰恰相反，新的架构猜想、训练策略无时无刻不在涌现。但大多数想",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "中训练",
+      "后训练"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/yanxishe/WXSemXnlvGNRbiPR.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928/6aba631302cea.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "当模型开始参与研发下一代模型，大模型的研发方式正在发生什么样的变化。"
+      },
+      {
+        "type": "p",
+        "text": "作者丨 高允毅 编辑丨 岑 峰 大多数科研构想，从未被充分验证。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "中训练、后训练持续升温，模型快速迭代，成为 AI"
+      },
+      {
+        "type": "p",
+        "text": "恰恰相反，新的架构猜想、训练策略无时无刻不在涌现。"
+      },
+      {
+        "type": "p",
+        "text": "但大多数想法，却在写不完的训练脚本、调不完的参数、排队等调度的 GPU 集群中，被无声消磨。"
+      },
+      {
+        "type": "p",
+        "text": "如果换种玩法，重构大模型研发呢。"
+      },
+      {
+        "type": "p",
+        "text": "你只说了半句话：“我猜想这个架构或许能降低长上下文成本……” 它就能读懂前沿文献，生成候选方案，自动编写代码、调度算力、并行跑消融实验。"
+      },
+      {
+        "type": "p",
+        "text": "这正是近期讨论度很高的 AI for AI。"
+      },
+      {
+        "type": "p",
+        "text": "它不是研发工具的升级，是下一代大模型的核心命题。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/yanxishe/WXSemXnlvGNRbiPR.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T12:54:00.000Z",
+    "rssPublishedAt": "2026-09-28T12:54:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.444Z",
+    "score": 49,
+    "metrics": {
+      "ageHours": 12.2,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 49 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.444Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:08.444Z",
+      "comment": "分值 49 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6oqia5suqj",
+    "createdAt": "2026-09-29T01:06:08.442Z",
+    "updatedAt": "2026-09-29T01:06:08.442Z",
+    "title": "解读丨吉利入股蔚来能源，李斌的换电生意有了新算法",
+    "summary": "交易完成后，蔚来能源投后估值将达160亿元。 作者 | 王瑞昊 编辑 | 李雨晨 5天前，吉利刚发布新一代超快充技术，把部分车型从10%充至70%的时间压缩到4分30秒。5天后，它宣布入股蔚来能源。 外界还在讨论快充与换",
+    "channel": "ai",
+    "tags": [
+      "AI创投",
+      "解读丨吉利入",
+      "入股蔚来能源"
+    ],
+    "author": "雷峰网·AI 观察",
+    "sourceName": "雷峰网·AI 观察",
+    "sourceUrl": "https://www.leiphone.com/category/transportation/bjRWJENf14uelTTS.html",
+    "cover": "",
+    "sourceImage": "https://static.leiphone.com/uploads/new/images/20260928/6aba663e766bf.jpg?imageMogr2/quality/90",
+    "content": [
+      {
+        "type": "p",
+        "text": "交易完成后，蔚来能源投后估值将达160亿元。"
+      },
+      {
+        "type": "p",
+        "text": "作者 | 王瑞昊 编辑 | 李雨晨 5天前，吉利刚发布新一代超快充技术，把部分车型从10%充至70%的时间压缩到4分30秒。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "解读丨吉利入股蔚来能源，李斌的换电生意有了新算法"
+      },
+      {
+        "type": "p",
+        "text": "外界还在讨论快充与换电谁会取代谁，两家公司已经开始计算，怎样把这两门生意放在一起做。"
+      },
+      {
+        "type": "p",
+        "text": "9月28日，蔚来与吉利控股宣布深化充换电合作。"
+      },
+      {
+        "type": "p",
+        "text": "按照协议，吉利将以易易互联100%股权及6.4亿元现金入股蔚来能源，交易完成后持股30%；蔚来中国则拟入股吉利旗下浩瀚能源，持股10%，同时推进部分充电资产的整合。"
+      },
+      {
+        "type": "p",
+        "text": "交易完成后，蔚来能源投后估值将达160亿元。"
+      },
+      {
+        "type": "p",
+        "text": "2023年11月，双方就已签署换电战略合作协议，涉及电池标准、网络运营和换电车型开发。"
+      },
+      {
+        "type": "p",
+        "text": "如今，双方决定把资产和资本也放进来。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.leiphone.com/category/transportation/bjRWJENf14uelTTS.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T13:08:00.000Z",
+    "rssPublishedAt": "2026-09-28T13:08:00.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tch36kr2x",
+    "collectedAt": "2026-09-29T01:06:08.442Z",
+    "score": 55,
+    "metrics": {
+      "ageHours": 12,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 6,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 55 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:06:08.442Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6jq8fm2p7s",
+    "createdAt": "2026-09-29T01:06:01.952Z",
+    "updatedAt": "2026-09-29T01:06:01.952Z",
+    "title": "HC归来，华为正重新定义AIDC基础设施",
+    "summary": "AI基础设施下一站：算电协同",
+    "channel": "ai",
+    "tags": [
+      "人工智能",
+      "HC归来",
+      "华为正重新定"
+    ],
+    "author": "量子位·AI 前沿",
+    "sourceName": "量子位·AI 前沿",
+    "sourceUrl": "https://www.qbitai.com/2026/09/498787.html",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "AI基础设施下一站：算电协同"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "HC归来，华为正重新定义AIDC基础设施"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.qbitai.com/2026/09/498787.html"
+      }
+    ],
+    "publishedAt": "2026-09-28T11:18:27.000Z",
+    "rssPublishedAt": "2026-09-28T11:18:27.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_a1w0tchm0de1x",
+    "collectedAt": "2026-09-29T01:06:01.952Z",
+    "score": 50,
+    "metrics": {
+      "ageHours": 13.8,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 8,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 50 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:01.952Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:01.952Z",
+      "comment": "分值 50 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6jf31kgqt6",
+    "createdAt": "2026-09-29T01:06:01.551Z",
+    "updatedAt": "2026-09-29T01:06:01.551Z",
+    "title": "专家解读晕厥背后潜藏的危机",
+    "summary": "中新网上海9月28日电 (陈静 瞿乃婴)很多人以为，心脏病的症状就是胸痛、胸闷、心慌。记者28日在此间采访获悉，在临床中，最隐蔽、最容易被漏掉，甚至可能引发严重后果的，恰恰是一过性晕厥、眼前发黑、突然发软。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "专家解读晕厥",
+      "后潜藏的危机"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-28/10705166.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月28日电 (陈静 瞿乃婴)很多人以为，心脏病的症状就是胸痛、胸闷、心慌。"
+      },
+      {
+        "type": "p",
+        "text": "记者28日在此间采访获悉，在临床中，最隐蔽、最容易被漏掉，甚至可能引发严重后果的，恰恰是一过性晕厥、眼前发黑、突然发软。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "专家解读晕厥背后潜藏的危机"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-28/10705166.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T14:39:10.000Z",
+    "rssPublishedAt": "2026-09-28T14:39:10.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T01:06:01.551Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.4,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:01.551Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:01.551Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6jf0frylau",
+    "createdAt": "2026-09-29T01:06:01.548Z",
+    "updatedAt": "2026-09-29T01:06:01.548Z",
+    "title": "被家养的猫、狗抓咬伤，需要打狂犬病疫苗吗？",
+    "summary": "今天(9月28日)，是世界狂犬病日。",
+    "channel": "health",
+    "tags": [
+      "健康",
+      "被家养的猫",
+      "狗抓咬伤"
+    ],
+    "author": "中新网·健康",
+    "sourceName": "中新网·健康",
+    "sourceUrl": "https://www.chinanews.com.cn/jk/2026/09-29/10705189.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "今天(9月28日)，是世界狂犬病日。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "被家养的猫、狗抓咬伤，需要打狂犬病疫苗吗？"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/jk/2026/09-29/10705189.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T22:49:12.000Z",
+    "rssPublishedAt": "2026-09-28T22:49:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hg91b8o",
+    "collectedAt": "2026-09-29T01:06:01.548Z",
+    "score": 57,
+    "metrics": {
+      "ageHours": 2.3,
+      "base": 30,
+      "freshness": 22,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 57 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:06:01.548Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6ipd5agj2c",
+    "createdAt": "2026-09-29T01:06:00.625Z",
+    "updatedAt": "2026-09-29T01:06:00.625Z",
+    "title": "奇石邂逅科技与文创 让阿拉善戈壁石头“活”起来",
+    "summary": "中新网阿拉善9月28日电 (记者 陈峰)走进展厅，奇石造型的鸟兽灵动传神，石头“菜品”栩栩如生，引得参观者纷纷驻足拍照。9月28日，第22届阿拉善玉·观赏石文化旅游活动在内蒙古自治区阿拉善盟启幕，来自全国各地的藏家、展商",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "奇石邂逅科技",
+      "逅科技与文创"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-28/10705099.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网阿拉善9月28日电 (记者 陈峰)走进展厅，奇石造型的鸟兽灵动传神，石头“菜品”栩栩如生，引得参观者纷纷驻足拍照。"
+      },
+      {
+        "type": "p",
+        "text": "9月28日，第22届阿拉善玉·观赏石文化旅游活动在内蒙古自治区阿拉善盟启幕，来自全国各地的藏家、展商与奇石爱好者相聚戈壁，共赴一场奇石文化盛宴。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "奇石邂逅科技与文创 让阿拉善戈壁石头“活”起来"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-28/10705099.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T12:49:39.000Z",
+    "rssPublishedAt": "2026-09-28T12:49:39.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T01:06:00.625Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 12.3,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:00.625Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:00.625Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6ipa5uckk5",
+    "createdAt": "2026-09-29T01:06:00.622Z",
+    "updatedAt": "2026-09-29T01:06:00.622Z",
+    "title": "湖南祁阳浯溪碑林首批入园书法作品发布 数字赋能千年文脉新生",
+    "summary": "中新网长沙9月28日电 (记者 唐小晴)以“一崖贯古今 翰墨启新程”为主题的湖南祁阳浯溪碑林首批入园书法作品发布会28日在长沙举行，首批20幅入园书法作品正式发布，30篇拟入园经典诗文同步公布。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "湖南祁阳浯溪",
+      "入园书法作品"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-28/10705098.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网长沙9月28日电 (记者 唐小晴)以“一崖贯古今 翰墨启新程”为主题的湖南祁阳浯溪碑林首批入园书法作品发布会28日在长沙举行，首批20幅入园书法作品正式发布，30篇拟入园经典诗文同步公布。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "湖南祁阳浯溪碑林首批入园书法作品发布 数字赋能千"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-28/10705098.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T12:50:39.000Z",
+    "rssPublishedAt": "2026-09-28T12:50:39.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T01:06:00.622Z",
+    "score": 48,
+    "metrics": {
+      "ageHours": 12.3,
+      "base": 30,
+      "freshness": 12,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 48 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:00.622Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:00.622Z",
+      "comment": "分值 48 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6ip7dfnrea",
+    "createdAt": "2026-09-29T01:06:00.619Z",
+    "updatedAt": "2026-09-29T01:06:00.619Z",
+    "title": "“造展人”马可·穆勒平遥谈影展：为电影留下文献",
+    "summary": "中新社山西平遥9月28日电 (记者 胡健)第十届平遥国际电影展“电影使者东游记”大师·对话活动28日在山西平遥举行，意大利电影制片人、策展人马可·穆勒与英国圣安德鲁斯大学全球电影研究荣休教授迪娜·尤尔丹诺娃展开对谈。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "“造展人”马可",
+      "穆勒平遥谈影展"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-28/10705122.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社山西平遥9月28日电 (记者 胡健)第十届平遥国际电影展“电影使者东游记”大师·对话活动28日在山西平遥举行，意大利电影制片人、策展人马可·穆勒与英国圣安德鲁斯大学全球电影研究荣休教授迪娜·尤尔丹诺娃展开对谈。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“造展人”马可·穆勒平遥谈影展：为电影留下文献"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-28/10705122.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T13:36:44.000Z",
+    "rssPublishedAt": "2026-09-28T13:36:44.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T01:06:00.619Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.5,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:00.619Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:00.619Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6ip53gmkjo",
+    "createdAt": "2026-09-29T01:06:00.617Z",
+    "updatedAt": "2026-09-29T01:06:00.617Z",
+    "title": "“原生态国际摄影大展+大地艺术季”启幕 展多彩贵州新风采",
+    "summary": "中新社贵州荔波9月28日电 (记者 袁超)2026多彩贵州·第十九届中国原生态国际摄影大展(以下简称，大展)、首届“多彩贵州大地艺术季”28日在贵州省黔南布依族苗族自治州荔波县洪江村开幕。中共贵州省委常委、省委宣传部部长",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "“原生态国际",
+      "艺术季”启幕"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-28/10705127.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社贵州荔波9月28日电 (记者 袁超)2026多彩贵州·第十九届中国原生态国际摄影大展(以下简称，大展)、首届“多彩贵州大地艺术季”28日在贵州省黔南布依族苗族自治州荔波县洪江村开幕。"
+      },
+      {
+        "type": "p",
+        "text": "中共贵州省委常委、省委宣传部部长、省委教育工委书记卢雍政出席开幕式致辞，并与海内外嘉宾代表共同启动两项活动。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "“原生态国际摄影大展+大地艺术季”启幕 展多彩贵"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-28/10705127.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T13:55:55.000Z",
+    "rssPublishedAt": "2026-09-28T13:55:55.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T01:06:00.617Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 11.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:00.617Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:00.617Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6ip2bh9vw6",
+    "createdAt": "2026-09-29T01:06:00.614Z",
+    "updatedAt": "2026-09-29T01:06:00.614Z",
+    "title": "2026中国国际孔子文化节在山东曲阜开幕 向世界传递“和合”之道",
+    "summary": "中新网山东曲阜9月28日电 (记者 赵晓 梁犇)2026中国国际孔子文化节28日在曲阜孔子研究院开幕。今年的文化节由山东省人民政府、文化和旅游部、中国联合国教科文组织全国委员会共同主办，主题为“仁礼天下 和合大同”。",
+    "channel": "culture",
+    "tags": [
+      "文化",
+      "2026中国",
+      "节在山东曲阜"
+    ],
+    "author": "中新网·文化",
+    "sourceName": "中新网·文化",
+    "sourceUrl": "https://www.chinanews.com.cn/cul/2026/09-28/10705170.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网山东曲阜9月28日电 (记者 赵晓 梁犇)2026中国国际孔子文化节28日在曲阜孔子研究院开幕。"
+      },
+      {
+        "type": "p",
+        "text": "今年的文化节由山东省人民政府、文化和旅游部、中国联合国教科文组织全国委员会共同主办，主题为“仁礼天下 和合大同”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026中国国际孔子文化节在山东曲阜开幕 向世界"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cul/2026/09-28/10705170.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T14:47:48.000Z",
+    "rssPublishedAt": "2026-09-28T14:47:48.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hgkdzx2",
+    "collectedAt": "2026-09-29T01:06:00.614Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:06:00.614Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:06:00.614Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6hnhnoapsa",
+    "createdAt": "2026-09-29T01:05:59.261Z",
+    "updatedAt": "2026-09-29T01:06:12.049Z",
+    "title": "2026 FIBA OPEN 3X3北京三人篮球公开赛总决赛收官",
+    "summary": "中新网北京9月28日电 2026 FIBA OPEN 3X3北京三人篮球公开赛总决赛在刚刚过去的中秋假期中收官，获得男子组、女子组冠军的两支队伍将参加11月在重庆举行的全国总决赛。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "2026",
+      "FIBA"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-28/10705176.shtml",
+    "cover": "/img/news/i-mulz6hnhnoapsa-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月28日电 2026 FIBA OPEN 3X3北京三人篮球公开赛总决赛在刚刚过去的中秋假期中收官，获得男子组、女子组冠军的两支队伍将参加11月在重庆举行的全国总决赛。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026 FIBA OPEN 3X3北京三人篮球"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-28/10705176.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:09:48.000Z",
+    "rssPublishedAt": "2026-09-28T15:09:48.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T01:05:59.261Z",
+    "score": 64,
+    "metrics": {
+      "ageHours": 9.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 2,
+      "keywordScore": 10,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "冠军",
+        "刚刚"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 64 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:59.261Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6hnf11d30t",
+    "createdAt": "2026-09-29T01:05:59.259Z",
+    "updatedAt": "2026-09-29T01:05:59.259Z",
+    "title": "2026北京马拉松10月18日开跑 最新亮点汇总",
+    "summary": "中新网北京9月28日电 9月28日，2026中国银行北京马拉松暨全国马拉松锦标赛新闻发布会举行。记者从会上了解到，本次比赛定于10月18日7:30起跑，总规模达到32000人。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "2026北京",
+      "月18日开跑"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-28/10705177.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网北京9月28日电 9月28日，2026中国银行北京马拉松暨全国马拉松锦标赛新闻发布会举行。"
+      },
+      {
+        "type": "p",
+        "text": "记者从会上了解到，本次比赛定于10月18日7:30起跑，总规模达到32000人。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026北京马拉松10月18日开跑 最新亮点汇总"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-28/10705177.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:10:56.000Z",
+    "rssPublishedAt": "2026-09-28T15:10:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T01:05:59.259Z",
+    "score": 59,
+    "metrics": {
+      "ageHours": 9.9,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "最新"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 59 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:59.259Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6hnce9xmex",
+    "createdAt": "2026-09-29T01:05:59.256Z",
+    "updatedAt": "2026-09-29T01:05:59.256Z",
+    "title": "谢震业：男子4×100接力 团队合力实现“一加一大于二”",
+    "summary": "中新网9月28日电(记者 金旭)爱知·名古屋亚运会当地时间28日举行田径项目男子4×100米接力决赛，由陈锦丰、曾克理、王胜杰，谢震业组成的中国队以38.17秒的成绩获得金牌，卫冕成功。",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "谢震业",
+      "男子4×10"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-28/10705178.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月28日电(记者 金旭)爱知·名古屋亚运会当地时间28日举行田径项目男子4×100米接力决赛，由陈锦丰、曾克理、王胜杰，谢震业组成的中国队以38.17秒的成绩获得金牌，卫冕成功。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "谢震业：男子4×100接力 团队合力实现“一加一"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-28/10705178.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:15:52.000Z",
+    "rssPublishedAt": "2026-09-28T15:15:52.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T01:05:59.256Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 9.8,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:05:59.256Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:05:59.256Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6hnaf3gzaf",
+    "createdAt": "2026-09-29T01:05:59.254Z",
+    "updatedAt": "2026-09-29T01:07:02.499Z",
+    "title": "（爱知·名古屋亚运会）亚运会乒乓球：蒯曼/王曼昱女双摘金 林诗栋男单夺冠",
+    "summary": "中新社日本名古屋9月29日电 (记者 国璇) 爱知·名古屋亚运会乒乓球项目28日晚收官。中国组合蒯曼/王曼昱以大比分4:0力克东道主组合张本美和/早田希娜，夺得女双冠军。男单决赛中，林诗栋以4:0战胜卫冕冠军王楚钦，首次",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-28/10705182.shtml",
+    "cover": "/img/news/i-mulz6hnaf3gzaf-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月29日电 (记者 国璇) 爱知·名古屋亚运会乒乓球项目28日晚收官。"
+      },
+      {
+        "type": "p",
+        "text": "中国组合蒯曼/王曼昱以大比分4:0力克东道主组合张本美和/早田希娜，夺得女双冠军。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）亚运会乒乓球：蒯曼/王曼昱"
+      },
+      {
+        "type": "p",
+        "text": "男单决赛中，林诗栋以4:0战胜卫冕冠军王楚钦，首次夺得亚运会男单冠军。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-28/10705182.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:56:42.000Z",
+    "rssPublishedAt": "2026-09-28T15:56:42.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T01:05:59.254Z",
+    "score": 69,
+    "metrics": {
+      "ageHours": 9.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 3,
+      "keywordScore": 15,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "首次",
+        "冠军",
+        "夺冠"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 69 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T01:05:59.254Z"
+    },
+    "review": {
+      "by": "collector",
+      "at": "2026-09-29T01:07:02.499Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mulz7ufvnlt9jv",
+    "publishedInboxAt": "2026-09-29T01:07:02.499Z"
+  },
+  {
+    "id": "mulz6hn8wjeh2q",
+    "createdAt": "2026-09-29T01:05:59.252Z",
+    "updatedAt": "2026-09-29T01:05:59.252Z",
+    "title": "（爱知·名古屋亚运会）综合消息：中国乒乓球队6金收官 中国队卫冕田径男、女4X100米接力",
+    "summary": "中新社日本名古屋9月28日电 爱知·名古屋亚运会28日共决出24枚金牌。乒乓球项目迎来收官，中国队当日包揽男单、女双两枚金牌。本届赛事中国乒乓球队参加全部7项，共斩获6金4银1铜。田径赛场，中国队成功卫冕田径男、女4X1",
+    "channel": "sports",
+    "tags": [
+      "体育",
+      "爱知",
+      "名古屋亚运会"
+    ],
+    "author": "中新网·体育",
+    "sourceName": "中新网·体育",
+    "sourceUrl": "https://www.chinanews.com.cn/ty/2026/09-28/10705183.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社日本名古屋9月28日电 爱知·名古屋亚运会28日共决出24枚金牌。"
+      },
+      {
+        "type": "p",
+        "text": "乒乓球项目迎来收官，中国队当日包揽男单、女双两枚金牌。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "（爱知·名古屋亚运会）综合消息：中国乒乓球队6金"
+      },
+      {
+        "type": "p",
+        "text": "本届赛事中国乒乓球队参加全部7项，共斩获6金4银1铜。"
+      },
+      {
+        "type": "p",
+        "text": "田径赛场，中国队成功卫冕田径男、女4X100米接力冠军。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/ty/2026/09-28/10705183.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:56:54.000Z",
+    "rssPublishedAt": "2026-09-28T15:56:54.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxoxntp",
+    "collectedAt": "2026-09-29T01:05:59.252Z",
+    "score": 55,
+    "metrics": {
+      "ageHours": 9.2,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 2,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 55 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:59.252Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6gxjw5e28u",
+    "createdAt": "2026-09-29T01:05:58.327Z",
+    "updatedAt": "2026-09-29T01:05:58.327Z",
+    "title": "2026世界设计之都大会：AI赋能，设计无界",
+    "summary": "中新网上海9月28日电 (记者 郑莹莹)由上海市人民政府、联合国教科文组织共同主办的2026世界设计之都大会(WDCC2026)28日在上海开幕。大会以“设计无界，品智生成”为主题，立足人工智能引领的新一轮科技与产业变革",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "2026世界",
+      "设计之都大会"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-28/10705168.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网上海9月28日电 (记者 郑莹莹)由上海市人民政府、联合国教科文组织共同主办的2026世界设计之都大会(WDCC2026)28日在上海开幕。"
+      },
+      {
+        "type": "p",
+        "text": "大会以“设计无界，品智生成”为主题，立足人工智能引领的新一轮科技与产业变革最前沿，为全球创意城市可持续发展贡献上海力量。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "2026世界设计之都大会：AI赋能，设计无界"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-28/10705168.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T14:46:16.000Z",
+    "rssPublishedAt": "2026-09-28T14:46:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-29T01:05:58.327Z",
+    "score": 54,
+    "metrics": {
+      "ageHours": 10.3,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "rejected",
+    "auto": {
+      "decision": "reject",
+      "reasons": [
+        "分值 54 低于准入线 55"
+      ],
+      "checkedAt": "2026-09-29T01:05:58.327Z"
+    },
+    "review": {
+      "by": "system",
+      "at": "2026-09-29T01:05:58.327Z",
+      "comment": "分值 54 低于准入线 55"
+    },
+    "articleId": ""
+  },
+  {
+    "id": "mulz6gxh0w0mxh",
+    "createdAt": "2026-09-29T01:05:58.325Z",
+    "updatedAt": "2026-09-29T01:05:58.325Z",
+    "title": "巴西市场上调2026年通胀预期至4.99%",
+    "summary": "中新社圣保罗9月28日电 巴西中央银行28日发布的最新一期《焦点报告》显示，金融市场将巴西2026年通胀预期由此前的4.92%上调至4.99%，同时连续第三周下调经济增长预期。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "巴西市场上调",
+      "至4.99%"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-28/10705180.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社圣保罗9月28日电 巴西中央银行28日发布的最新一期《焦点报告》显示，金融市场将巴西2026年通胀预期由此前的4.92%上调至4.99%，同时连续第三周下调经济增长预期。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "巴西市场上调2026年通胀预期至4.99%"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-28/10705180.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T15:20:30.000Z",
+    "rssPublishedAt": "2026-09-28T15:20:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-29T01:05:58.325Z",
+    "score": 59,
+    "metrics": {
+      "ageHours": 9.8,
+      "base": 30,
+      "freshness": 18,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "最新"
+      ]
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 59 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:58.325Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6gxfn74zel",
+    "createdAt": "2026-09-29T01:05:58.323Z",
+    "updatedAt": "2026-09-29T01:06:32.286Z",
+    "title": "口腔种植体集采接续采购启动 种植牙迈入集采2.0时代",
+    "summary": "小小一颗牙，关系大健康。口腔健康是全身健康的重要组成部分，牙齿缺失，不仅影响咀嚼进食、言语容貌，还会间接影响消化功能与生活质量。缺牙修复，也因此成为很多群众迫切的民生需求。",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "口腔种植体集",
+      "集采接续采购"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-29/10705197.shtml",
+    "cover": "/img/news/i-mulz6gxfn74zel-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "口腔健康是全身健康的重要组成部分，牙齿缺失，不仅影响咀嚼进食、言语容貌，还会间接影响消化功能与生活质量。"
+      },
+      {
+        "type": "p",
+        "text": "缺牙修复，也因此成为很多群众迫切的民生需求。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "口腔种植体集采接续采购启动 种植牙迈入集采2.0"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-29/10705197.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T23:19:13.000Z",
+    "rssPublishedAt": "2026-09-28T23:19:13.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-29T01:05:58.323Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.8,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:58.323Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6gxc0uwdn2",
+    "createdAt": "2026-09-29T01:05:58.320Z",
+    "updatedAt": "2026-09-29T01:05:58.320Z",
+    "title": "5万亿元城市，“开抢”年轻人",
+    "summary": "每经记者｜淡忠奎",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "5万亿元城市",
+      "“开抢”年轻人"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-29/10705214.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "每经记者｜淡忠奎"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "5万亿元城市，“开抢”年轻人"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-29/10705214.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:26:33.000Z",
+    "rssPublishedAt": "2026-09-29T00:26:33.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-29T01:05:58.320Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 60 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:58.320Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6gxaxqyt90",
+    "createdAt": "2026-09-29T01:05:58.318Z",
+    "updatedAt": "2026-09-29T01:05:58.318Z",
+    "title": "北京率先发布现房销售细则 影响几何？",
+    "summary": "每经记者｜陈梦妤",
+    "channel": "finance",
+    "tags": [
+      "财经",
+      "北京率先",
+      "现房销售细则"
+    ],
+    "author": "中新网·财经",
+    "sourceName": "中新网·财经",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-29/10705216.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "每经记者｜陈梦妤"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "北京率先发布现房销售细则 影响几何？"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-29/10705216.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:30:09.000Z",
+    "rssPublishedAt": "2026-09-29T00:30:09.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxuyicg",
+    "collectedAt": "2026-09-29T01:05:58.318Z",
+    "score": 60,
+    "metrics": {
+      "ageHours": 0.6,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 0,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 60 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:58.318Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6g7wpqwkws",
+    "createdAt": "2026-09-29T01:05:57.404Z",
+    "updatedAt": "2026-09-29T01:06:33.213Z",
+    "title": "以色列总理办公室证实：内塔尼亚胡密访阿联酋，行程遭泄露",
+    "summary": "中新网9月29日电 据《以色列时报》28日报道，以色列总理办公室证实，以色列总理内塔尼亚胡于27日前往阿联酋阿布扎比，与阿联酋总统穆罕默德举行会晤。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "以色列总理办",
+      "理办公室证实"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705209.shtml",
+    "cover": "/img/news/i-mulz6g7wpqwkws-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 据《以色列时报》28日报道，以色列总理办公室证实，以色列总理内塔尼亚胡于27日前往阿联酋阿布扎比，与阿联酋总统穆罕默德举行会晤。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "以色列总理办公室证实：内塔尼亚胡密访阿联酋，行程"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705209.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T23:50:14.000Z",
+    "rssPublishedAt": "2026-09-28T23:50:14.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-29T01:05:57.404Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.3,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:57.404Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6g7u5ecwb0",
+    "createdAt": "2026-09-29T01:05:57.402Z",
+    "updatedAt": "2026-09-29T01:06:15.495Z",
+    "title": "伊朗最高领袖：把敌人赶出阿拉伯海！特朗普又要把霍尔木兹改成“特朗普海峡”",
+    "summary": "原标题：伊朗最高领袖罕见连发24条帖文：把敌人赶出阿拉伯海！特朗普一张海峡地图发两回，又要把霍尔木兹改成“特朗普海峡” | 国际早察",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "伊朗最高领袖",
+      "把敌人赶出阿"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705210.shtml",
+    "cover": "/img/news/i-mulz6g7u5ecwb0-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "原标题：伊朗最高领袖罕见连发24条帖文：把敌人赶出阿拉伯海。"
+      },
+      {
+        "type": "p",
+        "text": "特朗普一张海峡地图发两回，又要把霍尔木兹改成“特朗普海峡” | 国际早察。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "伊朗最高领袖：把敌人赶出阿拉伯海！特朗普又要把霍"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705210.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-28T23:52:16.000Z",
+    "rssPublishedAt": "2026-09-28T23:52:16.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-29T01:05:57.402Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 1.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:57.402Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6g7rp5n5ku",
+    "createdAt": "2026-09-29T01:05:57.399Z",
+    "updatedAt": "2026-09-29T01:07:02.864Z",
+    "title": "美国突发枪击：一名州警身亡，嫌疑人被捕",
+    "summary": "中新网9月29日电 据美媒28日报道，美国肯塔基州一名州警当天在州际公路沿线巡逻时遭枪击身亡。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "美国突发枪击",
+      "一名州警身亡"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705212.shtml",
+    "cover": "/img/news/i-mulz6g7rp5n5ku-cover.jpg",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 据美媒28日报道，美国肯塔基州一名州警当天在州际公路沿线巡逻时遭枪击身亡。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "美国突发枪击：一名州警身亡，嫌疑人被捕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705212.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:07:22.000Z",
+    "rssPublishedAt": "2026-09-29T00:07:22.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-29T01:05:57.399Z",
+    "score": 66,
+    "metrics": {
+      "ageHours": 1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 1,
+      "keywordScore": 5,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": [
+        "突发"
+      ]
+    },
+    "status": "published",
+    "auto": {
+      "decision": "publish",
+      "reasons": [
+        "分值 66 达到自动发布线 65"
+      ],
+      "checkedAt": "2026-09-29T01:05:57.399Z"
+    },
+    "review": {
+      "by": "collector",
+      "at": "2026-09-29T01:07:02.864Z",
+      "comment": "自动审核通过并发布"
+    },
+    "articleId": "n_mulz7uq8ficbfu",
+    "publishedInboxAt": "2026-09-29T01:07:02.864Z"
+  },
+  {
+    "id": "mulz6g7pm5wj25",
+    "createdAt": "2026-09-29T01:05:57.397Z",
+    "updatedAt": "2026-09-29T01:05:57.397Z",
+    "title": "特朗普否认其“愿意有条件解除对伊制裁”的报道",
+    "summary": "中新网9月29日电 综合报道，美国总统特朗普28日在社交媒体发文，否认美国媒体有关其愿意以解除对伊朗制裁并解冻资金换取伊朗在核问题上让步的报道。特朗普称，该报道“不实”，“我什么都没有向他们提供”。特朗普还要求该媒体立即",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "特朗普否认其",
+      "对伊制裁”的"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705215.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 综合报道，美国总统特朗普28日在社交媒体发文，否认美国媒体有关其愿意以解除对伊朗制裁并解冻资金换取伊朗在核问题上让步的报道。"
+      },
+      {
+        "type": "p",
+        "text": "特朗普称，该报道“不实”，“我什么都没有向他们提供”。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "特朗普否认其“愿意有条件解除对伊制裁”的报道"
+      },
+      {
+        "type": "p",
+        "text": "特朗普还要求该媒体立即撤下这篇“虚假报道”。"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705215.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:26:45.000Z",
+    "rssPublishedAt": "2026-09-29T00:26:45.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-29T01:05:57.397Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.7,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:57.397Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6g7mxru3i4",
+    "createdAt": "2026-09-29T01:05:57.394Z",
+    "updatedAt": "2026-09-29T01:05:57.394Z",
+    "title": "欧盟延长拉法口岸边防特派团和巴勒斯坦警察特派团任期",
+    "summary": "中新社布鲁塞尔9月28日电(记者 德永健)欧盟28日宣布继续向巴勒斯坦提供安全援助，延长欧盟拉法口岸边防特派团和欧盟巴勒斯坦警察特派团的任期。",
+    "channel": "world",
+    "tags": [
+      "国际",
+      "欧盟延长拉法",
+      "察特派团任期"
+    ],
+    "author": "中新网·国际",
+    "sourceName": "中新网·国际",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705193.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社布鲁塞尔9月28日电(记者 德永健)欧盟28日宣布继续向巴勒斯坦提供安全援助，延长欧盟拉法口岸边防特派团和欧盟巴勒斯坦警察特派团的任期。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "欧盟延长拉法口岸边防特派团和巴勒斯坦警察特派团任"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705193.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:34:49.000Z",
+    "rssPublishedAt": "2026-09-29T00:34:49.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8hxdolex",
+    "collectedAt": "2026-09-29T01:05:57.394Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:57.394Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6fp4ui0suc",
+    "createdAt": "2026-09-29T01:05:56.728Z",
+    "updatedAt": "2026-09-29T01:05:56.728Z",
+    "title": "第81届联大一般性辩论闭幕",
+    "summary": "中新社联合国9月28日电(记者 王帆)第81届联合国大会一般性辩论28日在纽约联合国总部闭幕。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "第81届联大",
+      "大一般性辩论"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/gj/2026/09-29/10705196.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新社联合国9月28日电(记者 王帆)第81届联合国大会一般性辩论28日在纽约联合国总部闭幕。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "第81届联大一般性辩论闭幕"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/gj/2026/09-29/10705196.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:35:41.000Z",
+    "rssPublishedAt": "2026-09-29T00:35:41.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-29T01:05:56.728Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.5,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:56.728Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6fp1939ujx",
+    "createdAt": "2026-09-29T01:05:56.725Z",
+    "updatedAt": "2026-09-29T01:05:56.725Z",
+    "title": "辽宁等地有强对流 华西至江汉江淮多阴雨 北方地区将有大风降温",
+    "summary": "中新网9月29日电 据中央气象台网站消息，昨日，重庆、湖北、贵州等地出现暴雨或大暴雨，新疆、内蒙古等地风力较大。预计未来三天，华西地区至江汉、江淮等地有多阴雨，东北地区南部、华北中部等地有雷暴大风或冰雹等强对流天气，关注",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "辽宁等地有强对流",
+      "华西至江汉江"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-29/10705218.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网9月29日电 据中央气象台网站消息，昨日，重庆、湖北、贵州等地出现暴雨或大暴雨，新疆、内蒙古等地风力较大。"
+      },
+      {
+        "type": "p",
+        "text": "预计未来三天，华西地区至江汉、江淮等地有多阴雨，东北地区南部、华北中部等地有雷暴大风或冰雹等强对流天气，关注对交通、旅游、城市运行等影响；较强冷空气将影响中东部地区，关注大风降温对交通、旅游、农牧业设施等影响。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "辽宁等地有强对流 华西至江汉江淮多阴雨 北方地区"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-29/10705218.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:44:30.000Z",
+    "rssPublishedAt": "2026-09-29T00:44:30.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-29T01:05:56.725Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.4,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:56.725Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6foyoxadwn",
+    "createdAt": "2026-09-29T01:05:56.722Z",
+    "updatedAt": "2026-09-29T01:05:56.722Z",
+    "title": "澳华文联主席余俊武：海外华侨华人肩负三项时代使命",
+    "summary": "中新网山东曲阜9月29日电 (吕妍 李明芮)“身处多元文明交汇前沿，海外华侨华人肩负三项时代使命：文明互鉴是前行之路，秩序共建是立足之基，公理共守是立身之本。”澳大利亚华人文化艺术界联合会(澳华文联)主席余俊武9月28日",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "澳华文联主席",
+      "联主席余俊武"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/hr/2026/09-29/10705219.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中新网山东曲阜9月29日电 (吕妍 李明芮)“身处多元文明交汇前沿，海外华侨华人肩负三项时代使命：文明互鉴是前行之路，秩序共建是立足之基，公理共守是立身之本。"
+      },
+      {
+        "type": "p",
+        "text": "”澳大利亚华人文化艺术界联合会(澳华文联)主席余俊武9月28日接受中新网记者专访时表示，三者相辅相成、有机统一，构成新时代海外华侨华人的价值追求与使命担当。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "澳华文联主席余俊武：海外华侨华人肩负三项时代使命"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/hr/2026/09-29/10705219.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:53:12.000Z",
+    "rssPublishedAt": "2026-09-29T00:53:12.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-29T01:05:56.722Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:56.722Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6fov5v9aaw",
+    "createdAt": "2026-09-29T01:05:56.719Z",
+    "updatedAt": "2026-09-29T01:05:56.719Z",
+    "title": "购买后既没产权还要背银行贷款？起底“0公里二手车”延迟过户的销售套路",
+    "summary": "近日，来自全国多地的二手车买主反映称，此前在河北秦皇岛的一家汽车销售公司处，低价全款入手了一台九成新二手车。最后发现，到手的是一台拿不到产权、背负银行贷款的抵押车。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "购买后既没产",
+      "要背银行贷款"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/sh/2026/09-29/10705220.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "近日，来自全国多地的二手车买主反映称，此前在河北秦皇岛的一家汽车销售公司处，低价全款入手了一台九成新二手车。"
+      },
+      {
+        "type": "p",
+        "text": "最后发现，到手的是一台拿不到产权、背负银行贷款的抵押车。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "购买后既没产权还要背银行贷款？起底“0公里二手车"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/sh/2026/09-29/10705220.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T00:56:56.000Z",
+    "rssPublishedAt": "2026-09-29T00:56:56.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-29T01:05:56.719Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.2,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:56.719Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
+    "id": "mulz6fot1fn88m",
+    "createdAt": "2026-09-29T01:05:56.717Z",
+    "updatedAt": "2026-09-29T01:05:56.717Z",
+    "title": "今年前8月全国社会物流总额243.6万亿元 同比增长4.9%",
+    "summary": "中国物流与采购联合会今天(29日)公布今年1—8月份物流运行数据。数据显示，今年1—8月份，我国物流运行保持稳中有进发展态势、物流市场规模稳步扩张，国际物流通道扩容提质。",
+    "channel": "china",
+    "tags": [
+      "国内",
+      "前8月",
+      "社会物流总额"
+    ],
+    "author": "中新网·滚动",
+    "sourceName": "中新网·滚动",
+    "sourceUrl": "https://www.chinanews.com.cn/cj/2026/09-29/10705221.shtml",
+    "cover": "",
+    "sourceImage": "",
+    "content": [
+      {
+        "type": "p",
+        "text": "中国物流与采购联合会今天(29日)公布今年1—8月份物流运行数据。"
+      },
+      {
+        "type": "p",
+        "text": "数据显示，今年1—8月份，我国物流运行保持稳中有进发展态势、物流市场规模稳步扩张，国际物流通道扩容提质。"
+      },
+      {
+        "type": "image",
+        "src": "",
+        "caption": "今年前8月全国社会物流总额243.6万亿元 同比"
+      },
+      {
+        "type": "p",
+        "text": "原文链接（转载需获授权）：https://www.chinanews.com.cn/cj/2026/09-29/10705221.shtml"
+      }
+    ],
+    "publishedAt": "2026-09-29T01:01:35.000Z",
+    "rssPublishedAt": "2026-09-29T01:01:35.000Z",
+    "publishedAtAdjusted": false,
+    "sourceId": "s_mu3fhi8h94ra2n",
+    "collectedAt": "2026-09-29T01:05:56.716Z",
+    "score": 61,
+    "metrics": {
+      "ageHours": 0.1,
+      "base": 30,
+      "freshness": 25,
+      "keywordHits": 0,
+      "keywordScore": 0,
+      "quality": 1,
+      "weightScore": 5,
+      "media": 0,
+      "hits": []
+    },
+    "status": "pending",
+    "auto": {
+      "decision": "review",
+      "reasons": [
+        "分值 61 达到准入线，待人工复核"
+      ],
+      "checkedAt": "2026-09-29T01:05:56.716Z"
+    },
+    "review": null,
+    "articleId": ""
+  },
+  {
     "id": "mukgsesej807l0",
     "createdAt": "2026-09-27T23:43:23.102Z",
     "updatedAt": "2026-09-27T23:43:23.102Z",
