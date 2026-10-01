@@ -73,7 +73,9 @@ function main() {
   if (!rank.ok) console.log(`  !! 刷榜异常：${rank.err.trim().slice(0, 200)}`);
 
   console.log('\n[3/4] 补齐高清配图（内容相关 / 全局去重，限时 20 分钟）…');
-  if (fs.existsSync(LAST_RUN_FILE)) fs.unlinkSync(LAST_RUN_FILE);
+  // 不删除上一轮报告（删除动作会被安全删除护栏拦截），改为记录 mtime，
+  // 只在报告被本次运行覆盖（mtime 更新）时才采信
+  const prevRunMtime = fs.existsSync(LAST_RUN_FILE) ? fs.statSync(LAST_RUN_FILE).mtimeMs : 0;
   const images = run('fetch-images.js', ['--apply'], 20 * 60 * 1000);
   console.log(tail(images.out, 12));
   if (!images.ok) {
@@ -82,7 +84,7 @@ function main() {
   }
 
   const after = countArticles();
-  const img = fs.existsSync(LAST_RUN_FILE)
+  const img = (fs.existsSync(LAST_RUN_FILE) && fs.statSync(LAST_RUN_FILE).mtimeMs > prevRunMtime)
     ? JSON.parse(fs.readFileSync(LAST_RUN_FILE, 'utf8'))
     : null;
 
