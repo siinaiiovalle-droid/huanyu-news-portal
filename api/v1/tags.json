@@ -1,1 +1,1 @@
-{"code":0,"message":"ok","data":[]}
+{"code":0,"message":"ok","data":[{"name":"视频","count":4,"heat":105.8},{"name":"算力","count":2,"heat":105.6},{"name":"人工智能","count":4,"heat":85.7},{"name":"消费","count":4,"heat":66.8},{"name":"新能源汽车","count":2,"heat":62.8},{"name":"大模型","count":1,"heat":61.4},{"name":"邮轮","count":2,"heat":56},{"name":"文旅","count":2,"heat":56},{"name":"高铁","count":1,"heat":54.4},{"name":"交通基建","count":1,"heat":54.4},{"name":"城市群","count":1,"heat":54.4},{"name":"马拉松","count":2,"heat":48.5}]}
