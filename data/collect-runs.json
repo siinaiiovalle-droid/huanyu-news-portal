@@ -1,5 +1,161 @@
 [
   {
+    "id": "mvree54sb676om",
+    "createdAt": "2026-10-28T00:50:23.740Z",
+    "updatedAt": "2026-10-28T00:50:23.740Z",
+    "type": "collect",
+    "trigger": "cli",
+    "fetched": 1000,
+    "added": 65,
+    "duplicated": 745,
+    "rejected": 27,
+    "autoPublished": 3,
+    "failed": 0,
+    "images": {
+      "filled": 1,
+      "failed": 9,
+      "pool": {
+        "checked": 12,
+        "filled": 1,
+        "failed": 6
+      },
+      "reasons": [
+        "安切洛蒂首次带领巴西队集训：超时未找到合格配图（）",
+        "主教练张晓欢：我们是亲历者 也是幸运：超时未找到合格配图（）",
+        "全球AI投资持续升温，增长与风险如何：超时未找到合格配图（原文页配图：分辨率不足 227x227 / 原文页配图：分辨率不足 880x172）",
+        "Edge AI Daily 早报（1：超时未找到合格配图（原文配图：分辨率不足 750x400）",
+        "这场手术，托起生命的尊严（民生观）：超时未找到合格配图（）",
+        "矿产资源“户口簿”30年来首次大修订：超时未找到合格配图（原文页配图：分辨率不足 227x227 / 原文页配图：分辨率不足 880x172）",
+        "主教练张晓欢：我们是亲历者 也是幸运：超时未找到合格配图（）",
+        "全球AI投资持续升温，增长与风险如何：单篇配图超时，留到下次补图"
+      ]
+    },
+    "durationMs": 163778,
+    "perSource": [
+      {
+        "name": "人民网·时政",
+        "fetched": 100,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·要闻",
+        "fetched": 1,
+        "added": 0,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·滚动",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·国际",
+        "fetched": 100,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·国际",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·财经",
+        "fetched": 40,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·财经",
+        "fetched": 100,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·财经",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "新浪·科技",
+        "fetched": 15,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·体育",
+        "fetched": 100,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·体育",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·娱乐",
+        "fetched": 99,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·文化",
+        "fetched": 96,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·文化",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "人民网·健康",
+        "fetched": 100,
+        "added": 2,
+        "offTopic": 0
+      },
+      {
+        "name": "中新网·健康",
+        "fetched": 30,
+        "added": 5,
+        "offTopic": 0
+      },
+      {
+        "name": "量子位·AI 前沿",
+        "fetched": 10,
+        "added": 6,
+        "offTopic": 0
+      },
+      {
+        "name": "雷峰网·AI 观察",
+        "fetched": 20,
+        "added": 6,
+        "offTopic": 2
+      },
+      {
+        "name": "InfoQ·技术前沿",
+        "fetched": 20,
+        "added": 0,
+        "offTopic": 10
+      },
+      {
+        "name": "钛媒体·科技产业",
+        "fetched": 19,
+        "added": 5,
+        "offTopic": 13
+      }
+    ],
+    "finishedAt": "2026-10-28T00:50:23.740Z"
+  },
+  {
     "id": "muwig39a3n69ps",
     "createdAt": "2026-10-06T10:03:01.630Z",
     "updatedAt": "2026-10-06T10:03:01.630Z",
